@@ -1,7 +1,16 @@
-import React from 'react'
+import React from "react";
+import {
+	FiInstagram,
+	FiTwitter,
+	FiFacebook,
+	FiPhoneCall,
+	FiMail,
+} from "react-icons/fi";
+import {  FaEnvelope } from "react-icons/fa";
+import { AiOutlineSkype } from "react-icons/ai";
 
 const Footer = () => {
-  return (
+	return (
 		<div className="section footer-section">
 			{/* <!-- Footer Widget Section Start --> */}
 			<div className="footer-widget-section">
@@ -23,17 +32,37 @@ const Footer = () => {
 
 								<ul className="widget-info">
 									<li>
-										<p>
-											{" "}
-											<i className="flaticon-email"></i>{" "}
-											<a href="mailto:address@gmail.com">address@gmail.com</a>{" "}
+										<p
+											style={{
+												display: "flex",
+												alignItems: "center",
+												padding: "3px",
+											}}
+										>
+											<FiMail size={22} color="#309255" />{" "}
+											<a
+												style={{ marginTop: 0, marginBottom: "2px" }}
+												href="mailto:address@gmail.com"
+											>
+												address@gmail.com
+											</a>
 										</p>
 									</li>
 									<li>
-										<p>
-											{" "}
-											<i className="flaticon-phone-call"></i>{" "}
-											<a href="tel:9702621413">(970) 262-1413</a>{" "}
+										<p
+											style={{
+												display: "flex",
+												alignItems: "center",
+												padding: "3px",
+											}}
+										>
+											<FiPhoneCall color="#309255" size={22} />
+											<a
+												style={{ marginTop: 0, marginBottom: "2px" }}
+												href="tel:9702621413"
+											>
+												(970) 262-1413
+											</a>{" "}
 										</p>
 									</li>
 								</ul>
@@ -41,22 +70,22 @@ const Footer = () => {
 								<ul className="widget-social">
 									<li>
 										<a href="/">
-											<i className="flaticon-facebook"></i>
+											<FiFacebook size={24} />
 										</a>
 									</li>
 									<li>
 										<a href="/">
-											<i className="flaticon-twitter"></i>
+											<FiTwitter size={24} />
 										</a>
 									</li>
 									<li>
 										<a href="/">
-											<i className="flaticon-skype"></i>
+											<AiOutlineSkype size={26} />{" "}
 										</a>
 									</li>
 									<li>
 										<a href="/">
-											<i className="flaticon-instagram"></i>
+											<FiInstagram size={22} />
 										</a>
 									</li>
 								</ul>
@@ -147,6 +176,6 @@ const Footer = () => {
 			</div>
 		</div>
 	);
-}
+};
 
-export default Footer
+export default Footer;
