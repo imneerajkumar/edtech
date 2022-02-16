@@ -1,7 +1,6 @@
 import React from "react";
-
-const Navbar = ({scrollState}) => {
-    
+import { Link } from "react-router-dom";
+const Navbar = ({ scrollState }) => {
 	return (
 		<div>
 			<div className="header-section">
@@ -23,9 +22,9 @@ const Navbar = ({scrollState}) => {
 						<div className="header-main-wrapper">
 							{/* <!-- Header Logo Start --> */}
 							<div className="header-logo">
-								<a href="index.html">
+								<Link to="/">
 									<img src="assets/images/logo.png" alt="Logo" />
-								</a>
+								</Link>
 							</div>
 							{/* <!-- Header Logo End --> */}
 
@@ -33,109 +32,109 @@ const Navbar = ({scrollState}) => {
 							<div className="header-menu d-none d-lg-block">
 								<ul className="nav-menu">
 									<li>
-										<a href="index.html">Home</a>
+										<Link to="/">Home</Link>
 									</li>
 									<li>
-										<a href="/">All Course</a>
+										<Link to="/">All Course</Link>
 										<ul className="sub-menu">
 											<li>
-												<a href="courses.html">Courses</a>
+												<Link to="courses.html">Courses</Link>
 											</li>
 											<li>
-												<a href="courses-details.html">Courses Details</a>
+												<Link to="courses-details.html">Courses Details</Link>
 											</li>
 										</ul>
 									</li>
 									<li>
-										<a href="/">Pages </a>
+										<Link to="/">Pages </Link>
 										<ul className="sub-menu">
 											<li>
-												<a href="about.html">About</a>
+												<Link to="about.html">About</Link>
 											</li>
 											<li>
-												<a href="register.html">Register</a>
+												<Link to="register.html">Register</Link>
 											</li>
 											<li>
-												<a href="login.html">Login</a>
+												<Link to="login.html">Login</Link>
 											</li>
 											<li>
-												<a href="faq.html">FAQ</a>
+												<Link to="faq.html">FAQ</Link>
 											</li>
 											<li>
-												<a href="404-error.html">404 Error</a>
+												<Link to="404-error.html">404 Error</Link>
 											</li>
 											<li>
-												<a href="after-enroll.html">After Enroll</a>
+												<Link to="after-enroll.html">After Enroll</Link>
 											</li>
 											<li>
-												<a href="courses-admin.html">
+												<Link to="courses-admin.html">
 													Instructor Dashboard (Course List)
-												</a>
+												</Link>
 											</li>
 											<li>
-												<a href="overview.html">
+												<Link to="overview.html">
 													Instructor Dashboard (Performance)
-												</a>
+												</Link>
 											</li>
 											<li>
-												<a href="students.html">Students</a>
+												<Link to="students.html">Students</Link>
 											</li>
 											<li>
-												<a href="reviews.html">Reviews</a>
+												<Link to="reviews.html">Reviews</Link>
 											</li>
 											<li>
-												<a href="engagement.html">Course engagement</a>
+												<Link to="engagement.html">Course engagement</Link>
 											</li>
 											<li>
-												<a href="traffic-conversion.html">
+												<Link to="traffic-conversion.html">
 													Traffic & conversion
-												</a>
+												</Link>
 											</li>
 											<li>
-												<a href="messages.html">Messages</a>
+												<Link to="messages.html">Messages</Link>
 											</li>
 										</ul>
 									</li>
 									<li>
-										<a href="/">Blog</a>
+										<Link to="/">Blog</Link>
 										<ul className="sub-menu">
 											<li>
-												<a href="/">Blog</a>
+												<Link to="/">Blog</Link>
 												<ul className="sub-menu">
 													<li>
-														<a href="blog-grid.html">Blog</a>
+														<Link to="blog-grid.html">Blog</Link>
 													</li>
 													<li>
-														<a href="blog-left-sidebar.html">
+														<Link to="blog-left-sidebar.html">
 															Blog Left Sidebar
-														</a>
+														</Link>
 													</li>
 													<li>
-														<a href="blog-right-sidebar.html">
+														<Link to="blog-right-sidebar.html">
 															Blog Right Sidebar
-														</a>
+														</Link>
 													</li>
 												</ul>
 											</li>
 											<li>
-												<a href="/">Blog Details</a>
+												<Link to="/">Blog Details</Link>
 												<ul className="sub-menu">
 													<li>
-														<a href="blog-details-left-sidebar.html">
+														<Link to="blog-details-left-sidebar.html">
 															Blog Details Left Sidebar
-														</a>
+														</Link>
 													</li>
 													<li>
-														<a href="blog-details-right-sidebar.html">
+														<Link to="blog-details-right-sidebar.html">
 															Blog Details Right Sidebar
-														</a>
+														</Link>
 													</li>
 												</ul>
 											</li>
 										</ul>
 									</li>
 									<li>
-										<a href="contact.html">Contact</a>
+										<Link to="contact.html">Contact</Link>
 									</li>
 								</ul>
 							</div>
@@ -145,14 +144,14 @@ const Navbar = ({scrollState}) => {
 							<div className="header-sign-in-up d-none d-lg-block">
 								<ul>
 									<li>
-										<a className="sign-in" href="login.html">
+										<Link className="sign-in" to="/login">
 											Sign In
-										</a>
+										</Link>
 									</li>
 									<li>
-										<a className="sign-up" href="register.html">
+										<Link className="sign-up" to="/register">
 											Sign Up
-										</a>
+										</Link>
 									</li>
 								</ul>
 							</div>
@@ -160,11 +159,11 @@ const Navbar = ({scrollState}) => {
 
 							{/* <!-- Header Mobile Toggle Start --> */}
 							<div className="header-toggle d-lg-none">
-								<a className="menu-toggle" href="/">
+								<Link className="menu-toggle" to="/">
 									<span></span>
 									<span></span>
 									<span></span>
-								</a>
+								</Link>
 							</div>
 							{/* <!-- Header Mobile Toggle End --> */}
 						</div>
@@ -177,20 +176,20 @@ const Navbar = ({scrollState}) => {
 			{/* <!-- Mobile Menu Start --> */}
 			<div className="mobile-menu">
 				{/* <!-- Menu Close Start --> */}
-				<a className="menu-close" href="/">
+				<Link className="menu-close" to="/">
 					<i className="icofont-close-line"></i>
-				</a>
+				</Link>
 				{/* <!-- Menu Close End --> */}
 
 				{/* <!-- Mobile Top Medal Start --> */}
 				<div className="mobile-top">
 					<p>
 						<i className="flaticon-phone-call"></i>{" "}
-						<a href="tel:9702621413">(970) 262-1413</a>
+						<Link to="tel:9702621413">(970) 262-1413</Link>
 					</p>
 					<p>
 						<i className="flaticon-email"></i>{" "}
-						<a href="mailto:address@gmail.com">address@gmail.com</a>
+						<Link to="mailto:address@gmail.com">address@gmail.com</Link>
 					</p>
 				</div>
 				{/* <!-- Mobile Top Medal End --> */}
@@ -199,14 +198,14 @@ const Navbar = ({scrollState}) => {
 				<div className="mobile-sign-in-up">
 					<ul>
 						<li>
-							<a className="sign-in" href="login.html">
+							<Link className="sign-in" to="login.html">
 								Sign In
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a className="sign-up" href="register.html">
+							<Link className="sign-up" to="register.html">
 								Sign Up
-							</a>
+							</Link>
 						</li>
 					</ul>
 				</div>
@@ -216,101 +215,101 @@ const Navbar = ({scrollState}) => {
 				<div className="mobile-menu-items">
 					<ul className="nav-menu">
 						<li>
-							<a href="index.html">Home</a>
+							<Link to="index.html">Home</Link>
 						</li>
 						<li>
-							<a href="/">All Course</a>
+							<Link to="/">All Course</Link>
 							<ul className="sub-menu">
 								<li>
-									<a href="courses.html">Courses</a>
+									<Link to="courses.html">Courses</Link>
 								</li>
 								<li>
-									<a href="courses-details.html">Courses Details</a>
+									<Link to="courses-details.html">Courses Details</Link>
 								</li>
 							</ul>
 						</li>
 						<li>
-							<a href="/">Pages </a>
+							<Link to="/">Pages </Link>
 							<ul className="sub-menu">
 								<li>
-									<a href="about.html">About</a>
+									<Link to="about.html">About</Link>
 								</li>
 								<li>
-									<a href="register.html">Register</a>
+									<Link to="register.html">Register</Link>
 								</li>
 								<li>
-									<a href="login.html">Login</a>
+									<Link to="login.html">Login</Link>
 								</li>
 								<li>
-									<a href="faq.html">FAQ</a>
+									<Link to="faq.html">FAQ</Link>
 								</li>
 								<li>
-									<a href="404-error.html">404 Error</a>
+									<Link to="404-error.html">404 Error</Link>
 								</li>
 								<li>
-									<a href="after-enroll.html">After Enroll</a>
+									<Link to="after-enroll.html">After Enroll</Link>
 								</li>
 								<li>
-									<a href="courses-admin.html">
+									<Link to="courses-admin.html">
 										Instructor Dashboard (Course List)
-									</a>
+									</Link>
 								</li>
 								<li>
-									<a href="overview.html">Instructor Dashboard (Performance)</a>
+									<Link to="overview.html">Instructor Dashboard (Performance)</Link>
 								</li>
 								<li>
-									<a href="students.html">Students</a>
+									<Link to="students.html">Students</Link>
 								</li>
 								<li>
-									<a href="reviews.html">Reviews</a>
+									<Link to="reviews.html">Reviews</Link>
 								</li>
 								<li>
-									<a href="engagement.html">Course engagement</a>
+									<Link to="engagement.html">Course engagement</Link>
 								</li>
 								<li>
-									<a href="traffic-conversion.html">Traffic & conversion</a>
+									<Link to="traffic-conversion.html">Traffic & conversion</Link>
 								</li>
 								<li>
-									<a href="messages.html">Messages</a>
+									<Link to="messages.html">Messages</Link>
 								</li>
 							</ul>
 						</li>
 						<li>
-							<a href="/">Blog</a>
+							<Link to="/">Blog</Link>
 							<ul className="sub-menu">
 								<li>
-									<a href="/">Blog</a>
+									<Link to="/">Blog</Link>
 									<ul className="sub-menu">
 										<li>
-											<a href="blog-grid.html">Blog</a>
+											<Link to="blog-grid.html">Blog</Link>
 										</li>
 										<li>
-											<a href="blog-left-sidebar.html">Blog Left Sidebar</a>
+											<Link to="blog-left-sidebar.html">Blog Left Sidebar</Link>
 										</li>
 										<li>
-											<a href="blog-right-sidebar.html">Blog Right Sidebar</a>
+											<Link to="blog-right-sidebar.html">Blog Right Sidebar</Link>
 										</li>
 									</ul>
 								</li>
 								<li>
-									<a href="/">Blog Details</a>
+									<Link to="/">Blog Details</Link>
 									<ul className="sub-menu">
 										<li>
-											<a href="blog-details-left-sidebar.html">
+											<Link to="blog-details-left-sidebar.html">
 												Blog Details Left Sidebar
-											</a>
+											</Link>
 										</li>
 										<li>
-											<a href="blog-details-right-sidebar.html">
+											<Link to="blog-details-right-sidebar.html">
 												Blog Details Right Sidebar
-											</a>
+											</Link>
 										</li>
 									</ul>
 								</li>
 							</ul>
 						</li>
 						<li>
-							<a href="contact.html">Contact</a>
+							<Link to="contact.html">Contact</Link>
 						</li>
 					</ul>
 				</div>
@@ -320,24 +319,24 @@ const Navbar = ({scrollState}) => {
 				<div className="mobile-social">
 					<ul className="social">
 						<li>
-							<a href="/">
+							<Link to="/">
 								<i className="flaticon-facebook"></i>
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a href="/">
+							<Link to="/">
 								<i className="flaticon-twitter"></i>
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a href="/">
+							<Link to="/">
 								<i className="flaticon-skype"></i>
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a href="/">
+							<Link to="/">
 								<i className="flaticon-instagram"></i>
-							</a>
+							</Link>
 						</li>
 					</ul>
 				</div>

@@ -4,7 +4,7 @@ import Footer from "../Footer";
 import Download from "../Download";
 
 const Register = () => {
-  const [scrollState, setScrollState] = useState(false);
+	const [scrollState, setScrollState] = useState(false);
 
 	useEffect(() => {
 		window.addEventListener("scroll", (e) => {
@@ -17,130 +17,155 @@ const Register = () => {
 		});
 	});
 
-  return (
-    <div className="main-wrapper">
+	return (
+		<div className="main-wrapper">
 			{/* <!-- Header Section Start --> */}
 			<Navbar scrollState={scrollState} />
 			{/* <!-- Overlay Start --> */}
-        <div className="overlay"></div>
-        {/* <!-- Overlay End -->
+			<div className="overlay"></div>
+			{/* <!-- Overlay End -->
 
         <!-- Page Banner Start --> */}
-        <div className="section page-banner">
+			<div className="section page-banner">
+				<img
+					className="shape-2"
+					src="assets/images/shape/shape-23.png"
+					alt="Shape"
+				/>
 
-            <img className="shape-2" src="assets/images/shape/shape-23.png" alt="Shape" />
+				<div className="container">
+					{/* <!-- Page Banner Start --> */}
+					<div className="page-banner-content">
+						<ul className="breadcrumb">
+							<li>
+								<a href="/">Home</a>
+							</li>
+							<li className="active">Register</li>
+						</ul>
+						<h2 className="title">
+							Registration <span>Form</span>
+						</h2>
+					</div>
+					{/* <!-- Page Banner End --> */}
+				</div>
 
-            <div className="container">
-                {/* <!-- Page Banner Start --> */}
-                <div className="page-banner-content">
-                    <ul className="breadcrumb">
-                        <li><a href="/">Home</a></li>
-                        <li className="active">Register</li>
-                    </ul>
-                    <h2 className="title">Registration <span>Form</span></h2>
-                </div>
-                {/* <!-- Page Banner End --> */}
-            </div>
+				{/* <!-- Shape Icon Box Start --> */}
+				<div className="shape-icon-box">
+					<img
+						className="icon-shape-1 animation-left"
+						src="assets/images/shape/shape-5.png"
+						alt="Shape"
+					/>
 
-            {/* <!-- Shape Icon Box Start --> */}
-            <div className="shape-icon-box">
+					<div className="box-content">
+						<div className="box-wrapper">
+							<i className="flaticon-badge"></i>
+						</div>
+					</div>
 
-                <img className="icon-shape-1 animation-left" src="assets/images/shape/shape-5.png" alt="Shape" />
+					<img
+						className="icon-shape-2"
+						src="assets/images/shape/shape-6.png"
+						alt="Shape"
+					/>
+				</div>
+				{/* <!-- Shape Icon Box End --> */}
 
-                <div className="box-content">
-                    <div className="box-wrapper">
-                        <i className="flaticon-badge"></i>
-                    </div>
-                </div>
+				<img
+					className="shape-3"
+					src="assets/images/shape/shape-24.png"
+					alt="Shape"
+				/>
 
-                <img className="icon-shape-2" src="assets/images/shape/shape-6.png" alt="Shape" />
-
-            </div>
-            {/* <!-- Shape Icon Box End --> */}
-
-            <img className="shape-3" src="assets/images/shape/shape-24.png" alt="Shape" />
-
-            <img className="shape-author" src="assets/images/author/author-11.jpg" alt="Shape" />
-
-        </div>
-        {/* <!-- Page Banner End -->
+				<img
+					className="shape-author"
+					src="assets/images/author/author-11.jpg"
+					alt="Shape"
+				/>
+			</div>
+			{/* <!-- Page Banner End -->
 
         <!-- Register & Login Start --> */}
-        <div className="section section-padding">
-            <div className="container">
+			<div className="section section-padding">
+				<div className="container">
+					{/* <!-- Register & Login Wrapper Start --> */}
+					<div className="register-login-wrapper">
+						<div className="row align-items-center">
+							<div className="col-lg-6">
+								{/* <!-- Register & Login Images Start --> */}
+								<div className="register-login-images">
+									<div className="shape-1">
+										<img src="assets/images/shape/shape-26.png" alt="Shape" />
+									</div>
 
-                {/* <!-- Register & Login Wrapper Start --> */}
-                <div className="register-login-wrapper">
-                    <div className="row align-items-center">
-                        <div className="col-lg-6">
+									<div className="images">
+										<img
+											src="assets/images/register-login.png"
+											alt="Register Login"
+										/>
+									</div>
+								</div>
+								{/* <!-- Register & Login Images End --> */}
+							</div>
+							<div className="col-lg-6">
+								{/* <!-- Register & Login Form Start --> */}
+								<div className="register-login-form">
+									<h3 className="title">
+										Registration <span>Now</span>
+									</h3>
 
-                            {/* <!-- Register & Login Images Start --> */}
-                            <div className="register-login-images">
-                                <div className="shape-1">
-                                    <img src="assets/images/shape/shape-26.png" alt="Shape" />
-                                </div>
-
-
-                                <div className="images">
-                                    <img src="assets/images/register-login.png" alt="Register Login" />
-                                </div>
-                            </div>
-                            {/* <!-- Register & Login Images End --> */}
-
-                        </div>
-                        <div className="col-lg-6">
-
-                            {/* <!-- Register & Login Form Start --> */}
-                            <div className="register-login-form">
-                                <h3 className="title">Registration <span>Now</span></h3>
-
-                                <div className="form-wrapper">
-                                    <form action="#">
-                                        {/* <!-- Single Form Start --> */}
-                                        <div className="single-form">
-                                            <input type="text" placeholder="Name" />
-                                        </div>
-                                        {/* <!-- Single Form End -->
+									<div className="form-wrapper">
+										<form action="#">
+											{/* <!-- Single Form Start --> */}
+											<div className="single-form">
+												<input type="text" placeholder="Name" />
+											</div>
+											{/* <!-- Single Form End -->
                                         <!-- Single Form Start --> */}
-                                        <div className="single-form">
-                                            <input type="email" placeholder="Email" />
-                                        </div>
-                                        {/* <!-- Single Form End -->
+											<div className="single-form">
+												<input type="email" placeholder="Email" />
+											</div>
+											{/* <!-- Single Form End -->
                                         <!-- Single Form Start --> */}
-                                        <div className="single-form">
-                                            <input type="password" placeholder="Password" />
-                                        </div>
-                                        {/* <!-- Single Form End -->
+											<div className="single-form">
+												<input type="password" placeholder="Password" />
+											</div>
+											{/* <!-- Single Form End -->
                                         <!-- Single Form Start --> */}
-                                        <div className="single-form">
-                                            <input type="password" placeholder="Confirm Password" />
-                                        </div>
-                                        {/* <!-- Single Form End -->
+											<div className="single-form">
+												<input type="password" placeholder="Confirm Password" />
+											</div>
+											{/* <!-- Single Form End -->
                                         <!-- Single Form Start --> */}
-                                        <div className="single-form">
-                                            <button className="btn btn-primary btn-hover-dark w-100">Create an account</button>
-                                            <a className="btn btn-secondary btn-outline w-100" href="/">Sign up with Google</a>
-                                        </div>
-                                        {/* <!-- Single Form End --> */}
-                                    </form>
-                                </div>
-                            </div>
-                            {/* <!-- Register & Login Form End --> */}
+											<div className="single-form">
+												<button className="btn btn-primary btn-hover-dark w-100">
+													Create an account
+												</button>
+												<a
+													className="btn btn-secondary btn-outline w-100"
+													href="/"
+												>
+													Sign up with Google
+												</a>
+											</div>
+											{/* <!-- Single Form End --> */}
+										</form>
+									</div>
+								</div>
+								{/* <!-- Register & Login Form End --> */}
+							</div>
+						</div>
+					</div>
+					{/* <!-- Register & Login Wrapper End --> */}
+				</div>
+			</div>
+			{/* <!-- Register & Login End --> */}
 
-                        </div>
-                    </div>
-                </div>
-                {/* <!-- Register & Login Wrapper End --> */}
-
-            </div>
-        </div>
-        {/* <!-- Register & Login End --> */}
-
-      <Download />  
+			<Download />
 			<Footer />
 			{/* <!-- Footer Start  --> */}
 		</div>
-  );
-}
+	);
+};
 
 export default Register;
