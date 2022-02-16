@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
 	FiInstagram,
 	FiTwitter,
@@ -6,7 +7,7 @@ import {
 	FiPhoneCall,
 	FiMail,
 } from "react-icons/fi";
-import {  FaEnvelope } from "react-icons/fa";
+//import {  FaEnvelope } from "react-icons/fa";
 import { AiOutlineSkype } from "react-icons/ai";
 
 const Footer = () => {
@@ -128,19 +129,29 @@ const Footer = () => {
 
 									<ul className="widget-link">
 										<li>
-											<a href="/">Privacy Policy</a>
+											<Link to="/policy">
+												Privacy Policy
+											</Link>
 										</li>
 										<li>
-											<a href="/">Discussion</a>
+											<Link to="/policy">
+												Terms & Conditions
+											</Link>
 										</li>
 										<li>
-											<a href="/">Terms & Conditions</a>
+											<Link to="/policy">
+												User Guidelines
+											</Link>
 										</li>
 										<li>
-											<a href="/">Customer Support</a>
+											<Link to="/policy">
+												Refund Policy
+											</Link>
 										</li>
 										<li>
-											<a href="/">Course FAQ’s</a>
+											<Link to="/policy">
+												Referral
+											</Link>
 										</li>
 									</ul>
 								</div>
