@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 const Navbar = ({ scrollState }) => {
 	return (
 		<div>
@@ -38,10 +39,10 @@ const Navbar = ({ scrollState }) => {
 										<Link to="/">All Course</Link>
 										<ul className="sub-menu">
 											<li>
-												<Link to="courses.html">Courses</Link>
+												<Link to="/courses">Courses</Link>
 											</li>
 											<li>
-												<Link to="courses-details.html">Courses Details</Link>
+												<Link to="/course-details">Courses Details</Link>
 											</li>
 										</ul>
 									</li>

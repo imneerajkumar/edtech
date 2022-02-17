@@ -125,7 +125,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="course-details">
 													<img
 														src="assets/images/courses/courses-01.jpg"
 														alt="Courses"
@@ -155,7 +155,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Data Science and Machine Learning with Python -
 														Hands On!
 													</a>
@@ -190,7 +190,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-02.jpg"
 														alt="Courses"
@@ -220,7 +220,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Create Amazing Color Schemes for Your UX Design
 														Projects
 													</a>
@@ -254,7 +254,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-03.jpg"
 														alt="Courses"
@@ -284,7 +284,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Culture & Leadership: Strategies for a Successful
 														Business
 													</a>
@@ -319,7 +319,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-04.jpg"
 														alt="Courses"
@@ -349,7 +349,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Finance Series: Learn to Budget and Calculate your
 														Net Worth.
 													</a>
@@ -383,7 +383,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-05.jpg"
 														alt="Courses"
@@ -413,7 +413,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Build Brand Into Marketing: Tackling the New
 														Marketing Landscape
 													</a>
@@ -447,7 +447,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-06.jpg"
 														alt="Courses"
@@ -477,7 +477,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Graphic Design: Illustrating Badges and Icons with
 														Geometric Shapes
 													</a>
@@ -519,7 +519,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-02.jpg"
 														alt="Courses"
@@ -549,7 +549,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Data Science and Machine Learning with Python -
 														Hands On!
 													</a>
@@ -584,7 +584,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-05.jpg"
 														alt="Courses"
@@ -614,7 +614,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Create Amazing Color Schemes for Your UX Design
 														Projects
 													</a>
@@ -648,7 +648,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-01.jpg"
 														alt="Courses"
@@ -678,7 +678,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Culture & Leadership: Strategies for a Successful
 														Business
 													</a>
@@ -713,7 +713,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-04.jpg"
 														alt="Courses"
@@ -743,7 +743,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Finance Series: Learn to Budget and Calculate your
 														Net Worth.
 													</a>
@@ -777,7 +777,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-06.jpg"
 														alt="Courses"
@@ -807,7 +807,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Build Brand Into Marketing: Tackling the New
 														Marketing Landscape
 													</a>
@@ -841,7 +841,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-03.jpg"
 														alt="Courses"
@@ -871,7 +871,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Graphic Design: Illustrating Badges and Icons with
 														Geometric Shapes
 													</a>
@@ -913,7 +913,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-05.jpg"
 														alt="Courses"
@@ -943,7 +943,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Data Science and Machine Learning with Python -
 														Hands On!
 													</a>
@@ -978,7 +978,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-06.jpg"
 														alt="Courses"
@@ -1008,7 +1008,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Create Amazing Color Schemes for Your UX Design
 														Projects
 													</a>
@@ -1042,7 +1042,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-03.jpg"
 														alt="Courses"
@@ -1072,7 +1072,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Culture & Leadership: Strategies for a Successful
 														Business
 													</a>
@@ -1107,7 +1107,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-01.jpg"
 														alt="Courses"
@@ -1137,7 +1137,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Finance Series: Learn to Budget and Calculate your
 														Net Worth.
 													</a>
@@ -1171,7 +1171,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-02.jpg"
 														alt="Courses"
@@ -1201,7 +1201,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Build Brand Into Marketing: Tackling the New
 														Marketing Landscape
 													</a>
@@ -1235,7 +1235,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-04.jpg"
 														alt="Courses"
@@ -1265,7 +1265,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Graphic Design: Illustrating Badges and Icons with
 														Geometric Shapes
 													</a>
@@ -1307,7 +1307,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-06.jpg"
 														alt="Courses"
@@ -1337,7 +1337,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Data Science and Machine Learning with Python -
 														Hands On!
 													</a>
@@ -1372,7 +1372,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-05.jpg"
 														alt="Courses"
@@ -1402,7 +1402,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Create Amazing Color Schemes for Your UX Design
 														Projects
 													</a>
@@ -1436,7 +1436,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-04.jpg"
 														alt="Courses"
@@ -1466,7 +1466,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Culture & Leadership: Strategies for a Successful
 														Business
 													</a>
@@ -1501,7 +1501,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-03.jpg"
 														alt="Courses"
@@ -1531,7 +1531,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Finance Series: Learn to Budget and Calculate your
 														Net Worth.
 													</a>
@@ -1565,7 +1565,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-02.jpg"
 														alt="Courses"
@@ -1595,7 +1595,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Build Brand Into Marketing: Tackling the New
 														Marketing Landscape
 													</a>
@@ -1629,7 +1629,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-01.jpg"
 														alt="Courses"
@@ -1659,7 +1659,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Graphic Design: Illustrating Badges and Icons with
 														Geometric Shapes
 													</a>
@@ -1701,7 +1701,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-03.jpg"
 														alt="Courses"
@@ -1731,7 +1731,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Data Science and Machine Learning with Python -
 														Hands On!
 													</a>
@@ -1766,7 +1766,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-02.jpg"
 														alt="Courses"
@@ -1796,7 +1796,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Create Amazing Color Schemes for Your UX Design
 														Projects
 													</a>
@@ -1830,7 +1830,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-01.jpg"
 														alt="Courses"
@@ -1860,7 +1860,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Culture & Leadership: Strategies for a Successful
 														Business
 													</a>
@@ -1895,7 +1895,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-06.jpg"
 														alt="Courses"
@@ -1925,7 +1925,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Finance Series: Learn to Budget and Calculate your
 														Net Worth.
 													</a>
@@ -1959,7 +1959,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-05.jpg"
 														alt="Courses"
@@ -1989,7 +1989,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Build Brand Into Marketing: Tackling the New
 														Marketing Landscape
 													</a>
@@ -2023,7 +2023,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-04.jpg"
 														alt="Courses"
@@ -2053,7 +2053,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Graphic Design: Illustrating Badges and Icons with
 														Geometric Shapes
 													</a>
@@ -2095,7 +2095,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-03.jpg"
 														alt="Courses"
@@ -2125,7 +2125,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Data Science and Machine Learning with Python -
 														Hands On!
 													</a>
@@ -2160,7 +2160,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-05.jpg"
 														alt="Courses"
@@ -2190,7 +2190,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Create Amazing Color Schemes for Your UX Design
 														Projects
 													</a>
@@ -2224,7 +2224,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-01.jpg"
 														alt="Courses"
@@ -2254,7 +2254,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Culture & Leadership: Strategies for a Successful
 														Business
 													</a>
@@ -2289,7 +2289,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-04.jpg"
 														alt="Courses"
@@ -2319,7 +2319,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Finance Series: Learn to Budget and Calculate your
 														Net Worth.
 													</a>
@@ -2353,7 +2353,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-06.jpg"
 														alt="Courses"
@@ -2383,7 +2383,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Build Brand Into Marketing: Tackling the New
 														Marketing Landscape
 													</a>
@@ -2417,7 +2417,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-02.jpg"
 														alt="Courses"
@@ -2447,7 +2447,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Graphic Design: Illustrating Badges and Icons with
 														Geometric Shapes
 													</a>
@@ -2489,7 +2489,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-04.jpg"
 														alt="Courses"
@@ -2519,7 +2519,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Data Science and Machine Learning with Python -
 														Hands On!
 													</a>
@@ -2554,7 +2554,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-02.jpg"
 														alt="Courses"
@@ -2584,7 +2584,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Create Amazing Color Schemes for Your UX Design
 														Projects
 													</a>
@@ -2618,7 +2618,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-06.jpg"
 														alt="Courses"
@@ -2648,7 +2648,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Culture & Leadership: Strategies for a Successful
 														Business
 													</a>
@@ -2683,7 +2683,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-05.jpg"
 														alt="Courses"
@@ -2713,7 +2713,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Finance Series: Learn to Budget and Calculate your
 														Net Worth.
 													</a>
@@ -2747,7 +2747,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-01.jpg"
 														alt="Courses"
@@ -2777,7 +2777,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Build Brand Into Marketing: Tackling the New
 														Marketing Landscape
 													</a>
@@ -2811,7 +2811,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-03.jpg"
 														alt="Courses"
@@ -2841,7 +2841,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Graphic Design: Illustrating Badges and Icons with
 														Geometric Shapes
 													</a>

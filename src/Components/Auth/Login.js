@@ -126,17 +126,14 @@ const Login = () => {
 												<input type="password" placeholder="Password" />
 											</div>
 											{/* <!-- Single Form End -->
-                                        <!-- Single Form Start --> */}
+                      <!-- Single Form Start --> */}
 											<div className="single-form">
 												<button className="btn btn-primary btn-hover-dark w-100">
-													Login
+													Login as Student
 												</button>
-												<a
-													className="btn btn-secondary btn-outline w-100"
-													href="/"
-												>
-													Login with Google
-												</a>
+												<button className="btn btn-secondary btn-outline w-100">
+													Login as Educator
+												</button>
 											</div>
 											{/* <!-- Single Form End --> */}
 										</form>

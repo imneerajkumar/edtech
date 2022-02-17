@@ -139,14 +139,11 @@ const Register = () => {
                                         <!-- Single Form Start --> */}
 											<div className="single-form">
 												<button className="btn btn-primary btn-hover-dark w-100">
-													Create an account
+													Create a Student account 
 												</button>
-												<a
-													className="btn btn-secondary btn-outline w-100"
-													href="/"
-												>
-													Sign up with Google
-												</a>
+												<button className="btn btn-secondary btn-outline w-100">
+													Create an Educator account
+												</button>
 											</div>
 											{/* <!-- Single Form End --> */}
 										</form>
