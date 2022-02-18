@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { FiBookOpen } from "react-icons/fi";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import Download from "../Download";
@@ -59,7 +60,7 @@ const Register = () => {
 
 					<div className="box-content">
 						<div className="box-wrapper">
-							<i className="flaticon-badge"></i>
+							<FiBookOpen color="#fff" size={50} />
 						</div>
 					</div>
 
@@ -139,14 +140,11 @@ const Register = () => {
                                         <!-- Single Form Start --> */}
 											<div className="single-form">
 												<button className="btn btn-primary btn-hover-dark w-100">
-													Create an account
+													Create a Student account 
 												</button>
-												<a
-													className="btn btn-secondary btn-outline w-100"
-													href="/"
-												>
-													Sign up with Google
-												</a>
+												<button className="btn btn-secondary btn-outline w-100">
+													Create an Educator account
+												</button>
 											</div>
 											{/* <!-- Single Form End --> */}
 										</form>

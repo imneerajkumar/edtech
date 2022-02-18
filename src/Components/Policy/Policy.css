@@ -5,7 +5,7 @@
 
 .privacy-policy-container-left {
   width: 35%;
-  background-color: #e9fde6;
+  background-color: #e7f8ee;
   padding: 20px;
 }
 
@@ -29,7 +29,7 @@
 
 .privacy-policy-container-left-links a:hover {
   text-decoration: none;
-  color: blue;
+  color: #309255;
 }
 
 /* right */
@@ -55,5 +55,5 @@
   border-radius: 10px;
   margin-left: 30px;
   font-family: "Roboto", sans-serif;
-  border: 2px solid #0062e7;
+  border: 2px solid #309255;
 }

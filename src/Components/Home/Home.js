@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { FiBookOpen, FiClock, FiVideo } from "react-icons/fi";
 import Navbar from "../Navbar";
 import Download from "../Download";
 import Footer from "../Footer";
@@ -55,8 +56,8 @@ const Home = () => {
 					/>
 
 					<div className="box-content">
-						<div className="box-wrapper">
-							<i className="flaticon-open-book"></i>
+						<div className="box-wrapper">					
+							<FiBookOpen color="#fff" size={32} />
 							<span className="count">1,235</span>
 							<p>courses</p>
 						</div>
@@ -125,7 +126,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="course-details">
 													<img
 														src="assets/images/courses/courses-01.jpg"
 														alt="Courses"
@@ -155,7 +156,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Data Science and Machine Learning with Python -
 														Hands On!
 													</a>
@@ -163,11 +164,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -190,7 +191,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-02.jpg"
 														alt="Courses"
@@ -220,7 +221,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Create Amazing Color Schemes for Your UX Design
 														Projects
 													</a>
@@ -228,11 +229,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -254,7 +255,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-03.jpg"
 														alt="Courses"
@@ -284,7 +285,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Culture & Leadership: Strategies for a Successful
 														Business
 													</a>
@@ -292,11 +293,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -319,7 +320,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-04.jpg"
 														alt="Courses"
@@ -349,7 +350,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Finance Series: Learn to Budget and Calculate your
 														Net Worth.
 													</a>
@@ -357,11 +358,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -383,7 +384,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-05.jpg"
 														alt="Courses"
@@ -413,7 +414,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Build Brand Into Marketing: Tackling the New
 														Marketing Landscape
 													</a>
@@ -421,11 +422,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -447,7 +448,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-06.jpg"
 														alt="Courses"
@@ -477,7 +478,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Graphic Design: Illustrating Badges and Icons with
 														Geometric Shapes
 													</a>
@@ -485,11 +486,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -519,7 +520,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-02.jpg"
 														alt="Courses"
@@ -549,7 +550,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Data Science and Machine Learning with Python -
 														Hands On!
 													</a>
@@ -557,11 +558,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -584,7 +585,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-05.jpg"
 														alt="Courses"
@@ -614,7 +615,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Create Amazing Color Schemes for Your UX Design
 														Projects
 													</a>
@@ -622,11 +623,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -648,7 +649,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-01.jpg"
 														alt="Courses"
@@ -678,7 +679,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Culture & Leadership: Strategies for a Successful
 														Business
 													</a>
@@ -686,11 +687,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -713,7 +714,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-04.jpg"
 														alt="Courses"
@@ -743,7 +744,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Finance Series: Learn to Budget and Calculate your
 														Net Worth.
 													</a>
@@ -751,11 +752,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -777,7 +778,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-06.jpg"
 														alt="Courses"
@@ -807,7 +808,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Build Brand Into Marketing: Tackling the New
 														Marketing Landscape
 													</a>
@@ -815,11 +816,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -841,7 +842,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-03.jpg"
 														alt="Courses"
@@ -871,7 +872,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Graphic Design: Illustrating Badges and Icons with
 														Geometric Shapes
 													</a>
@@ -879,11 +880,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -913,7 +914,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-05.jpg"
 														alt="Courses"
@@ -943,7 +944,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Data Science and Machine Learning with Python -
 														Hands On!
 													</a>
@@ -951,11 +952,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -978,7 +979,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-06.jpg"
 														alt="Courses"
@@ -1008,7 +1009,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Create Amazing Color Schemes for Your UX Design
 														Projects
 													</a>
@@ -1016,11 +1017,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1042,7 +1043,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-03.jpg"
 														alt="Courses"
@@ -1072,7 +1073,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Culture & Leadership: Strategies for a Successful
 														Business
 													</a>
@@ -1080,11 +1081,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1107,7 +1108,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-01.jpg"
 														alt="Courses"
@@ -1137,7 +1138,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Finance Series: Learn to Budget and Calculate your
 														Net Worth.
 													</a>
@@ -1145,11 +1146,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1171,7 +1172,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-02.jpg"
 														alt="Courses"
@@ -1201,7 +1202,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Build Brand Into Marketing: Tackling the New
 														Marketing Landscape
 													</a>
@@ -1209,11 +1210,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1235,7 +1236,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-04.jpg"
 														alt="Courses"
@@ -1265,7 +1266,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Graphic Design: Illustrating Badges and Icons with
 														Geometric Shapes
 													</a>
@@ -1273,11 +1274,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1307,7 +1308,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-06.jpg"
 														alt="Courses"
@@ -1337,19 +1338,19 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Data Science and Machine Learning with Python -
 														Hands On!
 													</a>
 												</h4>
 												<div className="courses-meta">
-													<span>
+												<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1372,7 +1373,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-05.jpg"
 														alt="Courses"
@@ -1402,19 +1403,19 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Create Amazing Color Schemes for Your UX Design
 														Projects
 													</a>
 												</h4>
 												<div className="courses-meta">
-													<span>
+												<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1436,7 +1437,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-04.jpg"
 														alt="Courses"
@@ -1466,7 +1467,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Culture & Leadership: Strategies for a Successful
 														Business
 													</a>
@@ -1474,11 +1475,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1501,7 +1502,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-03.jpg"
 														alt="Courses"
@@ -1531,7 +1532,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Finance Series: Learn to Budget and Calculate your
 														Net Worth.
 													</a>
@@ -1539,11 +1540,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1565,7 +1566,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-02.jpg"
 														alt="Courses"
@@ -1595,7 +1596,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Build Brand Into Marketing: Tackling the New
 														Marketing Landscape
 													</a>
@@ -1603,11 +1604,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1629,7 +1630,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-01.jpg"
 														alt="Courses"
@@ -1659,7 +1660,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Graphic Design: Illustrating Badges and Icons with
 														Geometric Shapes
 													</a>
@@ -1667,11 +1668,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1701,7 +1702,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-03.jpg"
 														alt="Courses"
@@ -1731,7 +1732,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Data Science and Machine Learning with Python -
 														Hands On!
 													</a>
@@ -1739,11 +1740,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1766,7 +1767,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-02.jpg"
 														alt="Courses"
@@ -1796,7 +1797,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Create Amazing Color Schemes for Your UX Design
 														Projects
 													</a>
@@ -1804,11 +1805,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1830,7 +1831,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-01.jpg"
 														alt="Courses"
@@ -1860,7 +1861,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Culture & Leadership: Strategies for a Successful
 														Business
 													</a>
@@ -1868,11 +1869,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1895,7 +1896,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-06.jpg"
 														alt="Courses"
@@ -1925,7 +1926,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Finance Series: Learn to Budget and Calculate your
 														Net Worth.
 													</a>
@@ -1933,11 +1934,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1959,7 +1960,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-05.jpg"
 														alt="Courses"
@@ -1989,7 +1990,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Build Brand Into Marketing: Tackling the New
 														Marketing Landscape
 													</a>
@@ -1997,11 +1998,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2023,7 +2024,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-04.jpg"
 														alt="Courses"
@@ -2053,7 +2054,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Graphic Design: Illustrating Badges and Icons with
 														Geometric Shapes
 													</a>
@@ -2061,11 +2062,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2095,7 +2096,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-03.jpg"
 														alt="Courses"
@@ -2125,7 +2126,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Data Science and Machine Learning with Python -
 														Hands On!
 													</a>
@@ -2133,11 +2134,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2160,7 +2161,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-05.jpg"
 														alt="Courses"
@@ -2190,7 +2191,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Create Amazing Color Schemes for Your UX Design
 														Projects
 													</a>
@@ -2198,11 +2199,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2224,7 +2225,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-01.jpg"
 														alt="Courses"
@@ -2254,7 +2255,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Culture & Leadership: Strategies for a Successful
 														Business
 													</a>
@@ -2262,11 +2263,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2289,7 +2290,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-04.jpg"
 														alt="Courses"
@@ -2319,7 +2320,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Finance Series: Learn to Budget and Calculate your
 														Net Worth.
 													</a>
@@ -2327,11 +2328,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2353,7 +2354,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-06.jpg"
 														alt="Courses"
@@ -2383,7 +2384,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Build Brand Into Marketing: Tackling the New
 														Marketing Landscape
 													</a>
@@ -2391,11 +2392,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2417,7 +2418,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-02.jpg"
 														alt="Courses"
@@ -2447,7 +2448,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Graphic Design: Illustrating Badges and Icons with
 														Geometric Shapes
 													</a>
@@ -2455,11 +2456,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2489,7 +2490,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-04.jpg"
 														alt="Courses"
@@ -2519,7 +2520,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Data Science and Machine Learning with Python -
 														Hands On!
 													</a>
@@ -2527,11 +2528,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2554,7 +2555,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-02.jpg"
 														alt="Courses"
@@ -2584,7 +2585,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Create Amazing Color Schemes for Your UX Design
 														Projects
 													</a>
@@ -2592,11 +2593,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2618,7 +2619,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-06.jpg"
 														alt="Courses"
@@ -2648,7 +2649,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Culture & Leadership: Strategies for a Successful
 														Business
 													</a>
@@ -2656,11 +2657,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2683,7 +2684,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-05.jpg"
 														alt="Courses"
@@ -2713,7 +2714,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Finance Series: Learn to Budget and Calculate your
 														Net Worth.
 													</a>
@@ -2721,11 +2722,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2747,7 +2748,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-01.jpg"
 														alt="Courses"
@@ -2777,19 +2778,19 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Build Brand Into Marketing: Tackling the New
 														Marketing Landscape
 													</a>
 												</h4>
 												<div className="courses-meta">
-													<span>
+												<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2811,7 +2812,7 @@ const Home = () => {
 										{/* <!-- Single Courses Start --> */}
 										<div className="single-courses">
 											<div className="courses-images">
-												<a href="courses-details.html">
+												<a href="/course-details">
 													<img
 														src="assets/images/courses/courses-03.jpg"
 														alt="Courses"
@@ -2841,7 +2842,7 @@ const Home = () => {
 												</div>
 
 												<h4 className="title">
-													<a href="courses-details.html">
+													<a href="/course-details">
 														Graphic Design: Illustrating Badges and Icons with
 														Geometric Shapes
 													</a>
@@ -2849,11 +2850,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">

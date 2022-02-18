@@ -7,7 +7,6 @@ import {
 	FiPhoneCall,
 	FiMail,
 } from "react-icons/fi";
-//import {  FaEnvelope } from "react-icons/fa";
 import { AiOutlineSkype } from "react-icons/ai";
 
 const Footer = () => {
