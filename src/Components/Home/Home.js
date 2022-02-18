@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { FiBookOpen, FiClock, FiVideo } from "react-icons/fi";
 import Navbar from "../Navbar";
 import Download from "../Download";
 import Footer from "../Footer";
@@ -55,8 +56,8 @@ const Home = () => {
 					/>
 
 					<div className="box-content">
-						<div className="box-wrapper">
-							<i className="flaticon-open-book"></i>
+						<div className="box-wrapper">					
+							<FiBookOpen color="#fff" size={32} />
 							<span className="count">1,235</span>
 							<p>courses</p>
 						</div>
@@ -163,11 +164,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -228,11 +229,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -292,11 +293,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -357,11 +358,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -421,11 +422,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -485,11 +486,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -557,11 +558,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -622,11 +623,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -686,11 +687,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -751,11 +752,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -815,11 +816,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -879,11 +880,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -951,11 +952,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1016,11 +1017,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1080,11 +1081,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1145,11 +1146,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1209,11 +1210,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1273,11 +1274,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1343,13 +1344,13 @@ const Home = () => {
 													</a>
 												</h4>
 												<div className="courses-meta">
-													<span>
+												<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1408,13 +1409,13 @@ const Home = () => {
 													</a>
 												</h4>
 												<div className="courses-meta">
-													<span>
+												<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1474,11 +1475,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1539,11 +1540,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1603,11 +1604,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1667,11 +1668,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1739,11 +1740,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1804,11 +1805,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1868,11 +1869,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1933,11 +1934,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -1997,11 +1998,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2061,11 +2062,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2133,11 +2134,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2198,11 +2199,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2262,11 +2263,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2327,11 +2328,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2391,11 +2392,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2455,11 +2456,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2527,11 +2528,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2592,11 +2593,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2656,11 +2657,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2721,11 +2722,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2783,13 +2784,13 @@ const Home = () => {
 													</a>
 												</h4>
 												<div className="courses-meta">
-													<span>
+												<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">
@@ -2849,11 +2850,11 @@ const Home = () => {
 												<div className="courses-meta">
 													<span>
 														{" "}
-														<i className="icofont-clock-time"></i> 08 hr 15 mins
+														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}
-														<i className="icofont-read-book"></i> 29 Lectures{" "}
+														{" "}	
+														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
 												<div className="courses-price-review">

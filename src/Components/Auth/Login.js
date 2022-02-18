@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { FiBookOpen } from "react-icons/fi";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import Download from "../Download";
@@ -59,7 +60,7 @@ const Login = () => {
 
 					<div className="box-content">
 						<div className="box-wrapper">
-							<i className="flaticon-badge"></i>
+							<FiBookOpen color="#fff" size={50} />
 						</div>
 					</div>
 
