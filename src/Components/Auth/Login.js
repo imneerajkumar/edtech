@@ -118,12 +118,12 @@ const Login = () => {
 										<form action="#">
 											{/* <!-- Single Form Start --> */}
 											<div className="single-form">
-												<input type="email" placeholder="Username or Email" />
+												<input type="email" required placeholder="Username or Email" />
 											</div>
 											{/* <!-- Single Form End -->
                                         <!-- Single Form Start --> */}
 											<div className="single-form">
-												<input type="password" placeholder="Password" />
+												<input type="password" required placeholder="Password" />
 											</div>
 											{/* <!-- Single Form End -->
                                         <!-- Single Form Start --> */}

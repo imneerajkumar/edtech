@@ -118,22 +118,22 @@ const Register = () => {
 										<form action="#">
 											{/* <!-- Single Form Start --> */}
 											<div className="single-form">
-												<input type="text" placeholder="Name" />
+												<input required type="text" placeholder="Name" />
 											</div>
 											{/* <!-- Single Form End -->
                                         <!-- Single Form Start --> */}
 											<div className="single-form">
-												<input type="email" placeholder="Email" />
+												<input required type="email" placeholder="Email" />
 											</div>
 											{/* <!-- Single Form End -->
                                         <!-- Single Form Start --> */}
 											<div className="single-form">
-												<input type="password" placeholder="Password" />
+												<input required type="password" placeholder="Password" />
 											</div>
 											{/* <!-- Single Form End -->
                                         <!-- Single Form Start --> */}
 											<div className="single-form">
-												<input type="password" placeholder="Confirm Password" />
+												<input required type="password" placeholder="Confirm Password" />
 											</div>
 											{/* <!-- Single Form End -->
                                         <!-- Single Form Start --> */}
