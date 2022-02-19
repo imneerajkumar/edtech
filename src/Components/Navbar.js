@@ -36,106 +36,16 @@ const Navbar = ({ scrollState }) => {
 										<Link to="/">Home</Link>
 									</li>
 									<li>
-										<Link to="/">All Course</Link>
-										<ul className="sub-menu">
-											<li>
-												<Link to="/courses">Courses</Link>
-											</li>
-											<li>
-												<Link to="/course-details">Courses Details</Link>
-											</li>
-										</ul>
+										<Link to="/about">About</Link>
 									</li>
 									<li>
-										<Link to="/">Pages </Link>
-										<ul className="sub-menu">
-											<li>
-												<Link to="about.html">About</Link>
-											</li>
-											<li>
-												<Link to="register.html">Register</Link>
-											</li>
-											<li>
-												<Link to="login.html">Login</Link>
-											</li>
-											<li>
-												<Link to="faq.html">FAQ</Link>
-											</li>
-											<li>
-												<Link to="404-error.html">404 Error</Link>
-											</li>
-											<li>
-												<Link to="after-enroll.html">After Enroll</Link>
-											</li>
-											<li>
-												<Link to="courses-admin.html">
-													Instructor Dashboard (Course List)
-												</Link>
-											</li>
-											<li>
-												<Link to="overview.html">
-													Instructor Dashboard (Performance)
-												</Link>
-											</li>
-											<li>
-												<Link to="students.html">Students</Link>
-											</li>
-											<li>
-												<Link to="reviews.html">Reviews</Link>
-											</li>
-											<li>
-												<Link to="engagement.html">Course engagement</Link>
-											</li>
-											<li>
-												<Link to="traffic-conversion.html">
-													Traffic & conversion
-												</Link>
-											</li>
-											<li>
-												<Link to="messages.html">Messages</Link>
-											</li>
-										</ul>
+										<Link to="/courses">Courses</Link>
 									</li>
 									<li>
-										<Link to="/">Blog</Link>
-										<ul className="sub-menu">
-											<li>
-												<Link to="/">Blog</Link>
-												<ul className="sub-menu">
-													<li>
-														<Link to="blog-grid.html">Blog</Link>
-													</li>
-													<li>
-														<Link to="blog-left-sidebar.html">
-															Blog Left Sidebar
-														</Link>
-													</li>
-													<li>
-														<Link to="blog-right-sidebar.html">
-															Blog Right Sidebar
-														</Link>
-													</li>
-												</ul>
-											</li>
-											<li>
-												<Link to="/">Blog Details</Link>
-												<ul className="sub-menu">
-													<li>
-														<Link to="blog-details-left-sidebar.html">
-															Blog Details Left Sidebar
-														</Link>
-													</li>
-													<li>
-														<Link to="blog-details-right-sidebar.html">
-															Blog Details Right Sidebar
-														</Link>
-													</li>
-												</ul>
-											</li>
-										</ul>
+										<Link to="/blogs">Blogs</Link>
 									</li>
 									<li>
-										<Link to="contact.html">Contact</Link>
+										<Link to="/contact">Contact Us</Link>
 									</li>
 								</ul>
 							</div>
@@ -199,12 +109,12 @@ const Navbar = ({ scrollState }) => {
 				<div className="mobile-sign-in-up">
 					<ul>
 						<li>
-							<Link className="sign-in" to="login.html">
+							<Link className="sign-in" to="/login">
 								Sign In
 							</Link>
 						</li>
 						<li>
-							<Link className="sign-up" to="register.html">
+							<Link className="sign-up" to="/register">
 								Sign Up
 							</Link>
 						</li>
@@ -216,101 +126,19 @@ const Navbar = ({ scrollState }) => {
 				<div className="mobile-menu-items">
 					<ul className="nav-menu">
 						<li>
-							<Link to="index.html">Home</Link>
+							<Link to="/">Home</Link>
 						</li>
 						<li>
-							<Link to="/">All Course</Link>
-							<ul className="sub-menu">
-								<li>
-									<Link to="courses.html">Courses</Link>
-								</li>
-								<li>
-									<Link to="courses-details.html">Courses Details</Link>
-								</li>
-							</ul>
+							<Link to="/about">About</Link>
 						</li>
 						<li>
-							<Link to="/">Pages </Link>
-							<ul className="sub-menu">
-								<li>
-									<Link to="about.html">About</Link>
-								</li>
-								<li>
-									<Link to="register.html">Register</Link>
-								</li>
-								<li>
-									<Link to="login.html">Login</Link>
-								</li>
-								<li>
-									<Link to="faq.html">FAQ</Link>
-								</li>
-								<li>
-									<Link to="404-error.html">404 Error</Link>
-								</li>
-								<li>
-									<Link to="after-enroll.html">After Enroll</Link>
-								</li>
-								<li>
-									<Link to="courses-admin.html">
-										Instructor Dashboard (Course List)
-									</Link>
-								</li>
-								<li>
-									<Link to="overview.html">Instructor Dashboard (Performance)</Link>
-								</li>
-								<li>
-									<Link to="students.html">Students</Link>
-								</li>
-								<li>
-									<Link to="reviews.html">Reviews</Link>
-								</li>
-								<li>
-									<Link to="engagement.html">Course engagement</Link>
-								</li>
-								<li>
-									<Link to="traffic-conversion.html">Traffic & conversion</Link>
-								</li>
-								<li>
-									<Link to="messages.html">Messages</Link>
-								</li>
-							</ul>
+							<Link to="/courses">Courses</Link>
 						</li>
 						<li>
-							<Link to="/">Blog</Link>
-							<ul className="sub-menu">
-								<li>
-									<Link to="/">Blog</Link>
-									<ul className="sub-menu">
-										<li>
-											<Link to="blog-grid.html">Blog</Link>
-										</li>
-										<li>
-											<Link to="blog-left-sidebar.html">Blog Left Sidebar</Link>
-										</li>
-										<li>
-											<Link to="blog-right-sidebar.html">Blog Right Sidebar</Link>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<Link to="/">Blog Details</Link>
-									<ul className="sub-menu">
-										<li>
-											<Link to="blog-details-left-sidebar.html">
-												Blog Details Left Sidebar
-											</Link>
-										</li>
-										<li>
-											<Link to="blog-details-right-sidebar.html">
-												Blog Details Right Sidebar
-											</Link>
-										</li>
-									</ul>
-								</li>
-							</ul>
+							<Link to="/blogs">Blogs</Link>
 						</li>
 						<li>
-							<Link to="contact.html">Contact</Link>
+							<Link to="/contact">Contact Us</Link>
 						</li>
 					</ul>
 				</div>
