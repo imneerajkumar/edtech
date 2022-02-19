@@ -3,10 +3,30 @@ import { FiBookOpen } from "react-icons/fi";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import Download from "../Download";
-
+import { useDispatch, useSelector } from "react-redux";
+import { studentRegister } from "../../store/actions/studentsAction";
+import { educatorRegister } from "../../store/actions/educatorAction";
+import Message from "../message/message";
+import { useNavigate } from "react-router-dom";
 const Register = () => {
 	const [scrollState, setScrollState] = useState(false);
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const [name, setName] = useState("");
+	const [message, setMessage] = useState("");
+	const [confirmPassword, setConfirmPassword] = useState("");
+	const [isStudent, setIsStudent] = useState(false);
+	const educatorAuth = useSelector((state) => state.educatorAuthReducer);
+	const {
+		loading: EducatorLoading,
+		error: educatorError,
+		educatorInfo,
+	} = educatorAuth;
+	const studentAuth = useSelector((state) => state.studentAuthReducer);
+	const { loading, error, studentInfo } = studentAuth;
+	const navigate = useNavigate();
 
+	const dispatch = useDispatch();
 	useEffect(() => {
 		window.addEventListener("scroll", (e) => {
 			var scroll = window.pageYOffset;
@@ -17,7 +37,33 @@ const Register = () => {
 			}
 		});
 	});
-
+	useEffect(() => {
+		if (educatorInfo ) {
+			navigate("/courses");
+		}
+	}, [navigate, educatorInfo, isStudent]);
+	useEffect(() => {
+		if (studentInfo ) {
+			navigate("/courses");
+		}
+	}, [navigate, studentInfo]);
+	const registerHandle = (e) => {
+		e.preventDefault();
+		if (password !== confirmPassword) {
+			setMessage("Password don't match");
+		} else {
+			if (isStudent) {
+				dispatch(studentRegister(email, password, name));
+			} else {
+				dispatch(educatorRegister(email, password, name));
+			}
+			// console.log("ENTER");
+			setEmail("");
+			setPassword("");
+			setName("");
+			setConfirmPassword("");
+		}
+	};
 	return (
 		<div className="main-wrapper">
 			{/* <!-- Header Section Start --> */}
@@ -116,34 +162,71 @@ const Register = () => {
 									</h3>
 
 									<div className="form-wrapper">
-										<form action="#">
+										<form onSubmit={registerHandle}>
 											{/* <!-- Single Form Start --> */}
 											<div className="single-form">
-												<input required type="text" placeholder="Name" />
+												<input
+													required
+													type="text"
+													placeholder="Name"
+													value={name}
+                                                    style={{textTransform:"capitalize"}}
+													autocapitalize="words"
+													onChange={(e) => setName(e.target.value)}
+												/>
 											</div>
 											{/* <!-- Single Form End -->
                                         <!-- Single Form Start --> */}
 											<div className="single-form">
-												<input required type="email" placeholder="Email" />
+												<input
+													required
+													type="email"
+													placeholder="Email"
+													value={email}
+													onChange={(e) => setEmail(e.target.value)}
+												/>
 											</div>
 											{/* <!-- Single Form End -->
                                         <!-- Single Form Start --> */}
 											<div className="single-form">
-												<input required type="password" placeholder="Password" />
+												<input
+													required
+													type="password"
+													placeholder="Password"
+													value={password}
+													onChange={(e) => setPassword(e.target.value)}
+												/>
 											</div>
 											{/* <!-- Single Form End -->
                                         <!-- Single Form Start --> */}
 											<div className="single-form">
-												<input required type="password" placeholder="Confirm Password" />
+												<input
+													required
+													type="password"
+													placeholder="Confirm Password"
+													value={confirmPassword}
+													onChange={(e) => setConfirmPassword(e.target.value)}
+												/>
+											</div>
+											<div style={{ marginTop: 10 }}>
+												{message && (
+													<Message variant="danger">{message}</Message>
+												)}
 											</div>
 											{/* <!-- Single Form End -->
                                         <!-- Single Form Start --> */}
 											<div className="single-form">
-												<button className="btn btn-primary btn-hover-dark w-100">
-													Create a Student account 
+												<button
+													className="btn btn-primary btn-hover-dark w-100"
+													onClick={() => setIsStudent(true)}
+												>
+													Create Student account
 												</button>
-												<button className="btn btn-secondary btn-outline w-100">
-													Create an Educator account
+												<button
+													className="btn btn-secondary btn-outline w-100"
+													onClick={() => setIsStudent(false)}
+												>
+													Create Educator account
 												</button>
 											</div>
 											{/* <!-- Single Form End --> */}

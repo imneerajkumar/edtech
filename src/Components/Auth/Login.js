@@ -3,10 +3,25 @@ import { FiBookOpen } from "react-icons/fi";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import Download from "../Download";
-
+import { useDispatch, useSelector } from "react-redux";
+import { studentAuth } from "../../store/actions/studentsAction";
+import { educatorAuth } from "../../store/actions/educatorAction";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
 	const [scrollState, setScrollState] = useState(false);
-
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const [isStudent, setIsStudent] = useState(false);
+	const dispatch = useDispatch();
+	const educatorAuth = useSelector((state) => state.educatorAuthReducer);
+	const {
+		loading: EducatorLoading,
+		error: educatorError,
+		educatorInfo,
+	} = educatorAuth;
+	const studentAuth = useSelector((state) => state.studentAuthReducer);
+	const { loading, error, studentInfo } = studentAuth;
+	const navigate = useNavigate();
 	useEffect(() => {
 		window.addEventListener("scroll", (e) => {
 			var scroll = window.pageYOffset;
@@ -16,7 +31,30 @@ const Login = () => {
 				setScrollState(true);
 			}
 		});
+		// if(educatorIn)
 	});
+	useEffect(() => {
+		if (educatorInfo) {
+			navigate("/courses");
+		}
+	}, [navigate, educatorInfo, isStudent]);
+	useEffect(() => {
+		if (studentInfo) {
+			navigate("/courses");
+		}
+	}, [navigate, studentInfo]);
+
+	const loginHandle = (e) => {
+		e.preventDefault();
+		console.log(isStudent);
+		if (isStudent) {
+			dispatch(studentAuth(email, password));
+		} else {
+			dispatch(educatorAuth(email, password));
+		}
+		setEmail("");
+		setPassword("");
+	};
 
 	return (
 		<div className="main-wrapper">
@@ -116,23 +154,45 @@ const Login = () => {
 									</h3>
 
 									<div className="form-wrapper">
-										<form action="#">
+										<form action="#" onSubmit={loginHandle}>
 											{/* <!-- Single Form Start --> */}
 											<div className="single-form">
-												<input type="email" required placeholder="Username or Email" />
+												<input
+													type="email"
+													required
+													placeholder="Username or Email"
+													value={email}
+													onChange={(e) => setEmail(e.target.value)}
+												/>
 											</div>
 											{/* <!-- Single Form End -->
                                         <!-- Single Form Start --> */}
 											<div className="single-form">
-												<input type="password" required placeholder="Password" />
+												<input
+													type="password"
+													required
+													placeholder="Password"
+													value={password}
+													onChange={(e) => setPassword(e.target.value)}
+												/>
 											</div>
 											{/* <!-- Single Form End -->
                       <!-- Single Form Start --> */}
 											<div className="single-form">
-												<button className="btn btn-primary btn-hover-dark w-100">
+												<button
+													className="btn btn-primary btn-hover-dark w-100"
+													onClick={() => {
+														setIsStudent(true);
+													}}
+												>
 													Login as Student
 												</button>
-												<button className="btn btn-secondary btn-outline w-100">
+												<button
+													className="btn btn-secondary btn-outline w-100"
+													onClick={() => {
+														setIsStudent(false);
+													}}
+												>
 													Login as Educator
 												</button>
 											</div>
