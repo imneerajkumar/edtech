@@ -1,7 +1,43 @@
-import React from "react";
-import { Link } from "react-router-dom";
-
+import React, { useEffect, useState } from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Avatar } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import { Dropdown } from "react-bootstrap";
+import { logout } from "../store/actions/studentsAction";
+import { logoutEducator } from "../store/actions/educatorAction";
+import "./Navbar.css";
 const Navbar = ({ scrollState }) => {
+	const dispatch = useDispatch();
+    const navigate=useNavigate()
+	const educatorAuthReducer = useSelector((state) => state.educatorAuthReducer);
+	const { educatorInfo, loading, error } = educatorAuthReducer;
+	const [avatar, setAvatar] = useState("");
+	const studentAuthReducer = useSelector((state) => state.studentAuthReducer);
+	const {
+		studentInfo,
+		loading: loadStudent,
+		error: errorStudent,
+	} = studentAuthReducer;
+	// const data=localStorage.getItem()
+	useEffect(() => {
+		if (studentInfo) {
+			setAvatar(studentInfo.name.toUpperCase());
+		}
+		if (educatorInfo) {
+			setAvatar(educatorInfo.name.toUpperCase());
+		}
+	}, [educatorInfo, studentInfo, loading, loadStudent, avatar]);
+
+	const logoutHandle = () => {
+		if (studentInfo) {
+			dispatch(logout())
+		}
+		if (educatorInfo) {
+            dispatch(logoutEducator())
+		}
+        navigate("/")
+	};
+	// console.log(avatar);
 	return (
 		<div>
 			<div className="header-section">
@@ -47,24 +83,59 @@ const Navbar = ({ scrollState }) => {
 									<li>
 										<Link to="/contact">Contact Us</Link>
 									</li>
+									{/* <li>
+										<Link to="/admin">Admin</Link>
+									</li> */}
 								</ul>
 							</div>
 							{/* <!-- Header Menu End --> */}
 
 							{/* <!-- Header Sing In & Up Start --> */}
 							<div className="header-sign-in-up d-none d-lg-block">
-								<ul>
-									<li>
-										<Link className="sign-in" to="/login">
-											Sign In
-										</Link>
-									</li>
-									<li>
-										<Link className="sign-up" to="/register">
-											Sign Up
-										</Link>
-									</li>
-								</ul>
+								{avatar.length !== 0 ? (
+									<Dropdown>
+										<Avatar
+											sx={{
+												bgcolor: "#309255",
+												width: "60px",
+												height: "60px",
+												fontSize: "1.5rem",
+											}}
+										>
+											<Dropdown.Toggle
+												variant="success"
+												id="dropdown-autoclose-true"
+												style={{ display: "flex", justifyContent: "center" }}
+											>
+												{avatar.slice(0, 1)}
+											</Dropdown.Toggle>
+										</Avatar>
+										<Dropdown.Menu>
+											<Dropdown.Item onClick={logoutHandle}>
+												Logout
+											</Dropdown.Item>
+											<Dropdown.Item >
+												Another action
+											</Dropdown.Item>
+											<Dropdown.Item >
+												Something else
+											</Dropdown.Item>
+										</Dropdown.Menu>
+									</Dropdown>
+								) : (
+									<ul>
+										<li>
+											<Link className="sign-in" to="/login">
+												Sign In
+											</Link>
+										</li>
+										<li>
+											<Link className="sign-up" to="/register">
+												Sign Up
+											</Link>
+										</li>
+									</ul>
+								)}
 							</div>
 							{/* <!-- Header Sing In & Up End --> */}
 
@@ -106,19 +177,24 @@ const Navbar = ({ scrollState }) => {
 				{/* <!-- Mobile Top Medal End --> */}
 
 				{/* <!-- Mobile Sing In & Up Start --> */}
+
 				<div className="mobile-sign-in-up">
-					<ul>
-						<li>
-							<Link className="sign-in" to="/login">
-								Sign In
-							</Link>
-						</li>
-						<li>
-							<Link className="sign-up" to="/register">
-								Sign Up
-							</Link>
-						</li>
-					</ul>
+					{avatar.length !== 0 ? (
+						<Avatar sx={{ bgcolor: "blue" }}>N</Avatar>
+					) : (
+						<ul>
+							<li>
+								<Link className="sign-in" to="/login">
+									Sign In
+								</Link>
+							</li>
+							<li>
+								<Link className="sign-up" to="/register">
+									Sign Up
+								</Link>
+							</li>
+						</ul>
+					)}
 				</div>
 				{/* <!-- Mobile Sing In & Up End --> */}
 

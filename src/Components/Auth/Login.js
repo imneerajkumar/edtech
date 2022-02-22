@@ -13,14 +13,14 @@ const Login = () => {
 	const [password, setPassword] = useState("");
 	const [isStudent, setIsStudent] = useState(false);
 	const dispatch = useDispatch();
-	const educatorAuth = useSelector((state) => state.educatorAuthReducer);
+	const educatorA = useSelector((state) => state.educatorAuthReducer);
 	const {
 		loading: EducatorLoading,
 		error: educatorError,
 		educatorInfo,
-	} = educatorAuth;
-	const studentAuth = useSelector((state) => state.studentAuthReducer);
-	const { loading, error, studentInfo } = studentAuth;
+	} = educatorA;
+	const studentA = useSelector((state) => state.studentAuthReducer);
+	const { loading, error, studentInfo } = studentA;
 	const navigate = useNavigate();
 	useEffect(() => {
 		window.addEventListener("scroll", (e) => {

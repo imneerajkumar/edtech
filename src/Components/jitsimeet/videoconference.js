@@ -46,6 +46,7 @@ function JitsiMeetComponent() {
 						"recording",
 						"settings",
 					],
+						prejoinPageEnabled: false,
 				},
 				// configOverwrite: {
 				// 	toolbarButtons: [

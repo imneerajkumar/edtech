@@ -71,7 +71,7 @@ export const educatorRegister = (email, password, name) => async (dispatch) => {
 		});
 	}
 };
-export const logout = () => (dispatch) => {
+export const logoutEducator = () => (dispatch) => {
 	localStorage.removeItem("educatorInfo");
 	dispatch({
 		type: EDUCATOR_LOGOUT,
