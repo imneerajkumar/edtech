@@ -12,7 +12,7 @@ function CourseAdmin(props) {
 
                 {/* <!-- Header Logo Start --> */}
                 <div className="login-header-logo">
-                    <a href="index.html"><img src="assets/images/logo-icon.png" alt="Logo" /></a>
+                    <a href="/"><img src="assets/images/logo-icon.png" alt="Logo" /></a>
                 </div>
                 {/* <!-- Header Logo End --> */}
 

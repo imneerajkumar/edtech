@@ -40,7 +40,7 @@ const Home = () => {
 							It has survived not only five centuries but also the leap into
 							electronic typesetting.
 						</p>
-						<a className="btn btn-primary btn-hover-dark" href="/">
+						<a className="btn btn-primary btn-hover-dark" href="/courses">
 							Start A Course
 						</a>
 					</div>
@@ -137,7 +137,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-01.jpg"
 																	alt="Author"
@@ -145,13 +145,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Science</a>
+														<a href="/course-details">Science</a>
 													</div>
 												</div>
 
@@ -202,7 +202,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-02.jpg"
 																	alt="Author"
@@ -210,13 +210,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Pamela Foster
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Science</a>
+														<a href="/course-details">Science</a>
 													</div>
 												</div>
 
@@ -266,7 +266,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-03.jpg"
 																	alt="Author"
@@ -274,13 +274,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Rose Simmons
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Science</a>
+														<a href="/course-details">Science</a>
 													</div>
 												</div>
 
@@ -331,7 +331,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-04.jpg"
 																	alt="Author"
@@ -339,13 +339,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Finance</a>
+														<a href="/course-details">Finance</a>
 													</div>
 												</div>
 
@@ -395,7 +395,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-05.jpg"
 																	alt="Author"
@@ -403,13 +403,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Marketing</a>
+														<a href="/course-details">Marketing</a>
 													</div>
 												</div>
 
@@ -459,7 +459,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-06.jpg"
 																	alt="Author"
@@ -467,13 +467,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Design</a>
+														<a href="/course-details">Design</a>
 													</div>
 												</div>
 
@@ -531,7 +531,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-01.jpg"
 																	alt="Author"
@@ -539,13 +539,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Science</a>
+														<a href="/course-details">Science</a>
 													</div>
 												</div>
 
@@ -596,7 +596,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-02.jpg"
 																	alt="Author"
@@ -604,13 +604,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Pamela Foster
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Science</a>
+														<a href="/course-details">Science</a>
 													</div>
 												</div>
 
@@ -660,7 +660,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-03.jpg"
 																	alt="Author"
@@ -668,13 +668,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Rose Simmons
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Science</a>
+														<a href="/course-details">Science</a>
 													</div>
 												</div>
 
@@ -725,7 +725,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-04.jpg"
 																	alt="Author"
@@ -733,13 +733,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Finance</a>
+														<a href="/course-details">Finance</a>
 													</div>
 												</div>
 
@@ -789,7 +789,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-05.jpg"
 																	alt="Author"
@@ -797,13 +797,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Marketing</a>
+														<a href="/course-details">Marketing</a>
 													</div>
 												</div>
 
@@ -853,7 +853,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-06.jpg"
 																	alt="Author"
@@ -861,13 +861,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Design</a>
+														<a href="/course-details">Design</a>
 													</div>
 												</div>
 
@@ -925,7 +925,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-01.jpg"
 																	alt="Author"
@@ -933,13 +933,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Science</a>
+														<a href="/course-details">Science</a>
 													</div>
 												</div>
 
@@ -990,7 +990,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-02.jpg"
 																	alt="Author"
@@ -998,13 +998,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Pamela Foster
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Science</a>
+														<a href="/course-details">Science</a>
 													</div>
 												</div>
 
@@ -1054,7 +1054,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-03.jpg"
 																	alt="Author"
@@ -1062,13 +1062,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Rose Simmons
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Science</a>
+														<a href="/course-details">Science</a>
 													</div>
 												</div>
 
@@ -1119,7 +1119,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-04.jpg"
 																	alt="Author"
@@ -1127,13 +1127,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Finance</a>
+														<a href="/course-details">Finance</a>
 													</div>
 												</div>
 
@@ -1183,7 +1183,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-05.jpg"
 																	alt="Author"
@@ -1191,13 +1191,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Marketing</a>
+														<a href="/course-details">Marketing</a>
 													</div>
 												</div>
 
@@ -1247,7 +1247,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-06.jpg"
 																	alt="Author"
@@ -1255,13 +1255,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Design</a>
+														<a href="/course-details">Design</a>
 													</div>
 												</div>
 
@@ -1319,7 +1319,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-01.jpg"
 																	alt="Author"
@@ -1327,13 +1327,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Science</a>
+														<a href="/course-details">Science</a>
 													</div>
 												</div>
 
@@ -1384,7 +1384,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-02.jpg"
 																	alt="Author"
@@ -1392,13 +1392,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Pamela Foster
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Science</a>
+														<a href="/course-details">Science</a>
 													</div>
 												</div>
 
@@ -1448,7 +1448,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-03.jpg"
 																	alt="Author"
@@ -1456,13 +1456,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Rose Simmons
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Science</a>
+														<a href="/course-details">Science</a>
 													</div>
 												</div>
 
@@ -1513,7 +1513,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-04.jpg"
 																	alt="Author"
@@ -1521,13 +1521,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Finance</a>
+														<a href="/course-details">Finance</a>
 													</div>
 												</div>
 
@@ -1577,7 +1577,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-05.jpg"
 																	alt="Author"
@@ -1585,13 +1585,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Marketing</a>
+														<a href="/course-details">Marketing</a>
 													</div>
 												</div>
 
@@ -1641,7 +1641,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-06.jpg"
 																	alt="Author"
@@ -1649,13 +1649,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Design</a>
+														<a href="/course-details">Design</a>
 													</div>
 												</div>
 
@@ -1713,7 +1713,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-01.jpg"
 																	alt="Author"
@@ -1721,13 +1721,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Science</a>
+														<a href="/course-details">Science</a>
 													</div>
 												</div>
 
@@ -1778,7 +1778,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-02.jpg"
 																	alt="Author"
@@ -1786,13 +1786,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Pamela Foster
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Science</a>
+														<a href="/course-details">Science</a>
 													</div>
 												</div>
 
@@ -1842,7 +1842,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-03.jpg"
 																	alt="Author"
@@ -1850,13 +1850,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Rose Simmons
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Science</a>
+														<a href="/course-details">Science</a>
 													</div>
 												</div>
 
@@ -1907,7 +1907,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-04.jpg"
 																	alt="Author"
@@ -1915,13 +1915,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Finance</a>
+														<a href="/course-details">Finance</a>
 													</div>
 												</div>
 
@@ -1971,7 +1971,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-05.jpg"
 																	alt="Author"
@@ -1979,13 +1979,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Marketing</a>
+														<a href="/course-details">Marketing</a>
 													</div>
 												</div>
 
@@ -2035,7 +2035,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-06.jpg"
 																	alt="Author"
@@ -2043,13 +2043,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Design</a>
+														<a href="/course-details">Design</a>
 													</div>
 												</div>
 
@@ -2107,7 +2107,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-01.jpg"
 																	alt="Author"
@@ -2115,13 +2115,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Science</a>
+														<a href="/course-details">Science</a>
 													</div>
 												</div>
 
@@ -2172,7 +2172,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-02.jpg"
 																	alt="Author"
@@ -2180,13 +2180,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Pamela Foster
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Science</a>
+														<a href="/course-details">Science</a>
 													</div>
 												</div>
 
@@ -2236,7 +2236,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-03.jpg"
 																	alt="Author"
@@ -2244,13 +2244,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Rose Simmons
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Science</a>
+														<a href="/course-details">Science</a>
 													</div>
 												</div>
 
@@ -2301,7 +2301,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-04.jpg"
 																	alt="Author"
@@ -2309,13 +2309,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Finance</a>
+														<a href="/course-details">Finance</a>
 													</div>
 												</div>
 
@@ -2365,7 +2365,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-05.jpg"
 																	alt="Author"
@@ -2373,13 +2373,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Marketing</a>
+														<a href="/course-details">Marketing</a>
 													</div>
 												</div>
 
@@ -2429,7 +2429,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-06.jpg"
 																	alt="Author"
@@ -2437,13 +2437,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Design</a>
+														<a href="/course-details">Design</a>
 													</div>
 												</div>
 
@@ -2501,7 +2501,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-01.jpg"
 																	alt="Author"
@@ -2509,13 +2509,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Science</a>
+														<a href="/course-details">Science</a>
 													</div>
 												</div>
 
@@ -2566,7 +2566,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-02.jpg"
 																	alt="Author"
@@ -2574,13 +2574,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Pamela Foster
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Science</a>
+														<a href="/course-details">Science</a>
 													</div>
 												</div>
 
@@ -2630,7 +2630,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-03.jpg"
 																	alt="Author"
@@ -2638,13 +2638,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Rose Simmons
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Science</a>
+														<a href="/course-details">Science</a>
 													</div>
 												</div>
 
@@ -2695,7 +2695,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-04.jpg"
 																	alt="Author"
@@ -2703,13 +2703,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Finance</a>
+														<a href="/course-details">Finance</a>
 													</div>
 												</div>
 
@@ -2759,7 +2759,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-05.jpg"
 																	alt="Author"
@@ -2767,13 +2767,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Marketing</a>
+														<a href="/course-details">Marketing</a>
 													</div>
 												</div>
 
@@ -2823,7 +2823,7 @@ const Home = () => {
 												<div className="courses-author">
 													<div className="author">
 														<div className="author-thumb">
-															<a href="/">
+															<a href="/course-details">
 																<img
 																	src="assets/images/author/author-06.jpg"
 																	alt="Author"
@@ -2831,13 +2831,13 @@ const Home = () => {
 															</a>
 														</div>
 														<div className="author-name">
-															<a className="name" href="/">
+															<a className="name" href="/course-details">
 																Jason Williams
 															</a>
 														</div>
 													</div>
 													<div className="tag">
-														<a href="/">Design</a>
+														<a href="/course-details">Design</a>
 													</div>
 												</div>
 
@@ -2882,7 +2882,7 @@ const Home = () => {
 					{/* <!-- All Courses BUtton Start --> */}
 					<div className="courses-btn text-center">
 						<a
-							href="courses.html"
+							href="/courses"
 							className="btn btn-secondary btn-hover-primary"
 						>
 							Other Course
@@ -2913,7 +2913,7 @@ const Home = () => {
 								<div className="call-to-action-btn">
 									<a
 										className="btn btn-primary btn-hover-dark"
-										href="contact.html"
+										href="/contact"
 									>
 										Drop Information
 									</a>
@@ -3165,7 +3165,7 @@ const Home = () => {
 								{/* <!-- Single Blog Start --> */}
 								<div className="single-blog">
 									<div className="blog-image">
-										<a href="blog-details-left-sidebar.html">
+										<a href="blog-detail">
 											<img src="assets/images/blog/blog-01.jpg" alt="Blog" />
 										</a>
 									</div>
@@ -3173,7 +3173,7 @@ const Home = () => {
 										<div className="blog-author">
 											<div className="author">
 												<div className="author-thumb">
-													<a href="/">
+													<a href="blog-detail">
 														<img
 															src="assets/images/author/author-01.jpg"
 															alt="Author"
@@ -3181,18 +3181,18 @@ const Home = () => {
 													</a>
 												</div>
 												<div className="author-name">
-													<a className="name" href="/">
+													<a className="name" href="blog-detail">
 														Jason Williams
 													</a>
 												</div>
 											</div>
 											<div className="tag">
-												<a href="/">Science</a>
+												<a href="blog-detail">Science</a>
 											</div>
 										</div>
 
 										<h4 className="title">
-											<a href="blog-details-left-sidebar.html">
+											<a href="blog-detail">
 												Data Science and Machine Learning with Python - Hands
 												On!
 											</a>
@@ -3223,7 +3223,7 @@ const Home = () => {
 								{/* <!-- Single Blog Start --> */}
 								<div className="single-blog">
 									<div className="blog-image">
-										<a href="blog-details-left-sidebar.html">
+										<a href="blog-detail">
 											<img src="assets/images/blog/blog-02.jpg" alt="Blog" />
 										</a>
 									</div>
@@ -3231,7 +3231,7 @@ const Home = () => {
 										<div className="blog-author">
 											<div className="author">
 												<div className="author-thumb">
-													<a href="/">
+													<a href="blog-detail">
 														<img
 															src="assets/images/author/author-02.jpg"
 															alt="Author"
@@ -3239,18 +3239,18 @@ const Home = () => {
 													</a>
 												</div>
 												<div className="author-name">
-													<a className="name" href="/">
+													<a className="name" href="blog-detail">
 														Pamela Foster
 													</a>
 												</div>
 											</div>
 											<div className="tag">
-												<a href="/">UX Design</a>
+												<a href="blog-detail">UX Design</a>
 											</div>
 										</div>
 
 										<h4 className="title">
-											<a href="blog-details-left-sidebar.html">
+											<a href="blog-detail">
 												Create Amazing Color Schemes for Your UX Design Projects
 											</a>
 										</h4>
@@ -3267,7 +3267,7 @@ const Home = () => {
 										</div>
 
 										<a
-											href="blog-details-left-sidebar.html"
+											href="blog-detail"
 											className="btn btn-secondary btn-hover-primary"
 										>
 											Read More
@@ -3280,7 +3280,7 @@ const Home = () => {
 								{/* <!-- Single Blog Start --> */}
 								<div className="single-blog">
 									<div className="blog-image">
-										<a href="blog-details-left-sidebar.html">
+										<a href="blog-detail">
 											<img src="assets/images/blog/blog-03.jpg" alt="Blog" />
 										</a>
 									</div>
@@ -3288,7 +3288,7 @@ const Home = () => {
 										<div className="blog-author">
 											<div className="author">
 												<div className="author-thumb">
-													<a href="/">
+													<a href="blog-detail">
 														<img
 															src="assets/images/author/author-03.jpg"
 															alt="Author"
@@ -3296,18 +3296,18 @@ const Home = () => {
 													</a>
 												</div>
 												<div className="author-name">
-													<a className="name" href="/">
+													<a className="name" href="blog-detail">
 														Patricia Collins
 													</a>
 												</div>
 											</div>
 											<div className="tag">
-												<a href="/">Business</a>
+												<a href="blog-detail">Business</a>
 											</div>
 										</div>
 
 										<h4 className="title">
-											<a href="blog-details-left-sidebar.html">
+											<a href="blog-detail">
 												Culture & Leadership: Strategies for a Successful
 												Business
 											</a>
@@ -3325,7 +3325,7 @@ const Home = () => {
 										</div>
 
 										<a
-											href="blog-details-left-sidebar.html"
+											href="blog-detail"
 											className="btn btn-secondary btn-hover-primary"
 										>
 											Read More

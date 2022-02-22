@@ -466,7 +466,7 @@ function CourseDetail(props) {
                                     </ul>
                                 </div>
                                 <div className="info-btn">
-                                    <a href="/" className="btn btn-primary btn-hover-dark">Enroll Now</a>
+                                    <a href="/after-enroll" className="btn btn-primary btn-hover-dark">Enroll Now</a>
                                 </div>
                             </div>
                             {/* <!-- Sidebar Widget Information End --> */}
