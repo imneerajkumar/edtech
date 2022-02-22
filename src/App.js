@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./Components/Home/Home";
 import Register from "./Components/Auth/Register";
@@ -12,14 +12,17 @@ import BlogDetail from "./Components/Blogs/BlogDetail";
 import ScrollToTop from "./ScrollToTop";
 import About from "./Components/About/About";
 import Contact from "./Components/About/Contact";
-
+import Meeting from './Components/meeting/Video'
+import Meetpage from "./Components/meeting/Videocall";
+import VideoConference from './Components/jitsimeet/videoconference'
+import JitsiMeetComponent from "./Components/jitsimeet/videoconference";
 function App() {
+  
 	return (
-        
 		<Router>
 			<ScrollToTop />
 			<Routes>
-				<Route path="/login"element={<Login />} />
+				<Route path="/login" element={<Login />} />
 				<Route exact path="/register" element={<Register />} />
 				<Route exact path="/courses" element={<Courses />} />
 				<Route exact path="/course-details" element={<CourseDetail />} />
@@ -28,7 +31,11 @@ function App() {
 				<Route exact path="/policy" element={<PrivacyPolicy />} />
 				<Route exact path="/about" element={<About />} />
 				<Route exact path="/contact" element={<Contact />} />
-				<Route exact path="/" element={<Home />}/>
+				<Route exact path="/meeting" element={<Meeting />} />
+				<Route exact path="/meet" element={<JitsiMeetComponent />} />
+
+				<Route exact path="/" element={<Home />} />
+
 				<Route exact path="*" element={<ErrorPage />} />
 			</Routes>
 		</Router>

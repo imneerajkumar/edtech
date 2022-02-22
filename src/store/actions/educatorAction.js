@@ -1,6 +1,6 @@
 import {
     EDUCATOR_LOGIN_FAIL,
-    EDUCATOR_LOGIN_REQUEST, EDUCATOR_LOGIN_SUCCESS, EDUCATOR_REGISTER_FAIL, EDUCATOR_REGISTER_REQUEST, EDUCATOR_REGISTER_SUCCESS,
+    EDUCATOR_LOGIN_REQUEST, EDUCATOR_LOGIN_SUCCESS, EDUCATOR_LOGOUT, EDUCATOR_REGISTER_FAIL, EDUCATOR_REGISTER_REQUEST, EDUCATOR_REGISTER_SUCCESS,
 } from "../constants/constants";
 import axios from "axios";
 const API_URL = "http://localhost:4000";
@@ -70,4 +70,11 @@ export const educatorRegister = (email, password, name) => async (dispatch) => {
 					: error.message,
 		});
 	}
+};
+export const logout = () => (dispatch) => {
+	localStorage.removeItem("educatorInfo");
+	dispatch({
+		type: EDUCATOR_LOGOUT,
+	});
+
 };

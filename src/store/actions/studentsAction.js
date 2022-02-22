@@ -2,6 +2,7 @@ import {
 	STUDENT_LOGIN_FAIL,
 	STUDENT_LOGIN_REQUEST,
 	STUDENT_LOGIN_SUCCESS,
+    STUDENT_LOGOUT,
     STUDENT_REGISTER_FAIL,
     STUDENT_REGISTER_REQUEST,
     STUDENT_REGISTER_SUCCESS,
@@ -75,4 +76,17 @@ export const studentRegister = (email, password, name) => async (dispatch) => {
 					: error.message,
 		});
 	}
+};
+
+export const logout = () => (dispatch) => {
+	localStorage.removeItem("studentInfo");
+	dispatch({
+		type: STUDENT_LOGOUT,
+	});
+	// dispatch({
+	// 	type: ORDER_LIST_MY_RESET,
+	// });
+	// dispatch({ type: USER_DETAIL_RESET });
+	// dispatch({ type: USER_LIST_RESET });
+	// dispatch({ type: RESET_SHIPPING_ADDRESS });
 };

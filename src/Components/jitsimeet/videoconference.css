@@ -1,0 +1,6 @@
+#root iframe .toolbox-icon {
+	display: none;
+}
+.jitsi-icon jitsi-icon-default {
+	display: none;
+}
