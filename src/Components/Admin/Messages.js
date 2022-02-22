@@ -1,0 +1,361 @@
+import React from 'react';
+import Footer from '../Footer';
+
+function Messages(props) {
+  return (
+    <div className="main-wrapper main-wrapper-02">
+
+        {/* <!-- Login Header Start --> */}
+        <div className="section login-header">
+            {/* <!-- Login Header Wrapper Start --> */}
+            <div className="login-header-wrapper navbar navbar-expand">
+
+                {/* <!-- Header Logo Start --> */}
+                <div className="login-header-logo">
+                    <a href="index.html"><img src="assets/images/logo-icon.png" alt="Logo" /></a>
+                </div>
+                {/* <!-- Header Logo End --> */}
+
+                {/* <!-- Header Search Start --> */}
+                <div className="login-header-search dropdown">
+                    <button className="search-toggle" data-bs-toggle="dropdown"><i className="flaticon-loupe"></i></button>
+
+                    <div className="search-input dropdown-menu">
+                        <form action="#">
+                            <input type="text" placeholder="Search here" />
+                        </form>
+                    </div>
+
+                </div>
+                {/* <!-- Header Search End -->
+
+                <!-- Header Action Start --> */}
+                <div className="login-header-action ml-auto">
+                    <div className="dropdown">
+                        <button className="action notification" data-bs-toggle="dropdown">
+                            <i className="flaticon-notification"></i>
+                            <span className="active"></span>
+                        </button>
+                        <div className="dropdown-menu dropdown-notification">
+                            <ul className="notification-items-list">
+                                <li className="notification-item">
+                                    <span className="notify-icon bg-success text-white"><i className="icofont-ui-user"></i></span>
+                                    <div className="dropdown-body">
+                                        <a href="/">
+                                            <p><strong>Martin</strong> has added a <strong>customer</strong> Successfully
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <span className="notify-time">3:20 am</span>
+                                </li>
+                                <li className="notification-item">
+                                    <span className="notify-icon bg-success text-white"><i className="icofont-shopping-cart"></i></span>
+                                    <div className="dropdown-body">
+                                        <a href="/">
+                                            <p><strong>Jennifer</strong> purchased Light Dashboard 2.0.</p>
+                                        </a>
+                                    </div>
+                                    <span className="notify-time">3:20 am</span>
+                                </li>
+                                <li className="notification-item">
+                                    <span className="notify-icon bg-danger text-white"><i className="icofont-book-mark"></i></span>
+                                    <div className="dropdown-body">
+                                        <a href="/">
+                                            <p><strong>Robin</strong> marked a <strong>ticket</strong> as unsolved.
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <span className="notify-time">3:20 am</span>
+                                </li>
+                                <li className="notification-item">
+                                    <span className="notify-icon bg-success text-white"><i className="icofont-heart-alt"></i></span>
+                                    <div className="dropdown-body">
+                                        <a href="/">
+                                            <p><strong>David</strong> purchased Light Dashboard 1.0.</p>
+                                        </a>
+                                    </div>
+                                    <span className="notify-time">3:20 am</span>
+                                </li>
+                                <li className="notification-item">
+                                    <span className="notify-icon bg-success text-white"><i className="icofont-image"></i></span>
+                                    <div className="dropdown-body">
+                                        <a href="/">
+                                            <p><strong> James.</strong> has added a<strong>customer</strong> Successfully
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <span className="notify-time">3:20 am</span>
+                                </li>
+                            </ul>
+                            <a className="all-notification" href="/">See all notifications <i className="icofont-simple-right"></i></a>
+                        </div>
+                    </div>
+
+                    <a className="action author" href="/">
+                        <img src="assets/images/author/author-07.jpg" alt="Author" />
+                    </a>
+
+                    <div className="dropdown">
+                        <button className="action more" data-bs-toggle="dropdown">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <ul className="dropdown-menu">
+                            <li><a className="" href="/"><i className="icofont-user"></i> Profile</a></li>
+                            <li><a className="" href="/"><i className="icofont-inbox"></i> Inbox</a></li>
+                            <li><a className="" href="/"><i className="icofont-logout"></i> Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+                {/* <!-- Header Action End --> */}
+
+            </div>
+            {/* <!-- Login Header Wrapper End --> */}
+        </div>
+        {/* <!-- Login Header End --> */}
+
+        {/* <!-- Courses Admin Start --> */}
+        <div className="section overflow-hidden position-relative" id="wrapper">
+
+            {/* <!-- Sidebar Wrapper Start --> */}
+            <div className="sidebar-wrapper">
+                <div className="menu-list">
+                    <a className="active" href="/admin"><img src="assets/images/menu-icon/icon-1.png" alt="Icon" /></a>
+                    <a href="/messages"><img src="assets/images/menu-icon/icon-2.png" alt="Icon" /></a>
+                    <a href="/overview"><img src="assets/images/menu-icon/icon-3.png" alt="Icon" /></a>
+                </div>
+            </div>
+            {/* <!-- Sidebar Wrapper End --> */}
+
+            <div className="page-content-wrapper py-0">
+
+                {/* <!-- Admin Tab Menu Start --> */}
+                <div className="nav flex-column nav-pills admin-tab-menu">
+                    <a className="active" href="/">Question & Answer <span>3</span></a>
+                    <a href="/">Featured Question</a>
+                    <a href="/">Message <span>4</span></a>
+                    <a href="/">Assigment’s</a>
+                    <a href="/">Announcement’s</a>
+                </div>
+                {/* <!-- Admin Tab Menu End --> */}
+
+                {/* <!-- Page Content Wrapper Start --> */}
+                <div className="main-content-wrapper pb-0">
+                    <div className="container-fluid">
+
+                        {/* <!-- Admin Top Bar Start --> */}
+                        <div className="admin-top-bar flex-wrap">
+
+                            <div className="top-bar-filter">
+                                <ul className="filter-check">
+                                    <li>
+                                        <div className="courses-select">
+                                            <select>
+                                                <option data-display="All Courses">All Courses</option>
+                                                <option value="1">option</option>
+                                                <option value="2">option</option>
+                                                <option value="3">option</option>
+                                                <option value="4">Potato</option>
+                                            </select>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="unread" />
+                                        <label for="unread"><span></span> Unread (2)</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="answer1" />
+                                        <label for="answer1"><span></span> No Top Answer</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="answer2" />
+                                        <label for="answer2"><span></span> No Answer</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="answer3" />
+                                        <label for="answer3"><span></span> No Instructor Answer</label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div className="top-bar-filter-right">
+                                <div className="newest-select">
+                                    <select>
+                                        <option data-display="Newest First">Newest First</option>
+                                        <option value="1">Oldest First</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        {/* <!-- Admin Top Bar End -->
+
+                        <!-- Question & Answer End --> */}
+                        <div className="question-answer">
+
+                            <div className="row">
+                                <div className="col-xl-4">
+                                    {/* <!-- Answer User List Start --> */}
+                                    <div className="answer-user-list">
+
+                                        {/* <!-- Single User Start --> */}
+                                        <div className="single-user active">
+                                            <div className="user-author">
+                                                <img src="assets/images/author/author-12.jpg" alt="Author" />
+                                            </div>
+                                            <div className="user-content">
+                                                <h6 className="name">Natosha Sibley</h6>
+                                                <p>Woolentor and woocommerce</p>
+                                            </div>
+                                            <span className="time">02 days ago</span>
+                                        </div>
+                                        {/* <!-- Single User End -->
+
+                                        <!-- Single User Start --> */}
+                                        <div className="single-user">
+                                            <div className="user-author">
+                                                <img src="assets/images/author/author-13.jpg" alt="Author" /> 
+                                            </div>
+                                            <div className="user-content">
+                                                <h6 className="name">Alison Hunter</h6>
+                                                <p>Woolentor and woocommerce</p>
+                                            </div>
+                                            <span className="time">02 days ago</span>
+                                        </div>
+                                        {/* <!-- Single User End -->
+
+                                        <!-- Single User Start --> */}
+                                        <div className="single-user">
+                                            <div className="user-author">
+                                                <img src="assets/images/author/author-14.jpg" alt="Author" />
+                                            </div>
+                                            <div className="user-content">
+                                                <h6 className="name">Mabel Alvarez</h6>
+                                                <p>Woolentor and woocommerce</p>
+                                            </div>
+                                            <span className="time">02 days ago</span>
+                                        </div>
+                                        {/* <!-- Single User End -->
+
+                                        <!-- Single User Start --> */}
+                                        <div className="single-user">
+                                            <div className="user-author">
+                                                <img src="assets/images/author/author-15.jpg" alt="Author" />
+                                            </div>
+                                            <div className="user-content">
+                                                <h6 className="name">Preston Farmer</h6>
+                                                <p>Woolentor and woocommerce</p>
+                                            </div>
+                                            <span className="time">02 days ago</span>
+                                        </div>
+                                        {/* <!-- Single User End --> */}
+
+                                    </div>
+                                    {/* <!-- Answer User List End --> */}
+                                </div>
+                                <div className="col-xl-8">
+
+                                    {/* <!-- Answer Message Wrapper Start --> */}
+                                    <div className="answer-message-wrapper">
+
+                                        <ul>
+                                            <li>
+                                                {/* <!-- Single Message Start --> */}
+                                                <div className="single-message">
+                                                    <div className="message-author">
+                                                        <div className="author-images">
+                                                            <img src="assets/images/author/author-12.jpg" alt="Author" />
+                                                        </div>
+                                                        <div className="author-content">
+                                                            <h6 className="name"><strong>Natosha Sibley</strong> <span className="time">Asked: March 28, 2021</span></h6>
+                                                            <h4 className="title">How do the online demos and trial downloads differ?</h4>
+                                                        </div>
+                                                        <div className="meta">
+                                                            <span className="view"><i className="icofont-eye-alt"></i> 526 Views</span>
+                                                            <a className="answer" href="/"><i className="icofont-ui-messaging"></i> Answer</a>
+                                                        </div>
+                                                    </div>
+                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make specimen book has survived not only five centuries.</p>
+                                                </div>
+                                                {/* <!-- Single Message End --> */}
+
+                                                <ul className="message-replay">
+                                                    <li>
+                                                        {/* <!-- Single Message Start --> */}
+                                                        <div className="single-message">
+                                                            <div className="message-author">
+                                                                <div className="author-images">
+                                                                    <img src="assets/images/author/author-16.jpg" alt="Author" />
+                                                                </div>
+                                                                <div className="author-content">
+                                                                    <h6 className="name"><strong>Ashley Reeves</strong> <span className="instructor">Instructor</span></h6>
+                                                                    <span className="time">Asked: March 28, 2021</span>
+                                                                </div>
+                                                                <div className="meta">
+                                                                    <a className="answer" href="/"><i className="icofont-ui-messaging"></i> Answer</a>
+                                                                </div>
+                                                            </div>
+                                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make specimen book has survived not only five centuries.</p>
+                                                        </div>
+                                                        {/* <!-- Single Message End --> */}
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                {/* <!-- Single Message Start --> */}
+                                                <div className="single-message">
+                                                    <div className="message-author">
+                                                        <div className="author-images">
+                                                            <img src="assets/images/author/author-12.jpg" alt="Author" />
+                                                        </div>
+                                                        <div className="author-content">
+                                                            <h6 className="name"><strong>Natosha Sibley</strong></h6>
+                                                            <span className="time">Asked: March 28, 2021</span>
+                                                        </div>
+                                                        <div className="meta">
+                                                            <a className="answer" href="/"><i className="icofont-ui-messaging"></i> Answer</a>
+                                                        </div>
+                                                    </div>
+                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make specimen book has survived not only five centuries.</p>
+                                                </div>
+                                                {/* <!-- Single Message End --> */}
+                                            </li>
+                                        </ul>
+
+                                        <a className="loadmore" href="/">Loard more 22 answer</a>
+
+                                        <form action="#">
+                                            <div className="message-form">
+                                                <div className="auhtor">
+                                                    <img src="assets/images/author/author-16.jpg" alt="Author" />
+                                                </div>
+                                                <div className="message-input">
+                                                    <textarea placeholder="Post a public answer"></textarea>
+
+                                                    <div className="message-btn">
+                                                        <button className="btn btn-secondary btn-hover-primary">Cancel</button>
+                                                        <button className="btn btn-primary btn-hover-dark">Submit</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                    {/* <!-- Answer Message Wrapper End --> */}
+
+                                </div>
+                            </div>
+                        </div>
+                        {/* <!-- Question & Answer End --> */}
+                    </div>
+                </div>
+                {/* <!-- Page Content Wrapper End --> */}
+            </div>
+        </div>
+        {/* <!-- Courses Admin End --> */}
+      <Footer />
+    </div>
+  );
+}
+
+export default Messages;
