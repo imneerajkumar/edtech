@@ -181,7 +181,7 @@ function About(props) {
                         </div>
                         <div className="col-md-6">
                             <div className="call-to-action-btn">
-                                <a className="btn btn-primary btn-hover-dark" href="contact.html">Drop Information</a>
+                                <a className="btn btn-primary btn-hover-dark" href="/contact">Drop Information</a>
                             </div>
                         </div>
                     </div>
