@@ -12,7 +12,7 @@ import BlogDetail from "./Components/Blogs/BlogDetail";
 import ScrollToTop from "./ScrollToTop";
 import About from "./Components/About/About";
 import Contact from "./Components/About/Contact";
-import Meeting from './Components/meeting/Video'
+// import Meeting from './Components/meeting/Video'
 // import Meetpage from "./Components/meeting/Videocall";
 // import VideoConference from './Components/jitsimeet/videoconference'
 import JitsiMeetComponent from "./Components/jitsimeet/videoconference";
@@ -40,7 +40,7 @@ function App() {
 				<Route exact path="/about" element={<About />} />
 				<Route exact path="/contact" element={<Contact />} />
 
-				<Route exact path="/meeting" element={<Meeting />} />
+				{/* <Route exact path="/meeting" element={<Meeting />} /> */}
 				<Route exact path="/meet" element={<JitsiMeetComponent />} />
 
 				<Route exact path="/" element={<Home />} />
