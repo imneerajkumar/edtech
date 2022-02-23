@@ -8,11 +8,12 @@ import { logoutEducator } from "../store/actions/educatorAction";
 import "./Navbar.css";
 const Navbar = ({ scrollState }) => {
 	const dispatch = useDispatch();
-    const navigate=useNavigate()
+	const navigate = useNavigate();
 	const educatorAuthReducer = useSelector((state) => state.educatorAuthReducer);
 	const { educatorInfo, loading, error } = educatorAuthReducer;
 	const [avatar, setAvatar] = useState("");
 	const studentAuthReducer = useSelector((state) => state.studentAuthReducer);
+    const [click,setClick]=useState(false)
 	const {
 		studentInfo,
 		loading: loadStudent,
@@ -30,12 +31,12 @@ const Navbar = ({ scrollState }) => {
 
 	const logoutHandle = () => {
 		if (studentInfo) {
-			dispatch(logout())
+			dispatch(logout());
 		}
 		if (educatorInfo) {
-            dispatch(logoutEducator())
+			dispatch(logoutEducator());
 		}
-        navigate("/")
+		navigate("/");
 	};
 	// console.log(avatar);
 	return (
@@ -49,7 +50,17 @@ const Navbar = ({ scrollState }) => {
 						{/* <!-- Header Top Wrapper End --> */}
 					</div>
 				</div>
-
+				{/* <button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#nav-header"
+					aria-controls="nav-header"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button> */}
 				<div
 					id="nav-header"
 					className={`header-main ${scrollState && "sticky"}`}
@@ -114,12 +125,8 @@ const Navbar = ({ scrollState }) => {
 											<Dropdown.Item onClick={logoutHandle}>
 												Logout
 											</Dropdown.Item>
-											<Dropdown.Item >
-												Another action
-											</Dropdown.Item>
-											<Dropdown.Item >
-												Something else
-											</Dropdown.Item>
+											<Dropdown.Item>Another action</Dropdown.Item>
+											<Dropdown.Item>Something else</Dropdown.Item>
 										</Dropdown.Menu>
 									</Dropdown>
 								) : (
@@ -141,11 +148,11 @@ const Navbar = ({ scrollState }) => {
 
 							{/* <!-- Header Mobile Toggle Start --> */}
 							<div className="header-toggle d-lg-none">
-								<Link className="menu-toggle" to="/">
+								<div className="menu-toggle" onClick={()=>{setClick(true)}}>
 									<span></span>
 									<span></span>
 									<span></span>
-								</Link>
+								</div>
 							</div>
 							{/* <!-- Header Mobile Toggle End --> */}
 						</div>
@@ -155,97 +162,168 @@ const Navbar = ({ scrollState }) => {
 				{/* <!-- Header Main End --> */}
 			</div>
 
-			{/* <!-- Mobile Menu Start --> */}
-			<div className="mobile-menu">
-				{/* <!-- Menu Close Start --> */}
-				<Link className="menu-close" to="/">
-					<i className="icofont-close-line"></i>
-				</Link>
-				{/* <!-- Menu Close End --> */}
+			<div class={`mobile-menu ${click&&"open"} `}>
+				<div class="menu-close " onClick={()=>setClick(false)}>
+					<i class="icofont-close-line"></i>
+				</div>
 
-				{/* <!-- Mobile Top Medal Start --> */}
-				<div className="mobile-top">
+				<div class="mobile-top">
 					<p>
-						<i className="flaticon-phone-call"></i>{" "}
-						<Link to="tel:9702621413">(970) 262-1413</Link>
+						<i class="flaticon-phone-call"></i>{" "}
+						<a href="tel:9702621413">(970) 262-1413</a>
 					</p>
 					<p>
-						<i className="flaticon-email"></i>{" "}
-						<Link to="mailto:address@gmail.com">address@gmail.com</Link>
+						<i class="flaticon-email"></i>{" "}
+						<a href="mailto:address@gmail.com">address@gmail.com</a>
 					</p>
 				</div>
-				{/* <!-- Mobile Top Medal End --> */}
 
-				{/* <!-- Mobile Sing In & Up Start --> */}
-
-				<div className="mobile-sign-in-up">
-					{avatar.length !== 0 ? (
-						<Avatar sx={{ bgcolor: "blue" }}>N</Avatar>
-					) : (
-						<ul>
-							<li>
-								<Link className="sign-in" to="/login">
-									Sign In
-								</Link>
-							</li>
-							<li>
-								<Link className="sign-up" to="/register">
-									Sign Up
-								</Link>
-							</li>
-						</ul>
-					)}
-				</div>
-				{/* <!-- Mobile Sing In & Up End --> */}
-
-				{/* <!-- Mobile Menu Start --> */}
-				<div className="mobile-menu-items">
-					<ul className="nav-menu">
+				<div class="mobile-sign-in-up">
+					<ul>
 						<li>
-							<Link to="/">Home</Link>
+							<a class="sign-in" href="login.html">
+								Sign In
+							</a>
 						</li>
 						<li>
-							<Link to="/about">About</Link>
-						</li>
-						<li>
-							<Link to="/courses">Courses</Link>
-						</li>
-						<li>
-							<Link to="/blogs">Blogs</Link>
-						</li>
-						<li>
-							<Link to="/contact">Contact Us</Link>
+							<a class="sign-up" href="register.html">
+								Sign Up
+							</a>
 						</li>
 					</ul>
 				</div>
-				{/* <!-- Mobile Menu End --> */}
 
-				{/* <!-- Mobile Menu End --> */}
-				<div className="mobile-social">
-					<ul className="social">
-						<li>
-							<Link to="/">
-								<i className="flaticon-facebook"></i>
-							</Link>
+				<div class="mobile-menu-items">
+					<ul class="nav-menu">
+						<li class="active">
+							<a href="index.html">Home</a>
+						</li>
+						<li class="menu-item-has-children">
+							<span class="mobile-menu-expand"></span>
+							<a href="/">All Course</a>
+							<ul class="sub-menu" style={{display: "none"}}>
+								<li>
+									<a href="courses.html">Courses</a>
+								</li>
+								<li>
+									<a href="courses-details.html">Courses Details</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-item-has-children">
+							<span class="mobile-menu-expand"></span>
+							<a href="/">Pages </a>
+							<ul class="sub-menu" style={{display: "none"}}>
+								<li>
+									<a href="about.html">About</a>
+								</li>
+								<li>
+									<a href="register.html">Register</a>
+								</li>
+								<li>
+									<a href="login.html">Login</a>
+								</li>
+								<li>
+									<a href="faq.html">FAQ</a>
+								</li>
+								<li>
+									<a href="404-error.html">404 Error</a>
+								</li>
+								<li>
+									<a href="after-enroll.html">After Enroll</a>
+								</li>
+								<li>
+									<a href="courses-admin.html">
+										Instructor Dashboard (Course List)
+									</a>
+								</li>
+								<li>
+									<a href="overview.html">Instructor Dashboard (Performance)</a>
+								</li>
+								<li>
+									<a href="students.html">Students</a>
+								</li>
+								<li>
+									<a href="reviews.html">Reviews</a>
+								</li>
+								<li>
+									<a href="engagement.html">Course engagement</a>
+								</li>
+								<li>
+									<a href="traffic-conversion.html">Traffic &amp; conversion</a>
+								</li>
+								<li>
+									<a href="messages.html">Messages</a>
+								</li>
+							</ul>
+						</li>
+						<li class="menu-item-has-children">
+							<span class="mobile-menu-expand"></span>
+							<a href="/">Blog</a>
+							<ul class="sub-menu" style={{display: "none"}}>
+								<li class="menu-item-has-children">
+									<span class="mobile-menu-expand"></span>
+									<a href="/">Blog</a>
+									<ul class="sub-menu" style={{display: "none"}}>
+										<li>
+											<a href="blog-grid.html">Blog</a>
+										</li>
+										<li>
+											<a href="blog-left-sidebar.html">Blog Left Sidebar</a>
+										</li>
+										<li>
+											<a href="blog-right-sidebar.html">Blog Right Sidebar</a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu-item-has-children">
+									<span class="mobile-menu-expand"></span>
+									<a href="/">Blog Details</a>
+									<ul class="sub-menu" style={{display: "none"}}>
+										<li>
+											<a href="blog-details-left-sidebar.html">
+												Blog Details Left Sidebar
+											</a>
+										</li>
+										<li>
+											<a href="blog-details-right-sidebar.html">
+												Blog Details Right Sidebar
+											</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
 						</li>
 						<li>
-							<Link to="/">
-								<i className="flaticon-twitter"></i>
-							</Link>
-						</li>
-						<li>
-							<Link to="/">
-								<i className="flaticon-skype"></i>
-							</Link>
-						</li>
-						<li>
-							<Link to="/">
-								<i className="flaticon-instagram"></i>
-							</Link>
+							<a href="contact.html">Contact</a>
 						</li>
 					</ul>
 				</div>
-				{/* <!-- Mobile Menu End --> */}
+
+				<div class="mobile-social">
+					<ul class="social">
+						<li>
+							<a href="/">
+								<i class="flaticon-facebook"></i>
+							</a>
+						</li>
+						<li>
+							<a href="/">
+								<i class="flaticon-twitter"></i>
+							</a>
+						</li>
+						<li>
+							<a href="/">
+								<i class="flaticon-skype"></i>
+							</a>
+						</li>
+						<li>
+							<a href="/">
+								<i class="flaticon-instagram"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	);
