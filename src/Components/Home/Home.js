@@ -3340,7 +3340,7 @@ const Home = () => {
 				</div>
 			</div>
 			{/* <!-- Blog End --> */}
-			<Footer />
+			<Footer scrollState={scrollState} />
 			{/* <!-- Footer Start  --> */}
 		</div>
 	);
