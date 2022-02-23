@@ -4,6 +4,7 @@ import { AiOutlineSkype } from "react-icons/ai";
 import Navbar from "../Navbar";
 import Download from "../Download";
 import Footer from "../Footer";
+import ScrollButton from "../ScrollButton";
 
 function CourseDetail(props) {
   const [scrollState, setScrollState] = useState(false);
@@ -492,8 +493,9 @@ function CourseDetail(props) {
             </div>
         </div>
         {/* <!-- Courses End --> */}
-      <Download />
-		  <Footer />
+        <Download />
+        <ScrollButton scrollState={scrollState} />
+	    <Footer />
     </div>
   );
 }

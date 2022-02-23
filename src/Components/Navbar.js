@@ -5,7 +5,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { Dropdown } from "react-bootstrap";
 import { logout } from "../store/actions/studentsAction";
 import { logoutEducator } from "../store/actions/educatorAction";
+import {
+	FiInstagram,
+	FiTwitter,
+	FiFacebook,
+	FiPhoneCall,
+	FiMail,
+	FiArrowLeftCircle,
+} from "react-icons/fi";
+import { AiOutlineSkype } from "react-icons/ai";
 import "./Navbar.css";
+
 const Navbar = ({ scrollState }) => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
@@ -50,17 +60,7 @@ const Navbar = ({ scrollState }) => {
 						{/* <!-- Header Top Wrapper End --> */}
 					</div>
 				</div>
-				{/* <button
-					class="navbar-toggler"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#nav-header"
-					aria-controls="nav-header"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
-					<span class="navbar-toggler-icon"></span>
-				</button> */}
+
 				<div
 					id="nav-header"
 					className={`header-main ${scrollState && "sticky"}`}
@@ -94,9 +94,6 @@ const Navbar = ({ scrollState }) => {
 									<li>
 										<Link to="/contact">Contact Us</Link>
 									</li>
-									{/* <li>
-										<Link to="/admin">Admin</Link>
-									</li> */}
 								</ul>
 							</div>
 							{/* <!-- Header Menu End --> */}
@@ -162,166 +159,131 @@ const Navbar = ({ scrollState }) => {
 				{/* <!-- Header Main End --> */}
 			</div>
 
-			<div class={`mobile-menu ${click&&"open"} `}>
-				<div class="menu-close " onClick={()=>setClick(false)}>
-					<i class="icofont-close-line"></i>
+			<div className={`mobile-menu ${click&&"open"} `}>
+				<div className="menu-close " onClick={()=>setClick(false)}>
+					<FiArrowLeftCircle size={22} color="#309255" />
 				</div>
 
-				<div class="mobile-top">
-					<p>
-						<i class="flaticon-phone-call"></i>{" "}
-						<a href="tel:9702621413">(970) 262-1413</a>
+				<div className="mobile-top">
+					<p
+						style={{
+							display: "flex",
+							alignItems: "center",
+							justifyContent: "space-evenly",
+							padding: "3px",
+						}}
+					>
+						<FiMail size={22} color="#309255" />
+						<a
+							style={{ marginTop: 0, marginBottom: "2px" }}
+							href="mailto:address@gmail.com"
+						>
+							address@gmail.com
+						</a>
 					</p>
-					<p>
-						<i class="flaticon-email"></i>{" "}
-						<a href="mailto:address@gmail.com">address@gmail.com</a>
+					<p
+						style={{
+							display: "flex",
+							alignItems: "center",
+							justifyContent: "space-evenly",
+							padding: "3px",
+						}}
+					>
+						<FiPhoneCall color="#309255" size={22} />
+						<a
+							style={{ marginTop: 0, marginBottom: "2px" }}
+							href="tel:9702621413"
+						>
+							(970) 262-1413
+						</a>
 					</p>
 				</div>
 
-				<div class="mobile-sign-in-up">
+				<div className="mobile-sign-in-up">
+					{avatar.length !== 0 ? (
+					<Dropdown>
+						<Avatar
+							sx={{
+								bgcolor: "#309255",
+								width: "60px",
+								height: "60px",
+								fontSize: "1.5rem",
+							}}
+						>
+							<Dropdown.Toggle
+								variant="success"
+								id="dropdown-autoclose-true"
+								style={{ display: "flex", justifyContent: "center" }}
+							>
+								{avatar.slice(0, 1)}
+							</Dropdown.Toggle>
+						</Avatar>
+						<Dropdown.Menu>
+							<Dropdown.Item onClick={logoutHandle}>
+								Logout
+							</Dropdown.Item>
+							<Dropdown.Item>Another action</Dropdown.Item>
+							<Dropdown.Item>Something else</Dropdown.Item>
+						</Dropdown.Menu>
+					</Dropdown>
+				) : (
 					<ul>
 						<li>
-							<a class="sign-in" href="login.html">
+							<Link className="sign-in" to="/login">
 								Sign In
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a class="sign-up" href="register.html">
+							<Link className="sign-up" to="/register">
 								Sign Up
-							</a>
+							</Link>
+						</li>
+					</ul>
+				)}
+				</div>
+
+				<div className="mobile-menu-items">
+					<ul className="nav-menu">
+						<li>
+							<Link to="/">Home</Link>
+						</li>
+						<li>
+							<Link to="/about">About</Link>
+						</li>
+						<li>
+							<Link to="/courses">Courses</Link>
+						</li>
+						<li>
+							<Link to="/blogs">Blogs</Link>
+						</li>
+						<li>
+							<Link to="/contact">Contact Us</Link>
 						</li>
 					</ul>
 				</div>
 
-				<div class="mobile-menu-items">
-					<ul class="nav-menu">
-						<li class="active">
-							<a href="index.html">Home</a>
-						</li>
-						<li class="menu-item-has-children">
-							<span class="mobile-menu-expand"></span>
-							<a href="/">All Course</a>
-							<ul class="sub-menu" style={{display: "none"}}>
-								<li>
-									<a href="courses.html">Courses</a>
-								</li>
-								<li>
-									<a href="courses-details.html">Courses Details</a>
-								</li>
-							</ul>
-						</li>
-						<li class="menu-item-has-children">
-							<span class="mobile-menu-expand"></span>
-							<a href="/">Pages </a>
-							<ul class="sub-menu" style={{display: "none"}}>
-								<li>
-									<a href="about.html">About</a>
-								</li>
-								<li>
-									<a href="register.html">Register</a>
-								</li>
-								<li>
-									<a href="login.html">Login</a>
-								</li>
-								<li>
-									<a href="faq.html">FAQ</a>
-								</li>
-								<li>
-									<a href="404-error.html">404 Error</a>
-								</li>
-								<li>
-									<a href="after-enroll.html">After Enroll</a>
-								</li>
-								<li>
-									<a href="courses-admin.html">
-										Instructor Dashboard (Course List)
-									</a>
-								</li>
-								<li>
-									<a href="overview.html">Instructor Dashboard (Performance)</a>
-								</li>
-								<li>
-									<a href="students.html">Students</a>
-								</li>
-								<li>
-									<a href="reviews.html">Reviews</a>
-								</li>
-								<li>
-									<a href="engagement.html">Course engagement</a>
-								</li>
-								<li>
-									<a href="traffic-conversion.html">Traffic &amp; conversion</a>
-								</li>
-								<li>
-									<a href="messages.html">Messages</a>
-								</li>
-							</ul>
-						</li>
-						<li class="menu-item-has-children">
-							<span class="mobile-menu-expand"></span>
-							<a href="/">Blog</a>
-							<ul class="sub-menu" style={{display: "none"}}>
-								<li class="menu-item-has-children">
-									<span class="mobile-menu-expand"></span>
-									<a href="/">Blog</a>
-									<ul class="sub-menu" style={{display: "none"}}>
-										<li>
-											<a href="blog-grid.html">Blog</a>
-										</li>
-										<li>
-											<a href="blog-left-sidebar.html">Blog Left Sidebar</a>
-										</li>
-										<li>
-											<a href="blog-right-sidebar.html">Blog Right Sidebar</a>
-										</li>
-									</ul>
-								</li>
-								<li class="menu-item-has-children">
-									<span class="mobile-menu-expand"></span>
-									<a href="/">Blog Details</a>
-									<ul class="sub-menu" style={{display: "none"}}>
-										<li>
-											<a href="blog-details-left-sidebar.html">
-												Blog Details Left Sidebar
-											</a>
-										</li>
-										<li>
-											<a href="blog-details-right-sidebar.html">
-												Blog Details Right Sidebar
-											</a>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a href="contact.html">Contact</a>
-						</li>
-					</ul>
-				</div>
-
-				<div class="mobile-social">
-					<ul class="social">
+				<div className="mobile-social">
+					<ul className="social">			
 						<li>
 							<a href="/">
-								<i class="flaticon-facebook"></i>
+								<FiFacebook size={24} />
 							</a>
 						</li>
 						<li>
 							<a href="/">
-								<i class="flaticon-twitter"></i>
+								<FiTwitter size={24} />
 							</a>
 						</li>
 						<li>
 							<a href="/">
-								<i class="flaticon-skype"></i>
+								<AiOutlineSkype size={26} />{" "}
 							</a>
 						</li>
 						<li>
 							<a href="/">
-								<i class="flaticon-instagram"></i>
+								<FiInstagram size={22} />
 							</a>
-						</li>
+						</li>								
 					</ul>
 				</div>
 			</div>

@@ -4,6 +4,7 @@ import { AiOutlineSkype } from "react-icons/ai";
 import Navbar from "../Navbar";
 import Download from "../Download";
 import Footer from "../Footer";
+import ScrollButton from "../ScrollButton";
 
 function BlogDetail(props) {
   const [scrollState, setScrollState] = useState(false);
@@ -398,6 +399,7 @@ function BlogDetail(props) {
         </div>
         {/* <!-- Blog Details End --> */}    
         <Download />
+        <ScrollButton scrollState={scrollState} />
         <Footer />
     </div>
   );

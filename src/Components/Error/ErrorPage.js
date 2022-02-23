@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../Navbar";
 import Download from "../Download";
 import Footer from "../Footer";
+import ScrollButton from '../ScrollButton';
 
 function ErrorPage(props) {
   const [scrollState, setScrollState] = useState(false);
@@ -89,6 +90,7 @@ function ErrorPage(props) {
         </div>
         {/* <!-- Error End --> */}
         <Download />
+        <ScrollButton scrollState={scrollState} />
 		<Footer />
     </div>
   );
