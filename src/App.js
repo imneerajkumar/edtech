@@ -40,12 +40,7 @@ function App() {
 				<Route exact path="/policy" element={<PrivacyPolicy />} />
 				<Route exact path="/about" element={<About />} />
 				<Route exact path="/contact" element={<Contact />} />
-<<<<<<< HEAD
 
-				{/* <Route exact path="/meeting" element={<Meeting />} /> */}
-=======
-				<Route exact path="/meeting" element={<Meeting />} />
->>>>>>> 4eb1fce9d9b20bee9996a986be15f4aa5341a862
 				<Route exact path="/meet" element={<JitsiMeetComponent />} />
 				<Route exact path="/admin" element={<CourseAdmin />} />
 				<Route exact path="/engagement" element={<Engagement />} />
