@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import {
 	FiInstagram,
@@ -9,28 +9,7 @@ import {
 } from "react-icons/fi";
 import { AiOutlineSkype } from "react-icons/ai";
 
-const Footer = ({ scrollState }) => {
-	const [scrollAuto, setScrollAuto] = useState(false);
-	const scrollHandle = () => {
-		//  $(".back-to-top").on("click", function (event) {
-		// 				event.preventDefault();
-
-		// 				$("html, body").animate(
-		// 					{
-		// 						scrollTop: 0,
-		// 					},
-		// 					1500
-		// 				);
-		// 			});
-		window.scrollTo(0, 0);
-	};
-	useEffect(() => {
-		if (scrollState) {
-			setScrollAuto(true);
-		} else {
-			setScrollAuto(false);
-		}
-	},[scrollAuto,scrollState]);
+const Footer = () => {
 	return (
 		<div>
 			{" "}
@@ -198,11 +177,6 @@ const Footer = ({ scrollState }) => {
 					</div>
 				</div>
 			</div>
-			{scrollState && (
-				<div class="back-to-top" onClick={scrollHandle}>
-					<i class="icofont-simple-up"></i>
-				</div>
-			)}
 		</div>
 	);
 };

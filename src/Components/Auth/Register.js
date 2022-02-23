@@ -8,6 +8,8 @@ import { studentRegister } from "../../store/actions/studentsAction";
 import { educatorRegister } from "../../store/actions/educatorAction";
 import Message from "../message/message";
 import { useNavigate } from "react-router-dom";
+import ScrollButton from "../ScrollButton";
+
 const Register = () => {
 	const [scrollState, setScrollState] = useState(false);
 	const [email, setEmail] = useState("");
@@ -241,8 +243,8 @@ const Register = () => {
 				</div>
 			</div>
 			{/* <!-- Register & Login End --> */}
-
 			<Download />
+			<ScrollButton scrollState={scrollState} />
 			<Footer />
 			{/* <!-- Footer Start  --> */}
 		</div>

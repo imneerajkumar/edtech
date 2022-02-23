@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { studentAuth } from "../../store/actions/studentsAction";
 import { educatorAuth } from "../../store/actions/educatorAction";
 import { useNavigate } from "react-router-dom";
+import ScrollButton from "../ScrollButton";
+
 const Login = () => {
 	const [scrollState, setScrollState] = useState(false);
 	const [email, setEmail] = useState("");
@@ -210,6 +212,7 @@ const Login = () => {
 			{/* <!-- Register & Login End -->*/}
 
 			<Download />
+			<ScrollButton scrollState={scrollState} />
 			<Footer />
 			{/* <!-- Footer Start  --> */}
 		</div>

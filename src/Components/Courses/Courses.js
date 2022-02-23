@@ -3,6 +3,7 @@ import { FiBookOpen, FiSearch } from "react-icons/fi";
 import Navbar from "../Navbar";
 import Download from "../Download";
 import Footer from "../Footer";
+import ScrollButton from "../ScrollButton";
 
 function Courses(props) {
   const [scrollState, setScrollState] = useState(false);
@@ -351,6 +352,7 @@ function Courses(props) {
         </div>
         {/* <!-- Courses End -->*/}
       <Download />
+			<ScrollButton scrollState={scrollState} />
 		  <Footer />
     </div>
   );

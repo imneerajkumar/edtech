@@ -3,6 +3,7 @@ import { FiBookOpen } from "react-icons/fi";
 import Navbar from "../Navbar";
 import Download from "../Download";
 import Footer from "../Footer";
+import ScrollButton from "../ScrollButton";
 
 function Blog(props) {
   const [scrollState, setScrollState] = useState(false);
@@ -396,8 +397,9 @@ function Blog(props) {
           </div>
       </div>
       {/* <!-- Blog End --> */}
-      <Download />
-		  <Footer />
+        <Download />
+        <ScrollButton scrollState={scrollState} />
+		<Footer />
     </div>
   );
 }
