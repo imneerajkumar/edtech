@@ -23,7 +23,7 @@ const Navbar = ({ scrollState }) => {
 	const { educatorInfo, loading, error } = educatorAuthReducer;
 	const [avatar, setAvatar] = useState("");
 	const studentAuthReducer = useSelector((state) => state.studentAuthReducer);
-    const [click,setClick]=useState(false)
+	const [click, setClick] = useState(false);
 	const {
 		studentInfo,
 		loading: loadStudent,
@@ -48,6 +48,14 @@ const Navbar = ({ scrollState }) => {
 		}
 		navigate("/");
 	};
+
+	function isLoginE() {
+		if (educatorInfo) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	// console.log(avatar);
 	return (
 		<div>
@@ -91,6 +99,11 @@ const Navbar = ({ scrollState }) => {
 									<li>
 										<Link to="/blogs">Blogs</Link>
 									</li>
+									{isLoginE() && (
+										<li>
+											<Link to="/admin">Admin</Link>
+										</li>
+									)}
 									<li>
 										<Link to="/contact">Contact Us</Link>
 									</li>
@@ -145,7 +158,12 @@ const Navbar = ({ scrollState }) => {
 
 							{/* <!-- Header Mobile Toggle Start --> */}
 							<div className="header-toggle d-lg-none">
-								<div className="menu-toggle" onClick={()=>{setClick(true)}}>
+								<div
+									className="menu-toggle"
+									onClick={() => {
+										setClick(true);
+									}}
+								>
 									<span></span>
 									<span></span>
 									<span></span>
@@ -159,8 +177,8 @@ const Navbar = ({ scrollState }) => {
 				{/* <!-- Header Main End --> */}
 			</div>
 
-			<div className={`mobile-menu ${click&&"open"} `}>
-				<div className="menu-close " onClick={()=>setClick(false)}>
+			<div className={`mobile-menu ${click && "open"} `}>
+				<div className="menu-close " onClick={() => setClick(false)}>
 					<FiArrowLeftCircle size={22} color="#309255" />
 				</div>
 
@@ -201,45 +219,43 @@ const Navbar = ({ scrollState }) => {
 
 				<div className="mobile-sign-in-up">
 					{avatar.length !== 0 ? (
-					<Dropdown>
-						<Avatar
-							sx={{
-								bgcolor: "#309255",
-								width: "60px",
-								height: "60px",
-								fontSize: "1.5rem",
-							}}
-						>
-							<Dropdown.Toggle
-								variant="success"
-								id="dropdown-autoclose-true"
-								style={{ display: "flex", justifyContent: "center" }}
+						<Dropdown>
+							<Avatar
+								sx={{
+									bgcolor: "#309255",
+									width: "60px",
+									height: "60px",
+									fontSize: "1.5rem",
+								}}
 							>
-								{avatar.slice(0, 1)}
-							</Dropdown.Toggle>
-						</Avatar>
-						<Dropdown.Menu>
-							<Dropdown.Item onClick={logoutHandle}>
-								Logout
-							</Dropdown.Item>
-							<Dropdown.Item>Another action</Dropdown.Item>
-							<Dropdown.Item>Something else</Dropdown.Item>
-						</Dropdown.Menu>
-					</Dropdown>
-				) : (
-					<ul>
-						<li>
-							<Link className="sign-in" to="/login">
-								Sign In
-							</Link>
-						</li>
-						<li>
-							<Link className="sign-up" to="/register">
-								Sign Up
-							</Link>
-						</li>
-					</ul>
-				)}
+								<Dropdown.Toggle
+									variant="success"
+									id="dropdown-autoclose-true"
+									style={{ display: "flex", justifyContent: "center" }}
+								>
+									{avatar.slice(0, 1)}
+								</Dropdown.Toggle>
+							</Avatar>
+							<Dropdown.Menu>
+								<Dropdown.Item onClick={logoutHandle}>Logout</Dropdown.Item>
+								<Dropdown.Item>Another action</Dropdown.Item>
+								<Dropdown.Item>Something else</Dropdown.Item>
+							</Dropdown.Menu>
+						</Dropdown>
+					) : (
+						<ul>
+							<li>
+								<Link className="sign-in" to="/login">
+									Sign In
+								</Link>
+							</li>
+							<li>
+								<Link className="sign-up" to="/register">
+									Sign Up
+								</Link>
+							</li>
+						</ul>
+					)}
 				</div>
 
 				<div className="mobile-menu-items">
@@ -256,6 +272,11 @@ const Navbar = ({ scrollState }) => {
 						<li>
 							<Link to="/blogs">Blogs</Link>
 						</li>
+						{isLoginE() && (
+							<li>
+								<Link to="/admin">Admin</Link>
+							</li>
+						)}
 						<li>
 							<Link to="/contact">Contact Us</Link>
 						</li>
@@ -263,7 +284,7 @@ const Navbar = ({ scrollState }) => {
 				</div>
 
 				<div className="mobile-social">
-					<ul className="social">			
+					<ul className="social">
 						<li>
 							<a href="/">
 								<FiFacebook size={24} />
@@ -283,7 +304,7 @@ const Navbar = ({ scrollState }) => {
 							<a href="/">
 								<FiInstagram size={22} />
 							</a>
-						</li>								
+						</li>
 					</ul>
 				</div>
 			</div>

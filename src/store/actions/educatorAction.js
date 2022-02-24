@@ -23,7 +23,7 @@ export const educatorAuth = (email, password) => async (dispatch) => {
 			type: EDUCATOR_LOGIN_SUCCESS,
 			payload: data,
 		});
-		localStorage.setItem("Educator Info", JSON.stringify(data));
+		localStorage.setItem("educatorInfo", JSON.stringify(data));
 	} catch (error) {
 		dispatch({
 			type: EDUCATOR_LOGIN_FAIL,

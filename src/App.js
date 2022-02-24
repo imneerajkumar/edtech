@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+	BrowserRouter as Router,
+	Navigate,
+	Route,
+	Routes,
+} from "react-router-dom";
 import Home from "./Components/Home/Home";
 import Register from "./Components/Auth/Register";
 import Login from "./Components/Auth/Login";
@@ -24,16 +29,42 @@ import Overview from "./Components/Admin/Overview";
 import Reviews from "./Components/Admin/Reviews";
 import Students from "./Components/Admin/Students";
 import Traffic from "./Components/Admin/Traffic";
+import { useSelector } from "react-redux";
 
 function App() {
-	return (       
+	const educatorAuthReducer = useSelector((state) => state.educatorAuthReducer);
+	const { educatorInfo } = educatorAuthReducer;
+	const studentAuthReducer = useSelector((state) => state.studentAuthReducer);
+	const { studentInfo } = studentAuthReducer;
+
+	function isLogin() {
+		if (studentInfo||educatorInfo ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+    	function isLoginE() {
+				if ( educatorInfo) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+	return (
 		<Router>
 			<ScrollToTop />
 			<Routes>
 				<Route exact path="/login" element={<Login />} />
 				<Route exact path="/register" element={<Register />} />
-				<Route exact path="/courses" element={<Courses />} />
+				<Route
+					exact
+					path="/courses"
+					element={isLogin() ? <Courses /> : <Navigate to="/login" />}
+				/>
+
 				<Route exact path="/course-details" element={<CourseDetail />} />
+
 				<Route exact path="/after-enroll" element={<AfterEnroll />} />
 				<Route exact path="/blogs" element={<Blog />} />
 				<Route exact path="/blog-detail" element={<BlogDetail />} />
@@ -42,13 +73,41 @@ function App() {
 				<Route exact path="/contact" element={<Contact />} />
 
 				<Route exact path="/meet" element={<JitsiMeetComponent />} />
-				<Route exact path="/admin" element={<CourseAdmin />} />
-				<Route exact path="/engagement" element={<Engagement />} />
-				<Route exact path="/messages" element={<Messages />} />
-				<Route exact path="/overview" element={<Overview />} />
-				<Route exact path="/reviews" element={<Reviews />} />
-				<Route exact path="/students" element={<Students />} />
-				<Route exact path="/traffic" element={<Traffic />} />
+				<Route
+					exact
+					path="/admin"
+					element={isLoginE() ? <CourseAdmin /> : <Navigate to="/login" />}
+				/>
+				<Route
+					exact
+					path="/engagement"
+					element={isLoginE() ? <Engagement /> : <Navigate to="/login" />}
+				/>
+				<Route
+					exact
+					path="/messages"
+					element={isLoginE() ? <Messages /> : <Navigate to="/login" />}
+				/>
+				<Route
+					exact
+					path="/overview"
+					element={isLoginE() ? <Overview /> : <Navigate to="/login" />}
+				/>
+				<Route
+					exact
+					path="/reviews"
+					element={isLoginE() ? <Reviews /> : <Navigate to="/login" />}
+				/>
+				<Route
+					exact
+					path="/students"
+					element={isLoginE() ? <Students /> : <Navigate to="/login" />}
+				/>
+				<Route
+					exact
+					path="/traffic"
+					element={isLoginE() ? <Traffic /> : <Navigate to="/login" />}
+				/>
 				<Route exact path="/" element={<Home />} />
 				<Route path="*" element={<ErrorPage />} />
 			</Routes>

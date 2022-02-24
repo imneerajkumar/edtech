@@ -52,7 +52,7 @@ function Contact(props) {
 				{/* <!-- Shape Icon Box Start --> */}
 				<div className="shape-icon-box">
 					<img
-						className="icon-shape-1 animation-left"
+						className="icon-shape-1 "
 						src="assets/images/shape/shape-5.png"
 						alt="Shape"
 					/>
