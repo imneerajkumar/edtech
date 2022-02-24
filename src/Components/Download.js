@@ -23,7 +23,7 @@ const Download = () => {
                     </div>
                     {/* <!-- Section Title End --> */}
 
-                    <img className="shape-1 animation-right" src="assets/images/shape/shape-14.png" alt="Shape" />
+                    <img className="shape-1 " src="assets/images/shape/shape-14.png" alt="Shape" />
 
                     {/* <!-- Download App Button End --> */}
                     <div className="download-app-btn">

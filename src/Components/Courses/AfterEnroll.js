@@ -1,9 +1,62 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Download from "../Download";
 import Footer from "../Footer";
+import ReactPlayer from "react-player";
 
 function Courses(props) {
 	const [collap, setcollap] = useState(true);
+	useEffect(() => {
+		const element = document.getElementById("myvid");
+		console.log(element);
+		//         $(document).ready(function()
+
+		// {
+		// 	var vid = $('#myvid');
+
+		// 	//default video source
+		//     $(vid).attr("src", $("a.link:first").attr("href"));
+
+		//     // addclassName playing to first video link
+		//     $("a.link:first").addclassName("playing");
+
+		// $("a.link").on("click" , function  (event) {
+
+		// 	// prevent link default
+		//     event.preventDefault();
+
+		//     // change video source
+		//     $(vid).attr("src", $(this).attr("href"));
+
+		//     // remouve className playing from unplayed video href
+		//     $(".vids a").removeclassName("playing");
+
+		//     // add className playing to video href
+		//     $(this).addclassName("playing");
+
+		//     // add className paused to give the play/pause button the right look
+		//     $('.btnPlay').addclassName('paused');
+
+		//     // play the video
+		//     vid[0].play();
+
+		//     // adjust prev button state
+		//     if ($("a.link:first").hasclassName("playing")) {
+		//     $(".prevvid").addclassName("disabled");
+		//     }
+		//     else {
+		//         $(".prevvid").removeclassName("disabled");
+		//     }
+
+		//     // adjust next button state
+		//     if ($("a.link:last").hasclassName("playing")) {
+		//     $(".nextvid").addclassName("disabled");
+		//     }
+		//     else {
+		//         $(".nextvid").removeclassName("disabled");
+		//     }
+
+		// });
+	});
 	return (
 		<div className="main-wrapper">
 			<div className="section login-header">
@@ -584,7 +637,6 @@ function Courses(props) {
 										className="collapsed"
 										type="button"
 										data-bs-toggle="collapse"
-										onClick={() => setcollap((prev) => !prev)}
 										data-bs-target="#collapseOne"
 									>
 										<p>
@@ -596,7 +648,7 @@ function Courses(props) {
 
 									<div
 										id="collapseOne"
-										className={`accordion-collapse ${collap && "collapse"}`}
+										className="accordion-collapse collapse"
 										data-bs-parent="#videoPlaylist"
 									>
 										<nav className="vids">
@@ -672,23 +724,11 @@ function Courses(props) {
 
                           <!-- Accordion Items Start  --> */}
 								<div className="accordion-item">
-									{/* <button
-										class="btn btn-primary"
-										type="button"
-										data-bs-toggle="collapse"
-										data-bs-target="#collapseExample"
-										aria-expanded="false"
-										aria-controls="collapseExample"
-									>
-										Button with data-bs-target
-									</button> */}
 									<button
 										className="collapsed"
 										type="button"
 										data-bs-toggle="collapse"
 										data-bs-target="#collapseTwo"
-										aria-expanded="false"
-										aria-controls="collapseTwo"
 									>
 										<p>
 											Lesson-02: Science Fiction & Fantasy: Creating Unique and

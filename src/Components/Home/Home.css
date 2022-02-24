@@ -1,0 +1,39 @@
+.work-icon{
+    display: flex;
+    align-items: center;
+        width: 65px;
+    height: 65px;
+    /* padding: 20px; */
+    line-height: 68px;
+    text-align: center;
+    border: 1px solid rgba(48, 146, 85, 0.2);
+    border-radius: 10px;
+    background-color: #fff;
+    color: #309255;
+    display: inline-block;
+    font-size: 32px;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.single-work:hover .work-icon  {
+    border-color: #309255;
+    background-color: #309255;
+    color: #fff;
+}
+
+.icon{
+    vertical-align: baseline;
+}
+.single-courses .courses-content .courses-meta .time{
+    display: flex;
+    align-items: center;
+}
+.single-blog .blog-content .blog-meta .time{
+    display: flex;
+    align-items: center;
+}
+.time svg{
+    margin-right: 10px;
+}

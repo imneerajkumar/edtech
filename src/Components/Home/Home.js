@@ -4,7 +4,8 @@ import Navbar from "../Navbar";
 import Download from "../Download";
 import Footer from "../Footer";
 import ScrollButton from "../ScrollButton";
-
+import { FaSearch, FaHeart } from "react-icons/fa";
+import "./Home.css";
 const Home = () => {
 	const [scrollState, setScrollState] = useState(false);
 
@@ -51,13 +52,13 @@ const Home = () => {
 				{/* <!-- Slider Courses Box Start --> */}
 				<div className="slider-courses-box">
 					<img
-						className="shape-1 animation-left"
+						className="shape-1"
 						src="assets/images/shape/shape-5.png"
 						alt="Shape"
 					/>
 
 					<div className="box-content">
-						<div className="box-wrapper">					
+						<div className="box-wrapper">
 							<FiBookOpen color="#fff" size={32} />
 							<span className="count">1,235</span>
 							<p>courses</p>
@@ -163,12 +164,12 @@ const Home = () => {
 													</a>
 												</h4>
 												<div className="courses-meta">
-													<span>
+													<span className="time">
 														{" "}
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
-													<span>
-														{" "}	
+													<span className="time">
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -228,12 +229,12 @@ const Home = () => {
 													</a>
 												</h4>
 												<div className="courses-meta">
-													<span>
+													<span className="time">
 														{" "}
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
-													<span>
-														{" "}	
+													<span className="time">
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -292,12 +293,12 @@ const Home = () => {
 													</a>
 												</h4>
 												<div className="courses-meta">
-													<span>
+													<span className="time">
 														{" "}
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
-													<span>
-														{" "}	
+													<span className="time">
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -357,12 +358,12 @@ const Home = () => {
 													</a>
 												</h4>
 												<div className="courses-meta">
-													<span>
+													<span className="time">
 														{" "}
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
-													<span>
-														{" "}	
+													<span className="time">
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -421,12 +422,12 @@ const Home = () => {
 													</a>
 												</h4>
 												<div className="courses-meta">
-													<span>
+													<span className="time">
 														{" "}
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
-													<span>
-														{" "}	
+													<span className="time">
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -485,12 +486,12 @@ const Home = () => {
 													</a>
 												</h4>
 												<div className="courses-meta">
-													<span>
+													<span className="time">
 														{" "}
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
-													<span>
-														{" "}	
+													<span className="time">
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -562,7 +563,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -627,7 +628,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -691,7 +692,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -756,7 +757,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -820,7 +821,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -884,7 +885,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -956,7 +957,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -1021,7 +1022,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -1085,7 +1086,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -1150,7 +1151,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -1214,7 +1215,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -1278,7 +1279,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -1345,12 +1346,12 @@ const Home = () => {
 													</a>
 												</h4>
 												<div className="courses-meta">
-												<span>
+													<span>
 														{" "}
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -1410,12 +1411,12 @@ const Home = () => {
 													</a>
 												</h4>
 												<div className="courses-meta">
-												<span>
+													<span>
 														{" "}
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -1479,7 +1480,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -1544,7 +1545,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -1608,7 +1609,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -1672,7 +1673,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -1744,7 +1745,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -1809,7 +1810,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -1873,7 +1874,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -1938,7 +1939,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -2002,7 +2003,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -2066,7 +2067,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -2138,7 +2139,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -2203,7 +2204,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -2267,7 +2268,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -2332,7 +2333,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -2396,7 +2397,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -2460,7 +2461,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -2532,7 +2533,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -2597,7 +2598,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -2661,7 +2662,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -2726,7 +2727,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -2785,12 +2786,12 @@ const Home = () => {
 													</a>
 												</h4>
 												<div className="courses-meta">
-												<span>
+													<span>
 														{" "}
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -2854,7 +2855,7 @@ const Home = () => {
 														<FiClock color="#309255" size={22} /> 08 hr 15 mins
 													</span>
 													<span>
-														{" "}	
+														{" "}
 														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
 													</span>
 												</div>
@@ -2882,10 +2883,7 @@ const Home = () => {
 
 					{/* <!-- All Courses BUtton Start --> */}
 					<div className="courses-btn text-center">
-						<a
-							href="/courses"
-							className="btn btn-secondary btn-hover-primary"
-						>
+						<a href="/courses" className="btn btn-secondary btn-hover-primary">
 							Other Course
 						</a>
 					</div>
@@ -2899,6 +2897,11 @@ const Home = () => {
 				<div className="container">
 					{/* <!-- Call to Action Wrapper Start --> */}
 					<div className="call-to-action-wrapper">
+						<img
+							class="cat-shape-02"
+							src="assets/images/shape/shape-13.svg"
+							alt="Shape"
+						/>
 						<div className="row align-items-center">
 							<div className="col-md-6">
 								{/* <!-- Section Title Start --> */}
@@ -2912,10 +2915,7 @@ const Home = () => {
 							</div>
 							<div className="col-md-6">
 								<div className="call-to-action-btn">
-									<a
-										className="btn btn-primary btn-hover-dark"
-										href="/contact"
-									>
+									<a className="btn btn-primary btn-hover-dark" href="/contact">
 										Drop Information
 									</a>
 								</div>
@@ -2950,7 +2950,8 @@ const Home = () => {
 							/>
 
 							<div className="work-icon">
-								<i className="flaticon-transparency"></i>
+								<FaSearch size={26} className="icon" />
+								{/* <i className="flaticon-transparency"></i> */}
 							</div>
 							<div className="work-content">
 								<h3 className="title">Find Your Course</h3>
@@ -3200,13 +3201,15 @@ const Home = () => {
 										</h4>
 
 										<div className="blog-meta">
-											<span>
+											<span className="time">
 												{" "}
 												<i className="icofont-calendar"></i> 21 March, 2021
 											</span>
-											<span>
+											<span className="time">
 												{" "}
-												<i className="icofont-heart"></i> 2,568+{" "}
+												<FaHeart size={22} color="#309255" />
+												2,568+
+												{/* <i className="icofont-heart"></i> 2,568+{" "} */}
 											</span>
 										</div>
 
@@ -3257,13 +3260,15 @@ const Home = () => {
 										</h4>
 
 										<div className="blog-meta">
-											<span>
+											<span className="time">
 												{" "}
 												<i className="icofont-calendar"></i> 21 March, 2021
 											</span>
-											<span>
+											<span className="time">
 												{" "}
-												<i className="icofont-heart"></i> 2,568+{" "}
+												<FaHeart size={22} color="#309255" />
+												2,568+
+												{/* <i className="icofont-heart"></i> 2,568+{" "} */}
 											</span>
 										</div>
 
@@ -3315,13 +3320,15 @@ const Home = () => {
 										</h4>
 
 										<div className="blog-meta">
-											<span>
+											<span className="time">
 												{" "}
 												<i className="icofont-calendar"></i> 21 March, 2021
 											</span>
-											<span>
+											<span className="time">
 												{" "}
-												<i className="icofont-heart"></i> 2,568+{" "}
+												<FaHeart size={22} color="#309255" />
+												2,568+
+												{/* <i className="icofont-heart"></i> 2,568+{" "} */}
 											</span>
 										</div>
 

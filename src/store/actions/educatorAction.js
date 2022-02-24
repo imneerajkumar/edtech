@@ -3,7 +3,7 @@ import {
     EDUCATOR_LOGIN_REQUEST, EDUCATOR_LOGIN_SUCCESS, EDUCATOR_LOGOUT, EDUCATOR_REGISTER_FAIL, EDUCATOR_REGISTER_REQUEST, EDUCATOR_REGISTER_SUCCESS,
 } from "../constants/constants";
 import axios from "axios";
-const API_URL = "https://edulearning1.herokuapp.com/";
+const API_URL = "https://edulearning1.herokuapp.com";
 export const educatorAuth = (email, password) => async (dispatch) => {
 	try {
 		dispatch({

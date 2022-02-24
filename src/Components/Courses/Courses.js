@@ -44,7 +44,7 @@ function Courses(props) {
 
 					{/* <!-- Shape Icon Box Start --> */}
 					<div className="shape-icon-box">
-						<img className="icon-shape-1 animation-left" src="assets/images/shape/shape-5.png" alt="Shape" />
+						<img className="icon-shape-1 " src="assets/images/shape/shape-5.png" alt="Shape" />
 						<div className="box-content">
 							<div className="box-wrapper">
 								<FiBookOpen color="#fff" size={50} />
