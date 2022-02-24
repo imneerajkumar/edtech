@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Download from "../Download";
 import Footer from "../Footer";
-import ReactPlayer from "react-player";
+// import ReactPlayer from "react-player";
 
 function Courses(props) {
-	const [collap, setcollap] = useState(true);
+	// const [collap, setcollap] = useState(true);
 	useEffect(() => {
 		const element = document.getElementById("myvid");
 		console.log(element);

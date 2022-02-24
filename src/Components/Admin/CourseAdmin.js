@@ -1,4 +1,6 @@
 import React from 'react';
+import { AiOutlineUser } from 'react-icons/ai';
+import { FiLogOut, FiMail, FiSearch, FiHeart, FiMessageSquare } from 'react-icons/fi';
 import Footer from '../Footer';
 
 function CourseAdmin(props) {
@@ -18,14 +20,13 @@ function CourseAdmin(props) {
 
                 {/* <!-- Header Search Start --> */}
                 <div className="login-header-search dropdown">
-                    <button className="search-toggle" data-bs-toggle="dropdown"><i className="flaticon-loupe"></i></button>
+                    <button className="search-toggle" data-bs-toggle="dropdown"><i><FiSearch /></i></button>
 
                     <div className="search-input dropdown-menu">
                         <form action="#">
                             <input type="text" placeholder="Search here" />
                         </form>
                     </div>
-
                 </div>
                 {/* <!-- Header Search End --> */}
 
@@ -33,13 +34,13 @@ function CourseAdmin(props) {
                 <div className="login-header-action ml-auto">
                     <div className="dropdown">
                         <button className="action notification" data-bs-toggle="dropdown">
-                            <i className="flaticon-notification"></i>
+                            <i><FiMessageSquare/> </i>
                             <span className="active"></span>
                         </button>
                         <div className="dropdown-menu dropdown-notification">
                             <ul className="notification-items-list">
                                 <li className="notification-item">
-                                    <span className="notify-icon bg-success text-white"><i className="icofont-ui-user"></i></span>
+                                    <span className="notify-icon bg-success text-white"><i><AiOutlineUser /></i></span>
                                     <div className="dropdown-body">
                                         <a href="/">
                                             <p><strong>Martin</strong> has added a <strong>customer</strong> Successfully
@@ -49,7 +50,7 @@ function CourseAdmin(props) {
                                     <span className="notify-time">3:20 am</span>
                                 </li>
                                 <li className="notification-item">
-                                    <span className="notify-icon bg-success text-white"><i className="icofont-shopping-cart"></i></span>
+                                    <span className="notify-icon bg-success text-white"><i><AiOutlineUser /></i></span>
                                     <div className="dropdown-body">
                                         <a href="/">
                                             <p><strong>Jennifer</strong> purchased Light Dashboard 2.0.</p>
@@ -58,7 +59,7 @@ function CourseAdmin(props) {
                                     <span className="notify-time">3:20 am</span>
                                 </li>
                                 <li className="notification-item">
-                                    <span className="notify-icon bg-danger text-white"><i className="icofont-book-mark"></i></span>
+                                    <span className="notify-icon bg-danger text-white"><i><FiHeart /></i></span>
                                     <div className="dropdown-body">
                                         <a href="/">
                                             <p><strong>Robin</strong> marked a <strong>ticket</strong> as unsolved.
@@ -68,7 +69,7 @@ function CourseAdmin(props) {
                                     <span className="notify-time">3:20 am</span>
                                 </li>
                                 <li className="notification-item">
-                                    <span className="notify-icon bg-success text-white"><i className="icofont-heart-alt"></i></span>
+                                    <span className="notify-icon bg-success text-white"><i><AiOutlineUser /></i></span>
                                     <div className="dropdown-body">
                                         <a href="/">
                                             <p><strong>David</strong> purchased Light Dashboard 1.0.</p>
@@ -77,7 +78,7 @@ function CourseAdmin(props) {
                                     <span className="notify-time">3:20 am</span>
                                 </li>
                                 <li className="notification-item">
-                                    <span className="notify-icon bg-success text-white"><i className="icofont-image"></i></span>
+                                    <span className="notify-icon bg-success text-white"><i><AiOutlineUser /></i></span>
                                     <div className="dropdown-body">
                                         <a href="/">
                                             <p><strong> James.</strong> has added a<strong>customer</strong> Successfully
@@ -87,7 +88,7 @@ function CourseAdmin(props) {
                                     <span className="notify-time">3:20 am</span>
                                 </li>
                             </ul>
-                            <a className="all-notification" href="/">See all notifications <i className="icofont-simple-right"></i></a>
+                            <a className="all-notification" href="/">See all notifications</a>
                         </div>
                     </div>
 
@@ -102,9 +103,9 @@ function CourseAdmin(props) {
                             <span></span>
                         </button>
                         <ul className="dropdown-menu">
-                            <li><a className="" href="/"><i className="icofont-user"></i> Profile</a></li>
-                            <li><a className="" href="/"><i className="icofont-inbox"></i> Inbox</a></li>
-                            <li><a className="" href="/"><i className="icofont-logout"></i> Sign Out</a></li>
+                            <li><a className="" href="/"><i><AiOutlineUser /></i> Profile</a></li>
+                            <li><a className="" href="/"><i><FiMail /></i> Inbox</a></li>
+                            <li><a className="" href="/"><i><FiLogOut /></i> Sign Out</a></li>
                         </ul>
                     </div>
                 </div>

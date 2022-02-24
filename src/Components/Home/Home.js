@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { FiBookOpen, FiClock, FiVideo } from "react-icons/fi";
+import { FiBookOpen, FiClock, FiVideo, FiCalendar } from "react-icons/fi";
+import { AiFillHeart } from "react-icons/ai";
 import Navbar from "../Navbar";
 import Download from "../Download";
 import Footer from "../Footer";
 import ScrollButton from "../ScrollButton";
-import { FaSearch, FaHeart } from "react-icons/fa";
+import { FaBookmark, FaCertificate, FaQuoteRight, FaSearch } from "react-icons/fa";
 import "./Home.css";
+
 const Home = () => {
 	const [scrollState, setScrollState] = useState(false);
 
@@ -108,8 +110,8 @@ const Home = () => {
 						<div className="courses-search">
 							<form action="#">
 								<input type="text" placeholder="Search your course" />
-								<button>
-									<i className="flaticon-magnifying-glass"></i>
+								<button className="blog-meta">
+									<i><FaSearch /></i>
 								</button>
 							</form>
 						</div>
@@ -2951,7 +2953,6 @@ const Home = () => {
 
 							<div className="work-icon">
 								<FaSearch size={26} className="icon" />
-								{/* <i className="flaticon-transparency"></i> */}
 							</div>
 							<div className="work-content">
 								<h3 className="title">Find Your Course</h3>
@@ -2981,7 +2982,7 @@ const Home = () => {
 							/>
 
 							<div className="work-icon">
-								<i className="flaticon-forms"></i>
+								<FaBookmark size={24} className="icon" />
 							</div>
 							<div className="work-content">
 								<h3 className="title">Book A Seat</h3>
@@ -3011,7 +3012,7 @@ const Home = () => {
 							/>
 
 							<div className="work-icon">
-								<i className="flaticon-badge"></i>
+								<FaCertificate size={26} className="icon" />
 							</div>
 							<div className="work-content">
 								<h3 className="title">Get Certificate</h3>
@@ -3053,7 +3054,7 @@ const Home = () => {
 												alt="Author"
 											/>
 
-											<i className="icofont-quote-left"></i>
+											<i><FaQuoteRight /></i>
 										</div>
 
 										<span className="rating-star">
@@ -3199,20 +3200,10 @@ const Home = () => {
 												On!
 											</a>
 										</h4>
-
 										<div className="blog-meta">
-											<span className="time">
-												{" "}
-												<i className="icofont-calendar"></i> 21 March, 2021
-											</span>
-											<span className="time">
-												{" "}
-												<FaHeart size={22} color="#309255" />
-												2,568+
-												{/* <i className="icofont-heart"></i> 2,568+{" "} */}
-											</span>
+											<span><i><FiCalendar /></i> 21 March, 2021</span>
+											<span><i><AiFillHeart /></i>  2,568+ </span>
 										</div>
-
 										<a
 											href="blog-details-left-sidebar.html"
 											className="btn btn-secondary btn-hover-primary"
@@ -3257,21 +3248,12 @@ const Home = () => {
 											<a href="blog-detail">
 												Create Amazing Color Schemes for Your UX Design Projects
 											</a>
-										</h4>
-
-										<div className="blog-meta">
-											<span className="time">
-												{" "}
-												<i className="icofont-calendar"></i> 21 March, 2021
-											</span>
-											<span className="time">
-												{" "}
-												<FaHeart size={22} color="#309255" />
-												2,568+
-												{/* <i className="icofont-heart"></i> 2,568+{" "} */}
-											</span>
-										</div>
-
+										</h4>					
+											<div className="blog-meta">
+												<span><i><FiCalendar /></i> 21 March, 2021</span>
+												<span><i><AiFillHeart /></i>  2,568+ </span>
+											</div>										
+									
 										<a
 											href="blog-detail"
 											className="btn btn-secondary btn-hover-primary"
@@ -3318,20 +3300,10 @@ const Home = () => {
 												Business
 											</a>
 										</h4>
-
 										<div className="blog-meta">
-											<span className="time">
-												{" "}
-												<i className="icofont-calendar"></i> 21 March, 2021
-											</span>
-											<span className="time">
-												{" "}
-												<FaHeart size={22} color="#309255" />
-												2,568+
-												{/* <i className="icofont-heart"></i> 2,568+{" "} */}
-											</span>
+											<span><i><FiCalendar /></i> 21 March, 2021</span>
+											<span><i><AiFillHeart /></i>  2,568+ </span>
 										</div>
-
 										<a
 											href="blog-detail"
 											className="btn btn-secondary btn-hover-primary"

@@ -44,13 +44,15 @@ function App() {
 			return false;
 		}
 	}
-    	function isLoginE() {
-				if ( educatorInfo) {
-					return true;
-				} else {
-					return false;
-				}
-			}
+
+	function isLoginE() {
+		if ( educatorInfo) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	return (
 		<Router>
 			<ScrollToTop />
@@ -62,10 +64,12 @@ function App() {
 					path="/courses"
 					element={isLogin() ? <Courses /> : <Navigate to="/login" />}
 				/>
-
 				<Route exact path="/course-details" element={<CourseDetail />} />
-
-				<Route exact path="/after-enroll" element={<AfterEnroll />} />
+				<Route
+					exact
+					path="/after-enroll"
+					element={isLogin() ? <AfterEnroll /> : <Navigate to="/login" />}
+				/>
 				<Route exact path="/blogs" element={<Blog />} />
 				<Route exact path="/blog-detail" element={<BlogDetail />} />
 				<Route exact path="/policy" element={<PrivacyPolicy />} />

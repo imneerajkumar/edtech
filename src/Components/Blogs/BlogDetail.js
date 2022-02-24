@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { FiAward, FiLinkedin, FiInstagram, FiFacebook, FiTwitter } from "react-icons/fi";
-import { AiOutlineSkype } from "react-icons/ai";
+import { FiAward,  FiCalendar, FiLinkedin, FiInstagram, FiFacebook, FiTwitter } from "react-icons/fi";
+import { FaReply, FaSearch } from "react-icons/fa";
+import { AiOutlineSkype, AiFillHeart } from "react-icons/ai";
 import Navbar from "../Navbar";
 import Download from "../Download";
 import Footer from "../Footer";
@@ -83,8 +84,8 @@ function BlogDetail(props) {
                                     </div>
                                 </div>
                                 <div className="blog-meta">
-                                    <span> <i className="icofont-calendar"></i> 21 March, 2021</span>
-                                    <span> <i className="icofont-heart"></i> 2,568+ </span>
+                                      <span><i><FiCalendar /></i> 21 March, 2021</span>
+                                      <span><i><AiFillHeart /></i>  2,568+ </span>
                                     <span className="tag"><a href="/">Science</a></span>
                                 </div>
                             </div>
@@ -167,7 +168,7 @@ function BlogDetail(props) {
                                                 </div>
                                             </div>
                                             <p>Lorem Ipsum has been the industry's standard dummy text since the 1500 when unknown printer took a galley type and scrambled to make type specimen’s book has survived not five centuries but also the leap into electronic type and book.</p>
-                                            <a href="/" className="reply"> <i className="icofont-reply"></i> Reply</a>
+                                            <a href="/" className="reply"><i><FaReply /></i></a>
                                         </div>
                                         {/* <!-- Single Comment End --> */}
 
@@ -188,7 +189,7 @@ function BlogDetail(props) {
                                                         </div>
                                                     </div>
                                                     <p>Lorem Ipsum has been the industry's standard dumm text since the 1500 when printer took a galley type and scrambled to make type specimen book survived centuries but also the electronic type and book.</p>
-                                                    <a href="/" className="reply"> <i className="icofont-reply"></i> Reply</a>
+                                                    <a href="/" className="reply"><i><FaReply /></i>Reply</a>
                                                 </div>
                                                 {/* <!-- Single Comment End --> */}
                                             </li>
@@ -210,7 +211,7 @@ function BlogDetail(props) {
                                                 </div>
                                             </div>
                                             <p>Lorem Ipsum has been the industry's standard dummy text since the 1500 when unknown printer took a galley type and scrambled to make type specimen’s book has survived not five centuries but also the leap into electronic type and book.</p>
-                                            <a href="/" className="reply"> <i className="icofont-reply"></i> Reply</a>
+                                            <a href="/" className="reply"><i><FaReply /></i>Reply</a>
                                         </div>
                                         {/* <!-- Single Comment End --> */}
                                     </li>
@@ -269,7 +270,9 @@ function BlogDetail(props) {
                             <div className="sidebar-widget widget-search">
                                 <form action="#">
                                     <input type="text" placeholder="Search here" />
-                                    <button><i className="icofont-search-1"></i></button>
+                                    <button>
+                                        <i><FaSearch /></i>
+                                    </button>
                                 </form>
                             </div>
                             {/* <!-- Sidebar Widget Search End --> */}
@@ -305,7 +308,7 @@ function BlogDetail(props) {
                                                 </div>
                                                 <div className="post-content">
                                                     <h5 className="title"><a href="blog-details-left-sidebar.html">Create Amazing Color Schemes Design</a></h5>
-                                                    <span className="date"><i className="icofont-calendar"></i> 21 March, 2021</span>
+                                                    <span className="date"><i><FiCalendar /></i> 21 March, 2021</span>
                                                 </div>
                                             </div>
                                             {/* <!-- Sidebar Widget Post End --> */}
@@ -318,7 +321,7 @@ function BlogDetail(props) {
                                                 </div>
                                                 <div className="post-content">
                                                     <h5 className="title"><a href="blog-details-left-sidebar.html">Data Science Machine Learning with Python</a></h5>
-                                                    <span className="date"><i className="icofont-calendar"></i> 21 March, 2021</span>
+                                                    <span className="date"><i><FiCalendar /></i> 21 March, 2021</span>
                                                 </div>
                                             </div>
                                             {/* <!-- Sidebar Widget Post End --> */}
@@ -331,7 +334,7 @@ function BlogDetail(props) {
                                                 </div>
                                                 <div className="post-content">
                                                     <h5 className="title"><a href="blog-details-left-sidebar.html">Leadership: Strategies for Business</a></h5>
-                                                    <span className="date"><i className="icofont-calendar"></i> 21 March, 2021</span>
+                                                    <span className="date"><i><FiCalendar /></i> 21 March, 2021</span>
                                                 </div>
                                             </div>
                                             {/* <!-- Sidebar Widget Post End --> */}
@@ -344,7 +347,7 @@ function BlogDetail(props) {
                                                 </div>
                                                 <div className="post-content">
                                                     <h5 className="title"><a href="blog-details-left-sidebar.html">Illustrating Badges & Geometric Shapes</a></h5>
-                                                    <span className="date"><i className="icofont-calendar"></i> 21 March, 2021</span>
+                                                    <span className="date"><i><FiCalendar /></i> 21 March, 2021</span>
                                                 </div>
                                             </div>
                                             {/* <!-- Sidebar Widget Post End --> */}
