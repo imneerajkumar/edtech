@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FiBookOpen } from "react-icons/fi";
+import { FiAward, FiMail, FiMap, FiPhoneCall } from "react-icons/fi";
 import Navbar from "../Navbar";
 import Download from "../Download";
 import Footer from "../Footer";
@@ -58,8 +58,8 @@ function Contact(props) {
 					/>
 					<div className="box-content">
 						<div className="box-wrapper">
-							<FiBookOpen color="#fff" size={50} />
-						</div>
+							<FiAward color="#fff" size={"50%"} />
+            </div>
 					</div>
 					<img
 						className="icon-shape-2"
@@ -109,27 +109,35 @@ function Contact(props) {
 								<div className="contact-info">
 									{/* <!-- Single Contact Info Start --> */}
 									<div className="single-contact-info">
-										<div className="info-icon">
-											<i className="flaticon-phone-call"></i>
+										<div className="info-icon">									
+											<i style={{
+													display: "flex",
+													alignItems: "center",
+													justifyContent: "center"
+											}}><FiPhoneCall /></i>                                       
 										</div>
 										<div className="info-content">
 											<h6 className="title">Phone No.</h6>
 											<p>
-												<a href="tel:88193326867">(88) 193 326 867</a>
+												<a href="tel:9875543210">9876543210</a>
 											</p>
 										</div>
 									</div>
 									{/* <!-- Single Contact Info End -->
                                 <!-- Single Contact Info Start --> */}
 									<div className="single-contact-info">
-										<div className="info-icon">
-											<i className="flaticon-email"></i>
+										<div className="info-icon">									
+											<i style={{
+													display: "flex",
+													alignItems: "center",
+													justifyContent: "center"
+											}}><FiMail /></i>                                       
 										</div>
 										<div className="info-content">
 											<h6 className="title">Email Address.</h6>
 											<p>
-												<a href="mailto:edule100@gmail.com">
-													edule100@gmail.com
+												<a href="mailto:address@gmail.com">
+													address@gmail.com
 												</a>
 											</p>
 										</div>
@@ -137,12 +145,16 @@ function Contact(props) {
 									{/* <!-- Single Contact Info End -->
                                 <!-- Single Contact Info Start --> */}
 									<div className="single-contact-info">
-										<div className="info-icon">
-											<i className="flaticon-pin"></i>
+										<div className="info-icon">									
+											<i style={{
+													display: "flex",
+													alignItems: "center",
+													justifyContent: "center"
+											}}><FiMap /></i>                                       
 										</div>
 										<div className="info-content">
 											<h6 className="title">Office Address.</h6>
-											<p>Talga, Alabama, USA</p>
+											<p>New Delhi, India</p>
 										</div>
 									</div>
 									{/* <!-- Single Contact Info End --> */}
@@ -192,8 +204,8 @@ function Contact(props) {
 											<p className="form-message"></p>
 											{/* <!-- Single Form Start --> */}
 											<div className="single-form">
-												<button className="btn btn-primary btn-hover-dark w-100">
-													Send Message <i className="flaticon-right"></i>
+											<button className="btn btn-primary btn-hover-dark w-100">
+													Send Message 
 												</button>
 											</div>
 											{/* <!-- Single Form End --> */}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { FiBookOpen } from "react-icons/fi";
+import { FiAward,  FiUsers } from "react-icons/fi";
+import {  AiFillCode, AiFillSafetyCertificate, AiFillStar } from "react-icons/ai";
 import Navbar from "../Navbar";
 import Download from "../Download";
 import Footer from "../Footer";
@@ -46,7 +47,7 @@ function About(props) {
             <img className="icon-shape-1 " src="assets/images/shape/shape-5.png" alt="Shape" />
             <div className="box-content">
               <div className="box-wrapper">
-                <FiBookOpen color="#fff" size={50} />
+                <FiAward color="#fff" size={"50%"} />
               </div>
             </div>
             <img className="icon-shape-2" src="assets/images/shape/shape-6.png" alt="Shape" />
@@ -109,7 +110,11 @@ function About(props) {
                                 <div className="about-item">
                                     <div className="item-icon-title">
                                         <div className="item-icon">
-                                            <i className="flaticon-tutor"></i>
+                                            <i style={{
+                                                display: "flex",
+                                                alignItems: "center",
+                                                justifyContent: "center"
+                                            }}><FiUsers /></i>
                                         </div>
                                         <div className="item-title">
                                             <h3 className="title">Top Instructors</h3>
@@ -123,10 +128,14 @@ function About(props) {
                             <div className="col-lg-4">
                                 {/* <!-- About Item Start --> */}
                                 <div className="about-item">
-                                    <div className="item-icon-title">
+                                    <div className="item-icon-title">                                       
                                         <div className="item-icon">
-                                            <i className="flaticon-coding"></i>
-                                        </div>
+                                            <i style={{
+                                                display: "flex",
+                                                alignItems: "center",
+                                                justifyContent: "center"
+                                            }}><AiFillCode /></i>
+                                        </div>                                       
                                         <div className="item-title">
                                             <h3 className="title">Portable Program</h3>
                                         </div>
@@ -141,7 +150,11 @@ function About(props) {
                                 <div className="about-item">
                                     <div className="item-icon-title">
                                         <div className="item-icon">
-                                            <i className="flaticon-increase"></i>
+                                            <i style={{
+                                                display: "flex",
+                                                alignItems: "center",
+                                                justifyContent: "center"
+                                            }}><AiFillSafetyCertificate /></i>
                                         </div>
                                         <div className="item-title">
                                             <h3 className="title">Improve Quickly</h3>
@@ -214,9 +227,16 @@ function About(props) {
                                     <img src="assets/images/author/author-01.jpg" alt="Author" />
                                 </div>
                                 <div className="team-content">
-                                    <div className="rating">
+                                    <div 
+                                        className="rating" 
+                                        style={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center"
+                                        }}
+                                    >
                                         <span className="count">4.9</span>
-                                        <i className="icofont-star"></i>
+                                        <AiFillStar color="orange" />
                                         <span className="text">(rating)</span>
                                     </div>
                                     <h4 className="name">Margarita James</h4>
@@ -233,9 +253,16 @@ function About(props) {
                                     <img src="assets/images/author/author-02.jpg" alt="Author" />
                                 </div>
                                 <div className="team-content">
-                                    <div className="rating">
+                                    <div 
+                                        className="rating" 
+                                        style={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center"
+                                        }}
+                                    >
                                         <span className="count">4.9</span>
-                                        <i className="icofont-star"></i>
+                                        <AiFillStar color="orange" />
                                         <span className="text">(rating)</span>
                                     </div>
                                     <h4 className="name">Mitchell Colon</h4>
@@ -253,9 +280,16 @@ function About(props) {
                                     <img src="assets/images/author/author-03.jpg" alt="Author" />
                                 </div>
                                 <div className="team-content">
-                                    <div className="rating">
+                                    <div 
+                                        className="rating" 
+                                        style={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center"
+                                        }}
+                                    >
                                         <span className="count">4.9</span>
-                                        <i className="icofont-star"></i>
+                                        <AiFillStar color="orange" />
                                         <span className="text">(rating)</span>
                                     </div>
                                     <h4 className="name">Sonya Gordon</h4>
@@ -272,9 +306,16 @@ function About(props) {
                                     <img src="assets/images/author/author-04.jpg" alt="Author" />
                                 </div>
                                 <div className="team-content">
-                                    <div className="rating">
+                                    <div 
+                                        className="rating" 
+                                        style={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center"
+                                        }}
+                                    >
                                         <span className="count">4.9</span>
-                                        <i className="icofont-star"></i>
+                                        <AiFillStar color="orange" />
                                         <span className="text">(rating)</span>
                                     </div>
                                     <h4 className="name">Archie Neal</h4>
@@ -291,9 +332,16 @@ function About(props) {
                                     <img src="assets/images/author/author-05.jpg" alt="Author" />
                                 </div>
                                 <div className="team-content">
-                                    <div className="rating">
+                                     <div 
+                                        className="rating" 
+                                        style={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center"
+                                        }}
+                                    >
                                         <span className="count">4.9</span>
-                                        <i className="icofont-star"></i>
+                                        <AiFillStar color="orange" />
                                         <span className="text">(rating)</span>
                                     </div>
                                     <h4 className="name">Randal Ramsey</h4>
@@ -309,9 +357,16 @@ function About(props) {
                                     <img src="assets/images/author/author-06.jpg" alt="Author" />
                                 </div>
                                 <div className="team-content">
-                                    <div className="rating">
+                                    <div 
+                                        className="rating" 
+                                        style={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center"
+                                        }}
+                                    >
                                         <span className="count">4.9</span>
-                                        <i className="icofont-star"></i>
+                                        <AiFillStar color="orange" />
                                         <span className="text">(rating)</span>
                                     </div>
                                     <h4 className="name">Rochelle Thomas</h4>
@@ -329,9 +384,16 @@ function About(props) {
                                     <img src="assets/images/author/author-07.jpg" alt="Author" />
                                 </div>
                                 <div className="team-content">
-                                    <div className="rating">
+                                    <div 
+                                        className="rating" 
+                                        style={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center"
+                                        }}
+                                    >
                                         <span className="count">4.9</span>
-                                        <i className="icofont-star"></i>
+                                        <AiFillStar color="orange" />
                                         <span className="text">(rating)</span>
                                     </div>
                                     <h4 className="name">Della Salazar</h4>
@@ -349,9 +411,16 @@ function About(props) {
                                     <img src="assets/images/author/author-08.jpg" alt="Author" />
                                 </div>
                                 <div className="team-content">
-                                    <div className="rating">
+                                    <div 
+                                        className="rating" 
+                                        style={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center"
+                                        }}
+                                    >
                                         <span className="count">4.9</span>
-                                        <i className="icofont-star"></i>
+                                        <AiFillStar color="orange" />
                                         <span className="text">(rating)</span>
                                     </div>
                                     <h4 className="name">Ricardo Patrick</h4>
@@ -368,9 +437,16 @@ function About(props) {
                                     <img src="assets/images/author/author-09.jpg" alt="Author" />
                                 </div>
                                 <div className="team-content">
-                                    <div className="rating">
+                                    <div 
+                                        className="rating" 
+                                        style={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center"
+                                        }}
+                                    >
                                         <span className="count">4.9</span>
-                                        <i className="icofont-star"></i>
+                                        <AiFillStar color="orange" />
                                         <span className="text">(rating)</span>
                                     </div>
                                     <h4 className="name">Kurt Stewart</h4>
@@ -387,9 +463,16 @@ function About(props) {
                                     <img src="assets/images/author/author-10.jpg" alt="Author" />
                                 </div>
                                 <div className="team-content">
-                                    <div className="rating">
+                                    <div 
+                                        className="rating" 
+                                        style={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "center"
+                                        }}
+                                    >
                                         <span className="count">4.9</span>
-                                        <i className="icofont-star"></i>
+                                        <AiFillStar color="orange" />
                                         <span className="text">(rating)</span>
                                     </div>
                                     <h4 className="name">Rodney Terry</h4>

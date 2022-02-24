@@ -28,8 +28,8 @@ const Footer = () => {
 									</div>
 
 									<div className="widget-address">
-										<h4 className="footer-widget-title">Caribbean Ct</h4>
-										<p>Haymarket, Virginia (VA).</p>
+										<h4 className="footer-widget-title">New Delhi</h4>
+										<p>Delhi, India.</p>
 									</div>
 
 									<ul className="widget-info">
@@ -61,9 +61,9 @@ const Footer = () => {
 												<FiPhoneCall color="#309255" size={22} />
 												<a
 													style={{ marginTop: 0, marginBottom: "2px" }}
-													href="tel:9702621413"
+													href="tel:9876543210"
 												>
-													(970) 262-1413
+													9876543210
 												</a>{" "}
 											</p>
 										</li>

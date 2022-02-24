@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FiBookOpen, FiLinkedin, FiInstagram, FiFacebook, FiTwitter } from "react-icons/fi";
+import { FiAward, FiLinkedin, FiInstagram, FiFacebook, FiTwitter } from "react-icons/fi";
 import { AiOutlineSkype } from "react-icons/ai";
 import Navbar from "../Navbar";
 import Download from "../Download";
@@ -28,9 +28,7 @@ function BlogDetail(props) {
         {/* <!-- Overlay End --> */}
 
         {/* <!-- Page Banner Start --> */}
-        <div className="section page-banner">
-            <img className="shape-2" src="assets/images/shape/shape-23.png" alt="Shape" />
-
+        <div className="section page-banner">    
             <div className="container">
                 {/* <!-- Page Banner Start --> */}
                 <div className="page-banner-content">
@@ -50,7 +48,7 @@ function BlogDetail(props) {
 
                 <div className="box-content">
                     <div className="box-wrapper">
-                        <FiBookOpen color="#fff" size={50} />
+                        <FiAward color="#fff" size={"50%"} />
                     </div>
                 </div>
 

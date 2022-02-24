@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { FiBookOpen } from "react-icons/fi";
+import { FiAward,  FiCalendar } from "react-icons/fi";
+import { AiFillHeart, AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import Navbar from "../Navbar";
 import Download from "../Download";
 import Footer from "../Footer";
@@ -49,7 +50,7 @@ function Blog(props) {
 
               <div className="box-content">
                   <div className="box-wrapper">
-                     <FiBookOpen color="#fff" size={50} />
+                    <FiAward color="#fff" size={"50%"} />
                   </div>
               </div>
 
@@ -97,8 +98,8 @@ function Blog(props) {
                                   <h4 className="title"><a href="/blog-detail">Data Science and Machine Learning with Python - Hands On!</a></h4>
 
                                   <div className="blog-meta">
-                                      <span> <i className="icofont-calendar"></i> 21 March, 2021</span>
-                                      <span> <i className="icofont-heart"></i> 2,568+ </span>
+                                      <span><i><FiCalendar /></i> 21 March, 2021</span>
+                                      <span><i><AiFillHeart /></i>  2,568+ </span>
                                   </div>
 
                                   <a href="/blog-detail" className="btn btn-secondary btn-hover-primary">Read More</a>
@@ -132,8 +133,8 @@ function Blog(props) {
                                   <h4 className="title"><a href="/blog-detail">Create Amazing Color Schemes for Your UX Design Projects</a></h4>
 
                                   <div className="blog-meta">
-                                      <span> <i className="icofont-calendar"></i> 21 March, 2021</span>
-                                      <span> <i className="icofont-heart"></i> 2,568+ </span>
+                                      <span><i><FiCalendar /></i> 21 March, 2021</span>
+                                      <span><i><AiFillHeart /></i>  2,568+ </span>
                                   </div>
 
                                   <a href="/blog-detail" className="btn btn-secondary btn-hover-primary">Read More</a>
@@ -167,8 +168,8 @@ function Blog(props) {
                                   <h4 className="title"><a href="/blog-detail">Culture & Leadership: Strategies for a Successful Business</a></h4>
 
                                   <div className="blog-meta">
-                                      <span> <i className="icofont-calendar"></i> 21 March, 2021</span>
-                                      <span> <i className="icofont-heart"></i> 2,568+ </span>
+                                  <span><i><FiCalendar /></i> 21 March, 2021</span>
+                                      <span><i><AiFillHeart /></i>  2,568+ </span>
                                   </div>
 
                                   <a href="/blog-detail" className="btn btn-secondary btn-hover-primary">Read More</a>
@@ -201,8 +202,8 @@ function Blog(props) {
                                   <h4 className="title"><a href="/blog-detail">Data Science and Machine Learning with Python - Hands On!</a></h4>
 
                                   <div className="blog-meta">
-                                      <span> <i className="icofont-calendar"></i> 21 March, 2021</span>
-                                      <span> <i className="icofont-heart"></i> 2,568+ </span>
+                                  <span><i><FiCalendar /></i> 21 March, 2021</span>
+                                      <span><i><AiFillHeart /></i>  2,568+ </span>
                                   </div>
 
                                   <a href="/blog-detail" className="btn btn-secondary btn-hover-primary">Read More</a>
@@ -236,8 +237,8 @@ function Blog(props) {
                                   <h4 className="title"><a href="/blog-detail">Create Amazing Color Schemes for Your UX Design Projects</a></h4>
 
                                   <div className="blog-meta">
-                                      <span> <i className="icofont-calendar"></i> 21 March, 2021</span>
-                                      <span> <i className="icofont-heart"></i> 2,568+ </span>
+                                  <span><i><FiCalendar /></i> 21 March, 2021</span>
+                                      <span><i><AiFillHeart /></i>  2,568+ </span>
                                   </div>
 
                                   <a href="/blog-detail" className="btn btn-secondary btn-hover-primary">Read More</a>
@@ -269,8 +270,8 @@ function Blog(props) {
                                   <h4 className="title"><a href="/blog-detail">Culture & Leadership: Strategies for a Successful Business</a></h4>
 
                                   <div className="blog-meta">
-                                      <span> <i className="icofont-calendar"></i> 21 March, 2021</span>
-                                      <span> <i className="icofont-heart"></i> 2,568+ </span>
+                                    <span><i><FiCalendar /></i> 21 March, 2021</span>
+                                      <span><i><AiFillHeart /></i>  2,568+ </span>
                                   </div>
 
                                   <a href="/blog-detail" className="btn btn-secondary btn-hover-primary">Read More</a>
@@ -301,8 +302,8 @@ function Blog(props) {
                                   <h4 className="title"><a href="/blog-detail">Data Science and Machine Learning with Python - Hands On!</a></h4>
 
                                   <div className="blog-meta">
-                                      <span> <i className="icofont-calendar"></i> 21 March, 2021</span>
-                                      <span> <i className="icofont-heart"></i> 2,568+ </span>
+                                  <span><i><FiCalendar /></i> 21 March, 2021</span>
+                                      <span><i><AiFillHeart /></i>  2,568+ </span>
                                   </div>
 
                                   <a href="/blog-detail" className="btn btn-secondary btn-hover-primary">Read More</a>
@@ -335,8 +336,8 @@ function Blog(props) {
                                   <h4 className="title"><a href="/blog-detail">Create Amazing Color Schemes for Your UX Design Projects</a></h4>
 
                                   <div className="blog-meta">
-                                      <span> <i className="icofont-calendar"></i> 21 March, 2021</span>
-                                      <span> <i className="icofont-heart"></i> 2,568+ </span>
+                                  <span><i><FiCalendar /></i> 21 March, 2021</span>
+                                      <span><i><AiFillHeart /></i>  2,568+ </span>
                                   </div>
 
                                   <a href="/blog-detail" className="btn btn-secondary btn-hover-primary">Read More</a>
@@ -370,8 +371,8 @@ function Blog(props) {
                                   <h4 className="title"><a href="/blog-detail">Culture & Leadership: Strategies for a Successful Business</a></h4>
 
                                   <div className="blog-meta">
-                                      <span> <i className="icofont-calendar"></i> 21 March, 2021</span>
-                                      <span> <i className="icofont-heart"></i> 2,568+ </span>
+                                  <span><i><FiCalendar /></i> 21 March, 2021</span>
+                                      <span><i><AiFillHeart /></i>  2,568+ </span>
                                   </div>
 
                                   <a href="/blog-detail" className="btn btn-secondary btn-hover-primary">Read More</a>
@@ -386,11 +387,11 @@ function Blog(props) {
               <!-- Page Pagination End --> */}
               <div className="page-pagination">
                   <ul className="pagination justify-content-center">
-                      <li><a href="/blogs"><i className="icofont-rounded-left"></i></a></li>
+                      <li><a href="/blogs"><AiOutlineLeft /></a></li>
                       <li><a className="active" href="/blogs">1</a></li>
                       <li><a href="/blogs">2</a></li>
                       <li><a href="/blogs">3</a></li>
-                      <li><a href="/blogs"><i className="icofont-rounded-right"></i></a></li>
+                      <li><a href="/blogs"><AiOutlineRight /></a></li>
                   </ul>
               </div>
               {/* <!-- Page Pagination End --> */}

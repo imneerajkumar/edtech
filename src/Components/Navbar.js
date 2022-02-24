@@ -192,9 +192,9 @@ const Navbar = ({ scrollState }) => {
 						<FiPhoneCall color="#309255" size={22} />
 						<a
 							style={{ marginTop: 0, marginBottom: "2px" }}
-							href="tel:9702621413"
+							href="tel:9876543210"
 						>
-							(970) 262-1413
+							9876543210
 						</a>
 					</p>
 				</div>
