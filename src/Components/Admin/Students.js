@@ -254,15 +254,7 @@ function Students(props) {
                       </div>
                       {/* <!-- Student's Wrapper End -->
 
-                      <!-- Student's Map Start --> */}
-                      <div className="students-map">
-                          <h4 className="title">Student's locations and languages.</h4>
-
-                          <div className="map">
-                              <div id="vmap"></div>
-                          </div>
-                      </div>
-                      {/* <!-- Student's Map End -->
+                    
 
                       <!-- Student's Widget Start --> */}
                       <div className="students-widget">

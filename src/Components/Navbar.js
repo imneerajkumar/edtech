@@ -179,7 +179,7 @@ const Navbar = ({ scrollState }) => {
 
 			<div className={`mobile-menu ${click && "open"} `}>
 				<div className="menu-close " onClick={() => setClick(false)}>
-					<FiArrowLeftCircle size={22} color="#309255" />
+					<FiArrowLeftCircle size={32} color="#309255" />
 				</div>
 
 				<div className="mobile-top">
@@ -187,44 +187,40 @@ const Navbar = ({ scrollState }) => {
 						style={{
 							display: "flex",
 							alignItems: "center",
-							justifyContent: "space-evenly",
 							padding: "3px",
 						}}
 					>
-						<FiMail size={22} color="#309255" />
-						<a
-							style={{ marginTop: 0, marginBottom: "2px" }}
-							href="mailto:address@gmail.com"
-						>
-							address@gmail.com
+						<FiPhoneCall
+							color="#309255"
+							size={22}
+							style={{ marginRight: "10px" }}
+						/>
+						<a style={{ marginTop: 0 }} href="tel:9876543210">
+							(9876543210)
 						</a>
 					</p>
 					<p
 						style={{
 							display: "flex",
 							alignItems: "center",
-							justifyContent: "space-evenly",
 							padding: "3px",
 						}}
 					>
-						<FiPhoneCall color="#309255" size={22} />
-						<a
-							style={{ marginTop: 0, marginBottom: "2px" }}
-							href="tel:9876543210"
-						>
-							9876543210
+						<FiMail size={22} color="#309255" style={{ marginRight: "10px" }} />
+						<a style={{ marginTop: 0 }} href="mailto:address@gmail.com">
+							address@gmail.com
 						</a>
 					</p>
 				</div>
 
-				<div className="mobile-sign-in-up">
+				<div className="mobile-sign-in-up" style={{paddingTop:"20px"}}>
 					{avatar.length !== 0 ? (
-						<Dropdown>
+						<Dropdown style={{ display: "flex" ,justifyContent:"center"}}>
 							<Avatar
 								sx={{
 									bgcolor: "#309255",
-									width: "60px",
-									height: "60px",
+									width: "50px",
+									height: "50px",
 									fontSize: "1.5rem",
 								}}
 							>
@@ -258,7 +254,7 @@ const Navbar = ({ scrollState }) => {
 					)}
 				</div>
 
-				<div className="mobile-menu-items">
+				<div className="mobile-menu-items" style={{paddingTop:"20px"}}>
 					<ul className="nav-menu">
 						<li>
 							<Link to="/">Home</Link>
