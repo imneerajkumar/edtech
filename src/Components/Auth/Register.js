@@ -160,6 +160,10 @@ const Register = () => {
 									<div className="col-lg-6">
 										{/* <!-- Register & Login Form Start --> */}
 										<div className="register-login-form">
+											{(error || educatorError) && 
+												<Message variant="danger" children={error ? error : educatorError} /> 
+											}
+
 											<h3 className="title">
 												Registration <span>Now</span>
 											</h3>

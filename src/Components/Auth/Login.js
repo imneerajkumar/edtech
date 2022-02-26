@@ -9,18 +9,19 @@ import { educatorAuth } from "../../store/actions/educatorAction";
 import { useNavigate } from "react-router-dom";
 import ScrollButton from "../ScrollButton";
 import Loader from '../Loader/Loader';
+import Message from "../message/message";
 
 const Login = () => {
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
 	const [scrollState, setScrollState] = useState(false);
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [isStudent, setIsStudent] = useState(false);
-	const dispatch = useDispatch();
 	const educatorA = useSelector((state) => state.educatorAuthReducer);
 	const { loading: EducatorLoading, error: educatorError, educatorInfo } = educatorA;
 	const studentA = useSelector((state) => state.studentAuthReducer);
 	const { loading, error, studentInfo } = studentA;
-	const navigate = useNavigate();
 
 	useEffect(() => {
 		window.addEventListener("scroll", (e) => {
@@ -152,6 +153,10 @@ const Login = () => {
 								<div className="col-lg-6">
 									{/* <!-- Register & Login Form Start --> */}
 									<div className="register-login-form">
+										{(error || educatorError) && 
+											<Message variant="danger" children={error ? error : educatorError} /> 
+										}
+
 										<h3 className="title">
 											Login <span>Now</span>
 										</h3>
