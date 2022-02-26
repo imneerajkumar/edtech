@@ -2,6 +2,12 @@
     .add-height{
         display: flex;
         align-items: center;
-        height: 976px;
+        height: 786px;
+    }   
+}
+
+@media (max-width:1024px) {
+    .spot {
+        display: none;
     }
 }

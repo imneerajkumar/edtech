@@ -5,14 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Dropdown } from "react-bootstrap";
 import { logout } from "../store/actions/studentsAction";
 import { logoutEducator } from "../store/actions/educatorAction";
-import {
-	FiInstagram,
-	FiTwitter,
-	FiFacebook,
-	FiPhoneCall,
-	FiMail,
-	FiArrowLeftCircle,
-} from "react-icons/fi";
+import { FiInstagram,	FiTwitter,	FiFacebook,	FiPhoneCall,	FiMail,	FiArrowLeftCircle } from "react-icons/fi";
 import { AiOutlineSkype } from "react-icons/ai";
 import "./Navbar.css";
 

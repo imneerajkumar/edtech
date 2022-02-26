@@ -1,9 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutEducator } from "../../store/actions/educatorAction";
 import { AiOutlineUser } from 'react-icons/ai';
 import { FiLogOut, FiMail, FiHeart, FiEye } from 'react-icons/fi';
+import { Link, useNavigate } from 'react-router-dom';
+import { Avatar } from "@mui/material";
 import Footer from '../Footer';
 
 function Messages(props) {
+    const dispatch = useDispatch();
+	const navigate = useNavigate();
+    const educatorAuthReducer = useSelector((state) => state.educatorAuthReducer);
+	const { educatorInfo, loading } = educatorAuthReducer;
+	const [avatar, setAvatar] = useState("");
+	
+    useEffect(() => {
+		if (educatorInfo) {
+			setAvatar(educatorInfo.name.toUpperCase());
+		}
+	}, [educatorInfo, loading, avatar]);
+
+    const logoutHandle = () => {
+		if (educatorInfo) {
+			dispatch(logoutEducator());
+		}
+		navigate("/");
+	};
+
   return (
     <div className="main-wrapper main-wrapper-02">
          {/* <!-- Login Header Start --> */}
@@ -85,7 +108,16 @@ function Messages(props) {
                     </div>
 
                     <span className="action author">
-                        <img src="assets/images/author/author-07.jpg" alt="Author" />
+                        <Avatar
+                            sx={{
+                                bgcolor: "#fff",
+                                color: "#309255",
+                                width: "60px",
+                                height: "60px",
+                                fontSize: "1.5rem",
+                            }}
+                        >{avatar.slice(0, 1)}
+                        </Avatar>
                     </span>
 
                     <div className="dropdown">
@@ -95,9 +127,24 @@ function Messages(props) {
                             <span></span>
                         </button>
                         <ul className="dropdown-menu">
-                            <li><i><AiOutlineUser /></i> Profile</li>
-                            <li><i><FiMail /></i> Inbox</li>
-                            <li><i><FiLogOut /></i> Sign Out</li>
+                            <li>
+                                <button style={{border: "none", backgroundColor: "#fff"}}>
+                                    <AiOutlineUser />
+                                    {"   "}Profile
+                                </button>
+                            </li>
+                            <li>
+                                <button style={{border: "none", backgroundColor: "#fff"}} onClick={() => navigate('/messages')}>
+                                    <FiMail />
+                                    {"   "}Inbox
+                                </button>
+                            </li>
+                            <li> 
+                                <button style={{border: "none", backgroundColor: "#fff"}} onClick={logoutHandle}>
+                                    <FiLogOut /> 
+                                    {"   "}Log Out
+                                </button>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -114,9 +161,11 @@ function Messages(props) {
             {/* <!-- Sidebar Wrapper Start --> */}
             <div className="sidebar-wrapper" style={{backgroundColor: "#309255"}}>
                 <div className="menu-list">
-                    <a href="/admin"><img src="assets/images/menu-icon/icon-1.png" alt="Icon" /></a>
-                    <a href="/messages" className="active"><img src="assets/images/menu-icon/icon-2.png" alt="Icon" /></a>
-                    <a href="/overview"><img src="assets/images/menu-icon/icon-3.png" alt="Icon" /></a>
+                    <Link to="/admin"><img src="assets/images/menu-icon/icon-5.png" alt="Icon" /></Link>
+                    <Link to="/messages" className='active'><img src="assets/images/menu-icon/icon-2.png" alt="Icon" /></Link>
+                    <Link to="/overview"><img src="assets/images/menu-icon/icon-4.png" alt="Icon" /></Link>
+                    <Link to="/students"><img src="assets/images/menu-icon/icon-1.png" alt="Icon" /></Link>
+                    <Link to="/engagement"><img src="assets/images/menu-icon/icon-3.png" alt="Icon" /></Link>
                 </div>
             </div>
             {/* <!-- Sidebar Wrapper End --> */}
@@ -199,8 +248,7 @@ function Messages(props) {
                                             <div className="user-content">
                                                 <h6 className="name">Natosha Sibley</h6>
                                                 <p>Woolentor and woocommerce</p>
-                                            </div>
-                                            <span className="time">02 days ago</span>
+                                            </div>                                          
                                         </div>
                                         {/* <!-- Single User End -->
 
@@ -212,8 +260,7 @@ function Messages(props) {
                                             <div className="user-content">
                                                 <h6 className="name">Alison Hunter</h6>
                                                 <p>Woolentor and woocommerce</p>
-                                            </div>
-                                            <span className="time">02 days ago</span>
+                                            </div>                                           
                                         </div>
                                         {/* <!-- Single User End -->
 
@@ -226,7 +273,6 @@ function Messages(props) {
                                                 <h6 className="name">Mabel Alvarez</h6>
                                                 <p>Woolentor and woocommerce</p>
                                             </div>
-                                            <span className="time">02 days ago</span>
                                         </div>
                                         {/* <!-- Single User End -->
 
@@ -239,7 +285,6 @@ function Messages(props) {
                                                 <h6 className="name">Preston Farmer</h6>
                                                 <p>Woolentor and woocommerce</p>
                                             </div>
-                                            <span className="time">02 days ago</span>
                                         </div>
                                         {/* <!-- Single User End --> */}
 

@@ -134,7 +134,7 @@ const AddCourse = () => {
 							<div className="col-lg-6">
 								{/* <!-- Register & Login Images Start --> */}
 								<div className="register-login-images add-height">
-									<div className="shape-1">
+									<div className="shape-1 spot">
 										<img src="assets/images/shape/shape-26.png" alt="Shape" />
 									</div>
 
@@ -176,7 +176,7 @@ const AddCourse = () => {
 												/>
 											</div>
 											<div className="single-form">
-												<label for="Courseimage" style={{ fontSize: "18px" }}>
+												<label htmlFor="Courseimage" style={{ fontSize: "18px" }}>
 													Course Image
 												</label>
 
@@ -195,7 +195,7 @@ const AddCourse = () => {
 											</div>
 											<div className="single-form">
 												<label
-													for="Instructorimage"
+													htmlFor="Instructorimage"
 													style={{ fontSize: "18px" }}
 												>
 													Instructor Image
