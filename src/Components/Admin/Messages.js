@@ -1,13 +1,13 @@
 import React from 'react';
 import { AiOutlineUser } from 'react-icons/ai';
-import { FiLogOut, FiMail, FiSearch, FiHeart, FiMessageSquare } from 'react-icons/fi';
+import { FiLogOut, FiMail, FiHeart, FiEye } from 'react-icons/fi';
 import Footer from '../Footer';
 
 function Messages(props) {
   return (
     <div className="main-wrapper main-wrapper-02">
          {/* <!-- Login Header Start --> */}
-         <div className="section login-header">
+        <div className="section login-header" style={{backgroundColor: "#309255"}}>
             {/* <!-- Login Header Wrapper Start --> */}
             <div className="login-header-wrapper navbar navbar-expand">
 
@@ -19,13 +19,7 @@ function Messages(props) {
 
                 {/* <!-- Header Search Start --> */}
                 <div className="login-header-search dropdown">
-                    <button className="search-toggle" data-bs-toggle="dropdown"><i><FiSearch /></i></button>
-
-                    <div className="search-input dropdown-menu">
-                        <form action="#">
-                            <input type="text" placeholder="Search here" />
-                        </form>
-                    </div>
+                    <div className="search-input dropdown-menu"></div>
                 </div>
                 {/* <!-- Header Search End --> */}
 
@@ -33,67 +27,66 @@ function Messages(props) {
                 <div className="login-header-action ml-auto">
                     <div className="dropdown">
                         <button className="action notification" data-bs-toggle="dropdown">
-                            <i><FiMessageSquare/> </i>
-                            <span className="active"></span>
+                            <FiMail color="white" />
                         </button>
                         <div className="dropdown-menu dropdown-notification">
                             <ul className="notification-items-list">
                                 <li className="notification-item">
                                     <span className="notify-icon bg-success text-white"><i><AiOutlineUser /></i></span>
                                     <div className="dropdown-body">
-                                        <a href="/">
+                                        <span>
                                             <p><strong>Martin</strong> has added a <strong>customer</strong> Successfully
                                             </p>
-                                        </a>
+                                        </span>
                                     </div>
                                     <span className="notify-time">3:20 am</span>
                                 </li>
                                 <li className="notification-item">
                                     <span className="notify-icon bg-success text-white"><i><AiOutlineUser /></i></span>
                                     <div className="dropdown-body">
-                                        <a href="/">
+                                        <span>
                                             <p><strong>Jennifer</strong> purchased Light Dashboard 2.0.</p>
-                                        </a>
+                                        </span>
                                     </div>
                                     <span className="notify-time">3:20 am</span>
                                 </li>
                                 <li className="notification-item">
                                     <span className="notify-icon bg-danger text-white"><i><FiHeart /></i></span>
                                     <div className="dropdown-body">
-                                        <a href="/">
+                                        <span>
                                             <p><strong>Robin</strong> marked a <strong>ticket</strong> as unsolved.
                                             </p>
-                                        </a>
+                                        </span>
                                     </div>
                                     <span className="notify-time">3:20 am</span>
                                 </li>
                                 <li className="notification-item">
                                     <span className="notify-icon bg-success text-white"><i><AiOutlineUser /></i></span>
                                     <div className="dropdown-body">
-                                        <a href="/">
+                                        <span>
                                             <p><strong>David</strong> purchased Light Dashboard 1.0.</p>
-                                        </a>
+                                        </span>
                                     </div>
                                     <span className="notify-time">3:20 am</span>
                                 </li>
                                 <li className="notification-item">
                                     <span className="notify-icon bg-success text-white"><i><AiOutlineUser /></i></span>
                                     <div className="dropdown-body">
-                                        <a href="/">
+                                        <span>
                                             <p><strong> James.</strong> has added a<strong>customer</strong> Successfully
                                             </p>
-                                        </a>
+                                        </span>
                                     </div>
                                     <span className="notify-time">3:20 am</span>
                                 </li>
                             </ul>
-                            <a className="all-notification" href="/">See all notifications</a>
+                            <span className="all-notification">See all notifications</span>
                         </div>
                     </div>
 
-                    <a className="action author" href="/">
+                    <span className="action author">
                         <img src="assets/images/author/author-07.jpg" alt="Author" />
-                    </a>
+                    </span>
 
                     <div className="dropdown">
                         <button className="action more" data-bs-toggle="dropdown">
@@ -102,9 +95,9 @@ function Messages(props) {
                             <span></span>
                         </button>
                         <ul className="dropdown-menu">
-                            <li><a className="" href="/"><i><AiOutlineUser /></i> Profile</a></li>
-                            <li><a className="" href="/"><i><FiMail /></i> Inbox</a></li>
-                            <li><a className="" href="/"><i><FiLogOut /></i> Sign Out</a></li>
+                            <li><i><AiOutlineUser /></i> Profile</li>
+                            <li><i><FiMail /></i> Inbox</li>
+                            <li><i><FiLogOut /></i> Sign Out</li>
                         </ul>
                     </div>
                 </div>
@@ -115,15 +108,14 @@ function Messages(props) {
         </div>
         {/* <!-- Login Header End --> */}
 
-
         {/* <!-- Courses Admin Start --> */}
         <div className="section overflow-hidden position-relative" id="wrapper">
 
             {/* <!-- Sidebar Wrapper Start --> */}
-            <div className="sidebar-wrapper">
+            <div className="sidebar-wrapper" style={{backgroundColor: "#309255"}}>
                 <div className="menu-list">
-                    <a className="active" href="/admin"><img src="assets/images/menu-icon/icon-1.png" alt="Icon" /></a>
-                    <a href="/messages"><img src="assets/images/menu-icon/icon-2.png" alt="Icon" /></a>
+                    <a href="/admin"><img src="assets/images/menu-icon/icon-1.png" alt="Icon" /></a>
+                    <a href="/messages" className="active"><img src="assets/images/menu-icon/icon-2.png" alt="Icon" /></a>
                     <a href="/overview"><img src="assets/images/menu-icon/icon-3.png" alt="Icon" /></a>
                 </div>
             </div>
@@ -133,11 +125,11 @@ function Messages(props) {
 
                 {/* <!-- Admin Tab Menu Start --> */}
                 <div className="nav flex-column nav-pills admin-tab-menu">
-                    <a className="active" href="/">Question & Answer <span>3</span></a>
-                    <a href="/">Featured Question</a>
-                    <a href="/">Message <span>4</span></a>
-                    <a href="/">Assigment’s</a>
-                    <a href="/">Announcement’s</a>
+                    <a className="active" href="/messages">Question & Answer <span>3</span></a>
+                    <a href="/messages">Featured Question</a>
+                    <a href="/messages">Message <span>4</span></a>
+                    <a href="/messages">Assigment’s</a>
+                    <a href="/messages">Announcement’s</a>
                 </div>
                 {/* <!-- Admin Tab Menu End --> */}
 
@@ -157,7 +149,7 @@ function Messages(props) {
                                                 <option value="1">option</option>
                                                 <option value="2">option</option>
                                                 <option value="3">option</option>
-                                                <option value="4">Potato</option>
+                                                <option value="4">option</option>
                                             </select>
                                         </div>
                                     </li>
@@ -272,8 +264,8 @@ function Messages(props) {
                                                             <h4 className="title">How do the online demos and trial downloads differ?</h4>
                                                         </div>
                                                         <div className="meta">
-                                                            <span className="view"><i className="icofont-eye-alt"></i> 526 Views</span>
-                                                            <a className="answer" href="/"><i className="icofont-ui-messaging"></i> Answer</a>
+                                                            <span className="view"><i><FiEye /></i> 526 Views</span>
+                                                            <span className="answer"> Answer</span>
                                                         </div>
                                                     </div>
                                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make specimen book has survived not only five centuries.</p>
@@ -293,7 +285,7 @@ function Messages(props) {
                                                                     <span className="time">Asked: March 28, 2021</span>
                                                                 </div>
                                                                 <div className="meta">
-                                                                    <a className="answer" href="/"><i className="icofont-ui-messaging"></i> Answer</a>
+                                                                    <span className="answer">Answer</span>
                                                                 </div>
                                                             </div>
                                                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make specimen book has survived not only five centuries.</p>
@@ -314,7 +306,7 @@ function Messages(props) {
                                                             <span className="time">Asked: March 28, 2021</span>
                                                         </div>
                                                         <div className="meta">
-                                                            <a className="answer" href="/"><i className="icofont-ui-messaging"></i> Answer</a>
+                                                            <span className="answer">Answer</span>
                                                         </div>
                                                     </div>
                                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make specimen book has survived not only five centuries.</p>
@@ -334,7 +326,7 @@ function Messages(props) {
                                                     <textarea placeholder="Post a public answer"></textarea>
 
                                                     <div className="message-btn">
-                                                        <button className="btn btn-secondary btn-hover-primary">Cancel</button>
+                                                        <button className="btn btn-hover-primary">Cancel</button>
                                                         <button className="btn btn-primary btn-hover-dark">Submit</button>
                                                     </div>
                                                 </div>
@@ -354,7 +346,7 @@ function Messages(props) {
             </div>
         </div>
         {/* <!-- Courses Admin End --> */}
-      <Footer />
+        <Footer />
     </div>
   );
 }

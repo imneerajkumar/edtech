@@ -1,14 +1,13 @@
 import React from 'react';
 import { AiOutlineUser } from 'react-icons/ai';
-import { FiLogOut, FiMail, FiSearch, FiHeart, FiMessageSquare } from 'react-icons/fi';
+import { FiLogOut, FiMail, FiHeart } from 'react-icons/fi';
 import Footer from '../Footer';
 
 function Overview(props) {
   return (
     <div className="main-wrapper main-wrapper-02">
-
-       {/* <!-- Login Header Start --> */}
-       <div className="section login-header">
+        {/* <!-- Login Header Start --> */}
+        <div className="section login-header" style={{backgroundColor: "#309255"}}>
             {/* <!-- Login Header Wrapper Start --> */}
             <div className="login-header-wrapper navbar navbar-expand">
 
@@ -20,13 +19,7 @@ function Overview(props) {
 
                 {/* <!-- Header Search Start --> */}
                 <div className="login-header-search dropdown">
-                    <button className="search-toggle" data-bs-toggle="dropdown"><i><FiSearch /></i></button>
-
-                    <div className="search-input dropdown-menu">
-                        <form action="#">
-                            <input type="text" placeholder="Search here" />
-                        </form>
-                    </div>
+                    <div className="search-input dropdown-menu"></div>
                 </div>
                 {/* <!-- Header Search End --> */}
 
@@ -34,67 +27,66 @@ function Overview(props) {
                 <div className="login-header-action ml-auto">
                     <div className="dropdown">
                         <button className="action notification" data-bs-toggle="dropdown">
-                            <i><FiMessageSquare/> </i>
-                            <span className="active"></span>
+                            <FiMail color="white" />
                         </button>
                         <div className="dropdown-menu dropdown-notification">
                             <ul className="notification-items-list">
                                 <li className="notification-item">
                                     <span className="notify-icon bg-success text-white"><i><AiOutlineUser /></i></span>
                                     <div className="dropdown-body">
-                                        <a href="/">
+                                        <span>
                                             <p><strong>Martin</strong> has added a <strong>customer</strong> Successfully
                                             </p>
-                                        </a>
+                                        </span>
                                     </div>
                                     <span className="notify-time">3:20 am</span>
                                 </li>
                                 <li className="notification-item">
                                     <span className="notify-icon bg-success text-white"><i><AiOutlineUser /></i></span>
                                     <div className="dropdown-body">
-                                        <a href="/">
+                                        <span>
                                             <p><strong>Jennifer</strong> purchased Light Dashboard 2.0.</p>
-                                        </a>
+                                        </span>
                                     </div>
                                     <span className="notify-time">3:20 am</span>
                                 </li>
                                 <li className="notification-item">
                                     <span className="notify-icon bg-danger text-white"><i><FiHeart /></i></span>
                                     <div className="dropdown-body">
-                                        <a href="/">
+                                        <span>
                                             <p><strong>Robin</strong> marked a <strong>ticket</strong> as unsolved.
                                             </p>
-                                        </a>
+                                        </span>
                                     </div>
                                     <span className="notify-time">3:20 am</span>
                                 </li>
                                 <li className="notification-item">
                                     <span className="notify-icon bg-success text-white"><i><AiOutlineUser /></i></span>
                                     <div className="dropdown-body">
-                                        <a href="/">
+                                        <span>
                                             <p><strong>David</strong> purchased Light Dashboard 1.0.</p>
-                                        </a>
+                                        </span>
                                     </div>
                                     <span className="notify-time">3:20 am</span>
                                 </li>
                                 <li className="notification-item">
                                     <span className="notify-icon bg-success text-white"><i><AiOutlineUser /></i></span>
                                     <div className="dropdown-body">
-                                        <a href="/">
+                                        <span>
                                             <p><strong> James.</strong> has added a<strong>customer</strong> Successfully
                                             </p>
-                                        </a>
+                                        </span>
                                     </div>
                                     <span className="notify-time">3:20 am</span>
                                 </li>
                             </ul>
-                            <a className="all-notification" href="/">See all notifications</a>
+                            <span className="all-notification">See all notifications</span>
                         </div>
                     </div>
 
-                    <a className="action author" href="/">
+                    <span className="action author">
                         <img src="assets/images/author/author-07.jpg" alt="Author" />
-                    </a>
+                    </span>
 
                     <div className="dropdown">
                         <button className="action more" data-bs-toggle="dropdown">
@@ -103,9 +95,9 @@ function Overview(props) {
                             <span></span>
                         </button>
                         <ul className="dropdown-menu">
-                            <li><a className="" href="/"><i><AiOutlineUser /></i> Profile</a></li>
-                            <li><a className="" href="/"><i><FiMail /></i> Inbox</a></li>
-                            <li><a className="" href="/"><i><FiLogOut /></i> Sign Out</a></li>
+                            <li><i><AiOutlineUser /></i> Profile</li>
+                            <li><i><FiMail /></i> Inbox</li>
+                            <li><i><FiLogOut /></i> Sign Out</li>
                         </ul>
                     </div>
                 </div>
@@ -116,102 +108,114 @@ function Overview(props) {
         </div>
         {/* <!-- Login Header End --> */}
 
-
         {/* <!-- Courses Admin Start --> */}
         <div className="section overflow-hidden position-relative" id="wrapper">
 
             {/* <!-- Sidebar Wrapper Start --> */}
-            <div className="sidebar-wrapper">
+            <div className="sidebar-wrapper" style={{backgroundColor: "#309255"}}>
                 <div className="menu-list">
-                    <a className="active" href="/admin"><img src="assets/images/menu-icon/icon-1.png" alt="Icon" /></a>
+                    <a href="/admin"><img src="assets/images/menu-icon/icon-1.png" alt="Icon" /></a>
                     <a href="/messages"><img src="assets/images/menu-icon/icon-2.png" alt="Icon" /></a>
-                    <a href="/overview"><img src="assets/images/menu-icon/icon-3.png" alt="Icon" /></a>
+                    <a href="/overview" className="active"><img src="assets/images/menu-icon/icon-3.png" alt="Icon" /></a>
                 </div>
             </div>
             {/* <!-- Sidebar Wrapper End --> */}
 
             <div className="page-content-wrapper py-0">
-
                 {/* <!-- Admin Tab Menu Start --> */}
                 <div className="nav flex-column nav-pills admin-tab-menu">
-                    <a href="/overview">Overview</a>
-                  <a href="/students">Student’s</a>
-                  <a href="/reviews">Review’s</a>
-                  <a href="/engagement">Course Engagement</a>
-                  <a href="/traffic">Traffic & Conversion</a>
+                    <a href="/overview" className='active'>Overview</a>
+                    <a href="/students">Student’s</a>
+                    <a href="/reviews">Review’s</a>
+                    <a href="/engagement">Course Engagement</a>
                 </div>
-                {/* <!-- Admin Tab Menu End --> */}
+                {/* <!-- Admin Tab Menu End -->
 
-                {/* <!-- Page Content Wrapper Start --> */}
+                <!-- Page Content Wrapper Start --> */}
                 <div className="main-content-wrapper">
                     <div className="container-fluid">
-
-                        {/* <!-- Overview Top Start --> */}
-                        <div className="admin-top-bar flex-wrap">
-                            <div className="courses-select">
-                                <select>
-                                    <option data-display="All Courses">All Courses</option>
-                                    <option value="1">option</option>
-                                    <option value="2">option</option>
-                                    <option value="3">option</option>
-                                    <option value="4">Potato</option>
-                                </select>
+                        <div className="overview-box">
+                            <div className="single-box">
+                                <h5 className="title">Total Revenue</h5>
+                                <div className="count">$568.00</div>
+                                <p><span>$235.00</span> This months</p>
                             </div>
 
-                            <div className="overview-box">
-                                <div className="single-box">
-                                    <h5 className="title">Total Revenue</h5>
-                                    <div className="count">$568.00</div>
-                                    <p><span>$235.00</span> This months</p>
-                                </div>
+                            <div className="single-box">
+                                <h5 className="title">Total Enrollment’s</h5>
+                                <div className="count">2,570</div>
+                                <p><span>345</span> This months</p>
+                            </div>
 
-                                <div className="single-box">
-                                    <h5 className="title">Total Enrollment’s</h5>
-                                    <div className="count">2,570</div>
-                                    <p><span>345</span> This months</p>
-                                </div>
+                            <div className="single-box">
+                                <h5 className="title">Instgructor Rating</h5>
+                                <div className="count">
+                                    4.5
 
-                                <div className="single-box">
-                                    <h5 className="title">Instgructor Rating</h5>
-                                    <div className="count">
-                                        4.5
-
-                                        <span className="rating-star">
-												<span className="rating-bar" style={{width: "80%"}}></span>
-                                        </span>
-                                    </div>
-                                    <p><span>58</span> This months</p>
+                                    <span className="rating-star">
+                                            <span className="rating-bar" style={{width: "80%"}}></span>
+                                    </span>
                                 </div>
+                                <p><span>58</span> This months</p>
                             </div>
                         </div>
-                        {/* <!-- Overview Top End -->
 
-                        <!-- Graph Top Start --> */}
-                        <div className="graph">
-                            <div className="graph-title">
-                                <h4 className="title">Get top insights about your performance</h4>
+                        {/*<!-- Engagement Courses End --> */}
+                        <div className="engagement-courses table-responsive">
 
-                                <div className="months-select">
-                                    <select>
-                                        <option data-display="Last 12 months">Last 12 months</option>
-                                        <option value="1">Last 6 months</option>
-                                        <option value="1">Last 3 months</option>
-                                        <option value="1">Last 2 months</option>
-                                        <option value="1">Last 1 months</option>
-                                        <option value="1">Last 1 week</option>
-                                    </select>
-                                </div>
+                            <div className="courses-top">
+                                <ul>
+                                    <li>All Course’s</li>
+                                    <li>Minutes Taught</li>
+                                    <li>Active Student’s</li>
+                                </ul>
                             </div>
 
-                            <div className="graph-content">
-                                <div id="uniqueReport"></div>
+                            <div className="courses-list">
+                                <ul>
+                                    <li>
+                                        <div className="courses">
+                                            <div className="thumb">
+                                                <img src="assets/images/courses/admin-courses-01.jpg" alt="Courses" />
+                                            </div>
+                                            <div className="content">
+                                                <h4 className="title"><a href="/course-details">Build An eCommerce Site With WooCommerce and WooLentor</a></h4>
+                                            </div>
+                                        </div>
+                                        <div className="taught">
+                                            <span>11,001</span>
+                                        </div>
+                                        <div className="student">
+                                            <span>520</span>
+                                        </div>
+                                        <div className="button">
+                                            <button className="btn">View Details</button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div className="courses">
+                                            <div className="thumb">
+                                                <img src="assets/images/courses/admin-courses-01.jpg" alt="Courses" />
+                                            </div>
+                                            <div className="content">
+                                                <h4 className="title"><a href="/course-details">Build An WholeSale WooCommerce Store using Whols Plugin</a></h4>
+                                            </div>
+                                        </div>
+                                        <div className="taught">
+                                            <span>11,001</span>
+                                        </div>
+                                        <div className="student">
+                                            <span>520</span>
+                                        </div>
+                                        <div className="button">
+                                            <button className="btn">View Details</button>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
 
-                            <div className="graph-btn">
-                                <a className="btn btn-primary btn-hover-dark" href="/">Revenue Report <i className="icofont-rounded-down"></i></a>
-                            </div>
                         </div>
-                        {/* <!-- Graph Top End --> */}
+                        {/* <!-- Engagement Courses End --> */}
 
                     </div>
                 </div>

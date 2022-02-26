@@ -28,7 +28,6 @@ import Messages from "./Components/Admin/Messages";
 import Overview from "./Components/Admin/Overview";
 import Reviews from "./Components/Admin/Reviews";
 import Students from "./Components/Admin/Students";
-import Traffic from "./Components/Admin/Traffic";
 import { useSelector } from "react-redux";
 import AddCourse from "./Components/Admin/AddCourse";
 
@@ -112,11 +111,6 @@ function App() {
 					exact
 					path="/students"
 					element={isLoginE() ? <Students /> : <Navigate to="/login" />}
-				/>
-				<Route
-					exact
-					path="/traffic"
-					element={isLoginE() ? <Traffic /> : <Navigate to="/login" />}
 				/>
 				<Route exact path="/" element={<Home />} />
 				<Route path="*" element={<ErrorPage />} />
