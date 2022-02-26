@@ -5,14 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Dropdown } from "react-bootstrap";
 import { logout } from "../store/actions/studentsAction";
 import { logoutEducator } from "../store/actions/educatorAction";
-import {
-	FiInstagram,
-	FiTwitter,
-	FiFacebook,
-	FiPhoneCall,
-	FiMail,
-	FiArrowLeftCircle,
-} from "react-icons/fi";
+import { FiInstagram,	FiTwitter,	FiFacebook,	FiPhoneCall,	FiMail,	FiArrowLeftCircle } from "react-icons/fi";
 import { AiOutlineSkype } from "react-icons/ai";
 import "./Navbar.css";
 
@@ -20,16 +13,12 @@ const Navbar = ({ scrollState }) => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	const educatorAuthReducer = useSelector((state) => state.educatorAuthReducer);
-	const { educatorInfo, loading, error } = educatorAuthReducer;
+	const { educatorInfo, loading } = educatorAuthReducer;
 	const [avatar, setAvatar] = useState("");
 	const studentAuthReducer = useSelector((state) => state.studentAuthReducer);
 	const [click, setClick] = useState(false);
-	const {
-		studentInfo,
-		loading: loadStudent,
-		error: errorStudent,
-	} = studentAuthReducer;
-	// const data=localStorage.getItem()
+	const { studentInfo, loading: loadStudent } = studentAuthReducer;
+
 	useEffect(() => {
 		if (studentInfo) {
 			setAvatar(studentInfo.name.toUpperCase());
@@ -46,6 +35,8 @@ const Navbar = ({ scrollState }) => {
 		if (educatorInfo) {
 			dispatch(logoutEducator());
 		}
+
+		setAvatar("");
 		navigate("/");
 	};
 
@@ -135,8 +126,12 @@ const Navbar = ({ scrollState }) => {
 											<Dropdown.Item onClick={logoutHandle}>
 												Logout
 											</Dropdown.Item>
-											<Dropdown.Item>Another action</Dropdown.Item>
-											<Dropdown.Item>Something else</Dropdown.Item>
+											<Dropdown.Item>
+												{studentInfo ? studentInfo.name : educatorInfo.name}
+											</Dropdown.Item>
+											<Dropdown.Item>
+												{studentInfo ? studentInfo.email : educatorInfo.email}
+											</Dropdown.Item>
 										</Dropdown.Menu>
 									</Dropdown>
 								) : (
@@ -233,9 +228,15 @@ const Navbar = ({ scrollState }) => {
 								</Dropdown.Toggle>
 							</Avatar>
 							<Dropdown.Menu>
-								<Dropdown.Item onClick={logoutHandle}>Logout</Dropdown.Item>
-								<Dropdown.Item>Another action</Dropdown.Item>
-								<Dropdown.Item>Something else</Dropdown.Item>
+								<Dropdown.Item onClick={logoutHandle}>
+									Logout
+								</Dropdown.Item>
+								<Dropdown.Item>
+									{studentInfo ? studentInfo.name : educatorInfo.name}
+								</Dropdown.Item>
+								<Dropdown.Item>
+									{studentInfo ? studentInfo.email : educatorInfo.email}
+								</Dropdown.Item>
 							</Dropdown.Menu>
 						</Dropdown>
 					) : (

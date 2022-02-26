@@ -2900,7 +2900,7 @@ const Home = () => {
 					{/* <!-- Call to Action Wrapper Start --> */}
 					<div className="call-to-action-wrapper">
 						<img
-							class="cat-shape-02"
+							className="cat-shape-02"
 							src="assets/images/shape/shape-13.svg"
 							alt="Shape"
 						/>

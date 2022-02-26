@@ -1,5 +1,13 @@
+.spin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 .spin{
     height: 100px;
     width: 100px;
     margin: auto;
+    margin-top: 50px;
+    color: #309255;
 }

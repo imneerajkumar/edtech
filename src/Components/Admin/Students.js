@@ -1,14 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutEducator } from "../../store/actions/educatorAction";
 import { AiOutlineUser } from 'react-icons/ai';
 import { FiLogOut, FiMail, FiHeart, FiCalendar } from 'react-icons/fi';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from "swiper";
+import { Avatar } from "@mui/material";
 import Footer from '../Footer';
 import "swiper/css";
 import "swiper/css/pagination";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Students(props) {
+    const dispatch = useDispatch();
+	const navigate = useNavigate();
+    const educatorAuthReducer = useSelector((state) => state.educatorAuthReducer);
+	const { educatorInfo, loading } = educatorAuthReducer;
+	const [avatar, setAvatar] = useState("");
+	
+    useEffect(() => {
+		if (educatorInfo) {
+			setAvatar(educatorInfo.name.toUpperCase());
+		}
+	}, [educatorInfo, loading, avatar]);
+
+    const logoutHandle = () => {
+		if (educatorInfo) {
+			dispatch(logoutEducator());
+		}
+		navigate("/");
+	};
+
   return (
     <div className="main-wrapper main-wrapper-02">
       {/* <!-- Login Header Start --> */}
@@ -90,7 +112,16 @@ function Students(props) {
                     </div>
 
                     <span className="action author">
-                        <img src="assets/images/author/author-07.jpg" alt="Author" />
+                        <Avatar
+                            sx={{
+                                bgcolor: "#fff",
+                                color: "#309255",
+                                width: "60px",
+                                height: "60px",
+                                fontSize: "1.5rem",
+                            }}
+                        >{avatar.slice(0, 1)}
+                        </Avatar>
                     </span>
 
                     <div className="dropdown">
@@ -100,9 +131,24 @@ function Students(props) {
                             <span></span>
                         </button>
                         <ul className="dropdown-menu">
-                            <li><i><AiOutlineUser /></i> Profile</li>
-                            <li><i><FiMail /></i> Inbox</li>
-                            <li><i><FiLogOut /></i> Sign Out</li>
+                            <li>
+                                <button style={{border: "none", backgroundColor: "#fff"}}>
+                                    <AiOutlineUser />
+                                    {"   "}Profile
+                                </button>
+                            </li>
+                            <li>
+                                <button style={{border: "none", backgroundColor: "#fff"}} onClick={() => navigate('/messages')}>
+                                    <FiMail />
+                                    {"   "}Inbox
+                                </button>
+                            </li>
+                            <li> 
+                                <button style={{border: "none", backgroundColor: "#fff"}} onClick={logoutHandle}>
+                                    <FiLogOut /> 
+                                    {"   "}Log Out
+                                </button>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -119,9 +165,11 @@ function Students(props) {
             {/* <!-- Sidebar Wrapper Start --> */}
             <div className="sidebar-wrapper" style={{backgroundColor: "#309255"}}>
                 <div className="menu-list">
-                    <a href="/admin"><img src="assets/images/menu-icon/icon-1.png" alt="Icon" /></a>
-                    <a href="/messages"><img src="assets/images/menu-icon/icon-2.png" alt="Icon" /></a>
-                    <a href="/overview" className="active"><img src="assets/images/menu-icon/icon-3.png" alt="Icon" /></a>
+                    <Link to="/admin"><img src="assets/images/menu-icon/icon-5.png" alt="Icon" /></Link>
+                    <Link to="/messages"><img src="assets/images/menu-icon/icon-2.png" alt="Icon" /></Link>
+                    <Link to="/overview"><img src="assets/images/menu-icon/icon-4.png" alt="Icon" /></Link>
+                    <Link to="/students"><img src="assets/images/menu-icon/icon-1.png" alt="Icon" /></Link>
+                    <Link to="/engagement"><img src="assets/images/menu-icon/icon-3.png" alt="Icon" /></Link>
                 </div>
             </div>
             {/* <!-- Sidebar Wrapper End --> */}
@@ -130,10 +178,10 @@ function Students(props) {
 
               {/* <!-- Admin Tab Menu Start --> */}
               <div className="nav flex-column admin-tab-menu">
-                  <a href="/overview">Overview</a>
-                  <a href="/students" className='active'>Student’s</a>
-                  <a href="/reviews">Review’s</a>
-                  <a href="/engagement">Course Engagement</a>
+                  <Link to="/overview">Overview</Link>
+                  <Link to="/students" className='active'>Student’s</Link>
+                  <Link to="/reviews">Review’s</Link>
+                  <Link to='/engagement'>Course Engagement</Link>
               </div>
               {/* <!-- Admin Tab Menu End --> */}
 
@@ -167,7 +215,7 @@ function Students(props) {
                         <div className="swiper-container">
                           <Swiper
                                 slidesPerView={2}
-                                spaceBetween={0}
+                                spaceBetween={65}
                                 effect={"fade"}
                                 pagination={{
                                 clickable: true,
@@ -459,7 +507,7 @@ function Students(props) {
                               <div className="col-xxl-4">
                                   {/* <!-- Student's Widget Start --> */}
                                   <div className="single-student-widget widget-color-03">
-                                      <h4 className="widget-title">Additional Student Interests</h4>
+                                      <h4 className="widget-title">Additional Interests</h4>
 
                                       <div className="widget-items">
 
