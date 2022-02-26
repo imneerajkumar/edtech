@@ -179,7 +179,7 @@ function Overview(props) {
                                                 <img src="assets/images/courses/admin-courses-01.jpg" alt="Courses" />
                                             </div>
                                             <div className="content">
-                                                <h4 className="title"><a href="/">Build An eCommerce Site With WooCommerce and WooLentor</a></h4>
+                                                <h4 className="title"><a href="/course-details">Build An eCommerce Site With WooCommerce and WooLentor</a></h4>
                                             </div>
                                         </div>
                                         <div className="taught">
@@ -189,7 +189,7 @@ function Overview(props) {
                                             <span>520</span>
                                         </div>
                                         <div className="button">
-                                            <a className="btn" href="/">View Details</a>
+                                            <button className="btn">View Details</button>
                                         </div>
                                     </li>
                                     <li>
@@ -198,7 +198,7 @@ function Overview(props) {
                                                 <img src="assets/images/courses/admin-courses-01.jpg" alt="Courses" />
                                             </div>
                                             <div className="content">
-                                                <h4 className="title"><a href="/">Build An WholeSale WooCommerce Store using Whols Plugin</a></h4>
+                                                <h4 className="title"><a href="/course-details">Build An WholeSale WooCommerce Store using Whols Plugin</a></h4>
                                             </div>
                                         </div>
                                         <div className="taught">
@@ -208,7 +208,7 @@ function Overview(props) {
                                             <span>520</span>
                                         </div>
                                         <div className="button">
-                                            <a className="btn" href="/">View Details</a>
+                                            <button className="btn">View Details</button>
                                         </div>
                                     </li>
                                 </ul>

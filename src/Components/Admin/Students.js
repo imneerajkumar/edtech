@@ -1,7 +1,11 @@
 import React from 'react';
 import { AiOutlineUser } from 'react-icons/ai';
-import { FiLogOut, FiMail, FiHeart } from 'react-icons/fi';
+import { FiLogOut, FiMail, FiHeart, FiCalendar } from 'react-icons/fi';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from "swiper";
 import Footer from '../Footer';
+import "swiper/css";
+import "swiper/css/pagination";
 
 function Students(props) {
   return (
@@ -144,7 +148,7 @@ function Students(props) {
                                   <option value="1">option</option>
                                   <option value="2">option</option>
                                   <option value="3">option</option>
-                                  <option value="4">Potato</option>
+                                  <option value="4">option</option>
                               </select>
 
                               <h4 className="title">Meet people taking your courses</h4>
@@ -159,9 +163,18 @@ function Students(props) {
 
                       <!-- Student's Wrapper Start --> */}
                       <div className="students-wrapper students-active">
-                          <div className="swiper-container">
-                              <div className="swiper-wrapper">
-                                  <div className="swiper-slide">
+                        <div className="swiper-container">
+                          <Swiper
+                                slidesPerView={2}
+                                spaceBetween={0}
+                                effect={"fade"}
+                                pagination={{
+                                clickable: true,
+                                }}
+                                modules={[Pagination]}
+                                className="mySwiper"
+                            >
+                                  <SwiperSlide>
                                       {/* <!-- Single Student Start --> */}
                                       <div className="single-student">
                                           <div className="student-images">
@@ -171,12 +184,12 @@ function Students(props) {
                                               <h5 className="name">Margarita James</h5>
                                               <span className="country"><img src="assets/images/flag/flag-1.png" alt="Flog" /> Brazil</span>
                                               <p>Data Science and Machine learning</p>
-                                              <span className="date"><i className="icofont-ui-calendar"></i> 28.03.2021</span>
+                                              <span className="date"><FiCalendar/> 28.03.2021</span>
                                           </div>
                                       </div>
                                       {/* <!-- Single Student End --> */}
-                                  </div>
-                                  <div className="swiper-slide">
+                                  </SwiperSlide>
+                                  <SwiperSlide>
                                       {/* <!-- Single Student Start --> */}
                                       <div className="single-student">
                                           <div className="student-images">
@@ -186,12 +199,12 @@ function Students(props) {
                                               <h5 className="name">Stanley Castro</h5>
                                               <span className="country"><img src="assets/images/flag/flag-1.png" alt="Flog" /> Brazil</span>
                                               <p>Data Science and Machine learning</p>
-                                              <span className="date"><i className="icofont-ui-calendar"></i> 28.03.2021</span>
+                                              <span className="date"><i><FiCalendar/></i> 28.03.2021</span>
                                           </div>
                                       </div>
                                       {/* <!-- Single Student End --> */}
-                                  </div>
-                                  <div className="swiper-slide">
+                                  </SwiperSlide>
+                                  <SwiperSlide>
                                       {/* <!-- Single Student Start --> */}
                                       <div className="single-student">
                                           <div className="student-images">
@@ -201,12 +214,12 @@ function Students(props) {
                                               <h5 className="name">Beatrice Summers</h5>
                                               <span className="country"><img src="assets/images/flag/flag-1.png" alt="Flog" /> Brazil</span>
                                               <p>Data Science and Machine learning</p>
-                                              <span className="date"><i className="icofont-ui-calendar"></i> 28.03.2021</span>
+                                              <span className="date"><i><FiCalendar/></i> 28.03.2021</span>
                                           </div>
                                       </div>
                                       {/* <!-- Single Student End --> */}
-                                  </div>
-                                  <div className="swiper-slide">
+                                  </SwiperSlide>
+                                  <SwiperSlide>
                                       {/* <!-- Single Student Start --> */}
                                       <div className="single-student">
                                           <div className="student-images">
@@ -216,12 +229,12 @@ function Students(props) {
                                               <h5 className="name">Beatrice Summers</h5>
                                               <span className="country"><img src="assets/images/flag/flag-1.png" alt="Flog" /> Brazil</span>
                                               <p>Data Science and Machine learning</p>
-                                              <span className="date"><i className="icofont-ui-calendar"></i> 28.03.2021</span>
+                                              <span className="date"><i><FiCalendar/></i> 28.03.2021</span>
                                           </div>
                                       </div>
                                       {/* <!-- Single Student End --> */}
-                                  </div>
-                                  <div className="swiper-slide">
+                                  </SwiperSlide>
+                                  <SwiperSlide>
                                       {/* <!-- Single Student Start --> */}
                                       <div className="single-student">
                                           <div className="student-images">
@@ -231,19 +244,13 @@ function Students(props) {
                                               <h5 className="name">Beatrice Summers</h5>
                                               <span className="country"><img src="assets/images/flag/flag-1.png" alt="Flog" /> Brazil</span>
                                               <p>Data Science and Machine learning</p>
-                                              <span className="date"><i className="icofont-ui-calendar"></i> 28.03.2021</span>
+                                              <span className="date"><i><FiCalendar/></i> 28.03.2021</span>
                                           </div>
                                       </div>
                                       {/* <!-- Single Student End --> */}
-                                  </div>
-                              </div>
-
-                              <div className="students-arrow">
-                                  {/* <!-- Add Pagination --> */}
-                                  <div className="swiper-button-prev"><i className="icofont-rounded-left"></i></div>
-                                  <div className="swiper-button-next"><i className="icofont-rounded-right"></i></div>
-                              </div>
-                          </div>
+                                  </SwiperSlide>
+                              </Swiper>
+                            </div>
                       </div>
                       {/* <!-- Student's Wrapper End -->
 
@@ -360,20 +367,7 @@ function Students(props) {
                                               </div>
                                           </div>
                                           {/* <!-- Single Item End --> */}
-
                                       </div>
-
-                                      {/* <!-- Page Pagination End --> */}
-                                      <div className="page-pagination">
-                                          <ul className="pagination justify-content-center">
-                                              <li><a href="/"><i className="icofont-rounded-left"></i></a></li>
-                                              <li><a className="active" href="/">1</a></li>
-                                              <li><a href="/">2</a></li>
-                                              <li><a href="/">3</a></li>
-                                              <li><a href="/"><i className="icofont-rounded-right"></i></a></li>
-                                          </ul>
-                                      </div>
-                                      {/* <!-- Page Pagination End --> */}
                                   </div>
                                   {/* <!-- Student's Widget End --> */}
                               </div>
@@ -456,20 +450,7 @@ function Students(props) {
                                               </div>
                                           </div>
                                           {/* <!-- Single Item End --> */}
-
                                       </div>
-
-                                      {/* <!-- Page Pagination End --> */}
-                                      <div className="page-pagination">
-                                          <ul className="pagination justify-content-center">
-                                              <li><a href="/"><i className="icofont-rounded-left"></i></a></li>
-                                              <li><a className="active" href="/">1</a></li>
-                                              <li><a href="/">2</a></li>
-                                              <li><a href="/">3</a></li>
-                                              <li><a href="/"><i className="icofont-rounded-right"></i></a></li>
-                                          </ul>
-                                      </div>
-                                      {/* <!-- Page Pagination End --> */}
                                   </div>
                                   {/* <!-- Student's Widget End --> */}
                               </div>
@@ -553,18 +534,6 @@ function Students(props) {
                                           </div>
                                           {/* <!-- Single Item End --> */}
                                       </div>
-
-                                      {/* <!-- Page Pagination End --> */}
-                                      <div className="page-pagination">
-                                          <ul className="pagination justify-content-center">
-                                              <li><a href="/"><i className="icofont-rounded-left"></i></a></li>
-                                              <li><a className="active" href="/">1</a></li>
-                                              <li><a href="/">2</a></li>
-                                              <li><a href="/">3</a></li>
-                                              <li><a href="/"><i className="icofont-rounded-right"></i></a></li>
-                                          </ul>
-                                      </div>
-                                      {/* <!-- Page Pagination End --> */}
                                   </div>
                                   {/* <!-- Student's Widget End --> */}
                               </div>
@@ -577,9 +546,8 @@ function Students(props) {
                           <div className="new-courses-title">
                               <h3 className="title">Your students want to learn more. <br /> Consider creating new courses to meet that deman.</h3>
                           </div>
-                          <img className="shape d-none d-xl-block" src="assets/images/shape/shape-27.png" alt="Shape" />
                           <div className="new-courses-btn">
-                              <a href="/" className="btn">Create New Course <i className="icofont-rounded-right"></i></a>
+                              <a href="/" className="btn">Create New Course</a>
                           </div>
                       </div>
                       {/* <!-- New Courses End --> */}

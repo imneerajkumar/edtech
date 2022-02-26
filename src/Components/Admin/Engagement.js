@@ -1,9 +1,30 @@
 import React from 'react';
 import { AiOutlineUser } from 'react-icons/ai';
 import { FiLogOut, FiMail, FiHeart } from 'react-icons/fi';
+import Chart from "react-apexcharts";
 import Footer from '../Footer';
 
 function Engagement(props) {
+    const state = {
+     options: {
+        chart: {
+          id: "basic-bar"
+        },
+        xaxis: {
+          categories: ["Jan'22", "Feb'22", "Mar'22", "Apr'22", "May'22", "Jun'22", "Jul'22", "Aug'22", "Sep'22", "Oct'22", "Nov'22", "Dec'22"]
+        },
+        fill: {
+            colors: ['#309255']
+        }
+      },
+      series: [
+        {
+          name: "Minutes",
+          data: [7000, 5500, 4500, 2800, 6200, 3800, 7000, 5500, 4500, 2800, 6200, 3800]
+        }
+      ]
+    };
+
   return (
     <div className="main-wrapper main-wrapper-02">
          {/* <!-- Login Header Start --> */}
@@ -157,23 +178,13 @@ function Engagement(props) {
 
                         <!-- Graph Top Start --> */}
                         <div className="graph">
-                            <div className="graph-title">
-                                <h4 className="title">Minutes Taught</h4>
-
-                                <div className="months-select">
-                                    <select>
-                                        <option data-display="Last 12 months">Last 12 months</option>
-                                        <option value="1">Last 6 months</option>
-                                        <option value="1">Last 3 months</option>
-                                        <option value="1">Last 2 months</option>
-                                        <option value="1">Last 1 months</option>
-                                        <option value="1">Last 1 week</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div className="graph-content">
-                                <div id="uniqueVisits"></div>
+                            <div className="mixed-chart">
+                                <Chart
+                                options={state.options}
+                                series={state.series}
+                                type="bar"
+                                width="100%"
+                                />
                             </div>
                         </div>
                         {/* <!-- Graph Top End -->

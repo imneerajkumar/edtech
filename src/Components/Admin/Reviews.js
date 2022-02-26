@@ -141,7 +141,7 @@ function Reviews(props) {
                           <div className="top-bar-filter">
                               <ul className="filter-check">
                                   <li>
-                                      <div className="courses-select">
+                                      <div>
                                           <select>
                                               <option data-display="All Courses">All Courses</option>
                                               <option value="1">option</option>
@@ -160,15 +160,15 @@ function Reviews(props) {
                                       <label for="comment"><span></span> Comment</label>
                                   </li>
                                   <li>
-                                      <label>Rating:</label>
+                                      <label>Rating:</label>{"  "}
                                       <div className="rating-select">
                                           <select>
                                               <option data-display="All">All</option>
-                                              <option value="1">5 Start</option>
-                                              <option value="2">4 Start</option>
-                                              <option value="3">3 Start</option>
-                                              <option value="4">2 Start</option>
-                                              <option value="5">1 Start</option>
+                                              <option value="1">5 Star</option>
+                                              <option value="2">4 Star</option>
+                                              <option value="3">3 Star</option>
+                                              <option value="4">2 Star</option>
+                                              <option value="5">1 Star</option>
                                           </select>
                                       </div>
                                   </li>
