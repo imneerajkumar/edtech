@@ -1,0 +1,7 @@
+@media (min-width:1024px) {
+    .add-height{
+        display: flex;
+        align-items: center;
+        height: 976px;
+    }
+}

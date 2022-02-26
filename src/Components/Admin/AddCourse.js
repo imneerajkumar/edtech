@@ -1,63 +1,63 @@
-import React, { useEffect, useState } from 'react'
-import { FiBookOpen } from 'react-icons/fi';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { educatorAuth } from '../../store/actions/educatorAction';
-import { studentAuth } from '../../store/actions/studentsAction';
-import Download from '../Download';
-import Footer from '../Footer';
-import Navbar from '../Navbar';
-import ScrollButton from '../ScrollButton';
-
+import React, { useEffect, useState } from "react";
+import { FiBookOpen } from "react-icons/fi";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { educatorAuth } from "../../store/actions/educatorAction";
+import { studentAuth } from "../../store/actions/studentsAction";
+import Download from "../Download";
+import Footer from "../Footer";
+import Navbar from "../Navbar";
+import ScrollButton from "../ScrollButton";
+import "./AddCourse.css";
 const AddCourse = () => {
-const [scrollState, setScrollState] = useState(false);
-const [email, setEmail] = useState("");
-const [password, setPassword] = useState("");
-const [isStudent, setIsStudent] = useState(false);
-const dispatch = useDispatch();
-const educatorA = useSelector((state) => state.educatorAuthReducer);
-const {
-	loading: EducatorLoading,
-	error: educatorError,
-	educatorInfo,
-} = educatorA;
-const studentA = useSelector((state) => state.studentAuthReducer);
-const { loading, error, studentInfo } = studentA;
-const navigate = useNavigate();
-useEffect(() => {
-	window.addEventListener("scroll", (e) => {
-		var scroll = window.pageYOffset;
-		if (scroll <= 100) {
-			setScrollState(false);
-		} else {
-			setScrollState(true);
-		}
+	const [scrollState, setScrollState] = useState(false);
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const [isStudent, setIsStudent] = useState(false);
+	const dispatch = useDispatch();
+	const educatorA = useSelector((state) => state.educatorAuthReducer);
+	const {
+		loading: EducatorLoading,
+		error: educatorError,
+		educatorInfo,
+	} = educatorA;
+	const studentA = useSelector((state) => state.studentAuthReducer);
+	const { loading, error, studentInfo } = studentA;
+	const navigate = useNavigate();
+	useEffect(() => {
+		window.addEventListener("scroll", (e) => {
+			var scroll = window.pageYOffset;
+			if (scroll <= 100) {
+				setScrollState(false);
+			} else {
+				setScrollState(true);
+			}
+		});
+		// if(educatorIn)
 	});
-	// if(educatorIn)
-});
-// useEffect(() => {
-// 	if (educatorInfo) {
-// 		navigate("/admin");
-// 	}
-// }, [navigate, educatorInfo, isStudent]);
-// useEffect(() => {
-// 	if (studentInfo) {
-// 		navigate("/courses");
-// 	}
-// }, [navigate, studentInfo]);
+	// useEffect(() => {
+	// 	if (educatorInfo) {
+	// 		navigate("/admin");
+	// 	}
+	// }, [navigate, educatorInfo, isStudent]);
+	// useEffect(() => {
+	// 	if (studentInfo) {
+	// 		navigate("/courses");
+	// 	}
+	// }, [navigate, studentInfo]);
 
-const loginHandle = (e) => {
-	e.preventDefault();
-	console.log(isStudent);
-	if (isStudent) {
-		dispatch(studentAuth(email, password));
-	} else {
-		dispatch(educatorAuth(email, password));
-	}
-	setEmail("");
-	setPassword("");
-};
-  return (
+	const loginHandle = (e) => {
+		e.preventDefault();
+		console.log(isStudent);
+		if (isStudent) {
+			dispatch(studentAuth(email, password));
+		} else {
+			dispatch(educatorAuth(email, password));
+		}
+		setEmail("");
+		setPassword("");
+	};
+	return (
 		<div className="main-wrapper">
 			{/* <!-- Header Section Start --> */}
 			<Navbar scrollState={scrollState} />
@@ -133,7 +133,7 @@ const loginHandle = (e) => {
 						<div className="row align-items-center">
 							<div className="col-lg-6">
 								{/* <!-- Register & Login Images Start --> */}
-								<div className="register-login-images">
+								<div className="register-login-images add-height">
 									<div className="shape-1">
 										<img src="assets/images/shape/shape-26.png" alt="Shape" />
 									</div>
@@ -176,23 +176,43 @@ const loginHandle = (e) => {
 												/>
 											</div>
 											<div className="single-form">
+												<label for="Courseimage" style={{ fontSize: "18px" }}>
+													Course Image
+												</label>
+
 												<input
 													type="file"
-													// alt='courseImg'
+													// alt='courseImg
+													id="Courseimage"
+													style={{ height: "auto" }}
+													className="form-control"
+													accept=".jpg,.jpeg,.png"
 													required
 													placeholder="Course image"
 													value={email}
-													onChange={(e) => setEmail(e.target.value)}
+													// onChange={(e) => setEmail(e.target.value)}
 												/>
 											</div>
 											<div className="single-form">
+												<label
+													for="Instructorimage"
+													style={{ fontSize: "18px" }}
+												>
+													Instructor Image
+												</label>
+
 												<input
 													type="file"
+													id="Instructorimage"
+													className="form-control"
+													name="Instructor"
+													accept=".jpg,.jpeg,.png"
 													// alt='courseImg'
+													style={{ height: "auto" }}
 													required
 													placeholder="Instructor image"
 													value={email}
-													onChange={(e) => setEmail(e.target.value)}
+													// onChange={(e) => setEmail(e.target.value)}
 												/>
 											</div>
 											<div className="single-form">
@@ -224,6 +244,34 @@ const loginHandle = (e) => {
 													onChange={(e) => setPassword(e.target.value)}
 												/>
 											</div>
+											<div className="single-form">
+												<input
+													type="text"
+													required
+													placeholder="Level"
+													value={password}
+													onChange={(e) => setPassword(e.target.value)}
+												/>
+											</div>
+											<div className="single-form">
+												<input
+													type="text"
+													required
+													placeholder="Language"
+													value={password}
+													onChange={(e) => setPassword(e.target.value)}
+												/>
+											</div>
+											<div className="single-form">
+												<input
+													type="number"
+													required
+													placeholder="Duration (in hours)"
+													value={password}
+													onChange={(e) => setPassword(e.target.value)}
+												/>
+											</div>
+
 											{/* <!-- Single Form End -->
                       <!-- Single Form Start --> */}
 											<div className="single-form">
@@ -233,15 +281,7 @@ const loginHandle = (e) => {
 														setIsStudent(true);
 													}}
 												>
-													Login as Student
-												</button>
-												<button
-													className="btn btn-secondary btn-outline w-100"
-													onClick={() => {
-														setIsStudent(false);
-													}}
-												>
-													Login as Educator
+													Add Course
 												</button>
 											</div>
 											{/* <!-- Single Form End --> */}
@@ -263,6 +303,6 @@ const loginHandle = (e) => {
 			{/* <!-- Footer Start  --> */}
 		</div>
 	);
-}
+};
 
-export default AddCourse
+export default AddCourse;

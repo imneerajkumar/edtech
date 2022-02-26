@@ -6,6 +6,7 @@ import { Pagination } from "swiper";
 import Footer from '../Footer';
 import "swiper/css";
 import "swiper/css/pagination";
+import { Link } from 'react-router-dom';
 
 function Students(props) {
   return (
@@ -547,7 +548,7 @@ function Students(props) {
                               <h3 className="title">Your students want to learn more. <br /> Consider creating new courses to meet that deman.</h3>
                           </div>
                           <div className="new-courses-btn">
-                              <a href="/" className="btn">Create New Course</a>
+                              <Link to="/add-course" className="btn">Create New Course</Link>
                           </div>
                       </div>
                       {/* <!-- New Courses End --> */}

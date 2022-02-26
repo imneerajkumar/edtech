@@ -1,6 +1,7 @@
 import React from 'react';
 import { AiOutlineUser } from 'react-icons/ai';
 import { FiLogOut, FiMail, FiHeart } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 import Footer from '../Footer';
 
 function CourseAdmin(props) {
@@ -152,7 +153,7 @@ function CourseAdmin(props) {
                                 <li><button data-bs-toggle="tab" data-bs-target="#tab3">3</button></li>
                             </ul>
                             <div className="tab-btn">
-                                <a href="/" className="btn btn-primary btn-hover-dark">New Course</a>
+                                <Link to="/add-course" className="btn btn-primary btn-hover-dark">New Course</Link>
                             </div>
                         </div>
                     </div>
