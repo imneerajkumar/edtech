@@ -9,12 +9,14 @@ import {
 	educatorRegisterReducer,
 } from "./reducers/educatorReducer";
 import { composeWithDevTools } from "redux-devtools-extension";
+import { addCourseReducer } from "./reducers/courseReducer";
 const middleware = [thunk];
 const reducer = combineReducers({
 	studentAuthReducer: studentAuthReducer,
 	educatorAuthReducer: educatorAuthReducer,
 	studentRegisterReducer: studentRegisterReducer,
 	educatorRegisterReducer: educatorRegisterReducer,
+	addCourseReducer: addCourseReducer,
 });
 
 const studentInfofromStorage = localStorage.getItem("studentInfo")
