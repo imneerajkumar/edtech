@@ -30,6 +30,7 @@ import Reviews from "./Components/Admin/Reviews";
 import Students from "./Components/Admin/Students";
 import Traffic from "./Components/Admin/Traffic";
 import { useSelector } from "react-redux";
+import AddCourse from "./Components/Admin/AddCourse";
 
 function App() {
 	const educatorAuthReducer = useSelector((state) => state.educatorAuthReducer);
@@ -69,6 +70,11 @@ function App() {
 					exact
 					path="/after-enroll"
 					element={isLogin() ? <AfterEnroll /> : <Navigate to="/login" />}
+				/>
+				<Route
+					exact
+					path="/add-course"
+					element={isLoginE() ? <AddCourse /> : <Navigate to="/login" />}
 				/>
 				<Route exact path="/blogs" element={<Blog />} />
 				<Route exact path="/blog-detail" element={<BlogDetail />} />
