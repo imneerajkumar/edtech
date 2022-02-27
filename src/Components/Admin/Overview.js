@@ -5,6 +5,7 @@ import { AiOutlineUser } from 'react-icons/ai';
 import { FiLogOut, FiMail, FiHeart } from 'react-icons/fi';
 import { Link, useNavigate } from 'react-router-dom';
 import { Avatar } from "@mui/material";
+import Chart from "react-apexcharts";
 import Footer from '../Footer';
 
 function Overview(props) {
@@ -26,6 +27,42 @@ function Overview(props) {
 		}
 		navigate("/");
 	};
+
+    const state = {       
+        series: [{
+            name: "Income: $",
+            data: [200, 410, 355, 515, 495, 623, 691, 381, 248, 438, 360, 235]
+        }],
+        options: {
+          chart: {
+            height: 350,
+            type: 'line',
+            zoom: {
+              enabled: false
+            }
+          },
+          dataLabels: {
+            enabled: false
+          },
+          stroke: {
+            curve: 'straight'
+          },
+          title: {
+            text: 'Earnings in each month',
+            align: 'left'
+          },
+          grid: {
+            row: {
+              colors: ['#E5F4EB', 'transparent'],
+              opacity: 0.5
+            },
+          },
+          xaxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+          },
+          colors: ['#309255']
+        },  
+    };
 
   return (
     <div className="main-wrapper main-wrapper-02">
@@ -130,7 +167,7 @@ function Overview(props) {
                             <li>
                                 <button style={{border: "none", backgroundColor: "#fff"}}>
                                     <AiOutlineUser />
-                                    {"   "}Profile
+                                    {"   "}{educatorInfo.name}
                                 </button>
                             </li>
                             <li>
@@ -186,7 +223,7 @@ function Overview(props) {
                         <div className="overview-box">
                             <div className="single-box">
                                 <h5 className="title">Total Revenue</h5>
-                                <div className="count">$568.00</div>
+                                <div className="count">$5680.00</div>
                                 <p><span>$235.00</span> This months</p>
                             </div>
 
@@ -205,7 +242,19 @@ function Overview(props) {
                                             <span className="rating-bar" style={{width: "80%"}}></span>
                                     </span>
                                 </div>
-                                <p><span>58</span> This months</p>
+                                <p><span>58</span> This month</p>
+                            </div>
+                        </div>
+
+                        <div className="graph">
+                            <div className="mixed-chart">
+                                <Chart
+                                    options={state.options}
+                                    series={state.series}
+                                    type="line" 
+                                    height={350}
+                                    width="100%"
+                                />
                             </div>
                         </div>
 

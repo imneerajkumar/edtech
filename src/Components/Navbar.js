@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Dropdown } from "react-bootstrap";
 import { logout } from "../store/actions/studentsAction";
 import { logoutEducator } from "../store/actions/educatorAction";
-import { FiInstagram,	FiTwitter,	FiFacebook,	FiPhoneCall,	FiMail,	FiArrowLeftCircle } from "react-icons/fi";
-import { AiOutlineSkype } from "react-icons/ai";
+import { FiInstagram,	FiTwitter,	FiFacebook,	FiPhoneCall,	FiMail,	FiArrowLeftCircle, FiLogOut } from "react-icons/fi";
+import { AiOutlineSkype, AiOutlineUser } from "react-icons/ai";
 import "./Navbar.css";
 
 const Navbar = ({ scrollState }) => {
@@ -123,15 +123,15 @@ const Navbar = ({ scrollState }) => {
 											</Dropdown.Toggle>
 										</Avatar>
 										<Dropdown.Menu>
+											<Dropdown.Item>
+												<AiOutlineUser /> {studentInfo ? studentInfo.name : educatorInfo.name}
+											</Dropdown.Item>
+											<Dropdown.Item>
+												<FiMail /> {studentInfo ? studentInfo.email : educatorInfo.email}
+											</Dropdown.Item>
 											<Dropdown.Item onClick={logoutHandle}>
-												Logout
-											</Dropdown.Item>
-											<Dropdown.Item>
-												{studentInfo ? studentInfo.name : educatorInfo.name}
-											</Dropdown.Item>
-											<Dropdown.Item>
-												{studentInfo ? studentInfo.email : educatorInfo.email}
-											</Dropdown.Item>
+												<FiLogOut /> Logout
+											</Dropdown.Item>										
 										</Dropdown.Menu>
 									</Dropdown>
 								) : (
@@ -228,14 +228,14 @@ const Navbar = ({ scrollState }) => {
 								</Dropdown.Toggle>
 							</Avatar>
 							<Dropdown.Menu>
+								<Dropdown.Item>
+									<AiOutlineUser /> {studentInfo ? studentInfo.name : educatorInfo.name}
+								</Dropdown.Item>
+								<Dropdown.Item>
+									<FiMail /> {studentInfo ? studentInfo.email : educatorInfo.email}
+								</Dropdown.Item>
 								<Dropdown.Item onClick={logoutHandle}>
-									Logout
-								</Dropdown.Item>
-								<Dropdown.Item>
-									{studentInfo ? studentInfo.name : educatorInfo.name}
-								</Dropdown.Item>
-								<Dropdown.Item>
-									{studentInfo ? studentInfo.email : educatorInfo.email}
+									<FiLogOut /> Logout
 								</Dropdown.Item>
 							</Dropdown.Menu>
 						</Dropdown>
