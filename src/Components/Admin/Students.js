@@ -134,7 +134,7 @@ function Students(props) {
                             <li>
                                 <button style={{border: "none", backgroundColor: "#fff"}}>
                                     <AiOutlineUser />
-                                    {"   "}Profile
+                                    {"   "}{educatorInfo.name}
                                 </button>
                             </li>
                             <li>

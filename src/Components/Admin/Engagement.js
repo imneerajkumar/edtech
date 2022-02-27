@@ -151,7 +151,7 @@ function Engagement(props) {
                             <li>
                                 <button style={{border: "none", backgroundColor: "#fff"}}>
                                     <AiOutlineUser />
-                                    {"   "}Profile
+                                    {"   "}{educatorInfo.name}
                                 </button>
                             </li>
                             <li>
@@ -257,7 +257,7 @@ function Engagement(props) {
                                                 <img src="assets/images/courses/admin-courses-01.jpg" alt="Courses" />
                                             </div>
                                             <div className="content">
-                                                <h4 className="title"><a href="/">Build An eCommerce Site With WooCommerce and WooLentor</a></h4>
+                                                <h4 className="title"><a href="/course-details">Build An eCommerce Site With WooCommerce and WooLentor</a></h4>
                                             </div>
                                         </div>
                                         <div className="taught">
@@ -267,7 +267,7 @@ function Engagement(props) {
                                             <span>520</span>
                                         </div>
                                         <div className="button">
-                                            <a className="btn" href="/">View Details</a>
+                                            <a className="btn" href="/course-details">View Details</a>
                                         </div>
                                     </li>
                                     <li>
@@ -276,7 +276,7 @@ function Engagement(props) {
                                                 <img src="assets/images/courses/admin-courses-01.jpg" alt="Courses" />
                                             </div>
                                             <div className="content">
-                                                <h4 className="title"><a href="/">Build An WholeSale WooCommerce Store using Whols Plugin</a></h4>
+                                                <h4 className="title"><a href="/course-details">Build An WholeSale WooCommerce Store using Whols Plugin</a></h4>
                                             </div>
                                         </div>
                                         <div className="taught">
@@ -286,7 +286,7 @@ function Engagement(props) {
                                             <span>520</span>
                                         </div>
                                         <div className="button">
-                                            <a className="btn" href="/">View Details</a>
+                                            <a className="btn" href="/course-details">View Details</a>
                                         </div>
                                     </li>
                                 </ul>
