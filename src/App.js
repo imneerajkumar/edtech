@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
 	BrowserRouter as Router,
 	Navigate,
@@ -30,22 +30,6 @@ import Reviews from "./Components/Admin/Reviews";
 import Students from "./Components/Admin/Students";
 import { useSelector } from "react-redux";
 import AddCourse from "./Components/Admin/AddCourse";
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-
-const firebaseConfig = {
-	apiKey: "AIzaSyBuyTfw7jt9tlxzuTNKiHWYMAHkvIG8H4A",
-	authDomain: "edtech-757a9.firebaseapp.com",
-	projectId: "edtech-757a9",
-	storageBucket: "edtech-757a9.appspot.com",
-	messagingSenderId: "772394263680",
-	appId: "1:772394263680:web:2a7650fbbb56308f29b265",
-	measurementId: "G-103485YX3F",
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
 function App() {
 	const educatorAuthReducer = useSelector((state) => state.educatorAuthReducer);
@@ -68,11 +52,6 @@ function App() {
 			return false;
 		}
 	}
-	useEffect(() => {
-		const app = initializeApp(firebaseConfig);
-        console.log(app);
-		const analytics = getAnalytics(app);
-	});
 
 	return (
 		<Router>

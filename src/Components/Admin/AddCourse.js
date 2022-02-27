@@ -2,17 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { FiBookOpen } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { addCourse } from "../../store/actions/coursesAction";
 import { educatorAuth } from "../../store/actions/educatorAction";
-import { studentAuth } from "../../store/actions/studentsAction";
 import Download from "../Download";
 import Footer from "../Footer";
 import Navbar from "../Navbar";
 import ScrollButton from "../ScrollButton";
 import "./AddCourse.css";
-import { getStorage, ref, uploadBytes } from "firebase/storage";
-import { getApp } from "firebase/app";
+import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
+import { storage } from "../../store/constants/firebase";
 
 const AddCourse = () => {
 	const [scrollState, setScrollState] = useState(false);
@@ -25,21 +23,16 @@ const AddCourse = () => {
 		level: "",
 		language: "",
 		description: "",
-		duration: 0,
-		price: 0,
-		lectures: 0,
+		duration: null,
+		price: null,
+		lectures: null,
 	});
-	const [isStudent, setIsStudent] = useState(false);
 	const dispatch = useDispatch();
 	const educatorA = useSelector((state) => state.educatorAuthReducer);
-	const {
-		loading: EducatorLoading,
-		error: educatorError,
-		educatorInfo,
-	} = educatorA;
-	const studentA = useSelector((state) => state.studentAuthReducer);
-	const { loading, error, studentInfo } = studentA;
-	const navigate = useNavigate();
+	const { loading, error, educatorInfo } = educatorA;
+	const [cImage, setcImage] = useState(null);
+	const [iImage, setiImage] = useState(null);
+	const [progress, setProgress] = useState(0);
 
 	useEffect(() => {
 		window.addEventListener("scroll", (e) => {
@@ -50,53 +43,62 @@ const AddCourse = () => {
 				setScrollState(true);
 			}
 		});
-		// if(educatorIn)
 	});
 
-	const uploadInstructorImage = async () => {
-		const firebaseApp = getApp();
-		const storage = getStorage();
-		const imagesRef = ref(storage, "instructurName");
-		const path = details.instructorImage.split("\\");
+	const cImageHandler = () => {
+		const sotrageRef = ref(storage, `courses/${cImage.name}`);
+    const uploadTask = uploadBytesResumable(sotrageRef, cImage);
+		console.log(cImage);
 
-		const pathLength = path.length;
-		console.log(path);
-		const response = await fetch(path[pathLength - 1]);
-		const blob = await response.blob();
-// console.log(blob);
-		const metadata = {
-			contentType: "image/jpeg",
-		};
+		uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const prog = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
+        setProgress(prog);
+      },
+      (error) => console.log(error),
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+					setDetails((prev) => {
+						console.log(downloadURL);
+						return { ...prev, courseImage: downloadURL };
+					});
+        });
+      }
+    );
+	}
 
-		uploadBytes(imagesRef, details.instructorImage,metadata).then((snapshot) => {
-			console.log("Uploaded a blob or file!");
-		});
-	};
+	const iImageHanlder = () => {
+		const sotrageRef = ref(storage, `instructors/${iImage.name}`);
+    const uploadTask = uploadBytesResumable(sotrageRef, iImage);
 
-	// useEffect(() => {
-	// 	if (educatorInfo) {
-	// 		navigate("/admin");
-	// 	}
-	// }, [navigate, educatorInfo, isStudent]);
-	// useEffect(() => {
-	// 	if (studentInfo) {
-	// 		navigate("/courses");
-	// 	}
-	// }, [navigate, studentInfo]);
+		uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const prog = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
+        setProgress(prog);
+      },
+      (error) => console.log(error),
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          setDetails((prev) => {
+						return { ...prev, instructorImage: downloadURL };
+					});
+        });
+      }
+    );
+	}
 
 	const addCourseHandle = (e) => {
 		e.preventDefault();
 		// console.log(details);
 		dispatch(addCourse(details));
-		// console.log(isStudent);
-		// if (isStudent) {
-		// 	dispatch(studentAuth(email, password));
-		// } else {
-		// 	dispatch(educatorAuth(email, password));
-		// }
-		// setEmail("");
-		// setPassword("");
 	};
+
 	return (
 		<div className="main-wrapper">
 			{/* <!-- Header Section Start --> */}
@@ -212,7 +214,6 @@ const AddCourse = () => {
 											</div>
 											<div className="single-form">
 												{" "}
-												s
 												<input
 													type="text"
 													required
@@ -245,12 +246,7 @@ const AddCourse = () => {
 													accept=".jpg,.jpeg,.png"
 													// required
 													placeholder="Course image"
-													value={details.courseImage}
-													onChange={(e) => {
-														setDetails((prev) => {
-															return { ...prev, courseImage: e.target.value };
-														});
-													}}
+													onChange={(e) => {setcImage(e.target.files[0])}}
 												/>
 												<Button
 													variant="btn btn-secondary btn-outline w-100"
@@ -264,6 +260,7 @@ const AddCourse = () => {
 														padding: "20px 30px",
 														marginTop: "10px",
 													}}
+													onClick={cImageHandler}
 												>
 													Upload
 												</Button>
@@ -286,18 +283,10 @@ const AddCourse = () => {
 													style={{ marginTop: "10px" }}
 													// required
 													placeholder="Instructor image"
-													value={details.instructorImage}
-													onChange={(e) => {
-														setDetails((prev) => {
-															return {
-																...prev,
-																instructorImage: e.target.value,
-															};
-														});
-													}}
+													onChange={(e) => {setiImage(e.target.files[0])}}
 												/>
 												<Button
-													onClick={uploadInstructorImage}
+													onClick={iImageHanlder}
 													variant="btn btn-secondary btn-outline w-100"
 													style={{
 														textAlign: "center",
@@ -412,9 +401,7 @@ const AddCourse = () => {
 											<div className="single-form">
 												<button
 													className="btn btn-primary btn-hover-dark w-100"
-													onClick={() => {
-														setIsStudent(true);
-													}}
+													onClick={addCourseHandle}
 												>
 													Add Course
 												</button>
