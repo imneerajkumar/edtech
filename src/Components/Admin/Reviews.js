@@ -191,7 +191,7 @@ function Reviews(props) {
                               <ul className="filter-check">
                                   <li>
                                       <div>
-                                          <select>
+                                          <select className="nice-select">
                                               <option data-display="All Courses">All Courses</option>
                                               <option value="1">option</option>
                                               <option value="2">option</option>
@@ -211,7 +211,7 @@ function Reviews(props) {
                                   <li>
                                       <label>Rating:</label>{"  "}
                                       <div className="rating-select">
-                                          <select>
+                                          <select className="nice-select">
                                               <option data-display="All">All</option>
                                               <option value="1">5 Star</option>
                                               <option value="2">4 Star</option>

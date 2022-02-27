@@ -192,7 +192,7 @@ function Students(props) {
                       {/* <!-- Student Top Start --> */}
                       <div className="admin-top-bar students-top">
                           <div className="courses-select">
-                              <select>
+                              <select className="nice-select">
                                   <option data-display="All Courses">All Courses</option>
                                   <option value="1">option</option>
                                   <option value="2">option</option>

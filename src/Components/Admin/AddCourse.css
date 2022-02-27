@@ -11,3 +11,9 @@
         display: none;
     }
 }
+.btn.btn-outline:hover {
+    background-color: #309255;
+    border-color: #309255;
+    color: #fff;
+}
+

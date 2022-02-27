@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, ProgressBar } from "react-bootstrap";
 import { FiBookOpen } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import { addCourse } from "../../store/actions/coursesAction";
@@ -32,7 +32,8 @@ const AddCourse = () => {
 	const { loading, error, educatorInfo } = educatorA;
 	const [cImage, setcImage] = useState(null);
 	const [iImage, setiImage] = useState(null);
-	const [progress, setProgress] = useState(0);
+	const [cprogress, setCProgress] = useState(0);
+	const [iprogress, setIProgress] = useState(0);
 
 	useEffect(() => {
 		window.addEventListener("scroll", (e) => {
@@ -46,52 +47,59 @@ const AddCourse = () => {
 	});
 
 	const cImageHandler = () => {
-		const sotrageRef = ref(storage, `courses/${cImage.name}`);
-    const uploadTask = uploadBytesResumable(sotrageRef, cImage);
+		const storageRef = ref(
+			storage,
+			`courses/${educatorInfo.name}/${details.courseName}/${cImage.name}`
+		);
+		const uploadTask = uploadBytesResumable(storageRef, cImage);
 		console.log(cImage);
 
 		uploadTask.on(
-      "state_changed",
-      (snapshot) => {
-        const prog = Math.round(
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-        );
-        setProgress(prog);
-      },
-      (error) => console.log(error),
-      () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+			"state_changed",
+			(snapshot) => {
+				const prog = Math.round(
+					(snapshot.bytesTransferred / snapshot.totalBytes) * 100
+				);
+				setCProgress(prog);
+			},
+			(error) => console.log(error),
+			() => {
+				getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
 					setDetails((prev) => {
 						console.log(downloadURL);
 						return { ...prev, courseImage: downloadURL };
 					});
-        });
-      }
-    );
-	}
+				});
+			}
+		);
+	};
 
 	const iImageHanlder = () => {
-		const sotrageRef = ref(storage, `instructors/${iImage.name}`);
-    const uploadTask = uploadBytesResumable(sotrageRef, iImage);
+		const storageRef = ref(
+			storage,
+			`instructors/${educatorInfo.name}/${iImage.name}`
+		);
+		const uploadTask = uploadBytesResumable(storageRef, iImage);
 
 		uploadTask.on(
-      "state_changed",
-      (snapshot) => {
-        const prog = Math.round(
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-        );
-        setProgress(prog);
-      },
-      (error) => console.log(error),
-      () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          setDetails((prev) => {
+			"state_changed",
+			(snapshot) => {
+				const prog = Math.round(
+					(snapshot.bytesTransferred / snapshot.totalBytes) * 100
+				);
+				setIProgress(prog);
+			},
+			(error) => console.log(error),
+			() => {
+				getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+					setDetails((prev) => {
 						return { ...prev, instructorImage: downloadURL };
 					});
-        });
-      }
-    );
-	}
+				});
+			}
+		);
+	};
+    // console.log(iprogress);
 
 	const addCourseHandle = (e) => {
 		e.preventDefault();
@@ -246,10 +254,21 @@ const AddCourse = () => {
 													accept=".jpg,.jpeg,.png"
 													// required
 													placeholder="Course image"
-													onChange={(e) => {setcImage(e.target.files[0])}}
+													onChange={(e) => {
+														setcImage(e.target.files[0]);
+													}}
 												/>
+												{cprogress > 0 && cprogress < 100 && (
+													<ProgressBar
+														striped
+														variant="success"
+														style={{ marginTop: "10px" }}
+														now={cprogress}
+													/>
+												)}
+
 												<Button
-													variant="btn btn-secondary btn-outline w-100"
+													className="btn btn-secondary btn-outline w-100"
 													style={{
 														textAlign: "center",
 														height: "30px",
@@ -262,7 +281,7 @@ const AddCourse = () => {
 													}}
 													onClick={cImageHandler}
 												>
-													Upload
+													{cprogress === 100 ? "Uploaded" : "Upload"}
 												</Button>
 											</div>
 											<div style={{ marginTop: "20px" }}>
@@ -283,8 +302,19 @@ const AddCourse = () => {
 													style={{ marginTop: "10px" }}
 													// required
 													placeholder="Instructor image"
-													onChange={(e) => {setiImage(e.target.files[0])}}
+													onChange={(e) => {
+														setiImage(e.target.files[0]);
+													}}
 												/>
+												{iprogress > 0 && iprogress < 100 && (
+													<ProgressBar
+														striped
+														variant="success"
+														style={{ marginTop: "10px" }}
+														now={iprogress}
+													/>
+												)}
+
 												<Button
 													onClick={iImageHanlder}
 													variant="btn btn-secondary btn-outline w-100"
@@ -299,7 +329,7 @@ const AddCourse = () => {
 														marginTop: "10px",
 													}}
 												>
-													Upload
+													{iprogress === 100 ? "Uploaded" : "Upload"}
 												</Button>
 											</div>
 											<div className="single-form">
