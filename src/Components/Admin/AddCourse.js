@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FiBookOpen } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { addCourse } from "../../store/actions/coursesAction";
 import { educatorAuth } from "../../store/actions/educatorAction";
 import { studentAuth } from "../../store/actions/studentsAction";
 import Download from "../Download";
@@ -11,8 +12,19 @@ import ScrollButton from "../ScrollButton";
 import "./AddCourse.css";
 const AddCourse = () => {
 	const [scrollState, setScrollState] = useState(false);
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
+	const [details, setDetails] = useState({
+		instructorName: "",
+		instructorImage: "",
+		courseName: "",
+		courseImage: "",
+		curriculum: "",
+		level: "",
+		language: "",
+		description: "",
+		duration: 0,
+		price: 0,
+		lectures: 0,
+	});
 	const [isStudent, setIsStudent] = useState(false);
 	const dispatch = useDispatch();
 	const educatorA = useSelector((state) => state.educatorAuthReducer);
@@ -46,16 +58,18 @@ const AddCourse = () => {
 	// 	}
 	// }, [navigate, studentInfo]);
 
-	const loginHandle = (e) => {
+	const addCourseHandle = (e) => {
 		e.preventDefault();
-		console.log(isStudent);
-		if (isStudent) {
-			dispatch(studentAuth(email, password));
-		} else {
-			dispatch(educatorAuth(email, password));
-		}
-		setEmail("");
-		setPassword("");
+        // console.log(details);
+        dispatch(addCourse(details))
+		// console.log(isStudent);
+		// if (isStudent) {
+		// 	dispatch(studentAuth(email, password));
+		// } else {
+		// 	dispatch(educatorAuth(email, password));
+		// }
+		// setEmail("");
+		// setPassword("");
 	};
 	return (
 		<div className="main-wrapper">
@@ -155,15 +169,19 @@ const AddCourse = () => {
 									</h3>
 
 									<div className="form-wrapper">
-										<form action="#" onSubmit={loginHandle}>
+										<form action="#" onSubmit={addCourseHandle}>
 											{/* <!-- Single Form Start --> */}
 											<div className="single-form">
 												<input
 													type="text"
 													required
 													placeholder="Course name"
-													value={email}
-													onChange={(e) => setEmail(e.target.value)}
+													value={details.courseName}
+													onChange={(e) => {
+														setDetails((prev) => {
+															return { ...prev, courseName: e.target.value };
+														});
+													}}
 												/>
 											</div>
 											<div className="single-form">
@@ -171,8 +189,15 @@ const AddCourse = () => {
 													type="text"
 													required
 													placeholder="Instructor name"
-													value={email}
-													onChange={(e) => setEmail(e.target.value)}
+													value={details.instructorName}
+													onChange={(e) => {
+														setDetails((prev) => {
+															return {
+																...prev,
+																instructorName: e.target.value,
+															};
+														});
+													}}
 												/>
 											</div>
 											<div className="single-form">
@@ -187,10 +212,14 @@ const AddCourse = () => {
 													style={{ height: "auto" }}
 													className="form-control"
 													accept=".jpg,.jpeg,.png"
-													required
+													// required
 													placeholder="Course image"
-													value={email}
-													// onChange={(e) => setEmail(e.target.value)}
+													value={details.courseImage}
+													onChange={(e) => {
+														setDetails((prev) => {
+															return { ...prev, courseImage: e.target.value };
+														});
+													}}
 												/>
 											</div>
 											<div className="single-form">
@@ -209,10 +238,17 @@ const AddCourse = () => {
 													accept=".jpg,.jpeg,.png"
 													// alt='courseImg'
 													style={{ height: "auto" }}
-													required
+													// required
 													placeholder="Instructor image"
-													value={email}
-													// onChange={(e) => setEmail(e.target.value)}
+													value={details.instructorImage}
+													onChange={(e) => {
+														setDetails((prev) => {
+															return {
+																...prev,
+																instructorImage: e.target.value,
+															};
+														});
+													}}
 												/>
 											</div>
 											<div className="single-form">
@@ -220,8 +256,12 @@ const AddCourse = () => {
 													type="number"
 													required
 													placeholder="Price"
-													value={email}
-													onChange={(e) => setEmail(e.target.value)}
+													value={details.price}
+													onChange={(e) => {
+														setDetails((prev) => {
+															return { ...prev, price: e.target.value };
+														});
+													}}
 												/>
 											</div>
 											{/* <!-- Single Form End -->
@@ -231,8 +271,12 @@ const AddCourse = () => {
 													type="text"
 													required
 													placeholder="Description"
-													value={password}
-													onChange={(e) => setPassword(e.target.value)}
+													value={details.description}
+													onChange={(e) => {
+														setDetails((prev) => {
+															return { ...prev, description: e.target.value };
+														});
+													}}
 												/>
 											</div>
 											<div className="single-form">
@@ -240,8 +284,12 @@ const AddCourse = () => {
 													type="text"
 													required
 													placeholder="Curriculum"
-													value={password}
-													onChange={(e) => setPassword(e.target.value)}
+													value={details.curriculum}
+													onChange={(e) => {
+														setDetails((prev) => {
+															return { ...prev, curriculum: e.target.value };
+														});
+													}}
 												/>
 											</div>
 											<div className="single-form">
@@ -249,8 +297,12 @@ const AddCourse = () => {
 													type="text"
 													required
 													placeholder="Level"
-													value={password}
-													onChange={(e) => setPassword(e.target.value)}
+													value={details.level}
+													onChange={(e) => {
+														setDetails((prev) => {
+															return { ...prev, level: e.target.value };
+														});
+													}}
 												/>
 											</div>
 											<div className="single-form">
@@ -258,8 +310,12 @@ const AddCourse = () => {
 													type="text"
 													required
 													placeholder="Language"
-													value={password}
-													onChange={(e) => setPassword(e.target.value)}
+													value={details.language}
+													onChange={(e) => {
+														setDetails((prev) => {
+															return { ...prev, language: e.target.value };
+														});
+													}}
 												/>
 											</div>
 											<div className="single-form">
@@ -267,8 +323,25 @@ const AddCourse = () => {
 													type="number"
 													required
 													placeholder="Duration (in hours)"
-													value={password}
-													onChange={(e) => setPassword(e.target.value)}
+													value={details.duration}
+													onChange={(e) => {
+														setDetails((prev) => {
+															return { ...prev, duration: e.target.value };
+														});
+													}}
+												/>
+											</div>
+											<div className="single-form">
+												<input
+													type="number"
+													required
+													placeholder="Number of lectures "
+													value={details.lectures}
+													onChange={(e) => {
+														setDetails((prev) => {
+															return { ...prev, lectures: e.target.value };
+														});
+													}}
 												/>
 											</div>
 
