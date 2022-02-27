@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Button } from "react-bootstrap";
 import { FiBookOpen } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +11,9 @@ import Footer from "../Footer";
 import Navbar from "../Navbar";
 import ScrollButton from "../ScrollButton";
 import "./AddCourse.css";
+import { getStorage, ref, uploadBytes } from "firebase/storage";
+import { getApp } from "firebase/app";
+
 const AddCourse = () => {
 	const [scrollState, setScrollState] = useState(false);
 	const [details, setDetails] = useState({
@@ -36,6 +40,7 @@ const AddCourse = () => {
 	const studentA = useSelector((state) => state.studentAuthReducer);
 	const { loading, error, studentInfo } = studentA;
 	const navigate = useNavigate();
+
 	useEffect(() => {
 		window.addEventListener("scroll", (e) => {
 			var scroll = window.pageYOffset;
@@ -47,6 +52,27 @@ const AddCourse = () => {
 		});
 		// if(educatorIn)
 	});
+
+	const uploadInstructorImage = async () => {
+		const firebaseApp = getApp();
+		const storage = getStorage();
+		const imagesRef = ref(storage, "instructurName");
+		const path = details.instructorImage.split("\\");
+
+		const pathLength = path.length;
+		console.log(path);
+		const response = await fetch(path[pathLength - 1]);
+		const blob = await response.blob();
+// console.log(blob);
+		const metadata = {
+			contentType: "image/jpeg",
+		};
+
+		uploadBytes(imagesRef, details.instructorImage,metadata).then((snapshot) => {
+			console.log("Uploaded a blob or file!");
+		});
+	};
+
 	// useEffect(() => {
 	// 	if (educatorInfo) {
 	// 		navigate("/admin");
@@ -60,8 +86,8 @@ const AddCourse = () => {
 
 	const addCourseHandle = (e) => {
 		e.preventDefault();
-        // console.log(details);
-        dispatch(addCourse(details))
+		// console.log(details);
+		dispatch(addCourse(details));
 		// console.log(isStudent);
 		// if (isStudent) {
 		// 	dispatch(studentAuth(email, password));
@@ -185,6 +211,8 @@ const AddCourse = () => {
 												/>
 											</div>
 											<div className="single-form">
+												{" "}
+												s
 												<input
 													type="text"
 													required
@@ -200,8 +228,11 @@ const AddCourse = () => {
 													}}
 												/>
 											</div>
-											<div className="single-form">
-												<label htmlFor="Courseimage" style={{ fontSize: "18px" }}>
+											<div style={{ marginTop: "20px" }}>
+												<label
+													htmlFor="Courseimage"
+													style={{ fontSize: "18px", color: "#309255" }}
+												>
 													Course Image
 												</label>
 
@@ -209,7 +240,7 @@ const AddCourse = () => {
 													type="file"
 													// alt='courseImg
 													id="Courseimage"
-													style={{ height: "auto" }}
+													style={{ marginTop: "10px" }}
 													className="form-control"
 													accept=".jpg,.jpeg,.png"
 													// required
@@ -221,11 +252,26 @@ const AddCourse = () => {
 														});
 													}}
 												/>
+												<Button
+													variant="btn btn-secondary btn-outline w-100"
+													style={{
+														textAlign: "center",
+														height: "30px",
+														display: "flex",
+														justifyContent: "center",
+														alignItems: "center",
+														fontSize: "16px",
+														padding: "20px 30px",
+														marginTop: "10px",
+													}}
+												>
+													Upload
+												</Button>
 											</div>
-											<div className="single-form">
+											<div style={{ marginTop: "20px" }}>
 												<label
 													htmlFor="Instructorimage"
-													style={{ fontSize: "18px" }}
+													style={{ fontSize: "18px", color: "#309255" }}
 												>
 													Instructor Image
 												</label>
@@ -237,7 +283,7 @@ const AddCourse = () => {
 													name="Instructor"
 													accept=".jpg,.jpeg,.png"
 													// alt='courseImg'
-													style={{ height: "auto" }}
+													style={{ marginTop: "10px" }}
 													// required
 													placeholder="Instructor image"
 													value={details.instructorImage}
@@ -250,6 +296,22 @@ const AddCourse = () => {
 														});
 													}}
 												/>
+												<Button
+													onClick={uploadInstructorImage}
+													variant="btn btn-secondary btn-outline w-100"
+													style={{
+														textAlign: "center",
+														height: "30px",
+														display: "flex",
+														justifyContent: "center",
+														alignItems: "center",
+														fontSize: "16px",
+														padding: "20px ",
+														marginTop: "10px",
+													}}
+												>
+													Upload
+												</Button>
 											</div>
 											<div className="single-form">
 												<input
