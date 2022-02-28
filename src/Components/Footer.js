@@ -71,22 +71,22 @@ const Footer = () => {
 
 									<ul className="widget-social">
 										<li>
-											<a href="/">
+											<a href="https://www.facebook.com/" target="_blank">
 												<FiFacebook size={24} />
 											</a>
 										</li>
 										<li>
-											<a href="/">
+											<a href="https://twitter.com/" target="_blank">
 												<FiTwitter size={24} />
 											</a>
 										</li>
 										<li>
-											<a href="/">
+											<a href="https://www.skype.com/en/" target="_blank">
 												<AiOutlineSkype size={26} />{" "}
 											</a>
 										</li>
 										<li>
-											<a href="/">
+											<a href="https://www.instagram.com/" target="_blank">
 												<FiInstagram size={22} />
 											</a>
 										</li>
