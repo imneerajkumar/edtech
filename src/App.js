@@ -21,7 +21,7 @@ import Contact from "./Components/About/Contact";
 // import Meeting from './Components/meeting/Video'
 // import Meetpage from "./Components/meeting/Videocall";
 import JitsiMeetComponent from "./Components/jitsimeet/videoconference";
-import ConferenceForm from "./Components/jitsimeet/ConferenceForm";
+import ConferenceForm from "./Components/Admin/ConferenceForm";
 import CourseAdmin from "./Components/Admin/CourseAdmin";
 import Engagement from "./Components/Admin/Engagement";
 import Messages from "./Components/Admin/Messages";

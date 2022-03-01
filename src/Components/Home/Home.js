@@ -248,14 +248,13 @@ const Home = () => {
 															<span className="time">
 																{" "}
 																<FiVideo color="#309255" size={22} />{" "}
-																{item.lectures}
-																Lectures{" "}
+																{item.lectures} Lectures{" "}
 															</span>
 														</div>
 														<div className="courses-price-review">
 															<div className="courses-price">
 																<span className="sale-parice">
-																	${item.price}
+																	${item.price.toFixed(2)}
 																</span>
 																{/* <span className="old-parice">$440.00</span> */}
 															</div>
@@ -326,14 +325,13 @@ const Home = () => {
 															<span className="time">
 																{" "}
 																<FiVideo color="#309255" size={22} />{" "}
-																{item.lectures}
-																Lectures{" "}
+																{item.lectures} Lectures{" "}
 															</span>
 														</div>
 														<div className="courses-price-review">
 															<div className="courses-price">
 																<span className="sale-parice">
-																	${item.price}
+																	${item.price.toFixed(2)}
 																</span>
 																{/* <span className="old-parice">$440.00</span> */}
 															</div>

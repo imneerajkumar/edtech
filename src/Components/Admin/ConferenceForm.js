@@ -7,6 +7,8 @@ import Navbar from "../Navbar";
 import ScrollButton from "../ScrollButton";
 import shortid from "shortid";
 import { useNavigate } from "react-router-dom";
+import { addLecture } from "../../store/actions/lecturesAction";
+import Message from "../message/message";
 
 const ConferenceForm = () => {
 	const [scrollState, setScrollState] = useState(false);
@@ -16,13 +18,14 @@ const ConferenceForm = () => {
 		language: "",
 		description: "",
 		duration: null,
-    meetingId: shortid.generate()
+		meetingId: shortid.generate(),
 	});
 	const dispatch = useDispatch();
-  const navigate = useNavigate();
+	const navigate = useNavigate();
 	const educatorA = useSelector((state) => state.educatorAuthReducer);
-	const { loading, error, educatorInfo } = educatorA;
-  console.log(shortid.generate());
+	const { loading, educatorInfo } = educatorA;
+	const [error, setError] = useState("");
+	console.log(shortid.generate());
 
 	useEffect(() => {
 		window.addEventListener("scroll", (e) => {
@@ -37,7 +40,23 @@ const ConferenceForm = () => {
 
 	const meetingHandler = (e) => {
 		e.preventDefault();
-    navigate(`/meet/${details.meetingId}`)
+
+		dispatch(addLecture(details))
+			.then((response) => {
+                console.log(response);
+				setDetails({
+					instructorName: "",
+					subjectName: "",
+					language: "",
+					description: "",
+					duration: null,
+					meetingId: "",
+				});
+				navigate(`/meet/${details.meetingId}`);
+			})
+			.catch((e) => {
+				setError(e.message);
+			});
 	};
 
 	return (
@@ -156,7 +175,7 @@ const ConferenceForm = () => {
 													}}
 												/>
 											</div>
-                      <div className="single-form">
+											<div className="single-form">
 												<input
 													type="text"
 													required
@@ -169,7 +188,7 @@ const ConferenceForm = () => {
 													}}
 												/>
 											</div>
-                      <div className="single-form">
+											<div className="single-form">
 												<input
 													type="text"
 													required
@@ -194,7 +213,7 @@ const ConferenceForm = () => {
 														});
 													}}
 												/>
-											</div>																				
+											</div>
 											<div className="single-form">
 												<input
 													type="number"
@@ -208,12 +227,12 @@ const ConferenceForm = () => {
 													}}
 												/>
 											</div>
-                      <div className="single-form">
-												<input
-													value={details.meetingId}
-                          readOnly={true}												
-												/>
+											<div className="single-form">
+												<input value={details.meetingId} readOnly={true} />
 											</div>
+
+											<div style={{marginTop:"10px"}}> {error && <Message variant={"danger"} >{error}</Message>}</div>
+
 											<div className="single-form">
 												<button
 													className="btn btn-primary btn-hover-dark w-100"
