@@ -76,7 +76,7 @@ const Footer = () => {
 											</a>
 										</li>
 										<li>
-											<a href="https://twitter.com/" target="_blank">
+											<a href="https://twitter.com/" target="_blank" rel="noreferrer">
 												<FiTwitter size={24} />
 											</a>
 										</li>

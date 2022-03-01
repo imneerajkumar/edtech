@@ -5,7 +5,12 @@ import Navbar from "../Navbar";
 import Download from "../Download";
 import Footer from "../Footer";
 import ScrollButton from "../ScrollButton";
-import { FaBookmark, FaCertificate, FaQuoteRight, FaSearch } from "react-icons/fa";
+import {
+	FaBookmark,
+	FaCertificate,
+	FaQuoteRight,
+	FaSearch,
+} from "react-icons/fa";
 import "./Home.css";
 
 const Home = () => {
@@ -21,6 +26,77 @@ const Home = () => {
 			}
 		});
 	});
+	const data = [
+		{
+			imgUrl: "assets/images/courses/courses-01.jpg",
+			instructImgUrl: "assets/images/author/author-02.jpg",
+			instructName: "Jason Williams",
+			type: "Science",
+			courseName: "Data Science and Machine Learning with Python -Hands On!",
+			duration: " 08 hr 15 mins",
+			lectures: "29",
+			price: 385.0,
+			rating: 4.9,
+		},
+		{
+			imgUrl: "assets/images/courses/courses-02.jpg",
+			instructImgUrl: "assets/images/author/author-01.jpg",
+			instructName: "Pamela Foster",
+			type: "Science",
+			courseName: "Create Amazing Color Schemes for Your UX Design Projects",
+			duration: " 08 hr 15 mins",
+			lectures: "29",
+			price: 420.0,
+			rating: 4.9,
+		},
+		{
+			imgUrl: "assets/images/courses/courses-03.jpg",
+			instructImgUrl: "assets/images/author/author-03.jpg",
+			instructName: "Rose Simmons",
+			type: "Science",
+			courseName: "Culture & Leadership: Strategies for a Successful Business",
+			duration: " 08 hr 15 mins",
+			lectures: "29",
+			price: 295.0,
+			rating: 4.9,
+		},
+		{
+			imgUrl: "assets/images/courses/courses-04.jpg",
+			instructImgUrl: "assets/images/author/author-04.jpg",
+			instructName: "Angelia Williams",
+			type: "Finance",
+			courseName:
+				"Finance Series: Learn to Budget and Calculate your Net Worth.",
+			duration: " 08 hr 15 mins",
+			lectures: "29",
+			price: 295.0,
+			rating: 4.9,
+		},
+		{
+			imgUrl: "assets/images/courses/courses-05.jpg",
+			instructImgUrl: "assets/images/author/author-02.jpg",
+			instructName: "Jason Williams",
+			type: "Marketing",
+			courseName:
+				"Build Brand Into Marketing: Tackling the New Marketing Landscape",
+			duration: " 08 hr 15 mins",
+			lectures: "29",
+			price: 136.0,
+			rating: 4.9,
+		},
+		{
+			imgUrl: "assets/images/courses/courses-06.jpg",
+			instructImgUrl: "assets/images/author/author-01.jpg",
+			instructName: "Pamela Foster",
+			type: "Design",
+			courseName:
+				"Graphic Design: Illustrating Badges and Icons with Geometric Shapes",
+			duration: " 08 hr 15 mins",
+			lectures: "29",
+			price: 237.0,
+			rating: 4.9,
+		},
+	];
 
 	return (
 		<div className="main-wrapper">
@@ -111,7 +187,9 @@ const Home = () => {
 							<form action="#">
 								<input type="text" placeholder="Search your course" />
 								<button className="blog-meta">
-									<i><FaSearch /></i>
+									<i>
+										<FaSearch />
+									</i>
 								</button>
 							</form>
 						</div>
@@ -126,392 +204,76 @@ const Home = () => {
 							{/* <!-- All Courses Wrapper Start --> */}
 							<div className="courses-wrapper">
 								<div className="row">
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="course-details">
-													<img
-														src="assets/images/courses/courses-01.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-01.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
+									{data.map((item, index) => {
+										return (
+											<div className="col-lg-4 col-md-6">
+												{/* <!-- Single Courses Start --> */}
+												<div className="single-courses">
+													<div className="courses-images">
+														<a href="course-details">
+															<img src={item.imgUrl} alt="Courses" />
+														</a>
 													</div>
-													<div className="tag">
-														<a href="/course-details">Science</a>
-													</div>
-												</div>
+													<div className="courses-content">
+														<div className="courses-author">
+															<div className="author">
+																<div className="author-thumb">
+																	<a href="/course-details">
+																		<img
+																			src={item.instructImgUrl}
+																			alt="Author"
+																		/>
+																	</a>
+																</div>
+																<div className="author-name">
+																	<a className="name" href="/course-details">
+																		{item.instructName}
+																	</a>
+																</div>
+															</div>
+															<div className="tag">
+																<a href="/course-details">{item.type}</a>
+															</div>
+														</div>
 
-												<h4 className="title">
-													<a href="/course-details">
-														Data Science and Machine Learning with Python -
-														Hands On!
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span className="time">
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span className="time">
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$385.00</span>
-														<span className="old-parice">$440.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-02.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-02.jpg"
-																	alt="Author"
-																/>
-															</a>
+														<h4 className="title">
+															<a href="/course-details">{item.courseName}</a>
+														</h4>
+														<div className="courses-meta">
+															<span className="time">
+																{" "}
+																<FiClock color="#309255" size={22} />{" "}
+																{item.duration}
+															</span>
+															<span className="time">
+																{" "}
+																<FiVideo color="#309255" size={22} />{" "}
+																{item.lectures}
+																Lectures{" "}
+															</span>
 														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Pamela Foster
-															</a>
+														<div className="courses-price-review">
+															<div className="courses-price">
+																<span className="sale-parice">
+																	${item.price}
+																</span>
+																{/* <span className="old-parice">$440.00</span> */}
+															</div>
+															<div className="courses-review">
+																<span className="rating-count">
+																	{item.rating}
+																</span>
+																<span className="rating-star">
+																	<span className="rating-bar"></span>
+																</span>
+															</div>
 														</div>
 													</div>
-													<div className="tag">
-														<a href="/course-details">Science</a>
-													</div>
 												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Create Amazing Color Schemes for Your UX Design
-														Projects
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span className="time">
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span className="time">
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$420.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
+												{/* <!-- Single Courses End --> */}
 											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-03.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-03.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Rose Simmons
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Science</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Culture & Leadership: Strategies for a Successful
-														Business
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span className="time">
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span className="time">
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$295.00</span>
-														<span className="old-parice">$340.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-04.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-04.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Finance</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Finance Series: Learn to Budget and Calculate your
-														Net Worth.
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span className="time">
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span className="time">
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">Free</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-05.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-05.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Marketing</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Build Brand Into Marketing: Tackling the New
-														Marketing Landscape
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span className="time">
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span className="time">
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$136.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-06.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-06.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Design</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Graphic Design: Illustrating Badges and Icons with
-														Geometric Shapes
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span className="time">
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span className="time">
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$237.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
+										);
+									})}
 								</div>
 							</div>
 							{/* <!-- All Courses Wrapper End --> */}
@@ -520,2370 +282,80 @@ const Home = () => {
 							{/* <!-- All Courses Wrapper Start --> */}
 							<div className="courses-wrapper">
 								<div className="row">
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-02.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-01.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
+									{data.map((item, index) => {
+										return (
+											<div className="col-lg-4 col-md-6">
+												{/* <!-- Single Courses Start --> */}
+												<div className="single-courses">
+													<div className="courses-images">
+														<a href="course-details">
+															<img src={item.imgUrl} alt="Courses" />
+														</a>
 													</div>
-													<div className="tag">
-														<a href="/course-details">Science</a>
-													</div>
-												</div>
+													<div className="courses-content">
+														<div className="courses-author">
+															<div className="author">
+																<div className="author-thumb">
+																	<a href="/course-details">
+																		<img
+																			src={item.instructImgUrl}
+																			alt="Author"
+																		/>
+																	</a>
+																</div>
+																<div className="author-name">
+																	<a className="name" href="/course-details">
+																		{item.instructName}
+																	</a>
+																</div>
+															</div>
+															<div className="tag">
+																<a href="/course-details">{item.type}</a>
+															</div>
+														</div>
 
-												<h4 className="title">
-													<a href="/course-details">
-														Data Science and Machine Learning with Python -
-														Hands On!
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$385.00</span>
-														<span className="old-parice">$440.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-05.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-02.jpg"
-																	alt="Author"
-																/>
-															</a>
+														<h4 className="title">
+															<a href="/course-details">{item.courseName}</a>
+														</h4>
+														<div className="courses-meta">
+															<span className="time">
+																{" "}
+																<FiClock color="#309255" size={22} />{" "}
+																{item.duration}
+															</span>
+															<span className="time">
+																{" "}
+																<FiVideo color="#309255" size={22} />{" "}
+																{item.lectures}
+																Lectures{" "}
+															</span>
 														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Pamela Foster
-															</a>
+														<div className="courses-price-review">
+															<div className="courses-price">
+																<span className="sale-parice">
+																	${item.price}
+																</span>
+																{/* <span className="old-parice">$440.00</span> */}
+															</div>
+															<div className="courses-review">
+																<span className="rating-count">
+																	{item.rating}
+																</span>
+																<span className="rating-star">
+																	<span className="rating-bar"></span>
+																</span>
+															</div>
 														</div>
 													</div>
-													<div className="tag">
-														<a href="/course-details">Science</a>
-													</div>
 												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Create Amazing Color Schemes for Your UX Design
-														Projects
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$420.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
+												{/* <!-- Single Courses End --> */}
 											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-01.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-03.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Rose Simmons
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Science</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Culture & Leadership: Strategies for a Successful
-														Business
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$295.00</span>
-														<span className="old-parice">$340.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-04.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-04.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Finance</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Finance Series: Learn to Budget and Calculate your
-														Net Worth.
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">Free</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-06.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-05.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Marketing</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Build Brand Into Marketing: Tackling the New
-														Marketing Landscape
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$136.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-03.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-06.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Design</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Graphic Design: Illustrating Badges and Icons with
-														Geometric Shapes
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$237.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
+										);
+									})}
 								</div>
 							</div>
-							{/* <!-- All Courses Wrapper End --> */}
-						</div>
-						<div className="tab-pane fade" id="tabs3">
-							{/* <!-- All Courses Wrapper Start --> */}
-							<div className="courses-wrapper">
-								<div className="row">
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-05.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-01.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Science</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Data Science and Machine Learning with Python -
-														Hands On!
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$385.00</span>
-														<span className="old-parice">$440.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-06.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-02.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Pamela Foster
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Science</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Create Amazing Color Schemes for Your UX Design
-														Projects
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$420.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-03.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-03.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Rose Simmons
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Science</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Culture & Leadership: Strategies for a Successful
-														Business
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$295.00</span>
-														<span className="old-parice">$340.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-01.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-04.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Finance</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Finance Series: Learn to Budget and Calculate your
-														Net Worth.
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">Free</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-02.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-05.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Marketing</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Build Brand Into Marketing: Tackling the New
-														Marketing Landscape
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$136.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-04.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-06.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Design</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Graphic Design: Illustrating Badges and Icons with
-														Geometric Shapes
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$237.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-								</div>
-							</div>
-							{/* <!-- All Courses Wrapper End --> */}
-						</div>
-						<div className="tab-pane fade" id="tabs4">
-							{/* <!-- All Courses Wrapper Start --> */}
-							<div className="courses-wrapper">
-								<div className="row">
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-06.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-01.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Science</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Data Science and Machine Learning with Python -
-														Hands On!
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$385.00</span>
-														<span className="old-parice">$440.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-05.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-02.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Pamela Foster
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Science</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Create Amazing Color Schemes for Your UX Design
-														Projects
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$420.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-04.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-03.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Rose Simmons
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Science</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Culture & Leadership: Strategies for a Successful
-														Business
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$295.00</span>
-														<span className="old-parice">$340.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-03.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-04.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Finance</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Finance Series: Learn to Budget and Calculate your
-														Net Worth.
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">Free</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-02.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-05.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Marketing</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Build Brand Into Marketing: Tackling the New
-														Marketing Landscape
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$136.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-01.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-06.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Design</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Graphic Design: Illustrating Badges and Icons with
-														Geometric Shapes
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$237.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-								</div>
-							</div>
-							{/* <!-- All Courses Wrapper End --> */}
-						</div>
-						<div className="tab-pane fade" id="tabs5">
-							{/* <!-- All Courses Wrapper Start --> */}
-							<div className="courses-wrapper">
-								<div className="row">
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-03.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-01.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Science</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Data Science and Machine Learning with Python -
-														Hands On!
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$385.00</span>
-														<span className="old-parice">$440.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-02.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-02.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Pamela Foster
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Science</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Create Amazing Color Schemes for Your UX Design
-														Projects
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$420.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-01.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-03.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Rose Simmons
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Science</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Culture & Leadership: Strategies for a Successful
-														Business
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$295.00</span>
-														<span className="old-parice">$340.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-06.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-04.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Finance</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Finance Series: Learn to Budget and Calculate your
-														Net Worth.
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">Free</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-05.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-05.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Marketing</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Build Brand Into Marketing: Tackling the New
-														Marketing Landscape
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$136.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-04.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-06.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Design</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Graphic Design: Illustrating Badges and Icons with
-														Geometric Shapes
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$237.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-								</div>
-							</div>
-							{/* <!-- All Courses Wrapper End --> */}
-						</div>
-						<div className="tab-pane fade" id="tabs6">
-							{/* <!-- All Courses Wrapper Start --> */}
-							<div className="courses-wrapper">
-								<div className="row">
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-03.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-01.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Science</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Data Science and Machine Learning with Python -
-														Hands On!
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$385.00</span>
-														<span className="old-parice">$440.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-05.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-02.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Pamela Foster
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Science</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Create Amazing Color Schemes for Your UX Design
-														Projects
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$420.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-01.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-03.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Rose Simmons
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Science</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Culture & Leadership: Strategies for a Successful
-														Business
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$295.00</span>
-														<span className="old-parice">$340.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-04.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-04.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Finance</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Finance Series: Learn to Budget and Calculate your
-														Net Worth.
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">Free</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-06.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-05.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Marketing</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Build Brand Into Marketing: Tackling the New
-														Marketing Landscape
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$136.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-02.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-06.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Design</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Graphic Design: Illustrating Badges and Icons with
-														Geometric Shapes
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$237.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-								</div>
-							</div>
-							{/* <!-- All Courses Wrapper End --> */}
-						</div>
-						<div className="tab-pane fade" id="tabs7">
-							{/* <!-- All Courses Wrapper Start --> */}
-							<div className="courses-wrapper">
-								<div className="row">
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-04.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-01.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Science</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Data Science and Machine Learning with Python -
-														Hands On!
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$385.00</span>
-														<span className="old-parice">$440.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-02.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-02.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Pamela Foster
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Science</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Create Amazing Color Schemes for Your UX Design
-														Projects
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$420.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-06.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-03.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Rose Simmons
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Science</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Culture & Leadership: Strategies for a Successful
-														Business
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$295.00</span>
-														<span className="old-parice">$340.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-05.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-04.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Finance</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Finance Series: Learn to Budget and Calculate your
-														Net Worth.
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">Free</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-01.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-05.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Marketing</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Build Brand Into Marketing: Tackling the New
-														Marketing Landscape
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$136.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-									<div className="col-lg-4 col-md-6">
-										{/* <!-- Single Courses Start --> */}
-										<div className="single-courses">
-											<div className="courses-images">
-												<a href="/course-details">
-													<img
-														src="assets/images/courses/courses-03.jpg"
-														alt="Courses"
-													/>
-												</a>
-											</div>
-											<div className="courses-content">
-												<div className="courses-author">
-													<div className="author">
-														<div className="author-thumb">
-															<a href="/course-details">
-																<img
-																	src="assets/images/author/author-06.jpg"
-																	alt="Author"
-																/>
-															</a>
-														</div>
-														<div className="author-name">
-															<a className="name" href="/course-details">
-																Jason Williams
-															</a>
-														</div>
-													</div>
-													<div className="tag">
-														<a href="/course-details">Design</a>
-													</div>
-												</div>
-
-												<h4 className="title">
-													<a href="/course-details">
-														Graphic Design: Illustrating Badges and Icons with
-														Geometric Shapes
-													</a>
-												</h4>
-												<div className="courses-meta">
-													<span>
-														{" "}
-														<FiClock color="#309255" size={22} /> 08 hr 15 mins
-													</span>
-													<span>
-														{" "}
-														<FiVideo color="#309255" size={22} /> 29 Lectures{" "}
-													</span>
-												</div>
-												<div className="courses-price-review">
-													<div className="courses-price">
-														<span className="sale-parice">$237.00</span>
-													</div>
-													<div className="courses-review">
-														<span className="rating-count">4.9</span>
-														<span className="rating-star">
-															<span className="rating-bar"></span>
-														</span>
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* <!-- Single Courses End --> */}
-									</div>
-								</div>
-							</div>
-							{/* <!-- All Courses Wrapper End --> */}
 						</div>
 					</div>
-					{/* <!-- All Courses tab content End --> */}
-
-					{/* <!-- All Courses BUtton Start --> */}
 					<div className="courses-btn text-center">
 						<a href="/courses" className="btn btn-secondary btn-hover-primary">
 							Other Course
@@ -3054,7 +526,9 @@ const Home = () => {
 												alt="Author"
 											/>
 
-											<i><FaQuoteRight /></i>
+											<i>
+												<FaQuoteRight />
+											</i>
 										</div>
 
 										<span className="rating-star">
@@ -3201,8 +675,18 @@ const Home = () => {
 											</a>
 										</h4>
 										<div className="blog-meta">
-											<span><i><FiCalendar /></i> 21 March, 2021</span>
-											<span><i><AiFillHeart /></i>  2,568+ </span>
+											<span>
+												<i>
+													<FiCalendar />
+												</i>{" "}
+												21 March, 2021
+											</span>
+											<span>
+												<i>
+													<AiFillHeart />
+												</i>{" "}
+												2,568+{" "}
+											</span>
 										</div>
 										<a
 											href="blog-details-left-sidebar.html"
@@ -3248,12 +732,22 @@ const Home = () => {
 											<a href="blog-detail">
 												Create Amazing Color Schemes for Your UX Design Projects
 											</a>
-										</h4>					
-											<div className="blog-meta">
-												<span><i><FiCalendar /></i> 21 March, 2021</span>
-												<span><i><AiFillHeart /></i>  2,568+ </span>
-											</div>										
-									
+										</h4>
+										<div className="blog-meta">
+											<span>
+												<i>
+													<FiCalendar />
+												</i>{" "}
+												21 March, 2021
+											</span>
+											<span>
+												<i>
+													<AiFillHeart />
+												</i>{" "}
+												2,568+{" "}
+											</span>
+										</div>
+
 										<a
 											href="blog-detail"
 											className="btn btn-secondary btn-hover-primary"
@@ -3301,8 +795,18 @@ const Home = () => {
 											</a>
 										</h4>
 										<div className="blog-meta">
-											<span><i><FiCalendar /></i> 21 March, 2021</span>
-											<span><i><AiFillHeart /></i>  2,568+ </span>
+											<span>
+												<i>
+													<FiCalendar />
+												</i>{" "}
+												21 March, 2021
+											</span>
+											<span>
+												<i>
+													<AiFillHeart />
+												</i>{" "}
+												2,568+{" "}
+											</span>
 										</div>
 										<a
 											href="blog-detail"
