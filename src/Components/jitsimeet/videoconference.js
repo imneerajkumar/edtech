@@ -89,6 +89,7 @@ function JitsiMeetComponent() {
 				api.executeCommand("displayName", "MyName");
 			});
             api.addEventListener("readyToClose", function () {
+							//Remove from db
 							navigate("/")
 						});
 		} catch (error) {

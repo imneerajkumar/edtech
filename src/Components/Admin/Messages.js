@@ -202,20 +202,20 @@ function Messages(props) {
 				{/* <!-- Sidebar Wrapper Start --> */}
 				<div className="sidebar-wrapper" style={{ backgroundColor: "#309255" }}>
 					<div className="menu-list">
-						<Link to="/admin">
-							<img src="assets/images/menu-icon/icon-5.png" alt="Icon" />
-						</Link>
-						<Link to="/messages" className="active">
-							<img src="assets/images/menu-icon/icon-2.png" alt="Icon" />
-						</Link>
 						<Link to="/overview">
-							<img src="assets/images/menu-icon/icon-4.png" alt="Icon" />
+							<img src="assets/images/menu-icon/icon-1.png" alt="Icon" />
 						</Link>
 						<Link to="/students">
-							<img src="assets/images/menu-icon/icon-1.png" alt="Icon" />
+							<img src="assets/images/menu-icon/icon-2.png" alt="Icon" />
+						</Link>
+						<Link to="/reviews">
+							<img src="assets/images/menu-icon/icon-5.png" alt="Icon" />
 						</Link>
 						<Link to="/engagement">
 							<img src="assets/images/menu-icon/icon-3.png" alt="Icon" />
+						</Link>
+						<Link to="/admin">
+							<img src="assets/images/menu-icon/icon-4.png" alt="Icon" />
 						</Link>
 					</div>
 				</div>

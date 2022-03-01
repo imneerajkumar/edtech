@@ -20,8 +20,8 @@ import About from "./Components/About/About";
 import Contact from "./Components/About/Contact";
 // import Meeting from './Components/meeting/Video'
 // import Meetpage from "./Components/meeting/Videocall";
-// import VideoConference from './Components/jitsimeet/videoconference'
 import JitsiMeetComponent from "./Components/jitsimeet/videoconference";
+import ConferenceForm from "./Components/jitsimeet/ConferenceForm";
 import CourseAdmin from "./Components/Admin/CourseAdmin";
 import Engagement from "./Components/Admin/Engagement";
 import Messages from "./Components/Admin/Messages";
@@ -81,7 +81,13 @@ function App() {
 				<Route exact path="/about" element={<About />} />
 				<Route exact path="/contact" element={<Contact />} />
 
-				<Route exact path="/meet" element={<JitsiMeetComponent />} />
+				<Route
+					exact
+					path="/createMeet"
+					element={isLoginE() ? <ConferenceForm /> : <Navigate to="/login" />}
+				/>
+				<Route exact path="/meet/:id" element={<JitsiMeetComponent />} />
+
 				<Route
 					exact
 					path="/admin"

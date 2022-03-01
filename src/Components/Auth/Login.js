@@ -36,7 +36,7 @@ const Login = () => {
 
 	useEffect(() => {
 		if (educatorInfo) {
-			navigate("/admin");
+			navigate("/overview");
 		}
 	}, [navigate, educatorInfo, isStudent]);
 

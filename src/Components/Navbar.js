@@ -92,7 +92,7 @@ const Navbar = ({ scrollState }) => {
 									</li>
 									{isLoginE() && (
 										<li>
-											<Link to="/admin">Admin</Link>
+											<Link to="/overview">Admin</Link>
 										</li>
 									)}
 									<li>
@@ -271,7 +271,7 @@ const Navbar = ({ scrollState }) => {
 						</li>
 						{isLoginE() && (
 							<li>
-								<Link to="/admin">Admin</Link>
+								<Link to="/overview">Admin</Link>
 							</li>
 						)}
 						<li>

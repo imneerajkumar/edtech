@@ -3,7 +3,6 @@ import { Button, ProgressBar } from "react-bootstrap";
 import { FiBookOpen } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import { addCourse } from "../../store/actions/coursesAction";
-import { educatorAuth } from "../../store/actions/educatorAction";
 import Download from "../Download";
 import Footer from "../Footer";
 import Navbar from "../Navbar";

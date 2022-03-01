@@ -3,6 +3,7 @@ import Navbar from "../Navbar";
 import Download from "../Download";
 import Footer from "../Footer";
 import ScrollButton from '../ScrollButton';
+import { FiAward } from "react-icons/fi";
 
 function ErrorPage(props) {
   const [scrollState, setScrollState] = useState(false);
@@ -39,12 +40,12 @@ function ErrorPage(props) {
           {/* <!-- Shape Icon Box Start --> */}
           <div className="shape-icon-box">
 
-              <img className="icon-shape-1 animation-left" src="assets/images/shape/shape-5.png" alt="Shape" />
+              <img className="icon-shape-1" src="assets/images/shape/shape-5.png" alt="Shape" />
 
               <div className="box-content">
-                  <div className="box-wrapper">
-                      <i className="flaticon-badge"></i>
-                  </div>
+                <div className="box-wrapper">
+                    <FiAward color="#fff" size={"50%"} />
+                </div>
               </div>
 
               <img className="icon-shape-2" src="assets/images/shape/shape-6.png" alt="Shape" />
@@ -78,7 +79,7 @@ function ErrorPage(props) {
                                 <h5 className="sub-title">This Page is Not Found.</h5>
                                 <h2 className="main-title">We are very sorry for error. We <span> can’t find this</span> page.</h2>
                                 <p>It has survived not only five centuries but also the leap into electronic typesetting.</p>
-                                <a href="index.html" className="btn btn-primary btn-hover-dark">Back To Home</a>
+                                <a href="/" className="btn btn-primary btn-hover-dark">Back To Home</a>
                             </div>
                             {/* <!-- Error Content End --> */}
                         </div>
