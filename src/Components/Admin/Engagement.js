@@ -70,7 +70,7 @@ function Engagement(props) {
                 {/* <!-- Header Action Start --> */}
                 <div className="login-header-action ml-auto">
                     <div className="dropdown">
-                        <button className="action notification" data-bs-toggle="dropdown">
+                        <button className="action notification" style={{display:"flex"}} data-bs-toggle="dropdown">
                             <FiMail color="white" />
                         </button>
                         <div className="dropdown-menu dropdown-notification">

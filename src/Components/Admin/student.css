@@ -1,0 +1,6 @@
+@media (max-width: 425px) {
+	.swiper-horizontal > .swiper-pagination-bullets,
+	.swiper-pagination-bullets.swiper-pagination-horizontal {
+		bottom: 0 !important;
+	}
+}

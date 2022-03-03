@@ -4,10 +4,12 @@ import Navbar from "../Navbar";
 import Download from "../Download";
 import Footer from "../Footer";
 import ScrollButton from "../ScrollButton";
+import { useSelector } from "react-redux";
 
 function Contact(props) {
 	const [scrollState, setScrollState] = useState(false);
-
+	const educatorAuthReducer = useSelector((state) => state.educatorAuthReducer);
+	const { educatorInfo, loading } = educatorAuthReducer;
 	useEffect(() => {
 		window.addEventListener("scroll", (e) => {
 			var scroll = window.pageYOffset;

@@ -10,7 +10,7 @@ import {
 } from "./reducers/educatorReducer";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { addCourseReducer } from "./reducers/courseReducer";
-import { addLectureReducer } from "./reducers/lectureReducers";
+import { addLectureReducer, getLectureList } from "./reducers/lectureReducers";
 const middleware = [thunk];
 const reducer = combineReducers({
 	studentAuthReducer: studentAuthReducer,
@@ -19,7 +19,9 @@ const reducer = combineReducers({
 	educatorRegisterReducer: educatorRegisterReducer,
 	addCourseReducer: addCourseReducer,
 	addLectureReducer: addLectureReducer,
+	getLectureList: getLectureList,
 });
+
 
 const studentInfofromStorage = localStorage.getItem("studentInfo")
 	? JSON.parse(localStorage.getItem("studentInfo"))

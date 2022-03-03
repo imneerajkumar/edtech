@@ -5,7 +5,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { Dropdown } from "react-bootstrap";
 import { logout } from "../store/actions/studentsAction";
 import { logoutEducator } from "../store/actions/educatorAction";
-import { FiInstagram,	FiTwitter,	FiFacebook,	FiPhoneCall,	FiMail,	FiArrowLeftCircle, FiLogOut } from "react-icons/fi";
+import {
+	FiInstagram,
+	FiTwitter,
+	FiFacebook,
+	FiPhoneCall,
+	FiMail,
+	FiArrowLeftCircle,
+	FiLogOut,
+} from "react-icons/fi";
 import { AiOutlineSkype, AiOutlineUser } from "react-icons/ai";
 import "./Navbar.css";
 
@@ -39,7 +47,13 @@ const Navbar = ({ scrollState }) => {
 		setAvatar("");
 		navigate("/");
 	};
-
+	function isLogin() {
+		if (studentInfo) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	function isLoginE() {
 		if (educatorInfo) {
 			return true;
@@ -87,6 +101,11 @@ const Navbar = ({ scrollState }) => {
 									<li>
 										<Link to="/courses">Courses</Link>
 									</li>
+									{isLogin() && (
+										<li>
+											<Link to="/classes">Classes</Link>
+										</li>
+									)}
 									<li>
 										<Link to="/blogs">Blogs</Link>
 									</li>
@@ -95,6 +114,7 @@ const Navbar = ({ scrollState }) => {
 											<Link to="/overview">Admin</Link>
 										</li>
 									)}
+
 									<li>
 										<Link to="/contact">Contact Us</Link>
 									</li>
@@ -124,14 +144,16 @@ const Navbar = ({ scrollState }) => {
 										</Avatar>
 										<Dropdown.Menu>
 											<Dropdown.Item>
-												<AiOutlineUser /> {studentInfo ? studentInfo.name : educatorInfo.name}
+												<AiOutlineUser />{" "}
+												{studentInfo ? studentInfo.name : educatorInfo.name}
 											</Dropdown.Item>
 											<Dropdown.Item>
-												<FiMail /> {studentInfo ? studentInfo.email : educatorInfo.email}
+												<FiMail />{" "}
+												{studentInfo ? studentInfo.email : educatorInfo.email}
 											</Dropdown.Item>
 											<Dropdown.Item onClick={logoutHandle}>
 												<FiLogOut /> Logout
-											</Dropdown.Item>										
+											</Dropdown.Item>
 										</Dropdown.Menu>
 									</Dropdown>
 								) : (
@@ -203,14 +225,14 @@ const Navbar = ({ scrollState }) => {
 					>
 						<FiMail size={22} color="#309255" style={{ marginRight: "10px" }} />
 						<a style={{ marginTop: 0 }} href="mailto:address@gmail.com">
-							address@gmail.com
+							{educatorInfo?.email}{" "}
 						</a>
 					</p>
 				</div>
 
-				<div className="mobile-sign-in-up" style={{paddingTop:"20px"}}>
+				<div className="mobile-sign-in-up" style={{ paddingTop: "20px" }}>
 					{avatar.length !== 0 ? (
-						<Dropdown style={{ display: "flex" ,justifyContent:"center"}}>
+						<Dropdown style={{ display: "flex", justifyContent: "center" }}>
 							<Avatar
 								sx={{
 									bgcolor: "#309255",
@@ -229,10 +251,12 @@ const Navbar = ({ scrollState }) => {
 							</Avatar>
 							<Dropdown.Menu>
 								<Dropdown.Item>
-									<AiOutlineUser /> {studentInfo ? studentInfo.name : educatorInfo.name}
+									<AiOutlineUser />{" "}
+									{studentInfo ? studentInfo.name : educatorInfo.name}
 								</Dropdown.Item>
 								<Dropdown.Item>
-									<FiMail /> {studentInfo ? studentInfo.email : educatorInfo.email}
+									<FiMail />{" "}
+									{studentInfo ? studentInfo.email : educatorInfo.email}
 								</Dropdown.Item>
 								<Dropdown.Item onClick={logoutHandle}>
 									<FiLogOut /> Logout
@@ -255,7 +279,7 @@ const Navbar = ({ scrollState }) => {
 					)}
 				</div>
 
-				<div className="mobile-menu-items" style={{paddingTop:"20px"}}>
+				<div className="mobile-menu-items" style={{ paddingTop: "20px" }}>
 					<ul className="nav-menu">
 						<li>
 							<Link to="/">Home</Link>
@@ -266,6 +290,11 @@ const Navbar = ({ scrollState }) => {
 						<li>
 							<Link to="/courses">Courses</Link>
 						</li>
+						{isLogin() && (
+							<li>
+								<Link to="/classes">Classes</Link>
+							</li>
+						)}
 						<li>
 							<Link to="/blogs">Blogs</Link>
 						</li>
@@ -274,6 +303,7 @@ const Navbar = ({ scrollState }) => {
 								<Link to="/overview">Admin</Link>
 							</li>
 						)}
+
 						<li>
 							<Link to="/contact">Contact Us</Link>
 						</li>

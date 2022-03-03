@@ -3,6 +3,9 @@ import {
 	ADD_LECTURE_REQUEST,
 	ADD_LECTURE_FAIL,
 	ADD_LECTURE_SUCCESS,
+    GET_LECTURE_LIST_REQUEST,
+    GET_LECTURE_LIST_SUCCESS,
+    GET_LECTURE_LIST_FAIL,
 } from "../constants/constants";
 const API_URL = "http://localhost:4000";
 
@@ -23,6 +26,31 @@ export const addLecture = (details) => async (dispatch, getState) => {
 	} catch (e) {
 		dispatch({
 			type: ADD_LECTURE_FAIL,
+			payload:
+				e.response && e.response.data.message
+					? e.response.data.message
+					: e.message,
+		});
+	}
+};
+
+export const fetchLectures = () => async (dispatch, getState) => {
+	try {
+		const studentInfo = getState().studentAuthReducer.studentInfo;
+		// console.log(educatorInfo);
+		const config = {
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: studentInfo.token,
+			},
+		};
+		dispatch({ type: GET_LECTURE_LIST_REQUEST });
+		const { data } = axios.get(`${API_URL}/api/lectures/get`,  config);
+		// console.log(data);
+		dispatch({ type: GET_LECTURE_LIST_SUCCESS, payload: data });
+	} catch (e) {
+		dispatch({
+			type: GET_LECTURE_LIST_FAIL,
 			payload:
 				e.response && e.response.data.message
 					? e.response.data.message

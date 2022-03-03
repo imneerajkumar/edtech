@@ -53,7 +53,11 @@ function CourseAdmin(props) {
 					{/* <!-- Header Action Start --> */}
 					<div className="login-header-action ml-auto">
 						<div className="dropdown">
-							<button className="action notification" data-bs-toggle="dropdown">
+							<button
+								className="action notification"
+								style={{ display: "flex" }}
+								data-bs-toggle="dropdown"
+							>
 								<FiMail color="white" />
 							</button>
 							<div className="dropdown-menu dropdown-notification">
@@ -201,7 +205,7 @@ function CourseAdmin(props) {
 			<div className="section overflow-hidden position-relative" id="wrapper">
 				{/* <!-- Sidebar Wrapper Start --> */}
 				<div className="sidebar-wrapper" style={{ backgroundColor: "#309255" }}>
-					<div className="menu-list">				
+					<div className="menu-list">
 						<Link to="/overview">
 							<img src="assets/images/menu-icon/icon-1.png" alt="Icon" />
 						</Link>
