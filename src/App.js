@@ -18,8 +18,6 @@ import BlogDetail from "./Components/Blogs/BlogDetail";
 import ScrollToTop from "./ScrollToTop";
 import About from "./Components/About/About";
 import Contact from "./Components/About/Contact";
-// import Meeting from './Components/meeting/Video'
-// import Meetpage from "./Components/meeting/Videocall";
 import JitsiMeetComponent from "./Components/jitsimeet/videoconference";
 import ConferenceForm from "./Components/Admin/ConferenceForm";
 import CourseAdmin from "./Components/Admin/CourseAdmin";
@@ -30,6 +28,7 @@ import Reviews from "./Components/Admin/Reviews";
 import Students from "./Components/Admin/Students";
 import { useSelector } from "react-redux";
 import AddCourse from "./Components/Admin/AddCourse";
+import ViewConference from "./Components/jitsimeet/ViewConference";
 
 function App() {
 	const educatorAuthReducer = useSelector((state) => state.educatorAuthReducer);
@@ -86,7 +85,16 @@ function App() {
 					path="/createMeet"
 					element={isLoginE() ? <ConferenceForm /> : <Navigate to="/login" />}
 				/>
-				<Route exact path="/meet/:id" element={<JitsiMeetComponent />} />
+				<Route
+					exact
+					path="/classes"
+					element={isLogin() ? <ViewConference /> : <Navigate to="/login" />}
+				/>
+				<Route 
+					exact 
+					path="/meet/:id" 
+					element={isLoginE() || isLogin() ? <JitsiMeetComponent /> : <Navigate to="/login" />}
+				/>
 
 				<Route
 					exact
