@@ -10,7 +10,7 @@ import {
     REMOVE_LECTURE_SUCCESS,
     REMOVE_LECTURE_FAIL,
 } from "../constants/constants";
-const API_URL = "https://edulearning1.herokuapp.com";
+const API_URL = "http://localhost:4000";
 
 export const addLecture = (details) => async (dispatch, getState) => {
 	try {

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import ProgressComponent from "@material-ui/core/CircularProgress";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import "./videoconference.css";
+import { useSelector } from "react-redux";
 function JitsiMeetComponent() {
-	const navigate=useNavigate()
+	const navigate = useNavigate();
 	const [loading, setLoading] = useState(false);
+	const [name, setName] = useState();
 	const containerStyle = {
 		width: "100vw",
 		height: "100vh",
@@ -18,8 +20,19 @@ function JitsiMeetComponent() {
 		width: "100%",
 		height: "100%",
 	};
+	// const educatorAuthReducer = useSelector((state) => state.educatorAuthReducer);
+	// const { educatorInfo } = educatorAuthReducer;
+	// const studentAuthReducer = useSelector((state) => state.studentAuthReducer);
+	// const { studentInfo } = studentAuthReducer;
+   
+const studentInfofromStorage = localStorage.getItem("studentInfo")
+	? JSON.parse(localStorage.getItem("studentInfo"))
+	: null;
 
-	function startConference() {
+const educatorInfofromStorage = localStorage.getItem("educatorInfo")
+	? JSON.parse(localStorage.getItem("educatorInfo"))
+	: null;
+	function startConference(name) {
 		try {
 			const domain = "meet.jit.si";
 			const options = {
@@ -46,7 +59,7 @@ function JitsiMeetComponent() {
 						"recording",
 						"settings",
 					],
-						prejoinPageEnabled: false,
+					prejoinPageEnabled: false,
 				},
 				// configOverwrite: {
 				// 	toolbarButtons: [
@@ -86,12 +99,13 @@ function JitsiMeetComponent() {
 			api.addEventListener("videoConferenceJoined", () => {
 				console.log("Local User Joined");
 				setLoading(false);
-				api.executeCommand("displayName", "MyName");
+
+				api.executeCommand("displayName", name);
 			});
-            api.addEventListener("readyToClose", function () {
-							//Remove from db
-							navigate("/")
-						});
+			api.addEventListener("readyToClose", function () {
+				//Remove from db
+				navigate("/");
+			});
 		} catch (error) {
 			console.error("Failed to load Jitsi API", error);
 		}
@@ -99,8 +113,19 @@ function JitsiMeetComponent() {
 
 	useEffect(() => {
 		// verify the JitsiMeetExternalAPI constructor is added to the global..
-		if (window.exports.JitsiMeetExternalAPI) startConference();
-		else alert("Jitsi Meet API script not loaded");
+		if (educatorInfofromStorage || studentInfofromStorage) {
+			if (educatorInfofromStorage) {
+				console.log(educatorInfofromStorage.name);
+				setName(educatorInfofromStorage.name);
+			}
+			if (studentInfofromStorage) {
+				console.log(studentInfofromStorage.name);
+
+				setName(studentInfofromStorage.name);
+			}
+			if (window.exports.JitsiMeetExternalAPI) startConference(name);
+			else alert("Jitsi Meet API script not loaded");
+		}
 	}, []);
 
 	return (

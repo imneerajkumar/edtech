@@ -199,7 +199,7 @@ const Navbar = ({ scrollState }) => {
 					<FiArrowLeftCircle size={32} color="#309255" />
 				</div>
 
-				<div className="mobile-top">
+				<div className="mobile-top" style={{paddingTop:0}}>
 					<p
 						style={{
 							display: "flex",

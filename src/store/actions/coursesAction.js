@@ -4,7 +4,7 @@ import {
 	ADD_COURSE_REQUEST,
 	ADD_COURSE_SUCCESS,
 } from "../constants/constants";
-const API_URL = "https://edulearning1.herokuapp.com";
+const API_URL = "http://localhost:4000";
 
 export const addCourse = (details) => async (dispatch, getState) => {
 	try {
