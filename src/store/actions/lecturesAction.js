@@ -6,6 +6,9 @@ import {
     GET_LECTURE_LIST_REQUEST,
     GET_LECTURE_LIST_SUCCESS,
     GET_LECTURE_LIST_FAIL,
+    REMOVE_LECTURE_REQUEST,
+    REMOVE_LECTURE_SUCCESS,
+    REMOVE_LECTURE_FAIL,
 } from "../constants/constants";
 const API_URL = "http://localhost:4000";
 
@@ -51,6 +54,31 @@ export const fetchLectures = () => async (dispatch, getState) => {
 	} catch (e) {
 		dispatch({
 			type: GET_LECTURE_LIST_FAIL,
+			payload:
+				e.response && e.response.data.message
+					? e.response.data.message
+					: e.message,
+		});
+	}
+};
+
+export const removeLectureByMeetingId = (details) => async (dispatch, getState) => {
+	try {
+		const educatorInfo = getState().educatorAuthReducer.educatorInfo;
+		// console.log(educatorInfo);
+		const config = {
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: educatorInfo.token,
+			},
+		};
+		dispatch({ type: REMOVE_LECTURE_REQUEST });
+		const { data } = axios.get(`${API_URL}/api/lectures/deletelecture`, details,config);
+		// console.log(data);
+		dispatch({ type: REMOVE_LECTURE_SUCCESS, payload: data });
+	} catch (e) {
+		dispatch({
+			type: REMOVE_LECTURE_FAIL,
 			payload:
 				e.response && e.response.data.message
 					? e.response.data.message

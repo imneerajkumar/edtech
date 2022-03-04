@@ -10,7 +10,11 @@ import {
 } from "./reducers/educatorReducer";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { addCourseReducer } from "./reducers/courseReducer";
-import { addLectureReducer, getLectureList } from "./reducers/lectureReducers";
+import {
+	addLectureReducer,
+	getLectureList,
+	removeLecture,
+} from "./reducers/lectureReducers";
 const middleware = [thunk];
 const reducer = combineReducers({
 	studentAuthReducer: studentAuthReducer,
@@ -20,6 +24,7 @@ const reducer = combineReducers({
 	addCourseReducer: addCourseReducer,
 	addLectureReducer: addLectureReducer,
 	getLectureList: getLectureList,
+	removeLecture: removeLecture,
 });
 
 
