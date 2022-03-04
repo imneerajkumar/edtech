@@ -61,7 +61,7 @@ function Contact(props) {
 					<div className="box-content">
 						<div className="box-wrapper">
 							<FiAward color="#fff" size={"50%"} />
-            </div>
+						</div>
 					</div>
 					<img
 						className="icon-shape-2"
@@ -111,12 +111,16 @@ function Contact(props) {
 								<div className="contact-info">
 									{/* <!-- Single Contact Info Start --> */}
 									<div className="single-contact-info">
-										<div className="info-icon">									
-											<i style={{
+										<div className="info-icon">
+											<i
+												style={{
 													display: "flex",
 													alignItems: "center",
-													justifyContent: "center"
-											}}><FiPhoneCall /></i>                                       
+													justifyContent: "center",
+												}}
+											>
+												<FiPhoneCall />
+											</i>
 										</div>
 										<div className="info-content">
 											<h6 className="title">Phone No.</h6>
@@ -128,31 +132,37 @@ function Contact(props) {
 									{/* <!-- Single Contact Info End -->
                                 <!-- Single Contact Info Start --> */}
 									<div className="single-contact-info">
-										<div className="info-icon">									
-											<i style={{
+										<div className="info-icon">
+											<i
+												style={{
 													display: "flex",
 													alignItems: "center",
-													justifyContent: "center"
-											}}><FiMail /></i>                                       
+													justifyContent: "center",
+												}}
+											>
+												<FiMail />
+											</i>
 										</div>
 										<div className="info-content">
 											<h6 className="title">Email Address.</h6>
 											<p>
-												<a href="mailto:address@gmail.com">
-													address@gmail.com
-												</a>
+												<a href="mailto:address@gmail.com">address@gmail.com</a>
 											</p>
 										</div>
 									</div>
 									{/* <!-- Single Contact Info End -->
                                 <!-- Single Contact Info Start --> */}
 									<div className="single-contact-info">
-										<div className="info-icon">									
-											<i style={{
+										<div className="info-icon">
+											<i
+												style={{
 													display: "flex",
 													alignItems: "center",
-													justifyContent: "center"
-											}}><FiMap /></i>                                       
+													justifyContent: "center",
+												}}
+											>
+												<FiMap />
+											</i>
 										</div>
 										<div className="info-content">
 											<h6 className="title">Office Address.</h6>
@@ -173,7 +183,7 @@ function Contact(props) {
 									<div className="form-wrapper">
 										<form
 											id="contact-form"
-											action="https://htmlmail.hasthemes.com/humayun/edule-contact.php"
+											// action="https://htmlmail.hasthemes.com/humayun/edule-contact.php"
 											method="POST"
 										>
 											{/* <!-- Single Form Start --> */}
@@ -206,8 +216,8 @@ function Contact(props) {
 											<p className="form-message"></p>
 											{/* <!-- Single Form Start --> */}
 											<div className="single-form">
-											<button className="btn btn-primary btn-hover-dark w-100">
-													Send Message 
+												<button className="btn btn-primary btn-hover-dark w-100">
+													Send Message
 												</button>
 											</div>
 											{/* <!-- Single Form End --> */}

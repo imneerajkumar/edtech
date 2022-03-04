@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import ProgressComponent from "@material-ui/core/CircularProgress";
 import { useNavigate } from "react-router-dom";
 import "./videoconference.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { removeLectureByMeetingId } from "../../store/actions/lecturesAction";
 function JitsiMeetComponent() {
 	const navigate = useNavigate();
 	const [loading, setLoading] = useState(false);
@@ -20,23 +21,24 @@ function JitsiMeetComponent() {
 		width: "100%",
 		height: "100%",
 	};
-	// const educatorAuthReducer = useSelector((state) => state.educatorAuthReducer);
-	// const { educatorInfo } = educatorAuthReducer;
-	// const studentAuthReducer = useSelector((state) => state.studentAuthReducer);
-	// const { studentInfo } = studentAuthReducer;
-   
-const studentInfofromStorage = localStorage.getItem("studentInfo")
-	? JSON.parse(localStorage.getItem("studentInfo"))
-	: null;
+	const educatorAuthReducer = useSelector((state) => state.educatorAuthReducer);
+	const { educatorInfo } = educatorAuthReducer;
+	const studentAuthReducer = useSelector((state) => state.studentAuthReducer);
+	const { studentInfo } = studentAuthReducer;
+	const dispatch = useDispatch();
+	const studentInfofromStorage = localStorage.getItem("studentInfo")
+		? JSON.parse(localStorage.getItem("studentInfo"))
+		: null;
 
-const educatorInfofromStorage = localStorage.getItem("educatorInfo")
-	? JSON.parse(localStorage.getItem("educatorInfo"))
-	: null;
+	const educatorInfofromStorage = localStorage.getItem("educatorInfo")
+		? JSON.parse(localStorage.getItem("educatorInfo"))
+		: null;
+	// console.log();
 	function startConference(name) {
 		try {
 			const domain = "meet.jit.si";
 			const options = {
-				roomName: "roomName",
+				roomName: window.location.search.split("=")[1],
 				// height: ,
 				parentNode: document.getElementById("jitsi-container"),
 				interfaceConfigOverwrite: {
@@ -100,11 +102,26 @@ const educatorInfofromStorage = localStorage.getItem("educatorInfo")
 				console.log("Local User Joined");
 				setLoading(false);
 
-				api.executeCommand("displayName", name);
+				api.executeCommand(
+					"displayName",
+					studentInfofromStorage
+						? studentInfofromStorage.name
+						: educatorInfofromStorage && educatorInfofromStorage.name
+				);
 			});
 			api.addEventListener("readyToClose", function () {
 				//Remove from db
-				navigate("/");
+				if (educatorInfofromStorage) {
+                    console.log(window.location.pathname.split("/")[2]);
+					dispatch(
+						removeLectureByMeetingId(window.location.pathname.split("/")[2])
+					).then((res) => {
+						navigate("/");
+					});
+				}
+				if (studentInfofromStorage) {
+					navigate("/");
+				}
 			});
 		} catch (error) {
 			console.error("Failed to load Jitsi API", error);
@@ -113,19 +130,19 @@ const educatorInfofromStorage = localStorage.getItem("educatorInfo")
 
 	useEffect(() => {
 		// verify the JitsiMeetExternalAPI constructor is added to the global..
-		if (educatorInfofromStorage || studentInfofromStorage) {
-			if (educatorInfofromStorage) {
-				console.log(educatorInfofromStorage.name);
-				setName(educatorInfofromStorage.name);
-			}
-			if (studentInfofromStorage) {
-				console.log(studentInfofromStorage.name);
+		// if (educatorInfofromStorage || studentInfofromStorage) {
+		// 	if (educatorInfofromStorage) {
+		// 		console.log(educatorInfofromStorage.name);
+		// 		setName(educatorInfofromStorage.name);
+		// 	}
+		// 	if (studentInfofromStorage) {
+		// 		console.log(studentInfofromStorage.name);
 
-				setName(studentInfofromStorage.name);
-			}
-			if (window.exports.JitsiMeetExternalAPI) startConference(name);
-			else alert("Jitsi Meet API script not loaded");
-		}
+		// 		setName(studentInfofromStorage.name);
+		// 	}
+		if (window.exports.JitsiMeetExternalAPI) startConference();
+		else alert("Jitsi Meet API script not loaded");
+		// }
 	}, []);
 
 	return (

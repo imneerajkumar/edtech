@@ -7,7 +7,7 @@ url("../../fonts/flaticon.eot?655915d50ed0facf464660ba648373b0#iefix") format("e
 url("../../fonts/flaticon.svg?655915d50ed0facf464660ba648373b0#flaticon") format("svg");
 }
 
-i[className^="flaticon-"]:before, i[className*=" flaticon-"]:before {
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
     font-family: flaticon !important;
     font-style: normal;
     font-weight: normal !important;

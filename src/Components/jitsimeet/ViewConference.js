@@ -157,7 +157,7 @@ function ViewConference(props) {
 														{lecture.language}
 													</span>
 												</div>
-												<Link to={`/meet/${lecture.meetingId}`}>
+												<Link to={`/meet/${lecture.meetingId}?room=${lecture.subjectName}`}>
 													<div
 														className="join-now"
 														style={{ marginTop: "10px" }}

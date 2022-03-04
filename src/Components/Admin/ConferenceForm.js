@@ -25,7 +25,7 @@ const ConferenceForm = () => {
 	const educatorA = useSelector((state) => state.educatorAuthReducer);
 	const { loading, educatorInfo } = educatorA;
 	const [error, setError] = useState("");
-	console.log(shortid.generate());
+	// console.log(shortid.generate());
 
 	useEffect(() => {
 		window.addEventListener("scroll", (e) => {
@@ -52,7 +52,7 @@ const ConferenceForm = () => {
 					duration: null,
 					meetingId: "",
 				});
-				navigate(`/meet/${details.meetingId}`);
+				navigate(`/meet/${details.meetingId}?room=${details.subjectName}`);
 			})
 			.catch((e) => {
 				setError(e.message);
