@@ -1,0 +1,46 @@
+.lectures-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.lecture {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 5px 20px;
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #309255;
+}
+.lecture-left {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.lecture-mid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.lecture-right {
+  width: 225px;
+}
+.join-now {
+  border-radius: 6px;
+  text-align: center;
+  
+  padding: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+
+  border: 2px solid #309255;
+  background-color: #E7F8EE;
+  color: #309255;
+}
+.join-now:hover {
+  background-color: #309255;
+  color: #E7F8EE;
+}

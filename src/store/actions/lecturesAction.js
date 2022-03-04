@@ -10,7 +10,7 @@ import {
     REMOVE_LECTURE_SUCCESS,
     REMOVE_LECTURE_FAIL,
 } from "../constants/constants";
-const API_URL = "http://localhost:4000";
+const API_URL = "https://edulearning1.herokuapp.com";
 
 export const addLecture = (details) => async (dispatch, getState) => {
 	try {
@@ -23,7 +23,7 @@ export const addLecture = (details) => async (dispatch, getState) => {
 			},
 		};
 		dispatch({ type: ADD_LECTURE_REQUEST });
-		const { data } = axios.post(`${API_URL}/api/lectures/add`, details, config);
+		const { data } = await axios.post(`${API_URL}/api/lectures/add`, details, config);
 		console.log(data);
 		dispatch({ type: ADD_LECTURE_SUCCESS, payload: data });
 	} catch (e) {
@@ -48,7 +48,7 @@ export const fetchLectures = () => async (dispatch, getState) => {
 			},
 		};
 		dispatch({ type: GET_LECTURE_LIST_REQUEST });
-		const { data } = axios.get(`${API_URL}/api/lectures/get`,  config);
+		const { data } = await axios.get(`${API_URL}/api/lectures/get`,  config);
 		// console.log(data);
 		dispatch({ type: GET_LECTURE_LIST_SUCCESS, payload: data });
 	} catch (e) {
