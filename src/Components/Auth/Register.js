@@ -122,6 +122,7 @@ const Register = () => {
 			}
 		);
 	};
+	
 	return (
 		<>
 			{loading || EducatorLoading ? (
@@ -328,8 +329,8 @@ const Register = () => {
 														<input
 															required
 															type="number"
-                                                            minLength={10}
-                                                            maxLength={10}
+															minLength={10}
+															maxLength={10}
 															placeholder="Contact Number"
 															value={details.contact}
 															// style={{ textTransform: "capitalize",textAlign:'' }}
@@ -344,7 +345,8 @@ const Register = () => {
 													<div className="single-form">
 														<input
 															required
-															type="date"
+															type="text"
+															onFocus={(e) => (e.target.type = "date")}
 															placeholder="Date of birth"
 															value={details.dob}
 															// style={{ textTransform: "capitalize" }}

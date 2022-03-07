@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../store/actions/studentsAction";
 import { logoutEducator } from "../../store/actions/educatorAction";
 import { AiFillFastBackward, AiFillFastForward, AiOutlineUser } from 'react-icons/ai';
 import { FiLogOut, FiMail, FiHeart, FiShare2, FiEye } from 'react-icons/fi';
@@ -70,19 +71,29 @@ function Courses(props) {
   const educatorAuthReducer = useSelector((state) => state.educatorAuthReducer);
 	const { educatorInfo, loading } = educatorAuthReducer;
 	const [avatar, setAvatar] = useState("");
+	const studentAuthReducer = useSelector((state) => state.studentAuthReducer);
+	const { studentInfo, loading: loadStudent } = studentAuthReducer;
 	
 	useEffect(() => {
+		if (studentInfo) {
+			setAvatar(studentInfo.name.toUpperCase());
+		}
 		if (educatorInfo) {
 			setAvatar(educatorInfo.name.toUpperCase());
 		}
-	}, [educatorInfo, loading, avatar]);
+	}, [educatorInfo, studentInfo, loading, loadStudent, avatar]);
 
 	const logoutHandle = () => {
-	if (educatorInfo) {
-		dispatch(logoutEducator());
-	}
-	navigate("/");
-};
+		if (studentInfo) {
+			dispatch(logout());
+		}
+		if (educatorInfo) {
+			dispatch(logoutEducator());
+		}
+
+		setAvatar("");
+		navigate("/");
+	};
 
 	return (
 		<div className="main-wrapper">
@@ -185,9 +196,9 @@ function Courses(props) {
                         </button>
                         <ul className="dropdown-menu">
                             <li>
-															<button style={{border: "none", backgroundColor: "#fff"}}>
+															<button style={{border: "none", backgroundColor: "#fff"}} onClick={() => navigate("/profile")}>			
 																	<AiOutlineUser />
-																	{"   "}{educatorInfo.name}
+																	{"   "}{studentInfo ? studentInfo.name : educatorInfo.name}
 															</button>
                             </li>
                             <li> 
