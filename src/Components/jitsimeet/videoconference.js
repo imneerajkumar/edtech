@@ -112,7 +112,7 @@ function JitsiMeetComponent() {
 			api.addEventListener("readyToClose", function () {
 				//Remove from db
 				if (educatorInfofromStorage) {
-                    console.log(window.location.pathname.split("/")[2]);
+					console.log(window.location.pathname.split("/")[2]);
 					dispatch(
 						removeLectureByMeetingId(window.location.pathname.split("/")[2])
 					).then((res) => {
@@ -120,7 +120,7 @@ function JitsiMeetComponent() {
 					});
 				}
 				if (studentInfofromStorage) {
-					navigate("/");
+					navigate("/feedback");
 				}
 			});
 		} catch (error) {

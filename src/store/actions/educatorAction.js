@@ -36,7 +36,7 @@ export const educatorAuth = (email, password) => async (dispatch) => {
 };
 
 
-export const educatorRegister = (email, password, name) => async (dispatch) => {
+export const educatorRegister = (details) => async (dispatch) => {
 	try {
 		dispatch({
 			type: EDUCATOR_REGISTER_REQUEST,
@@ -48,7 +48,7 @@ export const educatorRegister = (email, password, name) => async (dispatch) => {
 		};
 		const { data } = await axios.post(
 			`${API_URL}/api/educator/register`,
-			{ email: email, password: password, name: name },
+			details,
 			config
 		);
 		console.log(data);

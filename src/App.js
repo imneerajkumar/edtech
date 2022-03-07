@@ -29,6 +29,7 @@ import Students from "./Components/Admin/Students";
 import { useSelector } from "react-redux";
 import AddCourse from "./Components/Admin/AddCourse";
 import ViewConference from "./Components/jitsimeet/ViewConference";
+import Feedback from "./Components/jitsimeet/feedback";
 
 function App() {
 	const educatorAuthReducer = useSelector((state) => state.educatorAuthReducer);
@@ -90,10 +91,16 @@ function App() {
 					path="/classes"
 					element={isLogin() ? <ViewConference /> : <Navigate to="/login" />}
 				/>
-				<Route 
-					exact 
-					path="/meet/:id" 
-					element={isLoginE() || isLogin() ? <JitsiMeetComponent /> : <Navigate to="/login" />}
+				<Route
+					exact
+					path="/meet/:id"
+					element={
+						isLoginE() || isLogin() ? (
+							<JitsiMeetComponent />
+						) : (
+							<Navigate to="/login" />
+						)
+					}
 				/>
 
 				<Route
@@ -126,6 +133,12 @@ function App() {
 					path="/students"
 					element={isLoginE() ? <Students /> : <Navigate to="/login" />}
 				/>
+				<Route
+					exact
+					path="/feedback"
+					element={isLogin() ? <Feedback /> : <Navigate to="/login" />}
+				/>
+
 				<Route exact path="/" element={<Home />} />
 				<Route path="*" element={<ErrorPage />} />
 			</Routes>

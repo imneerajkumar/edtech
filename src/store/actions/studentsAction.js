@@ -41,8 +41,8 @@ export const studentAuth = (email, password) => async (dispatch) => {
 	}
 };
 
-export const studentRegister = (email, password, name) => async (dispatch) => {
-    console.log(email);
+export const studentRegister = (details) => async (dispatch) => {
+    // console.log(email);
 	try {
 		dispatch({
 			type: STUDENT_REGISTER_REQUEST,
@@ -54,7 +54,7 @@ export const studentRegister = (email, password, name) => async (dispatch) => {
 		};
 		const { data } = await axios.post(
 			`${API_URL}/api/student/register`,
-			{ email: email, password: password, name: name },
+			details,
 			config
 		);
 		console.log(data);

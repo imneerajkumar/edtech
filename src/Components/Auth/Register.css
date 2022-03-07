@@ -1,0 +1,16 @@
+.select:focus {
+	border: 0px;
+}
+.container-img {
+	margin-top: 0;
+	padding: 45px 40px;
+}
+.student-img{
+    height: 950px;
+}
+
+@media(max-width:768px){
+.student-img{
+    height: 100%;
+}
+}
