@@ -122,6 +122,7 @@ const Register = () => {
 			}
 		);
 	};
+	
 	return (
 		<>
 			{loading || EducatorLoading ? (
@@ -346,11 +347,10 @@ const Register = () => {
 															required
 															type="text"
 															onFocus={(e) => (e.target.type = "date")}
-                                                            
+
 															placeholder="Date of birth"
 															value={details.dob}
-															// style={{ textTransform: "capitalize" }}
-															// autocapitalize="words"
+														
 															onChange={(e) =>
 																setDetails((prev) => {
 																	return { ...prev, dob: e.target.value };

@@ -30,6 +30,7 @@ import { useSelector } from "react-redux";
 import AddCourse from "./Components/Admin/AddCourse";
 import ViewConference from "./Components/jitsimeet/ViewConference";
 import Feedback from "./Components/jitsimeet/feedback";
+import Profile from "./Components/Profile/Profile";
 
 function App() {
 	const educatorAuthReducer = useSelector((state) => state.educatorAuthReducer);
@@ -75,6 +76,12 @@ function App() {
 					path="/add-course"
 					element={isLoginE() ? <AddCourse /> : <Navigate to="/login" />}
 				/>
+				<Route
+					exact
+					path="/profile"
+					element={isLoginE() ? <Profile /> : <Navigate to="/login" />}
+				/>
+
 				<Route exact path="/blogs" element={<Blog />} />
 				<Route exact path="/blog-detail" element={<BlogDetail />} />
 				<Route exact path="/policy" element={<PrivacyPolicy />} />

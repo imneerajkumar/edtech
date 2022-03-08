@@ -24,8 +24,8 @@ const Navbar = ({ scrollState }) => {
 	const { educatorInfo, loading } = educatorAuthReducer;
 	const [avatar, setAvatar] = useState("");
 	const studentAuthReducer = useSelector((state) => state.studentAuthReducer);
-	const [click, setClick] = useState(false);
 	const { studentInfo, loading: loadStudent } = studentAuthReducer;
+	const [click, setClick] = useState(false);
 
 	useEffect(() => {
 		if (studentInfo) {
@@ -144,8 +144,10 @@ const Navbar = ({ scrollState }) => {
 										</Avatar>
 										<Dropdown.Menu>
 											<Dropdown.Item>
+											<Link to='/profile'>
 												<AiOutlineUser />{" "}
 												{studentInfo ? studentInfo.name : educatorInfo.name}
+											</Link>
 											</Dropdown.Item>
 											<Dropdown.Item>
 												<FiMail />{" "}
@@ -251,8 +253,10 @@ const Navbar = ({ scrollState }) => {
 							</Avatar>
 							<Dropdown.Menu>
 								<Dropdown.Item>
-									<AiOutlineUser />{" "}
-									{studentInfo ? studentInfo.name : educatorInfo.name}
+									<Link to='/profile'>
+										<AiOutlineUser />{" "}
+										{studentInfo ? studentInfo.name : educatorInfo.name}
+									</Link>
 								</Dropdown.Item>
 								<Dropdown.Item>
 									<FiMail />{" "}

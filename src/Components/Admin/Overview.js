@@ -165,7 +165,10 @@ function Overview(props) {
                         </button>
                         <ul className="dropdown-menu">
                             <li>
-                                <button style={{border: "none", backgroundColor: "#fff"}}>
+                                <button 
+                                    style={{ border: "none", backgroundColor: "#fff" }}
+                                    onClick={() => navigate("/profile")}
+                                >
                                     <AiOutlineUser />
                                     {"   "}{educatorInfo.name}
                                 </button>
@@ -225,6 +228,7 @@ function Overview(props) {
                   <Link to="/reviews">Review’s</Link>
                   <Link to='/engagement'>Course Engagement</Link>
                   <Link to='/createMeet'>Start Live Class</Link>
+                  <Link to="/add-course">Add a new Course</Link>
                 </div>
                 {/* <!-- Admin Tab Menu End -->
 

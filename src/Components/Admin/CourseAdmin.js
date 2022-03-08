@@ -168,7 +168,10 @@ function CourseAdmin(props) {
 							</button>
 							<ul className="dropdown-menu">
 								<li>
-									<button style={{ border: "none", backgroundColor: "#fff" }}>
+									<button 
+										style={{ border: "none", backgroundColor: "#fff" }}
+										onClick={() => navigate("/profile")}
+									>
 										<AiOutlineUser />
 										{"   "}
 										{educatorInfo.name}
