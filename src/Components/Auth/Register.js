@@ -13,7 +13,7 @@ import Loader from "../Loader/Loader";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { storage } from "../../store/constants/firebase";
 import { Button, ProgressBar } from "react-bootstrap";
-import "./Register.css"
+import "./Register.css";
 const Register = () => {
 	const [scrollState, setScrollState] = useState(false);
 	// const [email, setEmail] = useState("");
@@ -93,7 +93,7 @@ const Register = () => {
 				dob: "",
 				gender: "",
 			});
-            setIProgress(0)
+			setIProgress(0);
 			setiImage(null);
 		}
 	};
@@ -208,7 +208,7 @@ const Register = () => {
 											// 	padding: "45px 40px",
 											// 	display: "flex",
 											// 	alignItems: "center",
-                                            //     marginTop:"0"
+											//     marginTop:"0"
 											// }}
 										>
 											<div className="shape-1">
@@ -220,7 +220,7 @@ const Register = () => {
 
 											<div className="images">
 												<img
-                                                className="student-img"
+													className="student-img"
 													// style={{ height: "950px" }}
 													src="assets/images/register-login.png"
 													alt="Register Login"
@@ -328,8 +328,8 @@ const Register = () => {
 														<input
 															required
 															type="number"
-                                                            minLength={10}
-                                                            maxLength={10}
+															minLength={10}
+															maxLength={10}
 															placeholder="Contact Number"
 															value={details.contact}
 															// style={{ textTransform: "capitalize",textAlign:'' }}
@@ -344,7 +344,9 @@ const Register = () => {
 													<div className="single-form">
 														<input
 															required
-															type="date"
+															type="text"
+															onFocus={(e) => (e.target.type = "date")}
+                                                            
 															placeholder="Date of birth"
 															value={details.dob}
 															// style={{ textTransform: "capitalize" }}
