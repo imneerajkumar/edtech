@@ -1,4 +1,8 @@
 import {
+    EDUCATOR_FAIL,
+    EDUCATOR_REQUEST,
+    EDUCATOR_SUCCESS,
+	STUDENT_FAIL,
 	STUDENT_LOGIN_FAIL,
 	STUDENT_LOGIN_REQUEST,
 	STUDENT_LOGIN_SUCCESS,
@@ -6,9 +10,11 @@ import {
     STUDENT_REGISTER_FAIL,
     STUDENT_REGISTER_REQUEST,
     STUDENT_REGISTER_SUCCESS,
+    STUDENT_REQUEST,
+    STUDENT_SUCCESS,
 } from "../constants/constants";
 import axios from "axios";
-const API_URL = "https://edulearning1.herokuapp.com";
+const API_URL = "http://localhost:4000";
 export const studentAuth = (email, password) => async (dispatch) => {
     
 	try {
@@ -89,4 +95,33 @@ export const logout = () => (dispatch) => {
 	// dispatch({ type: USER_DETAIL_RESET });
 	// dispatch({ type: USER_LIST_RESET });
 	// dispatch({ type: RESET_SHIPPING_ADDRESS });
+};
+
+export const fetchStudents = (id) => async (dispatch) => {
+	try {
+		dispatch({
+			type: STUDENT_REQUEST,
+		});
+		const config = {
+			headers: {
+				"Content-Type": "application/json",
+			},
+		};
+		const { data } = await axios.get(
+			`${API_URL}/api/student/getdetails/${id}`,
+					config
+		);
+		dispatch({
+			type: STUDENT_SUCCESS,
+			payload: data,
+		});
+	} catch (error) {
+		dispatch({
+			type: STUDENT_FAIL,
+			payload:
+				error.response && error.response.data.message
+					? error.response.data.message
+					: error.message,
+		});
+	}
 };

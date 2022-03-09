@@ -2,10 +2,12 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import {
 	studentAuthReducer,
+	studentFetch,
 	studentRegisterReducer,
 } from "./reducers/studentReducer";
 import {
 	educatorAuthReducer,
+	educatorFetch,
 	educatorRegisterReducer,
 } from "./reducers/educatorReducer";
 import { composeWithDevTools } from "redux-devtools-extension";
@@ -25,6 +27,8 @@ const reducer = combineReducers({
 	addLectureReducer: addLectureReducer,
 	getLectureList: getLectureList,
 	removeLecture: removeLecture,
+	educatorFetch: educatorFetch,
+	studentFetch: studentFetch,
 });
 
 
