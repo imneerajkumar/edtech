@@ -17,6 +17,7 @@ import {
 	getLectureList,
 	removeLecture,
 } from "./reducers/lectureReducers";
+import { addFeedbackReducer } from "./reducers/feedbackReducer";
 const middleware = [thunk];
 const reducer = combineReducers({
 	studentAuthReducer: studentAuthReducer,
@@ -29,6 +30,7 @@ const reducer = combineReducers({
 	removeLecture: removeLecture,
 	educatorFetch: educatorFetch,
 	studentFetch: studentFetch,
+	addFeedbackReducer: addFeedbackReducer,
 });
 
 

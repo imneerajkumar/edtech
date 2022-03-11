@@ -15,7 +15,7 @@ export const addLectureReducer = (state = {}, action) => {
 		case ADD_LECTURE_REQUEST:
 			return { loading: true, success: false, error: null };
 		case ADD_LECTURE_SUCCESS:
-			return { loading: false, success: true, lectures: action.payload };
+			return { loading: false, success: true,  };
 		case ADD_LECTURE_FAIL:
 			return { loading: false, error: action.payload };
 		default:

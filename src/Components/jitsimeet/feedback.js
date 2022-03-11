@@ -5,14 +5,21 @@ import Download from "../Download";
 import Footer from "../Footer";
 import Navbar from "../Navbar";
 import ScrollButton from "../ScrollButton";
-
+import { useDispatch } from "react-redux";
+import { addFeedback } from "../../store/actions/feedbackAction";
 const Feedback = () => {
 	const [scrollState, setScrollState] = useState(false);
-	const [name, setName] = useState();
-	const [feedback, setFeedback] = useState();
-	const [email, setEmail] = useState();
-    	const [instructorName, setInstructorName] = useState();
-
+	// const [name, setName] = useState();
+	// const [feedback, setFeedback] = useState();
+	// const [email, setEmail] = useState();
+	// const [instructorName, setInstructorName] = useState();
+	const [details, setDetails] = useState({
+		feedback: "",
+		name: "",
+		email: "",
+		instructorName: "",
+	});
+	const dispatch = useDispatch();
 	useEffect(() => {
 		window.addEventListener("scroll", (e) => {
 			var scroll = window.pageYOffset;
@@ -27,16 +34,16 @@ const Feedback = () => {
 
 	const feedbackHandle = (e) => {
 		e.preventDefault();
-		// console.log(isStudent);
-		// if (isStudent) {
-		// 	dispatch(studentAuth(email, password));
-		// } else {
-		// 	dispatch(educatorAuth(email, password));
-		// }
+
+		dispatch(addFeedback(details));
+
 		navigate("/classes");
-		setEmail("");
-		setName("");
-		setFeedback("");
+		setDetails({
+			feedback: "",
+			name: "",
+			email: "",
+			instructorName: "",
+		});
 	};
 	return (
 		<>
@@ -161,10 +168,14 @@ const Feedback = () => {
 														required
 														type="text"
 														placeholder="Name"
-														value={name}
+														value={details.name}
 														style={{ textTransform: "capitalize" }}
 														autocapitalize="words"
-														onChange={(e) => setName(e.target.value)}
+														onChange={(e) =>
+															setDetails((prev) => {
+																return { ...prev, name: e.target.value };
+															})
+														}
 													/>
 												</div>
 												{/* <!-- Single Form End --> */}
@@ -174,8 +185,12 @@ const Feedback = () => {
 														required
 														type="email"
 														placeholder="Email"
-														value={email}
-														onChange={(e) => setEmail(e.target.value)}
+														value={details.email}
+														onChange={(e) =>
+															setDetails((prev) => {
+																return { ...prev, email: e.target.value };
+															})
+														}
 													/>
 												</div>
 												<div className="single-form">
@@ -183,8 +198,15 @@ const Feedback = () => {
 														required
 														type="text"
 														placeholder="Instructor name"
-														value={instructorName}
-														onChange={(e) => setInstructorName(e.target.value)}
+														value={details.instructorName}
+														onChange={(e) =>
+															setDetails((prev) => {
+																return {
+																	...prev,
+																	instructorName: e.target.value,
+																};
+															})
+														}
 													/>
 												</div>
 
@@ -195,8 +217,12 @@ const Feedback = () => {
 														required
 														type="text"
 														placeholder="Feedback"
-														value={feedback}
-														onChange={(e) => setFeedback(e.target.value)}
+														value={details.feedback}
+														onChange={(e) =>
+															setDetails((prev) => {
+																return { ...prev, feedback: e.target.value };
+															})
+														}
 													/>
 												</div>
 												{/* <!-- Single Form End -->
