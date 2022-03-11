@@ -1,0 +1,31 @@
+@media (min-width:1024px) {
+  .add-height{
+    display: flex;
+    align-items: center;
+    height: 970px;
+  }   
+  .edit-height{
+    display: flex;
+    align-items: center;
+    height: 766px;
+  }
+  .user-img {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width:1024px) {
+  .spot {
+    display: none;
+  }
+  .user-img {
+    height: 100px;
+    width: 100px;
+  }
+}
+.btn.btn-outline:hover {
+  background-color: #309255;
+  border-color: #309255;
+  color: #fff;
+}

@@ -10,6 +10,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchEducator } from "../../store/actions/educatorAction";
 import { fetchStudents } from "../../store/actions/studentsAction";
 import Loader from "../Loader/Loader";
+import { FiAward } from "react-icons/fi";
+import './Profile.css';
 
 function Profile(props) {
 	const [scrollState, setScrollState] = useState(false);
@@ -121,13 +123,13 @@ function Profile(props) {
 	};
 
 	return (
-		<div className="main-wrapper">
-			<Navbar scrollState={scrollState} />
-
-			<div className="overlay"></div>
-			{loadingStudent || loadingEducator ? (
-				<Loader />
-			) : (
+		<>
+		{loadingStudent || loadingEducator ? (
+			<Loader />
+		) : (
+			<div className="main-wrapper">
+				<Navbar scrollState={scrollState} />
+				<div className="overlay"></div>
 				<div className="section page-banner">
 					<img
 						className="shape-2"
@@ -152,13 +154,32 @@ function Profile(props) {
 							</h2>
 						</div>
 					</div>
+					<div className="shape-icon-box">
+						<img
+							className="icon-shape-1 "
+							src="assets/images/shape/shape-5.png"
+							alt="Shape"
+						/>
+
+						<div className="box-content">
+							<div className="box-wrapper">
+								<FiAward color="#fff" size={"50%"} />
+							</div>
+						</div>
+
+						<img
+							className="icon-shape-2"
+							src="assets/images/shape/shape-6.png"
+							alt="Shape"
+						/>
+					</div>
 					<img
 						className="shape-3"
 						src="assets/images/shape/shape-24.png"
 						alt="Shape"
 					/>
 					<img
-						className="shape-author"
+						className="shape-author user-img"
 						src={
 							educatorDetails
 								? educatorDetails.userImage
@@ -167,15 +188,26 @@ function Profile(props) {
 						alt="User"
 					/>
 				</div>
-			)}
-			{loadingStudent || loadingEducator ? (
-				<Loader />
-			) : (
+			
 				<div className="section section-padding">
 					<div className="container">
 						<div className="register-login-wrapper">
 							<div className="row align-items-center">
-								<div className="col">
+								<div className="col-lg-6">
+									<div className={`register-login-images ${edit ? "add-height" : "edit-height"}`}>
+										<div className="shape-1 spot">
+											<img src="assets/images/shape/shape-26.png" alt="Shape" />
+										</div>
+
+										<div className="images">
+											<img
+												src="assets/images/register-login.png"
+												alt="Register Login"
+											/>
+										</div>
+									</div>
+								</div>
+								<div className="col-lg-6">
 									<div className="">
 										<h3 className="title mt-5">
 											About <span>Me</span>
@@ -541,13 +573,12 @@ function Profile(props) {
 						</div>
 					</div>
 				</div>
-			)}
-
-			<Download />
-			<ScrollButton scrollState={scrollState} />
-
-			<Footer />
-		</div>
+				<Download />
+				<ScrollButton scrollState={scrollState} />
+				<Footer />
+			</div>
+		)}
+		</>	
 	);
 }
 

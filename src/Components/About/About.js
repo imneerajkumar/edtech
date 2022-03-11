@@ -5,20 +5,37 @@ import Navbar from "../Navbar";
 import Download from "../Download";
 import Footer from "../Footer";
 import ScrollButton from "../ScrollButton";
+import FeedbackModal from "./FeedbackModal";
 
 function About(props) {
   const [scrollState, setScrollState] = useState(false);
+  const [show, setShow] = useState(false);
+  const [data, setData] = useState([
+    {
+        name: "Student 1",
+        feedback: "Lorem Ipsum has been the industry's standard dummy text since the 1500 when unknown printer took a galley type and scrambled to make type specimen’s book has survived not five centuries but also the leap into electronic type and book."
+    },
+    {
+        name: "Person 1",
+        feedback: "Lorem Ipsum has been the industry's standard dummy text since the 1500 when unknown printer took a galley type and scrambled to make type specimen’s book has survived not five centuries but also the leap into electronic type and book."
+    },
+  ]);
 
-	useEffect(() => {
-		window.addEventListener("scroll", (e) => {
-			var scroll = window.pageYOffset;
-			if (scroll <= 100) {
-				setScrollState(false);
-			} else {
-				setScrollState(true);
-			}
-		});
-	});
+  const handleShow = () => {
+    // Set data acc. to instructor selected
+    setShow(true);
+  }
+	
+  useEffect(() => {
+    window.addEventListener("scroll", (e) => {
+        var scroll = window.pageYOffset;
+        if (scroll <= 100) {
+            setScrollState(false);
+        } else {
+            setScrollState(true);
+        }
+    });
+  });
 
   return (
     <div className="main-wrapper">
@@ -176,6 +193,7 @@ function About(props) {
         {/* <!-- About End --> */}
 
         {/* <!-- Call to Action Start --> */}
+        <FeedbackModal show={show} handleClose={() => {setShow(false)}} data={data} />
         <div className="section section-padding-02">
             <div className="container">
 
@@ -208,7 +226,6 @@ function About(props) {
         {/* <!-- Team Member's Start --> */}
         <div className="section section-padding mt-n1">
             <div className="container">
-
                 {/* <!-- Section Title Start --> */}
                 <div className="section-title shape-03 text-center">
                     <h5 className="sub-title">Team Member’s</h5>
@@ -222,9 +239,9 @@ function About(props) {
                         <div className="col">
 
                             {/* <!-- Single Team Start --> */}
-                            <div className="single-team">
+                            <div className="single-team" >
                                 <div className="team-thumb">
-                                    <img src="assets/images/author/author-01.jpg" alt="Author" />
+                                    <img src="assets/images/author/author-01.jpg" alt="Author" onClick={handleShow}/>
                                 </div>
                                 <div className="team-content">
                                     <div 
@@ -250,7 +267,7 @@ function About(props) {
                             {/* <!-- Single Team Start --> */}
                             <div className="single-team">
                                 <div className="team-thumb">
-                                    <img src="assets/images/author/author-02.jpg" alt="Author" />
+                                    <img src="assets/images/author/author-02.jpg" alt="Author" onClick={handleShow} />
                                 </div>
                                 <div className="team-content">
                                     <div 
@@ -277,7 +294,7 @@ function About(props) {
                             {/* <!-- Single Team Start --> */}
                             <div className="single-team">
                                 <div className="team-thumb">
-                                    <img src="assets/images/author/author-03.jpg" alt="Author" />
+                                    <img src="assets/images/author/author-03.jpg" alt="Author" onClick={handleShow}/>
                                 </div>
                                 <div className="team-content">
                                     <div 
@@ -303,7 +320,7 @@ function About(props) {
                             {/* <!-- Single Team Start --> */}
                             <div className="single-team">
                                 <div className="team-thumb">
-                                    <img src="assets/images/author/author-04.jpg" alt="Author" />
+                                    <img src="assets/images/author/author-04.jpg" alt="Author" onClick={handleShow}/>
                                 </div>
                                 <div className="team-content">
                                     <div 
@@ -329,7 +346,7 @@ function About(props) {
                             {/* <!-- Single Team Start --> */}
                             <div className="single-team">
                                 <div className="team-thumb">
-                                    <img src="assets/images/author/author-05.jpg" alt="Author" />
+                                    <img src="assets/images/author/author-05.jpg" alt="Author" onClick={handleShow}/>
                                 </div>
                                 <div className="team-content">
                                      <div 
@@ -354,7 +371,7 @@ function About(props) {
                             {/* <!-- Single Team Start --> */}
                             <div className="single-team">
                                 <div className="team-thumb">
-                                    <img src="assets/images/author/author-06.jpg" alt="Author" />
+                                    <img src="assets/images/author/author-06.jpg" alt="Author" onClick={handleShow}/>
                                 </div>
                                 <div className="team-content">
                                     <div 
@@ -381,7 +398,7 @@ function About(props) {
                             {/* <!-- Single Team Start --> */}
                             <div className="single-team">
                                 <div className="team-thumb">
-                                    <img src="assets/images/author/author-07.jpg" alt="Author" />
+                                    <img src="assets/images/author/author-07.jpg" alt="Author" onClick={handleShow}/>
                                 </div>
                                 <div className="team-content">
                                     <div 
@@ -408,7 +425,7 @@ function About(props) {
                             {/* <!-- Single Team Start --> */}
                             <div className="single-team">
                                 <div className="team-thumb">
-                                    <img src="assets/images/author/author-08.jpg" alt="Author" />
+                                    <img src="assets/images/author/author-08.jpg" alt="Author" onClick={handleShow}/>
                                 </div>
                                 <div className="team-content">
                                     <div 
@@ -434,7 +451,7 @@ function About(props) {
                             {/* <!-- Single Team Start --> */}
                             <div className="single-team">
                                 <div className="team-thumb">
-                                    <img src="assets/images/author/author-09.jpg" alt="Author" />
+                                    <img src="assets/images/author/author-09.jpg" alt="Author" onClick={handleShow}/>
                                 </div>
                                 <div className="team-content">
                                     <div 
@@ -460,7 +477,7 @@ function About(props) {
                             {/* <!-- Single Team Start --> */}
                             <div className="single-team">
                                 <div className="team-thumb">
-                                    <img src="assets/images/author/author-10.jpg" alt="Author" />
+                                    <img src="assets/images/author/author-10.jpg" alt="Author" onClick={handleShow}/>
                                 </div>
                                 <div className="team-content">
                                     <div 
