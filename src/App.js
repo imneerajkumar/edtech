@@ -79,7 +79,7 @@ function App() {
 				<Route
 					exact
 					path="/profile"
-					element={isLoginE() ? <Profile /> : <Navigate to="/login" />}
+					element={ <Profile />}
 				/>
 
 				<Route exact path="/blogs" element={<Blog />} />

@@ -5,6 +5,7 @@ import Navbar from "../Navbar";
 import Download from "../Download";
 import Footer from "../Footer";
 import ScrollButton from "../ScrollButton";
+import { useDispatch, useSelector } from "react-redux";
 import {
 	FaBookmark,
 	FaCertificate,
@@ -12,10 +13,13 @@ import {
 	FaSearch,
 } from "react-icons/fa";
 import "./Home.css";
-
+import Loader from "../Loader/Loader";
+import { fetchCourses } from "../../store/actions/coursesAction";
 const Home = () => {
 	const [scrollState, setScrollState] = useState(false);
-
+	const dispatch = useDispatch();
+	const fetchCourseReducer = useSelector((state) => state.fetchCourseReducer);
+	const { loading, coursesData } = fetchCourseReducer;
 	useEffect(() => {
 		window.addEventListener("scroll", (e) => {
 			var scroll = window.pageYOffset;
@@ -26,77 +30,10 @@ const Home = () => {
 			}
 		});
 	});
-	const data = [
-		{
-			imgUrl: "assets/images/courses/courses-01.jpg",
-			instructImgUrl: "assets/images/author/author-02.jpg",
-			instructName: "Jason Williams",
-			type: "Science",
-			courseName: "Data Science and Machine Learning with Python -Hands On!",
-			duration: " 08 hr 15 mins",
-			lectures: "29",
-			price: 385.0,
-			rating: 4.9,
-		},
-		{
-			imgUrl: "assets/images/courses/courses-02.jpg",
-			instructImgUrl: "assets/images/author/author-01.jpg",
-			instructName: "Pamela Foster",
-			type: "Science",
-			courseName: "Create Amazing Color Schemes for Your UX Design Projects",
-			duration: " 08 hr 15 mins",
-			lectures: "29",
-			price: 420.0,
-			rating: 4.9,
-		},
-		{
-			imgUrl: "assets/images/courses/courses-03.jpg",
-			instructImgUrl: "assets/images/author/author-03.jpg",
-			instructName: "Rose Simmons",
-			type: "Science",
-			courseName: "Culture & Leadership: Strategies for a Successful Business",
-			duration: " 08 hr 15 mins",
-			lectures: "29",
-			price: 295.0,
-			rating: 4.9,
-		},
-		{
-			imgUrl: "assets/images/courses/courses-04.jpg",
-			instructImgUrl: "assets/images/author/author-04.jpg",
-			instructName: "Angelia Williams",
-			type: "Finance",
-			courseName:
-				"Finance Series: Learn to Budget and Calculate your Net Worth.",
-			duration: " 08 hr 15 mins",
-			lectures: "29",
-			price: 295.0,
-			rating: 4.9,
-		},
-		{
-			imgUrl: "assets/images/courses/courses-05.jpg",
-			instructImgUrl: "assets/images/author/author-02.jpg",
-			instructName: "Jason Williams",
-			type: "Marketing",
-			courseName:
-				"Build Brand Into Marketing: Tackling the New Marketing Landscape",
-			duration: " 08 hr 15 mins",
-			lectures: "29",
-			price: 136.0,
-			rating: 4.9,
-		},
-		{
-			imgUrl: "assets/images/courses/courses-06.jpg",
-			instructImgUrl: "assets/images/author/author-01.jpg",
-			instructName: "Pamela Foster",
-			type: "Design",
-			courseName:
-				"Graphic Design: Illustrating Badges and Icons with Geometric Shapes",
-			duration: " 08 hr 15 mins",
-			lectures: "29",
-			price: 237.0,
-			rating: 4.9,
-		},
-	];
+	useEffect(() => {
+		dispatch(fetchCourses());
+	},[dispatch]);
+	
 
 	return (
 		<div className="main-wrapper">
@@ -202,156 +139,84 @@ const Home = () => {
 					<div className="tab-content courses-tab-content">
 						<div className="tab-pane fade show active" id="tabs1">
 							{/* <!-- All Courses Wrapper Start --> */}
-							<div className="courses-wrapper">
-								<div className="row">
-									{data.map((item, index) => {
-										return (
-											<div className="col-lg-4 col-md-6">
-												{/* <!-- Single Courses Start --> */}
-												<div className="single-courses">
-													<div className="courses-images">
-														<a href="course-details">
-															<img src={item.imgUrl} alt="Courses" />
-														</a>
-													</div>
-													<div className="courses-content">
-														<div className="courses-author">
-															<div className="author">
-																<div className="author-thumb">
-																	<a href="/course-details">
-																		<img
-																			src={item.instructImgUrl}
-																			alt="Author"
-																		/>
-																	</a>
-																</div>
-																<div className="author-name">
-																	<a className="name" href="/course-details">
-																		{item.instructName}
-																	</a>
-																</div>
-															</div>
-															<div className="tag">
-																<a href="/course-details">{item.type}</a>
-															</div>
+							{loading ? (
+								<Loader />
+							) : (
+								<div className="courses-wrapper">
+									<div className="row">
+										{coursesData?.map((item, index) => {
+											return (
+												<div className="col-lg-4 col-md-6">
+													{/* <!-- Single Courses Start --> */}
+													<div className="single-courses">
+														<div className="courses-images">
+															<a href="course-details">
+																<img src={item.courseImage} alt="Courses" />
+															</a>
 														</div>
+														<div className="courses-content">
+															<div className="courses-author">
+																<div className="author">
+																	<div className="author-thumb">
+																		<a href="/course-details">
+																			<img
+																				src={item.instructorImage}
+																				alt="Author"
+																			/>
+																		</a>
+																	</div>
+																	<div className="author-name">
+																		<a className="name" href="/course-details">
+																			{item.instructName}
+																		</a>
+																	</div>
+																</div>
+																<div className="tag">
+																	<a href="/course-details">{item.type}</a>
+																</div>
+															</div>
 
-														<h4 className="title">
-															<a href="/course-details">{item.courseName}</a>
-														</h4>
-														<div className="courses-meta">
-															<span className="time">
-																{" "}
-																<FiClock color="#309255" size={22} />{" "}
-																{item.duration}
-															</span>
-															<span className="time">
-																{" "}
-																<FiVideo color="#309255" size={22} />{" "}
-																{item.lectures} Lectures{" "}
-															</span>
-														</div>
-														<div className="courses-price-review">
-															<div className="courses-price">
-																<span className="sale-parice">
-																	${item.price.toFixed(2)}
+															<h4 className="title">
+																<a href="/course-details">{item.courseName}</a>
+															</h4>
+															<div className="courses-meta">
+																<span className="time">
+																	{" "}
+																	<FiClock color="#309255" size={22} />{" "}
+																	{item.duration}
 																</span>
-																{/* <span className="old-parice">$440.00</span> */}
+																<span className="time">
+																	{" "}
+																	<FiVideo color="#309255" size={22} />{" "}
+																	{item.lectures} Lectures{" "}
+																</span>
 															</div>
-															<div className="courses-review">
-																<span className="rating-count">
-																	{item.rating}
-																</span>
-																<span className="rating-star">
-																	<span className="rating-bar"></span>
-																</span>
+															<div className="courses-price-review">
+																<div className="courses-price">
+																	<span className="sale-parice">
+																		${item.price.toFixed(2)}
+																	</span>
+																	{/* <span className="old-parice">$440.00</span> */}
+																</div>
+																<div className="courses-review">
+																	<span className="rating-count">
+																		{item.rating}
+																	</span>
+																	<span className="rating-star">
+																		<span className="rating-bar"></span>
+																	</span>
+																</div>
 															</div>
 														</div>
 													</div>
+													{/* <!-- Single Courses End --> */}
 												</div>
-												{/* <!-- Single Courses End --> */}
-											</div>
-										);
-									})}
+											);
+										})}
+									</div>
 								</div>
-							</div>
+							)}
 							{/* <!-- All Courses Wrapper End --> */}
-						</div>
-						<div className="tab-pane fade" id="tabs2">
-							{/* <!-- All Courses Wrapper Start --> */}
-							<div className="courses-wrapper">
-								<div className="row">
-									{data.map((item, index) => {
-										return (
-											<div className="col-lg-4 col-md-6">
-												{/* <!-- Single Courses Start --> */}
-												<div className="single-courses">
-													<div className="courses-images">
-														<a href="course-details">
-															<img src={item.imgUrl} alt="Courses" />
-														</a>
-													</div>
-													<div className="courses-content">
-														<div className="courses-author">
-															<div className="author">
-																<div className="author-thumb">
-																	<a href="/course-details">
-																		<img
-																			src={item.instructImgUrl}
-																			alt="Author"
-																		/>
-																	</a>
-																</div>
-																<div className="author-name">
-																	<a className="name" href="/course-details">
-																		{item.instructName}
-																	</a>
-																</div>
-															</div>
-															<div className="tag">
-																<a href="/course-details">{item.type}</a>
-															</div>
-														</div>
-
-														<h4 className="title">
-															<a href="/course-details">{item.courseName}</a>
-														</h4>
-														<div className="courses-meta">
-															<span className="time">
-																{" "}
-																<FiClock color="#309255" size={22} />{" "}
-																{item.duration}
-															</span>
-															<span className="time">
-																{" "}
-																<FiVideo color="#309255" size={22} />{" "}
-																{item.lectures} Lectures{" "}
-															</span>
-														</div>
-														<div className="courses-price-review">
-															<div className="courses-price">
-																<span className="sale-parice">
-																	${item.price.toFixed(2)}
-																</span>
-																{/* <span className="old-parice">$440.00</span> */}
-															</div>
-															<div className="courses-review">
-																<span className="rating-count">
-																	{item.rating}
-																</span>
-																<span className="rating-star">
-																	<span className="rating-bar"></span>
-																</span>
-															</div>
-														</div>
-													</div>
-												</div>
-												{/* <!-- Single Courses End --> */}
-											</div>
-										);
-									})}
-								</div>
-							</div>
 						</div>
 					</div>
 					<div className="courses-btn text-center">

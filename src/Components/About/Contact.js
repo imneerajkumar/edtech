@@ -10,6 +10,9 @@ function Contact(props) {
 	const [scrollState, setScrollState] = useState(false);
 	const educatorAuthReducer = useSelector((state) => state.educatorAuthReducer);
 	const { educatorInfo, loading } = educatorAuthReducer;
+const [details,setDetails]=useState({
+    name:"",email:""
+})
 	useEffect(() => {
 		window.addEventListener("scroll", (e) => {
 			var scroll = window.pageYOffset;
@@ -20,6 +23,9 @@ function Contact(props) {
 			}
 		});
 	});
+    const handleSubmit=()=>{
+        // set
+    }
 
 	return (
 		<div className="main-wrapper">
@@ -183,8 +189,7 @@ function Contact(props) {
 									<div className="form-wrapper">
 										<form
 											id="contact-form"
-											// action="https://htmlmail.hasthemes.com/humayun/edule-contact.php"
-											method="POST"
+											onSubmit={handleSubmit}
 										>
 											{/* <!-- Single Form Start --> */}
 											<div className="single-form">

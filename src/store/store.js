@@ -11,7 +11,7 @@ import {
 	educatorRegisterReducer,
 } from "./reducers/educatorReducer";
 import { composeWithDevTools } from "redux-devtools-extension";
-import { addCourseReducer } from "./reducers/courseReducer";
+import { addCourseReducer, fetchCourseReducer } from "./reducers/courseReducer";
 import {
 	addLectureReducer,
 	getLectureList,
@@ -31,6 +31,7 @@ const reducer = combineReducers({
 	educatorFetch: educatorFetch,
 	studentFetch: studentFetch,
 	addFeedbackReducer: addFeedbackReducer,
+	fetchCourseReducer: fetchCourseReducer,
 });
 
 
