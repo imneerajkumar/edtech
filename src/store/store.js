@@ -8,6 +8,7 @@ import {
 import {
 	educatorAuthReducer,
 	educatorFetch,
+	educatorFetchList,
 	educatorRegisterReducer,
 } from "./reducers/educatorReducer";
 import { composeWithDevTools } from "redux-devtools-extension";
@@ -17,7 +18,7 @@ import {
 	getLectureList,
 	removeLecture,
 } from "./reducers/lectureReducers";
-import { addFeedbackReducer } from "./reducers/feedbackReducer";
+import { addFeedbackReducer, fetchFeedbackForInstructorReducer } from "./reducers/feedbackReducer";
 const middleware = [thunk];
 const reducer = combineReducers({
 	studentAuthReducer: studentAuthReducer,
@@ -32,6 +33,8 @@ const reducer = combineReducers({
 	studentFetch: studentFetch,
 	addFeedbackReducer: addFeedbackReducer,
 	fetchCourseReducer: fetchCourseReducer,
+	fetchFeedbackForInstructorReducer: fetchFeedbackForInstructorReducer,
+	educatorFetchList: educatorFetchList,
 });
 
 

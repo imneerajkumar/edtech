@@ -2,78 +2,82 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store/actions/studentsAction";
 import { logoutEducator } from "../../store/actions/educatorAction";
-import { AiFillFastBackward, AiFillFastForward, AiOutlineUser } from 'react-icons/ai';
-import { FiLogOut, FiMail, FiHeart, FiShare2, FiEye } from 'react-icons/fi';
+import {
+	AiFillFastBackward,
+	AiFillFastForward,
+	AiOutlineUser,
+} from "react-icons/ai";
+import { FiLogOut, FiMail, FiHeart, FiShare2, FiEye } from "react-icons/fi";
 import { Avatar } from "@mui/material";
-import { useNavigate } from 'react-router-dom';
-import Footer from '../Footer';
+import { useNavigate } from "react-router-dom";
+import Footer from "../Footer";
 import Download from "../Download";
 // import ReactPlayer from "react-player";
 
 function Courses(props) {
 	// const [collap, setcollap] = useState(true);
-	
+
 	//useEffect(() => {
-		//const element = document.getElementById("myvid");
-		//console.log(element);
-		//         $(document).ready(function()
+	//const element = document.getElementById("myvid");
+	//console.log(element);
+	//         $(document).ready(function()
 
-		// {
-		// 	var vid = $('#myvid');
+	// {
+	// 	var vid = $('#myvid');
 
-		// 	//default video source
-		//     $(vid).attr("src", $("a.link:first").attr("href"));
+	// 	//default video source
+	//     $(vid).attr("src", $("a.link:first").attr("href"));
 
-		//     // addclassName playing to first video link
-		//     $("a.link:first").addclassName("playing");
+	//     // addclassName playing to first video link
+	//     $("a.link:first").addclassName("playing");
 
-		// $("a.link").on("click" , function  (event) {
+	// $("a.link").on("click" , function  (event) {
 
-		// 	// prevent link default
-		//     event.preventDefault();
+	// 	// prevent link default
+	//     event.preventDefault();
 
-		//     // change video source
-		//     $(vid).attr("src", $(this).attr("href"));
+	//     // change video source
+	//     $(vid).attr("src", $(this).attr("href"));
 
-		//     // remouve className playing from unplayed video href
-		//     $(".vids a").removeclassName("playing");
+	//     // remouve className playing from unplayed video href
+	//     $(".vids a").removeclassName("playing");
 
-		//     // add className playing to video href
-		//     $(this).addclassName("playing");
+	//     // add className playing to video href
+	//     $(this).addclassName("playing");
 
-		//     // add className paused to give the play/pause button the right look
-		//     $('.btnPlay').addclassName('paused');
+	//     // add className paused to give the play/pause button the right look
+	//     $('.btnPlay').addclassName('paused');
 
-		//     // play the video
-		//     vid[0].play();
+	//     // play the video
+	//     vid[0].play();
 
-		//     // adjust prev button state
-		//     if ($("a.link:first").hasclassName("playing")) {
-		//     $(".prevvid").addclassName("disabled");
-		//     }
-		//     else {
-		//         $(".prevvid").removeclassName("disabled");
-		//     }
+	//     // adjust prev button state
+	//     if ($("a.link:first").hasclassName("playing")) {
+	//     $(".prevvid").addclassName("disabled");
+	//     }
+	//     else {
+	//         $(".prevvid").removeclassName("disabled");
+	//     }
 
-		//     // adjust next button state
-		//     if ($("a.link:last").hasclassName("playing")) {
-		//     $(".nextvid").addclassName("disabled");
-		//     }
-		//     else {
-		//         $(".nextvid").removeclassName("disabled");
-		//     }
+	//     // adjust next button state
+	//     if ($("a.link:last").hasclassName("playing")) {
+	//     $(".nextvid").addclassName("disabled");
+	//     }
+	//     else {
+	//         $(".nextvid").removeclassName("disabled");
+	//     }
 
-		// });
+	// });
 	// });
 
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
-  const educatorAuthReducer = useSelector((state) => state.educatorAuthReducer);
+	const educatorAuthReducer = useSelector((state) => state.educatorAuthReducer);
 	const { educatorInfo, loading } = educatorAuthReducer;
 	const [avatar, setAvatar] = useState("");
 	const studentAuthReducer = useSelector((state) => state.studentAuthReducer);
 	const { studentInfo, loading: loadStudent } = studentAuthReducer;
-	
+
 	useEffect(() => {
 		if (studentInfo) {
 			setAvatar(studentInfo.name.toUpperCase());
@@ -98,124 +102,166 @@ function Courses(props) {
 	return (
 		<div className="main-wrapper">
 			{/* <!-- Login Header Start --> */}
-			<div className="section login-header" style={{backgroundColor: "#309255"}}>
-            {/* <!-- Login Header Wrapper Start --> */}
-            <div className="login-header-wrapper navbar navbar-expand">
+			<div
+				className="section login-header"
+				style={{ backgroundColor: "#309255" }}
+			>
+				{/* <!-- Login Header Wrapper Start --> */}
+				<div className="login-header-wrapper navbar navbar-expand">
+					{/* <!-- Header Logo Start --> */}
+					<div className="login-header-logo">
+						<a href="/">
+							<img src="assets/images/logo-icon.png" alt="Logo" />
+						</a>
+					</div>
+					{/* <!-- Header Logo End --> */}
 
-                {/* <!-- Header Logo Start --> */}
-                <div className="login-header-logo">
-                    <a href="/"><img src="assets/images/logo-icon.png" alt="Logo" /></a>
-                </div>
-                {/* <!-- Header Logo End --> */}
+					{/* <!-- Header Search Start --> */}
+					<div className="login-header-search dropdown">
+						<div className="search-input dropdown-menu"></div>
+					</div>
+					{/* <!-- Header Search End --> */}
 
-                {/* <!-- Header Search Start --> */}
-                <div className="login-header-search dropdown">
-                    <div className="search-input dropdown-menu"></div>
-                </div>
-                {/* <!-- Header Search End --> */}
+					{/* <!-- Header Action Start --> */}
+					<div className="login-header-action ml-auto">
+						<div className="dropdown">
+							<button className="action notification" data-bs-toggle="dropdown">
+								<FiMail color="white" />
+							</button>
+							<div className="dropdown-menu dropdown-notification">
+								<ul className="notification-items-list">
+									<li className="notification-item">
+										<span className="notify-icon bg-success text-white">
+											<i>
+												<AiOutlineUser />
+											</i>
+										</span>
+										<div className="dropdown-body">
+											<span>
+												<p>
+													<strong>Martin</strong> has added a{" "}
+													<strong>customer</strong> Successfully
+												</p>
+											</span>
+										</div>
+										<span className="notify-time">3:20 am</span>
+									</li>
+									<li className="notification-item">
+										<span className="notify-icon bg-success text-white">
+											<i>
+												<AiOutlineUser />
+											</i>
+										</span>
+										<div className="dropdown-body">
+											<span>
+												<p>
+													<strong>Jennifer</strong> purchased Light Dashboard
+													2.0.
+												</p>
+											</span>
+										</div>
+										<span className="notify-time">3:20 am</span>
+									</li>
+									<li className="notification-item">
+										<span className="notify-icon bg-danger text-white">
+											<i>
+												<FiHeart />
+											</i>
+										</span>
+										<div className="dropdown-body">
+											<span>
+												<p>
+													<strong>Robin</strong> marked a{" "}
+													<strong>ticket</strong> as unsolved.
+												</p>
+											</span>
+										</div>
+										<span className="notify-time">3:20 am</span>
+									</li>
+									<li className="notification-item">
+										<span className="notify-icon bg-success text-white">
+											<i>
+												<AiOutlineUser />
+											</i>
+										</span>
+										<div className="dropdown-body">
+											<span>
+												<p>
+													<strong>David</strong> purchased Light Dashboard 1.0.
+												</p>
+											</span>
+										</div>
+										<span className="notify-time">3:20 am</span>
+									</li>
+									<li className="notification-item">
+										<span className="notify-icon bg-success text-white">
+											<i>
+												<AiOutlineUser />
+											</i>
+										</span>
+										<div className="dropdown-body">
+											<span>
+												<p>
+													<strong> James.</strong> has added a
+													<strong>customer</strong> Successfully
+												</p>
+											</span>
+										</div>
+										<span className="notify-time">3:20 am</span>
+									</li>
+								</ul>
+								<span className="all-notification">See all notifications</span>
+							</div>
+						</div>
 
-                {/* <!-- Header Action Start --> */}
-                <div className="login-header-action ml-auto">
-                    <div className="dropdown">
-                        <button className="action notification" data-bs-toggle="dropdown">
-                            <FiMail color="white" />
-                        </button>
-                        <div className="dropdown-menu dropdown-notification">
-                            <ul className="notification-items-list">
-                                <li className="notification-item">
-                                    <span className="notify-icon bg-success text-white"><i><AiOutlineUser /></i></span>
-                                    <div className="dropdown-body">
-                                        <span>
-                                            <p><strong>Martin</strong> has added a <strong>customer</strong> Successfully
-                                            </p>
-                                        </span>
-                                    </div>
-                                    <span className="notify-time">3:20 am</span>
-                                </li>
-                                <li className="notification-item">
-                                    <span className="notify-icon bg-success text-white"><i><AiOutlineUser /></i></span>
-                                    <div className="dropdown-body">
-                                        <span>
-                                            <p><strong>Jennifer</strong> purchased Light Dashboard 2.0.</p>
-                                        </span>
-                                    </div>
-                                    <span className="notify-time">3:20 am</span>
-                                </li>
-                                <li className="notification-item">
-                                    <span className="notify-icon bg-danger text-white"><i><FiHeart /></i></span>
-                                    <div className="dropdown-body">
-                                        <span>
-                                            <p><strong>Robin</strong> marked a <strong>ticket</strong> as unsolved.
-                                            </p>
-                                        </span>
-                                    </div>
-                                    <span className="notify-time">3:20 am</span>
-                                </li>
-                                <li className="notification-item">
-                                    <span className="notify-icon bg-success text-white"><i><AiOutlineUser /></i></span>
-                                    <div className="dropdown-body">
-                                        <span>
-                                            <p><strong>David</strong> purchased Light Dashboard 1.0.</p>
-                                        </span>
-                                    </div>
-                                    <span className="notify-time">3:20 am</span>
-                                </li>
-                                <li className="notification-item">
-                                    <span className="notify-icon bg-success text-white"><i><AiOutlineUser /></i></span>
-                                    <div className="dropdown-body">
-                                        <span>
-                                            <p><strong> James.</strong> has added a<strong>customer</strong> Successfully
-                                            </p>
-                                        </span>
-                                    </div>
-                                    <span className="notify-time">3:20 am</span>
-                                </li>
-                            </ul>
-                            <span className="all-notification">See all notifications</span>
-                        </div>
-                    </div>
+						<span className="action author">
+							<Avatar
+								sx={{
+									bgcolor: "#fff",
+									color: "#309255",
+									width: "60px",
+									height: "60px",
+									fontSize: "1.5rem",
+								}}
+							>
+								{avatar.slice(0, 1)}
+							</Avatar>
+						</span>
 
-                    <span className="action author">
-                        <Avatar
-                            sx={{
-                                bgcolor: "#fff",
-                                color: "#309255",
-                                width: "60px",
-                                height: "60px",
-                                fontSize: "1.5rem",
-                            }}
-                        >{avatar.slice(0, 1)}
-                        </Avatar>
-                    </span>
-
-                    <div className="dropdown">
-                        <button className="action more" data-bs-toggle="dropdown">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </button>
-                        <ul className="dropdown-menu">
-                            <li>
-															<button style={{border: "none", backgroundColor: "#fff"}} onClick={() => navigate("/profile")}>			
-																	<AiOutlineUser />
-																	{"   "}{studentInfo ? studentInfo.name : educatorInfo.name}
-															</button>
-                            </li>
-                            <li> 
-															<button style={{border: "none", backgroundColor: "#fff"}} onClick={logoutHandle}>
-																	<FiLogOut /> 
-																	{"   "}Log Out
-															</button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                {/* <!-- Header Action End --> */}
-
-            </div>
-            {/* <!-- Login Header Wrapper End --> */}
-        </div>
-        {/* <!-- Login Header End --> */}
+						<div className="dropdown">
+							<button className="action more" data-bs-toggle="dropdown">
+								<span></span>
+								<span></span>
+								<span></span>
+							</button>
+							<ul className="dropdown-menu">
+								<li>
+									<button
+										style={{ border: "none", backgroundColor: "#fff" }}
+										onClick={() => navigate("/profile")}
+									>
+										<AiOutlineUser />
+										{"   "}
+										{studentInfo ? studentInfo.name : educatorInfo.name}
+									</button>
+								</li>
+								<li>
+									<button
+										style={{ border: "none", backgroundColor: "#fff" }}
+										onClick={logoutHandle}
+									>
+										<FiLogOut />
+										{"   "}Log Out
+									</button>
+								</li>
+							</ul>
+						</div>
+					</div>
+					{/* <!-- Header Action End --> */}
+				</div>
+				{/* <!-- Login Header Wrapper End --> */}
+			</div>
+			{/* <!-- Login Header End --> */}
 
 			{/* <!-- Courses Enroll Start --> */}
 			<div className="section">
@@ -242,14 +288,18 @@ function Courses(props) {
 								<div className="controllers">
 									<div className="controllers-left">
 										<button className="prevvid disabled" title="Previous video">
-											<i><AiFillFastBackward /></i>
+											<i>
+												<AiFillFastBackward />
+											</i>
 										</button>
 										<button
 											className="btnPlay"
 											title="Play/Pause video"
 										></button>
 										<button className="nextvid" title="Next video">
-											<i><AiFillFastForward /></i>
+											<i>
+												<AiFillFastForward />
+											</i>
 										</button>
 										<button
 											className="sound sound2"
@@ -296,8 +346,10 @@ function Courses(props) {
 									Your Net Worth.
 								</h2>
 								<p>
-									<i><FiEye /></i> <span>8,350</span>{" "}
-									Students are watching
+									<i>
+										<FiEye />
+									</i>{" "}
+									<span>8,350</span> Students are watching
 								</p>
 							</div>
 							{/* <!-- Courses Enroll Title End --> */}
@@ -333,7 +385,10 @@ function Courses(props) {
 									</ul>
 								</div>
 								<div className="enroll-share">
-									<i><FiShare2 /></i> Share
+									<i>
+										<FiShare2 />
+									</i>{" "}
+									Share
 								</div>
 							</div>
 							{/* <!-- Courses Enroll Tab End --> */}

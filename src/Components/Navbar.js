@@ -144,11 +144,15 @@ const Navbar = ({ scrollState }) => {
 										</Avatar>
 										<Dropdown.Menu>
 											<Dropdown.Item>
-											<Link to='/profile'>
-												<AiOutlineUser />{" "}
-												{studentInfo ? studentInfo.name : educatorInfo.name}
-											</Link>
+												<Link to="/profile">
+													<div>
+														{" "}
+														<AiOutlineUser />{" "}
+														{studentInfo ? studentInfo.name : educatorInfo.name}
+													</div>
+												</Link>
 											</Dropdown.Item>
+
 											<Dropdown.Item>
 												<FiMail />{" "}
 												{studentInfo ? studentInfo.email : educatorInfo.email}
@@ -201,7 +205,7 @@ const Navbar = ({ scrollState }) => {
 					<FiArrowLeftCircle size={32} color="#309255" />
 				</div>
 
-				<div className="mobile-top" style={{paddingTop:0}}>
+				<div className="mobile-top" style={{ paddingTop: 0 }}>
 					<p
 						style={{
 							display: "flex",
@@ -253,9 +257,12 @@ const Navbar = ({ scrollState }) => {
 							</Avatar>
 							<Dropdown.Menu>
 								<Dropdown.Item>
-									<Link to='/profile'>
-										<AiOutlineUser />{" "}
-										{studentInfo ? studentInfo.name : educatorInfo.name}
+									<Link to="/profile">
+										<div>
+											{" "}
+											<AiOutlineUser />{" "}
+											{studentInfo ? studentInfo.name : educatorInfo.name}
+										</div>
 									</Link>
 								</Dropdown.Item>
 								<Dropdown.Item>

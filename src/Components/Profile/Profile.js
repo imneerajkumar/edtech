@@ -41,6 +41,7 @@ function Profile(props) {
 		state: "",
 		dob: "",
 		gender: "",
+        userName:""
 	});
 
 	const dispatch = useDispatch();
@@ -237,6 +238,28 @@ function Profile(props) {
 														onChange={(e) =>
 															setDetails((prev) => {
 																return { ...prev, name: e.target.value };
+															})
+														}
+														readOnly={!edit}
+													/>
+												</div>
+												<div className="single-form">
+													<input
+														required
+														type="text"
+														placeholder="User name"
+														value={
+															!edit
+																? educatorDetails
+																	? educatorDetails.name
+																	: studentDetails && studentDetails.name
+																: details.name
+														}
+														style={{ textTransform: "capitalize" }}
+														autoCapitalize="words"
+														onChange={(e) =>
+															setDetails((prev) => {
+																return { ...prev, userName: e.target.value };
 															})
 														}
 														readOnly={!edit}

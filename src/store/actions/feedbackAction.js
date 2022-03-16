@@ -1,4 +1,4 @@
-import { ADD_FEEDBACK_FAIL, ADD_FEEDBACK_REQUEST, ADD_FEEDBACK_SUCCESS } from "../constants/constants";
+import { ADD_FEEDBACK_FAIL, ADD_FEEDBACK_REQUEST, ADD_FEEDBACK_SUCCESS, GET_INSTRUCTORS_FEEDBACK_FAIL, GET_INSTRUCTORS_FEEDBACK_REQUEST, GET_INSTRUCTORS_FEEDBACK_SUCCESS } from "../constants/constants";
 import axios from "axios";
 const API_URL = "http://localhost:4000";
 
@@ -30,4 +30,30 @@ export const addFeedback = (details) => async (dispatch,getState) => {
 			});
 		}
 	} catch (e) {}
+};
+
+export const fetchFeedbackForInstructors = (username) => async (dispatch, getState) => {
+	console.log("Caled");
+	try {
+		// const studentInfo = getState().studentAuthReducer.studentInfo;
+		// console.log(educatorInfo);
+		const config = {
+			headers: {
+				"Content-Type": "application/json",
+				// Authorization: studentInfo.token,
+			},
+		};
+		dispatch({ type: GET_INSTRUCTORS_FEEDBACK_REQUEST });
+		const { data } = await axios.get(`${API_URL}/api/feedback/get/:${username}`, config);
+		// console.log(data);
+		dispatch({ type: GET_INSTRUCTORS_FEEDBACK_SUCCESS, payload: data });
+	} catch (e) {
+		dispatch({
+			type: GET_INSTRUCTORS_FEEDBACK_FAIL,
+			payload:
+				e.response && e.response.data.message
+					? e.response.data.message
+					: e.message,
+		});
+	}
 };

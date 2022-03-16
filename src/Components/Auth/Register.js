@@ -33,6 +33,7 @@ const Register = () => {
 		state: "",
 		dob: "",
 		gender: "",
+        userName:""
 	});
 	const [isStudent, setIsStudent] = useState(false);
 	const educatorAuth = useSelector((state) => state.educatorAuthReducer);
@@ -92,6 +93,7 @@ const Register = () => {
 				state: "",
 				dob: "",
 				gender: "",
+                userName:""
 			});
 			setIProgress(0);
 			setiImage(null);
@@ -262,6 +264,21 @@ const Register = () => {
 															}
 														/>
 													</div>
+													<div className="single-form">
+														<input
+															required
+															type="text"
+															placeholder="User name"
+															value={details.name}
+															style={{ textTransform: "capitalize" }}
+															autocapitalize="words"
+															onChange={(e) =>
+																setDetails((prev) => {
+																	return { ...prev, userName: e.target.value };
+																})
+															}
+														/>
+													</div>
 													{/* <!-- Single Form End --> */}
 													{/*  <!-- Single Form Start --> */}
 													<div className="single-form">
@@ -347,10 +364,8 @@ const Register = () => {
 															required
 															type="text"
 															onFocus={(e) => (e.target.type = "date")}
-
 															placeholder="Date of birth"
 															value={details.dob}
-														
 															onChange={(e) =>
 																setDetails((prev) => {
 																	return { ...prev, dob: e.target.value };
