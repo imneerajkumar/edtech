@@ -7,6 +7,39 @@ import Footer from "../Footer";
 import ScrollButton from "../ScrollButton";
 import FeedbackModal from "./FeedbackModal";
 
+const instructors = [
+    {
+        emailId: "instructor1@gmail.com",
+        name: "Instructor1",
+        image: "assets/images/author/author-02.jpg",
+    },
+    {
+        emailId: "instructor2@gmail.com",
+        name: "Instructor3",
+        image: "assets/images/author/author-03.jpg",
+    },
+    {
+        emailId: "instructor3@gmail.com",
+        name: "Instructor3",
+        image: "assets/images/author/author-04.jpg",
+    },
+    {
+        emailId: "instructor4@gmail.com",
+        name: "Instructor4",
+        image: "assets/images/author/author-02.jpg",
+    },
+    {
+        emailId: "instructor5@gmail.com",
+        name: "Instructor5",
+        image: "assets/images/author/author-03.jpg",
+    },
+    {
+        emailId: "instructor6@gmail.com",
+        name: "Instructor6",
+        image: "assets/images/author/author-04.jpg",
+    },
+];
+
 function About(props) {
   const [scrollState, setScrollState] = useState(false);
   const [show, setShow] = useState(false);
@@ -21,8 +54,10 @@ function About(props) {
     },
   ]);
 
-  const handleShow = () => {
-    // Set data acc. to instructor selected
+  const handleShow = (id) => {
+    console.log(id);
+    // dispatch getfeedback of instructor emailId(id)
+    // setData()
     setShow(true);
   }
 	
@@ -78,12 +113,10 @@ function About(props) {
 
       {/* <!-- About Start --> */}
         <div className="section">
-
             <div className="section-padding-02 mt-n10">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6">
-
                             {/* <!-- About Images Start --> */}
                             <div className="about-images">
                                 <div className="images">
@@ -98,10 +131,8 @@ function About(props) {
                                 </div>
                             </div>
                             {/* <!-- About Images End --> */}
-
                         </div>
                         <div className="col-lg-6">
-
                             {/* <!-- About Content Start --> */}
                             <div className="about-content">
                                 <h5 className="sub-title">Welcome to Edule.</h5>
@@ -110,7 +141,6 @@ function About(props) {
                                 <a href="/courses" className="btn btn-primary btn-hover-dark">Start A Course</a>
                             </div>
                             {/* <!-- About Content End --> */}
-
                         </div>
                     </div>
                 </div>
@@ -118,7 +148,6 @@ function About(props) {
 
             <div className="section-padding-02 mt-n6">
                 <div className="container">
-
                     {/* <!-- About Items Wrapper Start --> */}
                     <div className="about-items-wrapper">
                         <div className="row">
@@ -185,10 +214,8 @@ function About(props) {
                         </div>
                     </div>
                     {/* <!-- About Items Wrapper End --> */}
-
                 </div>
             </div>
-
         </div>
         {/* <!-- About End --> */}
 
@@ -196,20 +223,17 @@ function About(props) {
         <FeedbackModal show={show} handleClose={() => {setShow(false)}} data={data} />
         <div className="section section-padding-02">
             <div className="container">
-
                 {/* <!-- Call to Action Wrapper Start --> */}
                 <div className="call-to-action-wrapper">
                     <img className="cat-shape-02" src="assets/images/shape/shape-13.svg" alt="Shape" />
                     <div className="row align-items-center">
                         <div className="col-md-6">
-
                             {/* <!-- Section Title Start --> */}
                             <div className="section-title shape-02">
                                 <h5 className="sub-title">Become A Instructor</h5>
                                 <h2 className="main-title">You can join with Edule as <span>a instructor?</span></h2>
                             </div>
                             {/* <!-- Section Title End --> */}
-
                         </div>
                         <div className="col-md-6">
                             <div className="call-to-action-btn">
@@ -218,7 +242,6 @@ function About(props) {
                         </div>
                     </div>
                 {/* <!-- Call to Action Wrapper End --> */}
-
             </div>
         </div>
         {/* <!-- Call to Action End --> */}
@@ -236,272 +259,34 @@ function About(props) {
                 {/* <!-- Team Wrapper Start --> */}
                 <div className="team-wrapper">
                     <div className="row row-cols-lg-5 row-cols-sm-3 row-cols-2 ">
-                        <div className="col">
-
-                            {/* <!-- Single Team Start --> */}
-                            <div className="single-team" >
-                                <div className="team-thumb">
-                                    <img src="assets/images/author/author-01.jpg" alt="Author" onClick={handleShow}/>
-                                </div>
-                                <div className="team-content">
-                                    <div 
-                                        className="rating" 
-                                        style={{
-                                            display: "flex",
-                                            alignItems: "center",
-                                            justifyContent: "center"
-                                        }}
-                                    >
-                                        <span className="count">4.9</span>
-                                        <AiFillStar color="orange" />
-                                        <span className="text">(rating)</span>
+                        {instructors.map((item) => (
+                            <div className="col" key={item.emailId}>
+                                <div className="single-team" >
+                                    <div className="team-thumb">
+                                        <img src={item.image} alt="Author" onClick={() => handleShow(item.emailId)}/>
                                     </div>
-                                    <h4 className="name">Margarita James</h4>
-                                    <span className="designation">MSC, Instructor</span>
+                                    <div className="team-content">
+                                        <div 
+                                            className="rating" 
+                                            style={{
+                                                display: "flex",
+                                                alignItems: "center",
+                                                justifyContent: "center"
+                                            }}
+                                        >
+                                            <span className="count">4.9</span>
+                                            <AiFillStar color="orange" />
+                                            <span className="text">(rating)</span>
+                                        </div>
+                                        <h4 className="name">{item.name}</h4>
+                                        <span className="designation">MSC, Instructor</span>
+                                    </div>
                                 </div>
                             </div>
-                            {/* <!-- Single Team End --> */}
-
-                        </div>
-                        <div className="col">
-                            {/* <!-- Single Team Start --> */}
-                            <div className="single-team">
-                                <div className="team-thumb">
-                                    <img src="assets/images/author/author-02.jpg" alt="Author" onClick={handleShow} />
-                                </div>
-                                <div className="team-content">
-                                    <div 
-                                        className="rating" 
-                                        style={{
-                                            display: "flex",
-                                            alignItems: "center",
-                                            justifyContent: "center"
-                                        }}
-                                    >
-                                        <span className="count">4.9</span>
-                                        <AiFillStar color="orange" />
-                                        <span className="text">(rating)</span>
-                                    </div>
-                                    <h4 className="name">Mitchell Colon</h4>
-                                    <span className="designation">BBA, Instructor</span>
-                                </div>
-                            </div>
-                            {/* <!-- Single Team End --> */}
-
-                        </div>
-                        <div className="col">
-
-                            {/* <!-- Single Team Start --> */}
-                            <div className="single-team">
-                                <div className="team-thumb">
-                                    <img src="assets/images/author/author-03.jpg" alt="Author" onClick={handleShow}/>
-                                </div>
-                                <div className="team-content">
-                                    <div 
-                                        className="rating" 
-                                        style={{
-                                            display: "flex",
-                                            alignItems: "center",
-                                            justifyContent: "center"
-                                        }}
-                                    >
-                                        <span className="count">4.9</span>
-                                        <AiFillStar color="orange" />
-                                        <span className="text">(rating)</span>
-                                    </div>
-                                    <h4 className="name">Sonya Gordon</h4>
-                                    <span className="designation">MBA, Instructor</span>
-                                </div>
-                            </div>
-                            {/* <!-- Single Team End --> */}
-
-                        </div>
-                        <div className="col">
-                            {/* <!-- Single Team Start --> */}
-                            <div className="single-team">
-                                <div className="team-thumb">
-                                    <img src="assets/images/author/author-04.jpg" alt="Author" onClick={handleShow}/>
-                                </div>
-                                <div className="team-content">
-                                    <div 
-                                        className="rating" 
-                                        style={{
-                                            display: "flex",
-                                            alignItems: "center",
-                                            justifyContent: "center"
-                                        }}
-                                    >
-                                        <span className="count">4.9</span>
-                                        <AiFillStar color="orange" />
-                                        <span className="text">(rating)</span>
-                                    </div>
-                                    <h4 className="name">Archie Neal</h4>
-                                    <span className="designation">BBS, Instructor</span>
-                                </div>
-                            </div>
-                            {/* <!-- Single Team End --> */}
-                        </div>
-
-                        <div className="col">
-                            {/* <!-- Single Team Start --> */}
-                            <div className="single-team">
-                                <div className="team-thumb">
-                                    <img src="assets/images/author/author-05.jpg" alt="Author" onClick={handleShow}/>
-                                </div>
-                                <div className="team-content">
-                                     <div 
-                                        className="rating" 
-                                        style={{
-                                            display: "flex",
-                                            alignItems: "center",
-                                            justifyContent: "center"
-                                        }}
-                                    >
-                                        <span className="count">4.9</span>
-                                        <AiFillStar color="orange" />
-                                        <span className="text">(rating)</span>
-                                    </div>
-                                    <h4 className="name">Randal Ramsey</h4>
-                                    <span className="designation">MBBS, Instructor</span>
-                                </div>
-                            </div>
-                            {/* <!-- Single Team End --> */}
-                        </div>
-                        <div className="col">
-                            {/* <!-- Single Team Start --> */}
-                            <div className="single-team">
-                                <div className="team-thumb">
-                                    <img src="assets/images/author/author-06.jpg" alt="Author" onClick={handleShow}/>
-                                </div>
-                                <div className="team-content">
-                                    <div 
-                                        className="rating" 
-                                        style={{
-                                            display: "flex",
-                                            alignItems: "center",
-                                            justifyContent: "center"
-                                        }}
-                                    >
-                                        <span className="count">4.9</span>
-                                        <AiFillStar color="orange" />
-                                        <span className="text">(rating)</span>
-                                    </div>
-                                    <h4 className="name">Rochelle Thomas</h4>
-                                    <span className="designation">MSC, Instructor</span>
-                                </div>
-                            </div>
-                            {/* <!-- Single Team End --> */}
-
-                        </div>
-                        <div className="col">
-
-                            {/* <!-- Single Team Start --> */}
-                            <div className="single-team">
-                                <div className="team-thumb">
-                                    <img src="assets/images/author/author-07.jpg" alt="Author" onClick={handleShow}/>
-                                </div>
-                                <div className="team-content">
-                                    <div 
-                                        className="rating" 
-                                        style={{
-                                            display: "flex",
-                                            alignItems: "center",
-                                            justifyContent: "center"
-                                        }}
-                                    >
-                                        <span className="count">4.9</span>
-                                        <AiFillStar color="orange" />
-                                        <span className="text">(rating)</span>
-                                    </div>
-                                    <h4 className="name">Della Salazar</h4>
-                                    <span className="designation">BBA, Instructor</span>
-                                </div>
-                            </div>
-                            {/* <!-- Single Team End --> */}
-
-                        </div>
-                        <div className="col">
-
-                            {/* <!-- Single Team Start --> */}
-                            <div className="single-team">
-                                <div className="team-thumb">
-                                    <img src="assets/images/author/author-08.jpg" alt="Author" onClick={handleShow}/>
-                                </div>
-                                <div className="team-content">
-                                    <div 
-                                        className="rating" 
-                                        style={{
-                                            display: "flex",
-                                            alignItems: "center",
-                                            justifyContent: "center"
-                                        }}
-                                    >
-                                        <span className="count">4.9</span>
-                                        <AiFillStar color="orange" />
-                                        <span className="text">(rating)</span>
-                                    </div>
-                                    <h4 className="name">Ricardo Patrick</h4>
-                                    <span className="designation">MBA, Instructor</span>
-                                </div>
-                            </div>
-                            {/* <!-- Single Team End --> */}
-
-                        </div>
-                        <div className="col">
-                            {/* <!-- Single Team Start --> */}
-                            <div className="single-team">
-                                <div className="team-thumb">
-                                    <img src="assets/images/author/author-09.jpg" alt="Author" onClick={handleShow}/>
-                                </div>
-                                <div className="team-content">
-                                    <div 
-                                        className="rating" 
-                                        style={{
-                                            display: "flex",
-                                            alignItems: "center",
-                                            justifyContent: "center"
-                                        }}
-                                    >
-                                        <span className="count">4.9</span>
-                                        <AiFillStar color="orange" />
-                                        <span className="text">(rating)</span>
-                                    </div>
-                                    <h4 className="name">Kurt Stewart</h4>
-                                    <span className="designation">BBS, Instructor</span>
-                                </div>
-                            </div>
-                            {/* <!-- Single Team End --> */}
-
-                        </div>
-                        <div className="col">
-                            {/* <!-- Single Team Start --> */}
-                            <div className="single-team">
-                                <div className="team-thumb">
-                                    <img src="assets/images/author/author-10.jpg" alt="Author" onClick={handleShow}/>
-                                </div>
-                                <div className="team-content">
-                                    <div 
-                                        className="rating" 
-                                        style={{
-                                            display: "flex",
-                                            alignItems: "center",
-                                            justifyContent: "center"
-                                        }}
-                                    >
-                                        <span className="count">4.9</span>
-                                        <AiFillStar color="orange" />
-                                        <span className="text">(rating)</span>
-                                    </div>
-                                    <h4 className="name">Rodney Terry</h4>
-                                    <span className="designation">MBBS, Instructor</span>
-                                </div>
-                            </div>
-                            {/* <!-- Single Team End --> */}
-                        </div>
+                        ))}
                     </div>
                 </div>
                 {/* <!-- Team Wrapper End --> */}
-
             </div>
         </div>
         {/* <!-- Team Member's End --> */}

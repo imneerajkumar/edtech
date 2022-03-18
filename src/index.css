@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+} 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #94fabe; 
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #309255; 
+}
+
+.vidcontainer > div {
+  width: 100% !important;
+  height: 100% !important;
+}
