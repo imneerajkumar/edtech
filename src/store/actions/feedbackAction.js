@@ -32,11 +32,9 @@ export const addFeedback = (details) => async (dispatch,getState) => {
 	} catch (e) {}
 };
 
-export const fetchFeedbackForInstructors = (username) => async (dispatch, getState) => {
-	console.log("Caled");
+export const fetchFeedbackForInstructors = (userName) => async (dispatch, getState) => {
+	console.log("Called");
 	try {
-		// const studentInfo = getState().studentAuthReducer.studentInfo;
-		// console.log(educatorInfo);
 		const config = {
 			headers: {
 				"Content-Type": "application/json",
@@ -44,7 +42,7 @@ export const fetchFeedbackForInstructors = (username) => async (dispatch, getSta
 			},
 		};
 		dispatch({ type: GET_INSTRUCTORS_FEEDBACK_REQUEST });
-		const { data } = await axios.get(`${API_URL}/api/feedback/get/:${username}`, config);
+		const { data } = await axios.get(`${API_URL}/api/feedback/getdetails/:${userName}`, config);
 		// console.log(data);
 		dispatch({ type: GET_INSTRUCTORS_FEEDBACK_SUCCESS, payload: data });
 	} catch (e) {

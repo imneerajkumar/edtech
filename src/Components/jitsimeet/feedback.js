@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FiBookOpen } from "react-icons/fi";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Download from "../Download";
 import Footer from "../Footer";
 import Navbar from "../Navbar";
@@ -17,7 +17,7 @@ const Feedback = () => {
 		feedback: "",
 		name: "",
 		email: "",
-		instructorName: "",
+		userName: "",
 	});
 	const dispatch = useDispatch();
 	useEffect(() => {
@@ -42,7 +42,7 @@ const Feedback = () => {
 			feedback: "",
 			name: "",
 			email: "",
-			instructorName: "",
+			userName: "",
 		});
 	};
 	return (
@@ -170,7 +170,7 @@ const Feedback = () => {
 														placeholder="Name"
 														value={details.name}
 														style={{ textTransform: "capitalize" }}
-														autocapitalize="words"
+														autoCapitalize="words"
 														onChange={(e) =>
 															setDetails((prev) => {
 																return { ...prev, name: e.target.value };
@@ -197,8 +197,8 @@ const Feedback = () => {
 													<input
 														required
 														type="text"
-														placeholder="Instructor name"
-														value={details.instructorName}
+														placeholder="Instructor username"
+														value={details.userName}
 														onChange={(e) =>
 															setDetails((prev) => {
 																return {

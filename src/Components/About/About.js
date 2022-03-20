@@ -6,44 +6,51 @@ import Download from "../Download";
 import Footer from "../Footer";
 import ScrollButton from "../ScrollButton";
 import FeedbackModal from "./FeedbackModal";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchEducatorList } from "../../store/actions/educatorAction";
+import { fetchFeedbackForInstructors } from "../../store/actions/feedbackAction";
 
-const instructors = [
-    {
-        emailId: "instructor1@gmail.com",
-        name: "Instructor1",
-        image: "assets/images/author/author-02.jpg",
-    },
-    {
-        emailId: "instructor2@gmail.com",
-        name: "Instructor3",
-        image: "assets/images/author/author-03.jpg",
-    },
-    {
-        emailId: "instructor3@gmail.com",
-        name: "Instructor3",
-        image: "assets/images/author/author-04.jpg",
-    },
-    {
-        emailId: "instructor4@gmail.com",
-        name: "Instructor4",
-        image: "assets/images/author/author-02.jpg",
-    },
-    {
-        emailId: "instructor5@gmail.com",
-        name: "Instructor5",
-        image: "assets/images/author/author-03.jpg",
-    },
-    {
-        emailId: "instructor6@gmail.com",
-        name: "Instructor6",
-        image: "assets/images/author/author-04.jpg",
-    },
-];
+// const educatorList = [
+//     {
+//         email: "instructor1@gmail.com",
+//         name: "Instructor1",
+//         userName: "instructor1",
+//         userImage: "assets/images/author/author-02.jpg",
+//     },
+//     {
+//         emailId: "instructor2@gmail.com",
+//         name: "Instructor2",
+//         userName: "instructor2",
+//         userImage: "assets/images/author/author-03.jpg",
+//     },
+//     {
+//         emailId: "instructor3@gmail.com",
+//         name: "Instructor3",
+//         userName: "instructor3",
+//         userImage: "assets/images/author/author-04.jpg",
+//     },
+//     {
+//         emailId: "instructor4@gmail.com",
+//         name: "Instructor4",
+//         userName: "instructor4",
+//         userImage: "assets/images/author/author-02.jpg",
+//     },
+//     {
+//         emailId: "instructor5@gmail.com",
+//         name: "Instructor5",
+//         userName: "instructor5",
+//         userImage: "assets/images/author/author-03.jpg",
+//     },
+//     {
+//         emailId: "instructor6@gmail.com",
+//         name: "Instructor6",
+//         userName: "instructor6",
+//         userImage: "assets/images/author/author-04.jpg",
+//     },
+// ];
 
-function About(props) {
-  const [scrollState, setScrollState] = useState(false);
-  const [show, setShow] = useState(false);
-  const [data, setData] = useState([
+const data = 
+[
     {
         name: "Student 1",
         feedback: "Lorem Ipsum has been the industry's standard dummy text since the 1500 when unknown printer took a galley type and scrambled to make type specimen’s book has survived not five centuries but also the leap into electronic type and book."
@@ -52,14 +59,23 @@ function About(props) {
         name: "Person 1",
         feedback: "Lorem Ipsum has been the industry's standard dummy text since the 1500 when unknown printer took a galley type and scrambled to make type specimen’s book has survived not five centuries but also the leap into electronic type and book."
     },
-  ]);
+]
 
-  const handleShow = (id) => {
-    console.log(id);
-    // dispatch getfeedback of instructor emailId(id)
-    // setData()
+function About(props) {
+  const [scrollState, setScrollState] = useState(false);
+  const [show, setShow] = useState(false);
+  const dispatch = useDispatch();
+  const { educatorList } = useSelector((state) => state.educatorFetchList);
+//   const feedbackData = useState(useSelector((state) => state.fetchFeedbackForInstructorReducer));
+ 
+  const handleShow = (userName) => {
+    dispatch(fetchFeedbackForInstructors(userName));   
     setShow(true);
   }
+
+  useEffect(() => {
+    dispatch(fetchEducatorList());
+  },[dispatch]);
 	
   useEffect(() => {
     window.addEventListener("scroll", (e) => {
@@ -259,11 +275,16 @@ function About(props) {
                 {/* <!-- Team Wrapper Start --> */}
                 <div className="team-wrapper">
                     <div className="row row-cols-lg-5 row-cols-sm-3 row-cols-2 ">
-                        {instructors.map((item) => (
-                            <div className="col" key={item.emailId}>
+                        {educatorList && educatorList.map((item) => (
+                            <div className="col" key={item.userName}>
                                 <div className="single-team" >
                                     <div className="team-thumb">
-                                        <img src={item.image} alt="Author" onClick={() => handleShow(item.emailId)}/>
+                                        <img 
+                                            src={item.userImage} 
+                                            style={{width:'153px', height:'153px'}}
+                                            alt="" 
+                                            onClick={() => handleShow(item.userName)}
+                                        />
                                     </div>
                                     <div className="team-content">
                                         <div 
