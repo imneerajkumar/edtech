@@ -6,7 +6,7 @@ function ScrollButton({ scrollState }) {
     <div>
       {scrollState && (
 				<div 
-          style={{display: "block"}}
+          style={{display: "block",right:0,left:"30px"}}
           className="back-to-top" 
           onClick={() => window.scrollTo(0, 0)}
         >

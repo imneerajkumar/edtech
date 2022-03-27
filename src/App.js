@@ -63,7 +63,7 @@ function App() {
 				<Route
 					exact
 					path="/courses"
-					element={isLogin() ? <Courses /> : <Navigate to="/login" />}
+					element={ <Courses /> }
 				/>
 				<Route exact path="/course-details" element={<CourseDetail />} />
 				<Route

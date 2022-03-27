@@ -1,0 +1,29 @@
+.chatbot-modal {
+  position: fixed;
+  right: 25px;
+  bottom: 50px;
+  z-index: 1000;
+}
+
+.hide-btn {
+  display: none;
+}
+
+.react-chatbot-kit-chat-input {
+  background-color: white;
+}
+.react-chatbot-kit-chat-container{
+    width: min-content !important;
+}
+.react-chatbot-kit-chat-bot-message {
+  line-height: 1.5;
+  display: flex;
+  flex-wrap: wrap !important;
+   /* width: fit-content !important; */
+       word-break: break-word !important;
+}
+
+.react-chatbot-kit-user-chat-message {
+  line-height: 1.5;
+}
+

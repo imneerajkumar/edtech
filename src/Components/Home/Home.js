@@ -6,6 +6,7 @@ import Download from "../Download";
 import Footer from "../Footer";
 import ScrollButton from "../ScrollButton";
 import { useDispatch, useSelector } from "react-redux";
+import Chatbotbtn from '../chatbot/Chatbotbtn'
 import {
 	FaBookmark,
 	FaCertificate,
@@ -687,6 +688,7 @@ const Home = () => {
 				</div>
 			</div>
 			{/* <!-- Blog End --> */}
+            <Chatbotbtn/>
 			<ScrollButton scrollState={scrollState} />
 			<Footer />
 			{/* <!-- Footer Start  --> */}

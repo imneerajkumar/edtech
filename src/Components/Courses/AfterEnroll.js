@@ -2,74 +2,16 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store/actions/studentsAction";
 import { logoutEducator } from "../../store/actions/educatorAction";
-import {
-	AiFillFastBackward,
-	AiFillFastForward,
-	AiOutlineUser,
-} from "react-icons/ai";
+import { AiOutlineUser} from "react-icons/ai";
 import { FiLogOut, FiMail, FiHeart, FiShare2, FiEye } from "react-icons/fi";
 import { Avatar } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Footer";
 import Download from "../Download";
-// import ReactPlayer from "react-player";
+import ReactPlayer from 'react-player';
+import { data } from './data';
 
 function Courses(props) {
-	// const [collap, setcollap] = useState(true);
-
-	//useEffect(() => {
-	//const element = document.getElementById("myvid");
-	//console.log(element);
-	//         $(document).ready(function()
-
-	// {
-	// 	var vid = $('#myvid');
-
-	// 	//default video source
-	//     $(vid).attr("src", $("a.link:first").attr("href"));
-
-	//     // addclassName playing to first video link
-	//     $("a.link:first").addclassName("playing");
-
-	// $("a.link").on("click" , function  (event) {
-
-	// 	// prevent link default
-	//     event.preventDefault();
-
-	//     // change video source
-	//     $(vid).attr("src", $(this).attr("href"));
-
-	//     // remouve className playing from unplayed video href
-	//     $(".vids a").removeclassName("playing");
-
-	//     // add className playing to video href
-	//     $(this).addclassName("playing");
-
-	//     // add className paused to give the play/pause button the right look
-	//     $('.btnPlay').addclassName('paused');
-
-	//     // play the video
-	//     vid[0].play();
-
-	//     // adjust prev button state
-	//     if ($("a.link:first").hasclassName("playing")) {
-	//     $(".prevvid").addclassName("disabled");
-	//     }
-	//     else {
-	//         $(".prevvid").removeclassName("disabled");
-	//     }
-
-	//     // adjust next button state
-	//     if ($("a.link:last").hasclassName("playing")) {
-	//     $(".nextvid").addclassName("disabled");
-	//     }
-	//     else {
-	//         $(".nextvid").removeclassName("disabled");
-	//     }
-
-	// });
-	// });
-
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	const educatorAuthReducer = useSelector((state) => state.educatorAuthReducer);
@@ -77,6 +19,7 @@ function Courses(props) {
 	const [avatar, setAvatar] = useState("");
 	const studentAuthReducer = useSelector((state) => state.studentAuthReducer);
 	const { studentInfo, loading: loadStudent } = studentAuthReducer;
+	const [url, setUrl] = useState('https://player.vimeo.com/external/215175080.hd.mp4?s=5b17787857fd95646e67ad0f666ea69388cb703c&amp;profile_id=119')
 
 	useEffect(() => {
 		if (studentInfo) {
@@ -101,28 +44,16 @@ function Courses(props) {
 
 	return (
 		<div className="main-wrapper">
-			{/* <!-- Login Header Start --> */}
-			<div
-				className="section login-header"
-				style={{ backgroundColor: "#309255" }}
-			>
-				{/* <!-- Login Header Wrapper Start --> */}
+			<div className="section login-header" style={{ backgroundColor: "#309255" }}>
 				<div className="login-header-wrapper navbar navbar-expand">
-					{/* <!-- Header Logo Start --> */}
 					<div className="login-header-logo">
 						<a href="/">
 							<img src="assets/images/logo-icon.png" alt="Logo" />
 						</a>
 					</div>
-					{/* <!-- Header Logo End --> */}
-
-					{/* <!-- Header Search Start --> */}
 					<div className="login-header-search dropdown">
 						<div className="search-input dropdown-menu"></div>
 					</div>
-					{/* <!-- Header Search End --> */}
-
-					{/* <!-- Header Action Start --> */}
 					<div className="login-header-action ml-auto">
 						<div className="dropdown">
 							<button className="action notification" data-bs-toggle="dropdown">
@@ -257,89 +188,21 @@ function Courses(props) {
 							</ul>
 						</div>
 					</div>
-					{/* <!-- Header Action End --> */}
 				</div>
-				{/* <!-- Login Header Wrapper End --> */}
 			</div>
-			{/* <!-- Login Header End --> */}
 
-			{/* <!-- Courses Enroll Start --> */}
 			<div className="section">
-				{/* <!-- Courses Enroll Wrapper Start --> */}
 				<div className="courses-enroll-wrapper">
-					{/* <!-- Courses Video Player Start --> */}
 					<div className="courses-video-player">
-						{/* <!-- Courses Video Container Start --> */}
 						<div className="vidcontainer">
-							<video id="myvid"></video>
-
-							<div className="video-play-bar">
-								<div className="topControl">
-									<div className="progress">
-										<span className="bufferBar"></span>
-										<span className="timeBar"></span>
-									</div>
-									<div className="time">
-										<span className="current"></span> /
-										<span className="duration"></span>
-									</div>
-								</div>
-
-								<div className="controllers">
-									<div className="controllers-left">
-										<button className="prevvid disabled" title="Previous video">
-											<i>
-												<AiFillFastBackward />
-											</i>
-										</button>
-										<button
-											className="btnPlay"
-											title="Play/Pause video"
-										></button>
-										<button className="nextvid" title="Next video">
-											<i>
-												<AiFillFastForward />
-											</i>
-										</button>
-										<button
-											className="sound sound2"
-											title="Mute/Unmute sound"
-										></button>
-										<div className="volume" title="Set volume">
-											<span className="volumeBar"></span>
-										</div>
-									</div>
-
-									<div className="controllers-right">
-										<button className="btnspeed" title="Video speed">
-											<i className="fa fa-gear"></i>
-										</button>
-										<ul className="speedcnt">
-											<li className="spdx50">1.5</li>
-											<li className="spdx25">1.25</li>
-											<li className="spdx1 selected">Normal</li>
-											<li className="spdx050">0.5</li>
-										</ul>
-										<button className="btnFS" title="full screen"></button>
-									</div>
-								</div>
-							</div>
-
-							<div className="bigplay" title="play the video">
-								<i className="fa fa-play"></i>
-							</div>
-
-							<div className="loading">
-								<div className="spinner-border spinner">
-									<span className="visually-hidden">Loading...</span>
-								</div>
-							</div>
+							<ReactPlayer 
+								url={url} 
+								controls={true}
+								style={{width:'100%', height:'100%'}}
+							/>
 						</div>
-						{/* <!-- Courses Video Container End --> */}
 
-						{/* <!-- Courses Enroll Content Start --> */}
 						<div className="courses-enroll-content">
-							{/* <!-- Courses Enroll Title Start --> */}
 							<div className="courses-enroll-title">
 								<h2 className="title">
 									Finance & Investment Series: Learn to Budget and Calculate
@@ -352,9 +215,6 @@ function Courses(props) {
 									<span>8,350</span> Students are watching
 								</p>
 							</div>
-							{/* <!-- Courses Enroll Title End --> */}
-
-							{/* <!-- Courses Enroll Tab Start --> */}
 							<div className="courses-enroll-tab">
 								<div className="enroll-tab-menu">
 									<ul className="nav">
@@ -391,13 +251,9 @@ function Courses(props) {
 									Share
 								</div>
 							</div>
-							{/* <!-- Courses Enroll Tab End --> */}
-
-							{/* <!-- Courses Enroll Tab Content Start --> */}
 							<div className="courses-enroll-tab-content">
 								<div className="tab-content">
 									<div className="tab-pane fade show active" id="tab1">
-										{/* <!-- Overview Start --> */}
 										<div className="overview">
 											<div className="row">
 												<div className="col-lg-4">
@@ -407,19 +263,7 @@ function Courses(props) {
 												</div>
 												<div className="col-lg-8">
 													<div className="enroll-tab-content">
-														<p>
-															Lorem Ipsum is simply dummy text of the printing
-															and typesetting industry. Lorem Ipsum has been
-															industry's standard dummy text ever since the
-															1500s when andom unknown printer took a galley of
-															type scrambled it to make a type specimen book. It
-															has survived not’s only and five centuries, but
-															also the lea into electronic typesetting,
-															remaining priting essentially unchanged. It was
-															popularsed in the 1960 with containing Lorem Ipsum
-															passages desktop publishing software.
-														</p>
-
+														<p>{data.cousreDetails}</p>
 														<table className="table">
 															<tbody>
 																<tr>
@@ -460,30 +304,14 @@ function Courses(props) {
 																</tr>
 															</tbody>
 														</table>
-
-														<p>
-															Lorem Ipsum is simply dummy text of the printing
-															and typesetting industry. Lorem Ipsum has been
-															industry's standard dummy text ever since the
-															1500s when andom unknown printer took a galley of
-															type scrambled it to make a type specimen book.
-														</p>
-
-														<p>
-															Lorem Ipsum is simply dummy text of the printing
-															and typesetting industry. Lorem Ipsum has been
-															industry's standard dummy text ever since the
-															1500s when andom unknown printer took a galley of
-															type scrambled it to make a type specimen book.
-														</p>
+														<p>{data.cousreDetailU}</p>
+														<p>{data.cousreDetailD}</p>
 													</div>
 												</div>
 											</div>
 										</div>
-										{/* <!-- Overview End --> */}
 									</div>
 									<div className="tab-pane fade" id="tab2">
-										{/* <!-- Description Start --> */}
 										<div className="description">
 											<div className="row">
 												<div className="col-lg-4">
@@ -493,47 +321,15 @@ function Courses(props) {
 												</div>
 												<div className="col-lg-8">
 													<div className="enroll-tab-content">
-														<p>
-															Lorem Ipsum is simply dummy text of the printing
-															and typesetting industry. Lorem Ipsum has been
-															industry's standard dummy text ever since the
-															1500s when andom unknown printer took a galley of
-															type scrambled it to make a type specimen book. It
-															has survived not’s only and five centuries, but
-															also the lea into electronic typesetting,
-															remaining priting essentially unchanged. It was
-															popularsed in the 1960 with containing Lorem Ipsum
-															passages desktop publishing software.
-														</p>
-
-														<p className="text">
-															“Lorem Ipsum is simply dummy text of the printing
-															and typesetting industry. Lorem Ipsum has
-															industry's standard dummy text ever since the
-															1500s when andom unknown printer took a galley
-															scrambled it to make a type specimen book.”
-														</p>
-
-														<p>
-															Lorem Ipsum is simply dummy text of the printing
-															and typesetting industry. Lorem Ipsum has been
-															industry's standard dummy text ever since the
-															1500s when andom unknown printer took a galley of
-															type scrambled it to make a type specimen book. It
-															has survived not’s only and five centuries, but
-															also the lea into electronic typesetting,
-															remaining priting essentially unchanged. It was
-															popularsed in the 1960 with containing Lorem Ipsum
-															passages desktop publishing software.
-														</p>
+														<p>{data.desc1}</p>
+														<p className="text">{data.desc2}</p>
+														<p>{data.desc3}</p>
 													</div>
 												</div>
 											</div>
 										</div>
-										{/* <!-- Description End --> */}
 									</div>
 									<div className="tab-pane fade" id="tab3">
-										{/* <!-- Certificates Start --> */}
 										<div className="certificates">
 											<div className="row">
 												<div className="col-lg-4">
@@ -543,26 +339,13 @@ function Courses(props) {
 												</div>
 												<div className="col-lg-8">
 													<div className="enroll-tab-content">
-														<p>
-															Lorem Ipsum is simply dummy text of the printing
-															and typesetting industry. Lorem Ipsum has been
-															industry's standard dummy text ever since the
-															1500s when andom unknown printer took a galley of
-															type scrambled it to make a type specimen book. It
-															has survived not’s only and five centuries, but
-															also the lea into electronic typesetting,
-															remaining priting essentially unchanged. It was
-															popularsed in the 1960 with containing Lorem Ipsum
-															passages desktop publishing software.
-														</p>
+														<p>{data.certificates}</p>
 													</div>
 												</div>
 											</div>
 										</div>
-										{/* <!-- Certificates End --> */}
 									</div>
 									<div className="tab-pane fade" id="tab4">
-										{/* <!-- Instructor Start --> */}
 										<div className="instructor">
 											<div className="row">
 												<div className="col-lg-4">
@@ -572,7 +355,6 @@ function Courses(props) {
 												</div>
 												<div className="col-lg-8">
 													<div className="enroll-tab-content">
-														{/* <!-- Single Instructor Start --> */}
 														<div className="single-instructor">
 															<div className="review-author">
 																<div className="author-thumb">
@@ -594,18 +376,8 @@ function Courses(props) {
 																	</span>
 																</div>
 															</div>
-															<p>
-																Lorem Ipsum is simply dummy text of the printing
-																and typesetting industry. Lorem Ipsum has been
-																industry's standard dummy text ever since the
-																1500s when andom unknown printer took a galley
-																of type scrambled it to make a type specimen
-																book.
-															</p>
+															<p>{data.instructor}</p>
 														</div>
-														{/* <!-- Single Instructor End --> */}
-
-														{/* <!-- Single Instructor Start --> */}
 														<div className="single-instructor">
 															<div className="review-author">
 																<div className="author-thumb">
@@ -627,18 +399,8 @@ function Courses(props) {
 																	</span>
 																</div>
 															</div>
-															<p>
-																Lorem Ipsum is simply dummy text of the printing
-																and typesetting industry. Lorem Ipsum has been
-																industry's standard dummy text ever since the
-																1500s when andom unknown printer took a galley
-																of type scrambled it to make a type specimen
-																book.
-															</p>
+															<p>{data.instructor}</p>
 														</div>
-														{/* <!-- Single Instructor End --> */}
-
-														{/* <!-- Single Instructor Start --> */}
 														<div className="single-instructor">
 															<div className="review-author">
 																<div className="author-thumb">
@@ -660,31 +422,17 @@ function Courses(props) {
 																	</span>
 																</div>
 															</div>
-															<p>
-																Lorem Ipsum is simply dummy text of the printing
-																and typesetting industry. Lorem Ipsum has been
-																industry's standard dummy text ever since the
-																1500s when andom unknown printer took a galley
-																of type scrambled it to make a type specimen
-																book.
-															</p>
+															<p>{data.instructor}</p>
 														</div>
-														{/* <!-- Single Instructor End --> */}
 													</div>
 												</div>
 											</div>
 										</div>
-										{/* <!-- Instructor End --> */}
 									</div>
 								</div>
 							</div>
-							{/* <!-- Courses Enroll Tab Content End --> */}
 						</div>
-						{/* <!-- Courses Enroll Content End --> */}
 					</div>
-					{/* <!-- Courses Video Player End --> */}
-
-					{/* <!-- Courses Video Playlist Start --> */}
 					<div className="courses-video-playlist">
 						<div className="playlist-title">
 							<h3 className="title">Course Content</h3>
@@ -716,66 +464,67 @@ function Courses(props) {
 									>
 										<nav className="vids">
 											<a
+												href="#/"
 												className="link active"
-												href="https://player.vimeo.com/external/215175080.hd.mp4?s=5b17787857fd95646e67ad0f666ea69388cb703c&amp;profile_id=119"
+												onClick={() => setUrl('https://player.vimeo.com/external/215175080.hd.mp4?s=5b17787857fd95646e67ad0f666ea69388cb703c&amp;profile_id=119')}
 											>
 												<p>01. The Complete Medicine MasterclassName</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590826.hd.mp4?s=6a918d074abf8f3add7858018855524d384f6934&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590826.hd.mp4?s=6a918d074abf8f3add7858018855524d384f6934&amp;profile_id=119")}
 											>
 												<p>02. Standard dummy text ever since the</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590786.hd.mp4?s=bcd80c5d2f6bf1bbad3b1a670ef93861e72f9683&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590786.hd.mp4?s=bcd80c5d2f6bf1bbad3b1a670ef93861e72f9683&amp;profile_id=119")}
 											>
 												<p>03. Printer took a galley of type and scrambled</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>04. It to make a type specimen book & break</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test5_voice_mp4_480x360.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>
 													05. Survived not only five centuries also the leap
 												</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test7_voiceclip_mp4_480x360.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>06. Into typesettingremaining essentially</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test8_voiceclip_mp4_480x320.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>07. Unchanged. It was popularised in the 1960s</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/MP4/ConvertedFiles/Media-Convert/Unsupported/dw11222.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>08. The release of Letraset sheets containing</p>
 												<span className="total-duration">08 minutes</span>
@@ -784,8 +533,7 @@ function Courses(props) {
 									</div>
 								</div>
 								{/* <!-- Accordion Items End  -->
-
-                          <!-- Accordion Items Start  --> */}
+								<!-- Accordion Items Start  --> */}
 								<div className="accordion-item">
 									<button
 										className="collapsed"
@@ -799,74 +547,74 @@ function Courses(props) {
 										</p>
 										<span className="total-duration">01 hour 48 minutes</span>
 									</button>
-
 									<div
 										id="collapseTwo"
 										className="accordion-collapse collapse"
 										data-bs-parent="#videoPlaylist"
 									>
 										<nav className="vids">
-											<a
-												className="link"
-												href="https://player.vimeo.com/external/215175080.hd.mp4?s=5b17787857fd95646e67ad0f666ea69388cb703c&amp;profile_id=119"
+										<a
+												href="#/"
+												className="link active"
+												onClick={() => setUrl('https://player.vimeo.com/external/215175080.hd.mp4?s=5b17787857fd95646e67ad0f666ea69388cb703c&amp;profile_id=119')}
 											>
 												<p>09. The Complete Medicine MasterclassName</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590826.hd.mp4?s=6a918d074abf8f3add7858018855524d384f6934&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590826.hd.mp4?s=6a918d074abf8f3add7858018855524d384f6934&amp;profile_id=119")}
 											>
 												<p>10. Standard dummy text ever since the</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590786.hd.mp4?s=bcd80c5d2f6bf1bbad3b1a670ef93861e72f9683&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590786.hd.mp4?s=bcd80c5d2f6bf1bbad3b1a670ef93861e72f9683&amp;profile_id=119")}
 											>
 												<p>11. Printer took a galley of type and scrambled</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>12. It to make a type specimen book & break</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test5_voice_mp4_480x360.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>
 													13. Survived not only five centuries also the leap
 												</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test7_voiceclip_mp4_480x360.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>14. Into typesettingremaining essentially</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test8_voiceclip_mp4_480x320.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>15. Unchanged. It was popularised in the 1960s</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/MP4/ConvertedFiles/Media-Convert/Unsupported/dw11222.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>16. The release of Letraset sheets containing</p>
 												<span className="total-duration">08 minutes</span>
@@ -875,8 +623,7 @@ function Courses(props) {
 									</div>
 								</div>
 								{/* <!-- Accordion Items End  -->
-
-                          <!-- Accordion Items Start  --> */}
+								<!-- Accordion Items Start  --> */}
 								<div className="accordion-item">
 									<button
 										className="collapsed"
@@ -897,67 +644,68 @@ function Courses(props) {
 										data-bs-parent="#videoPlaylist"
 									>
 										<nav className="vids">
-											<a
-												className="link"
-												href="https://player.vimeo.com/external/215175080.hd.mp4?s=5b17787857fd95646e67ad0f666ea69388cb703c&amp;profile_id=119"
+										<a
+												href="#/"
+												className="link active"
+												onClick={() => setUrl('https://player.vimeo.com/external/215175080.hd.mp4?s=5b17787857fd95646e67ad0f666ea69388cb703c&amp;profile_id=119')}
 											>
 												<p>17. The Complete Medicine MasterclassName</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590826.hd.mp4?s=6a918d074abf8f3add7858018855524d384f6934&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590826.hd.mp4?s=6a918d074abf8f3add7858018855524d384f6934&amp;profile_id=119")}
 											>
 												<p>18. Standard dummy text ever since the</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590786.hd.mp4?s=bcd80c5d2f6bf1bbad3b1a670ef93861e72f9683&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590786.hd.mp4?s=bcd80c5d2f6bf1bbad3b1a670ef93861e72f9683&amp;profile_id=119")}
 											>
 												<p>19. Printer took a galley of type and scrambled</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>20. It to make a type specimen book & break</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test5_voice_mp4_480x360.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>
 													21. Survived not only five centuries also the leap
 												</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test7_voiceclip_mp4_480x360.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>22. Into typesettingremaining essentially</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test8_voiceclip_mp4_480x320.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>23. Unchanged. It was popularised in the 1960s</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/MP4/ConvertedFiles/Media-Convert/Unsupported/dw11222.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>24. The release of Letraset sheets containing</p>
 												<span className="total-duration">08 minutes</span>
@@ -966,8 +714,7 @@ function Courses(props) {
 									</div>
 								</div>
 								{/* <!-- Accordion Items End  -->
-
-                          <!-- Accordion Items Start  --> */}
+								<!-- Accordion Items Start  --> */}
 								<div className="accordion-item">
 									<button
 										className="collapsed"
@@ -988,67 +735,68 @@ function Courses(props) {
 										data-bs-parent="#videoPlaylist"
 									>
 										<nav className="vids">
-											<a
-												className="link"
-												href="https://player.vimeo.com/external/215175080.hd.mp4?s=5b17787857fd95646e67ad0f666ea69388cb703c&amp;profile_id=119"
+										<a
+												href="#/"
+												className="link active"
+												onClick={() => setUrl('https://player.vimeo.com/external/215175080.hd.mp4?s=5b17787857fd95646e67ad0f666ea69388cb703c&amp;profile_id=119')}
 											>
 												<p>25. The Complete Medicine MasterclassName</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590826.hd.mp4?s=6a918d074abf8f3add7858018855524d384f6934&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590826.hd.mp4?s=6a918d074abf8f3add7858018855524d384f6934&amp;profile_id=119")}
 											>
 												<p>26. Standard dummy text ever since the</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590786.hd.mp4?s=bcd80c5d2f6bf1bbad3b1a670ef93861e72f9683&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590786.hd.mp4?s=bcd80c5d2f6bf1bbad3b1a670ef93861e72f9683&amp;profile_id=119")}
 											>
 												<p>27. Printer took a galley of type and scrambled</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>28. It to make a type specimen book & break</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test5_voice_mp4_480x360.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>
 													29. Survived not only five centuries also the leap
 												</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test7_voiceclip_mp4_480x360.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>30. Into typesettingremaining essentially</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test8_voiceclip_mp4_480x320.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>31. Unchanged. It was popularised in the 1960s</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/MP4/ConvertedFiles/Media-Convert/Unsupported/dw11222.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>32. The release of Letraset sheets containing</p>
 												<span className="total-duration">08 minutes</span>
@@ -1057,8 +805,7 @@ function Courses(props) {
 									</div>
 								</div>
 								{/* <!-- Accordion Items End  -->
-
-                          <!-- Accordion Items Start  --> */}
+								<!-- Accordion Items Start  --> */}
 								<div className="accordion-item">
 									<button
 										className="collapsed"
@@ -1080,66 +827,67 @@ function Courses(props) {
 									>
 										<nav className="vids">
 											<a
-												className="link"
-												href="https://player.vimeo.com/external/215175080.hd.mp4?s=5b17787857fd95646e67ad0f666ea69388cb703c&amp;profile_id=119"
+												href="#/"
+												className="link active"
+												onClick={() => setUrl('https://player.vimeo.com/external/215175080.hd.mp4?s=5b17787857fd95646e67ad0f666ea69388cb703c&amp;profile_id=119')}
 											>
 												<p>33. The Complete Medicine MasterclassName</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590826.hd.mp4?s=6a918d074abf8f3add7858018855524d384f6934&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590826.hd.mp4?s=6a918d074abf8f3add7858018855524d384f6934&amp;profile_id=119")}
 											>
 												<p>34. Standard dummy text ever since the</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590786.hd.mp4?s=bcd80c5d2f6bf1bbad3b1a670ef93861e72f9683&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590786.hd.mp4?s=bcd80c5d2f6bf1bbad3b1a670ef93861e72f9683&amp;profile_id=119")}
 											>
 												<p>35. Printer took a galley of type and scrambled</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>36. It to make a type specimen book & break</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test5_voice_mp4_480x360.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>
 													37. Survived not only five centuries also the leap
 												</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test7_voiceclip_mp4_480x360.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>38. Into typesettingremaining essentially</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test8_voiceclip_mp4_480x320.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>39. Unchanged. It was popularised in the 1960s</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/MP4/ConvertedFiles/Media-Convert/Unsupported/dw11222.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>40. The release of Letraset sheets containing</p>
 												<span className="total-duration">08 minutes</span>
@@ -1148,8 +896,7 @@ function Courses(props) {
 									</div>
 								</div>
 								{/* <!-- Accordion Items End  -->
-
-                          <!-- Accordion Items Start  --> */}
+								<!-- Accordion Items Start  --> */}
 								<div className="accordion-item">
 									<button
 										className="collapsed"
@@ -1163,74 +910,74 @@ function Courses(props) {
 										</p>
 										<span className="total-duration">01 hour 48 minutes</span>
 									</button>
-
 									<div
 										id="collapseSix"
 										className="accordion-collapse collapse"
 										data-bs-parent="#videoPlaylist"
 									>
 										<nav className="vids">
-											<a
-												className="link"
-												href="https://player.vimeo.com/external/215175080.hd.mp4?s=5b17787857fd95646e67ad0f666ea69388cb703c&amp;profile_id=119"
+										<a
+												href="#/"
+												className="link active"
+												onClick={() => setUrl('https://player.vimeo.com/external/215175080.hd.mp4?s=5b17787857fd95646e67ad0f666ea69388cb703c&amp;profile_id=119')}
 											>
 												<p>41. The Complete Medicine MasterclassName</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590826.hd.mp4?s=6a918d074abf8f3add7858018855524d384f6934&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590826.hd.mp4?s=6a918d074abf8f3add7858018855524d384f6934&amp;profile_id=119")}
 											>
 												<p>42. Standard dummy text ever since the</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590786.hd.mp4?s=bcd80c5d2f6bf1bbad3b1a670ef93861e72f9683&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590786.hd.mp4?s=bcd80c5d2f6bf1bbad3b1a670ef93861e72f9683&amp;profile_id=119")}
 											>
 												<p>43. Printer took a galley of type and scrambled</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>44. It to make a type specimen book & break</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test5_voice_mp4_480x360.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>
 													45. Survived not only five centuries also the leap
 												</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test7_voiceclip_mp4_480x360.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>46. Into typesettingremaining essentially</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test8_voiceclip_mp4_480x320.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>47. Unchanged. It was popularised in the 1960s</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/MP4/ConvertedFiles/Media-Convert/Unsupported/dw11222.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>48. The release of Letraset sheets containing</p>
 												<span className="total-duration">08 minutes</span>
@@ -1239,8 +986,7 @@ function Courses(props) {
 									</div>
 								</div>
 								{/* <!-- Accordion Items End  -->
-
-                          <!-- Accordion Items Start  --> */}
+								<!-- Accordion Items Start  --> */}
 								<div className="accordion-item">
 									<button
 										className="collapsed"
@@ -1254,74 +1000,74 @@ function Courses(props) {
 										</p>
 										<span className="total-duration">01 hour 48 minutes</span>
 									</button>
-
 									<div
 										id="collapseSaven"
 										className="accordion-collapse collapse"
 										data-bs-parent="#videoPlaylist"
 									>
 										<nav className="vids">
-											<a
-												className="link"
-												href="https://player.vimeo.com/external/215175080.hd.mp4?s=5b17787857fd95646e67ad0f666ea69388cb703c&amp;profile_id=119"
+										<a
+												href="#/"
+												className="link active"
+												onClick={() => setUrl('https://player.vimeo.com/external/215175080.hd.mp4?s=5b17787857fd95646e67ad0f666ea69388cb703c&amp;profile_id=119')}
 											>
 												<p>49. The Complete Medicine MasterclassName</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590826.hd.mp4?s=6a918d074abf8f3add7858018855524d384f6934&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590826.hd.mp4?s=6a918d074abf8f3add7858018855524d384f6934&amp;profile_id=119")}
 											>
 												<p>50. Standard dummy text ever since the</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590786.hd.mp4?s=bcd80c5d2f6bf1bbad3b1a670ef93861e72f9683&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590786.hd.mp4?s=bcd80c5d2f6bf1bbad3b1a670ef93861e72f9683&amp;profile_id=119")}
 											>
 												<p>51. Printer took a galley of type and scrambled</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>52. It to make a type specimen book & break</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test5_voice_mp4_480x360.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>
 													53. Survived not only five centuries also the leap
 												</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test7_voiceclip_mp4_480x360.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>54. Into typesettingremaining essentially</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test8_voiceclip_mp4_480x320.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>55. Unchanged. It was popularised in the 1960s</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/MP4/ConvertedFiles/Media-Convert/Unsupported/dw11222.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>56. The release of Letraset sheets containing</p>
 												<span className="total-duration">08 minutes</span>
@@ -1330,8 +1076,7 @@ function Courses(props) {
 									</div>
 								</div>
 								{/* <!-- Accordion Items End  -->
-
-                          <!-- Accordion Items Start  --> */}
+								<!-- Accordion Items Start  --> */}
 								<div className="accordion-item">
 									<button
 										className="collapsed"
@@ -1345,74 +1090,74 @@ function Courses(props) {
 										</p>
 										<span className="total-duration">01 hour 48 minutes</span>
 									</button>
-
 									<div
 										id="collapseEight"
 										className="accordion-collapse collapse"
 										data-bs-parent="#videoPlaylist"
 									>
 										<nav className="vids">
-											<a
-												className="link"
-												href="https://player.vimeo.com/external/215175080.hd.mp4?s=5b17787857fd95646e67ad0f666ea69388cb703c&amp;profile_id=119"
+										<a
+												href="#/"
+												className="link active"
+												onClick={() => setUrl('https://player.vimeo.com/external/215175080.hd.mp4?s=5b17787857fd95646e67ad0f666ea69388cb703c&amp;profile_id=119')}
 											>
 												<p>57. The Complete Medicine MasterclassName</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590826.hd.mp4?s=6a918d074abf8f3add7858018855524d384f6934&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590826.hd.mp4?s=6a918d074abf8f3add7858018855524d384f6934&amp;profile_id=119")}
 											>
 												<p>58. Standard dummy text ever since the</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590786.hd.mp4?s=bcd80c5d2f6bf1bbad3b1a670ef93861e72f9683&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590786.hd.mp4?s=bcd80c5d2f6bf1bbad3b1a670ef93861e72f9683&amp;profile_id=119")}
 											>
 												<p>59. Printer took a galley of type and scrambled</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>60. It to make a type specimen book & break</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test5_voice_mp4_480x360.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>
 													61. Survived not only five centuries also the leap
 												</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test7_voiceclip_mp4_480x360.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>62. Into typesettingremaining essentially</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test8_voiceclip_mp4_480x320.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>63. Unchanged. It was popularised in the 1960s</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/MP4/ConvertedFiles/Media-Convert/Unsupported/dw11222.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>64. The release of Letraset sheets containing</p>
 												<span className="total-duration">08 minutes</span>
@@ -1421,8 +1166,7 @@ function Courses(props) {
 									</div>
 								</div>
 								{/* <!-- Accordion Items End  -->
-
-                          <!-- Accordion Items Start  --> */}
+								<!-- Accordion Items Start  --> */}
 								<div className="accordion-item">
 									<button
 										className="collapsed"
@@ -1436,74 +1180,74 @@ function Courses(props) {
 										</p>
 										<span className="total-duration">01 hour 48 minutes</span>
 									</button>
-
 									<div
 										id="collapseNine"
 										className="accordion-collapse collapse"
 										data-bs-parent="#videoPlaylist"
 									>
 										<nav className="vids">
-											<a
-												className="link"
-												href="https://player.vimeo.com/external/215175080.hd.mp4?s=5b17787857fd95646e67ad0f666ea69388cb703c&amp;profile_id=119"
+										<a
+												href="#/"
+												className="link active"
+												onClick={() => setUrl('https://player.vimeo.com/external/215175080.hd.mp4?s=5b17787857fd95646e67ad0f666ea69388cb703c&amp;profile_id=119')}
 											>
 												<p>65. The Complete Medicine MasterclassName</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590826.hd.mp4?s=6a918d074abf8f3add7858018855524d384f6934&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590826.hd.mp4?s=6a918d074abf8f3add7858018855524d384f6934&amp;profile_id=119")}
 											>
 												<p>66. Standard dummy text ever since the</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590786.hd.mp4?s=bcd80c5d2f6bf1bbad3b1a670ef93861e72f9683&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590786.hd.mp4?s=bcd80c5d2f6bf1bbad3b1a670ef93861e72f9683&amp;profile_id=119")}
 											>
 												<p>67. Printer took a galley of type and scrambled</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>68. It to make a type specimen book & break</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test5_voice_mp4_480x360.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>
 													69. Survived not only five centuries also the leap
 												</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test7_voiceclip_mp4_480x360.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>70. Into typesettingremaining essentially</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test8_voiceclip_mp4_480x320.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>71. Unchanged. It was popularised in the 1960s</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/MP4/ConvertedFiles/Media-Convert/Unsupported/dw11222.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>72. The release of Letraset sheets containing</p>
 												<span className="total-duration">08 minutes</span>
@@ -1512,8 +1256,7 @@ function Courses(props) {
 									</div>
 								</div>
 								{/* <!-- Accordion Items End  -->
-
-                          <!-- Accordion Items Start  --> */}
+								<!-- Accordion Items Start  --> */}
 								<div className="accordion-item">
 									<button
 										className="collapsed"
@@ -1527,74 +1270,74 @@ function Courses(props) {
 										</p>
 										<span className="total-duration">01 hour 48 minutes</span>
 									</button>
-
 									<div
 										id="collapseTen"
 										className="accordion-collapse collapse"
 										data-bs-parent="#videoPlaylist"
 									>
 										<nav className="vids">
-											<a
-												className="link"
-												href="https://player.vimeo.com/external/215175080.hd.mp4?s=5b17787857fd95646e67ad0f666ea69388cb703c&amp;profile_id=119"
+										<a
+												href="#/"
+												className="link active"
+												onClick={() => setUrl('https://player.vimeo.com/external/215175080.hd.mp4?s=5b17787857fd95646e67ad0f666ea69388cb703c&amp;profile_id=119')}
 											>
 												<p>73. The Complete Medicine MasterclassName</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590826.hd.mp4?s=6a918d074abf8f3add7858018855524d384f6934&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590826.hd.mp4?s=6a918d074abf8f3add7858018855524d384f6934&amp;profile_id=119")}
 											>
 												<p>74. Standard dummy text ever since the</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590786.hd.mp4?s=bcd80c5d2f6bf1bbad3b1a670ef93861e72f9683&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590786.hd.mp4?s=bcd80c5d2f6bf1bbad3b1a670ef93861e72f9683&amp;profile_id=119")}
 											>
 												<p>75. Printer took a galley of type and scrambled</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>76. It to make a type specimen book & break</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test5_voice_mp4_480x360.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>
 													77. Survived not only five centuries also the leap
 												</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test7_voiceclip_mp4_480x360.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>78. Into typesettingremaining essentially</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/H264/Other_Media/H264_test8_voiceclip_mp4_480x320.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>79. Unchanged. It was popularised in the 1960s</p>
 												<span className="total-duration">08 minutes</span>
 											</a>
-
 											<a
+												href="#/"
 												className="link"
-												href="http://download.wavetlan.com/SVV/Media/HTTP/MP4/ConvertedFiles/Media-Convert/Unsupported/dw11222.mp4"
+												onClick={() => setUrl("https://player.vimeo.com/external/207590615.hd.mp4?s=c4bce1872859889c86b688c26c60ed2b5734de28&amp;profile_id=119")}
 											>
 												<p>80. The release of Letraset sheets containing</p>
 												<span className="total-duration">08 minutes</span>
@@ -1605,14 +1348,9 @@ function Courses(props) {
 								{/* <!-- Accordion Items End  --> */}
 							</div>
 						</div>
-						{/* <!-- Video Playlist End  --> */}
 					</div>
-					{/* <!-- Courses Video Playlist End --> */}
 				</div>
-				{/* <!-- Courses Enroll Wrapper End --> */}
 			</div>
-			{/* <!-- Courses Enroll End --> */}
-
 			<Download />
 			<Footer />
 		</div>
