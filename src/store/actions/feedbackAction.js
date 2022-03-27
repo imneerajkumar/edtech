@@ -1,6 +1,6 @@
 import { ADD_FEEDBACK_FAIL, ADD_FEEDBACK_REQUEST, ADD_FEEDBACK_SUCCESS, GET_INSTRUCTORS_FEEDBACK_FAIL, GET_INSTRUCTORS_FEEDBACK_REQUEST, GET_INSTRUCTORS_FEEDBACK_SUCCESS } from "../constants/constants";
 import axios from "axios";
-const API_URL = "https://edulearning1.herokuapp.com/";
+const API_URL = "https://edulearning1.herokuapp.com";
 
 export const addFeedback = (details) => async (dispatch,getState) => {
 	try {
