@@ -1,3 +1,17 @@
+# Edule - eLearning Platform
+We created a edtech platform to provide best in class and quality education to everyone. Quality Education- Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all. Through our solution students can learn and educate themselves with topics from all the fields. Our platform is student friendly and easily accessible for everyone. The quality of education that we wish to make available would be one of the best in the world.
+
+
+## Some salient features:
+- Live classes and recorded video lectures
+- Educator dashboard 
+- Blogs for latest news and information regarding education.
+- Educator and students can interact directly through virtual call. (Inbuilt virtual meeting)
+- Educators can list their courses on their own.
+- AI Chatbot for shortlisting courses.
+- Exact location using Google Map API.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
