@@ -14,44 +14,44 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchEducatorList } from "../../store/actions/educatorAction";
 import { fetchFeedbackForInstructors } from "../../store/actions/feedbackAction";
 
-// const educatorList = [
-//     {
-//         email: "instructor1@gmail.com",
-//         name: "Instructor1",
-//         userName: "instructor1",
-//         userImage: "assets/images/author/author-02.jpg",
-//     },
-//     {
-//         emailId: "instructor2@gmail.com",
-//         name: "Instructor2",
-//         userName: "instructor2",
-//         userImage: "assets/images/author/author-03.jpg",
-//     },
-//     {
-//         emailId: "instructor3@gmail.com",
-//         name: "Instructor3",
-//         userName: "instructor3",
-//         userImage: "assets/images/author/author-04.jpg",
-//     },
-//     {
-//         emailId: "instructor4@gmail.com",
-//         name: "Instructor4",
-//         userName: "instructor4",
-//         userImage: "assets/images/author/author-02.jpg",
-//     },
-//     {
-//         emailId: "instructor5@gmail.com",
-//         name: "Instructor5",
-//         userName: "instructor5",
-//         userImage: "assets/images/author/author-03.jpg",
-//     },
-//     {
-//         emailId: "instructor6@gmail.com",
-//         name: "Instructor6",
-//         userName: "instructor6",
-//         userImage: "assets/images/author/author-04.jpg",
-//     },
-// ];
+const educatorList = [
+    {
+        email: "instructor1@gmail.com",
+        name: "Instructor1",
+        userName: "instructor1",
+        userImage: "assets/images/author/author-02.jpg",
+    },
+    {
+        emailId: "instructor2@gmail.com",
+        name: "Instructor2",
+        userName: "instructor2",
+        userImage: "assets/images/author/author-03.jpg",
+    },
+    {
+        emailId: "instructor3@gmail.com",
+        name: "Instructor3",
+        userName: "instructor3",
+        userImage: "assets/images/author/author-04.jpg",
+    },
+    {
+        emailId: "instructor4@gmail.com",
+        name: "Instructor4",
+        userName: "instructor4",
+        userImage: "assets/images/author/author-02.jpg",
+    },
+    {
+        emailId: "instructor5@gmail.com",
+        name: "Instructor5",
+        userName: "instructor5",
+        userImage: "assets/images/author/author-03.jpg",
+    },
+    {
+        emailId: "instructor6@gmail.com",
+        name: "Instructor6",
+        userName: "instructor6",
+        userImage: "assets/images/author/author-04.jpg",
+    },
+];
 
 const data = 
 [
@@ -69,9 +69,73 @@ function About(props) {
   const [scrollState, setScrollState] = useState(false);
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
-  const { educatorList } = useSelector((state) => state.educatorFetchList);
+//   const { educatorList } = useSelector((state) => state.educatorFetchList);
 //   const feedbackData = useState(useSelector((state) => state.fetchFeedbackForInstructorReducer));
- 
+ const educatorList = [
+		{
+			email: "instructor1@gmail.com",
+			name: "Scarlett Morgan",
+			userName: "instructor1",
+			userImage: "assets/images/author/author-01.jpg",
+		},
+		{
+			emailId: "instructor2@gmail.com",
+			name: "Jay Kakkar",
+			userName: "instructor2",
+			userImage: "assets/images/author/author-02.jpg",
+		},
+		{
+			emailId: "instructor3@gmail.com",
+			name: "Melanie Rhode",
+			userName: "instructor3",
+			userImage: "assets/images/author/author-03.jpg",
+		},
+		{
+			emailId: "instructor4@gmail.com",
+			name: "Jessica Foster",
+			userName: "instructor4",
+			userImage: "assets/images/author/author-04.jpg",
+		},
+		{
+			emailId: "instructor5@gmail.com",
+			name: "Manan Kakkar",
+			userName: "instructor5",
+			userImage: "assets/images/author/author-05.jpg",
+		},
+		{
+			emailId: "instructor6@gmail.com",
+			name: "Kevin Obrein",
+			userName: "instructor6",
+			userImage: "assets/images/author/author-06.jpg",
+		},
+		{
+			emailId: "instructor6@gmail.com",
+			name: "Elizabeth Green",
+			userName: "instructor6",
+			userImage: "assets/images/author/author-07.jpg",
+		},
+		{
+			emailId: "instructor6@gmail.com",
+			name: "Rachel Buffay",
+			userName: "instructor6",
+			userImage: "assets/images/author/author-08.jpg",
+		},
+		{
+			emailId: "instructor6@gmail.com",
+			name: "Pamela Fostor",
+			userName: "instructor6",
+			userImage: "assets/images/author/author-09.jpg",
+		},
+		{
+			emailId: "instructor6@gmail.com",
+			name: "Neeraj Kumar",
+			userName: "instructor6",
+			userImage: "assets/images/author/author-10.jpg",
+		},
+ ];
+
+
+
   const handleShow = (userName) => {
     dispatch(fetchFeedbackForInstructors(userName));   
     setShow(true);

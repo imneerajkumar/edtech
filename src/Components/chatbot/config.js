@@ -1,7 +1,7 @@
 import { createChatBotMessage } from "react-chatbot-kit";
 import ListProperties from "./widgets/ListProperties";
 
-const botName = "VRDOOR Bot";
+const botName = "Edule Bot";
 
 const config = {
   initialMessages: [createChatBotMessage(`Hello User. How may I help you?`)],
