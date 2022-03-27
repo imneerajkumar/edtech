@@ -7,7 +7,7 @@ import {
     GET_COURSES_REQUEST,
     GET_COURSES_SUCCESS,
 } from "../constants/constants";
-const API_URL = "https://vrdoor-server.herokuapp.com";
+const API_URL = "https://edulearning1.herokuapp.com/";
 
 export const addCourse = (details) => async (dispatch, getState) => {
 	try {

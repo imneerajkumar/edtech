@@ -14,7 +14,7 @@ import {
     EDUCATOR_SUCCESS,
 } from "../constants/constants";
 import axios from "axios";
-const API_URL = "https://vrdoor-server.herokuapp.com";
+const API_URL = "https://edulearning1.herokuapp.com/";
 export const educatorAuth = (email, password) => async (dispatch) => {
 	try {
 		dispatch({
