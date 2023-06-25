@@ -1,6 +1,9 @@
 # Edule - eLearning Platform
 We created a edtech platform to provide best in class and quality education to everyone. Quality Education- Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all. Through our solution students can learn and educate themselves with topics from all the fields. Our platform is student friendly and easily accessible for everyone. The quality of education that we wish to make available would be one of the best in the world.
 
+## Contributors
+1> Jay Kakkar
+2> Neeraj Kumar
 
 ## Some salient features:
 - Live classes and recorded video lectures
@@ -20,7 +23,7 @@ https://edulelearning.netlify.app/
 https://github.com/jaykakkar31/edtechServer
 
 ### Demo 
-https://www.youtube.com/watch?v=m9wBN0f4l0E
+https://github.com/imneerajkumar/edtech/assets/79255742/548eee71-dcd7-41c6-9938-935c90a4331a
 
 ## Technologies Used:
 - React Js
